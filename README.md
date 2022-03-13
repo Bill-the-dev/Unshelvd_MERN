@@ -54,3 +54,27 @@ It will give you suggestions for Connected (online) or Unplugged (in-person) gam
 | Kirby  | Frontend skeleton, splash page          | PM: Game show page                                               | Library show page | Flex          |
 | Ethan  | Frontend skeleton, splash page          | PM: Suggestion Form                                              | Flex              | Flex          |
 | All    | Regroup for skeleton review, AWS set up | AM: Seed DB (users, groups, games, demo), Meet for CSS framework |                   | Bugs, Styling |
+
+## Design Wireframes
+
+### Splash
+![Splash Page](https://github.com/Bill-the-dev/Unshelvd_MERN/blob/main/wireframes/01_splash.png?raw=true)
+
+### Main Library 
+![Main Library](https://github.com/Bill-the-dev/Unshelvd_MERN/blob/main/wireframes/02_library.png?raw=true)
+
+### Group Index
+![Group Index](https://github.com/Bill-the-dev/Unshelvd_MERN/blob/main/wireframes/03_group_index.png?raw=true)
+
+### Group Show
+![Group Show](https://github.com/Bill-the-dev/Unshelvd_MERN/blob/main/wireframes/04_group_show.png?raw=true)
+
+### Suggest Form
+![Suggest Form](https://github.com/Bill-the-dev/Unshelvd_MERN/blob/main/wireframes/05_suggest_form.png?raw=true)
+
+### Game Show
+![Game Show](https://github.com/Bill-the-dev/Unshelvd_MERN/blob/main/wireframes/06_game_show.png?raw=true)
+
+
+
+
