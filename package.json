@@ -1,0 +1,33 @@
+{
+  "name": "unshelvd_mern",
+  "version": "1.0.0",
+  "description": "“I dunno, what do you want to do?”  Friends are no fun with open-ended questions. Unshelvd is here to fix that.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "server": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bill-the-dev/Unshelvd_MERN.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bill-the-dev/Unshelvd_MERN/issues"
+  },
+  "homepage": "https://github.com/Bill-the-dev/Unshelvd_MERN#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.6",
+    "passport": "^0.5.2",
+    "passport-jwt": "^4.0.0",
+    "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
