@@ -2,9 +2,10 @@ const express = require("express");
 const router = express.Router();
 const Game = require('../../models/Game')
 const passport = require('passport');
+const { request } = require("express");
 
 
-// const validateTweetInput = require('../../validation/tweets')
+const validateGameInput = require('../../validation/games')
 
 // router.get("/test", (req, res) => res.json({ msg: "This is the tweets route" }));
 
@@ -31,8 +32,18 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req,res) => {
         return res.status(400).json(errors)
     }
     const newGame = new Game({
-        // text: req.body.text,
-        // user: req.user.id
+        name: req.body.name,
+        image: req.body.image,
+        playerCount: {
+            min: req.body.min,
+            max: req.body.max
+        },
+        playerCountMax: req.body.playerCount.max,
+        category: req.body.category,
+        gameType: req.body.gameType,
+        description: req.body.description,
+        rulesLink: req.body.rulesLink,
+        userCreator: req.user.id
     })
 
     newGame.save()
