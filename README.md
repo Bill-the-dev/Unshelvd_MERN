@@ -27,20 +27,23 @@ It will give you suggestions for Connected (online) or Unplugged (in-person) gam
 * Groups will persist in database unless admin deletes
   * BONUS: group will timeout after specific time and not persist in DB
 
-### 4. Game Generator
-* Feature that will generate a game recommendation based on:
-  * Number of people playing
-  * Combined user libraries
-  * Category selection
-* Game recommendation will include:
+### 4. Game Show Page
+* Game show page will include:
   * Name
   * Image (or default game image)
   * Player Count
   * Category
   * Description, if avail
   * Instructions link, if avail
+  
+### 5. Game Generator
+* Feature that will generate a game recommendation based on:
+  * Number of people playing
+  * Combined user libraries
+  * Category selection
+* Each game recommendation will direct to Game Show Page
 
-### 5. Search (BONUS)
+### 6. Search (BONUS)
 * Add search functionality within game library
 
 ## Technologies and Technical Challenges
@@ -52,7 +55,7 @@ It will give you suggestions for Connected (online) or Unplugged (in-person) gam
 | Bill   | Backend skeleton, Auth, Set up heroku   | PM: Group show page including create group                       | Group index page  | Deploy        |
 | Emily  | Backend skeleton, Auth, Set up heroku   | Frontend Auth forms, finish splash/auth from Monday              | New game form     | README        |
 | Kirby  | Frontend skeleton, splash page          | PM: Game show page                                               | Library show page | Flex          |
-| Ethan  | Frontend skeleton, splash page          | PM: Suggestion Form                                              | Flex              | Flex          |
+| Ethan  | Frontend skeleton, splash page          | PM: Suggestion Form                                              | Nav bar, flex     | Flex          |
 | All    | Regroup for skeleton review, AWS set up | AM: Seed DB (users, groups, games, demo), Meet for CSS framework |                   | Bugs, Styling |
 
 --- 
