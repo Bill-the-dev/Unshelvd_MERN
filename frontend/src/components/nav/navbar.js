@@ -29,9 +29,9 @@ class NavBar extends React.Component {
     }
 
     render() {
-        if (this.props.location.pathname === "/") {
-            return null;
-        }
+        // if (this.props.location.pathname === "/") {
+        //     return null;
+        // }
         return (
             <div>
                 <h1>Unshelvd</h1>
