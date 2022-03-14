@@ -14,9 +14,23 @@ const GameSchema = new Schema({
     type: Map, // figure out how to get min and max player count
     of: Integer
   },
-  name: {
-    type: String,
+  category: {
+    type: Array, // this can be multiselect stored as an array
     required: true
+  },
+  gameType: {
+    type: Array, // this can be multiselect stored as an array
+    required: true
+  },
+  description: {
+    type: String
+  },
+  rulesLink: {
+    type: String
+  },
+  userCreator: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
   }
 })
 
