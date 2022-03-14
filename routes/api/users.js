@@ -91,6 +91,12 @@ router.post("/login", (req, res) => {
   });
 });
 
-// router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
+// // ALL GAMES FROM USER
+// router.get('/user/:user_id', (req,res) => {
+//   Game.find({ user: req.params.user_id})
+//       .then(games => res.json(games))
+//       .catch(err => res.status(404).json({nogamesfound: 'no games found from user'}))
+// })
+router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
 
 module.exports = router;
