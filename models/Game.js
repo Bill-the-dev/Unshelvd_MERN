@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const GameSchema = new Schema({
+const gameSchema = new Schema({
   name: {
     type: String,
-    required: true
+    required: true,
+    // index: true
   },
   image: {
     type: String, //is string correct type? reading url for AWS
@@ -31,8 +32,11 @@ const GameSchema = new Schema({
   },
   userCreator: {
     type: Schema.Types.ObjectId,
-    ref: 'User'
+    ref: 'User',
+    // index: true
   }
 })
 
-module.exports = Game = mongoose.model('Game', GameSchema)
+gameSchema.index({ name: 1, userCreator: 1 }, { unique: true })
+
+module.exports = Game = mongoose.model('Game', gameSchema)
