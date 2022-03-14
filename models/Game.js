@@ -9,10 +9,11 @@ const GameSchema = new Schema({
   image: {
     type: String, //is string correct type? reading url for AWS
     required: true
+    // add default to generic image path
   },
   playerCount: {
     type: Map, // figure out how to get min and max player count
-    of: Integer
+    of: Number
   },
   category: {
     type: Array, // this can be multiselect stored as an array
