@@ -138,8 +138,8 @@ Connected / Unplugged
 Codenames
 (img saved)
 2 - 8+
-Board Game, Party, Word, Puzzle, Quick, Team Play
-Codenames is an easy party game solve puzzles. The game is divided into red and blue, each side has a team leader, the team leader's goal is to lead their team to the final victory. The two rival spymasters know the secret identities of 25 agents. Their teammates know the agents only by their CODENAMES.
+Board Game, Party, Word, Puzzle, Quick, Team Play, Deduction
+Codenames is an easy deduction party game. The game is divided into red and blue, each side has a team leader, the team leader's goal is to lead their team to the final victory. The two rival spymasters know the secret identities of 25 agents. Their teammates know the agents only by their CODENAMES.
 Connected Play: https://codenames.game/
 https://czechgames.com/en/codenames/video/
 
@@ -161,3 +161,7 @@ One Night Ultimate Werewolf
 Board Game, Party, Bluffing, Quick, App, Deduction
 
 An app-driven Werewolf that lasts but a single night. Wolves and villagers beware!
+Connected Play: https://netgames.io/games/onu-werewolf/
+https://ultraboardgames.com/one-night-ultimate-werewolf/game-rules.php
+
+---
