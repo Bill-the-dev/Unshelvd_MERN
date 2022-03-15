@@ -12,6 +12,7 @@ import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 
 import './stylesheets/index.scss'
+import { fetchGames } from './actions/game_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -38,4 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
 
   ReactDOM.render(<Root store={store} />, root);
+
+
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
+  window.fetchGames = fetchGames;
 });
