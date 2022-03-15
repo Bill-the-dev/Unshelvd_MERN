@@ -1,0 +1,14 @@
+.signup-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5% auto;
+}
+
+.signup-errors {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: x-small;
+  color: $dark-red;
+}
