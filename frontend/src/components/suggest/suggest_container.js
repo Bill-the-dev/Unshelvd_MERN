@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 
 
 const mapDispatchToProps = dispatch => ({
-
+    filterGames: preferences => dispatch(filterGames(preferences))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SuggestForm)
