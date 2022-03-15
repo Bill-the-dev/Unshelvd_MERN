@@ -47,10 +47,16 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req,res) => {
 
 // DELETE GROUP
 router.delete('/:id', (req,res) => {
-  groupId = `ObjectId(${req.params.id})`
-  Group.deleteOne( { "_id" : groupId } )
-    .then(res => res.json('hello'))
+  // groupId = `ObjectId(${req.params.id})`
+  // groupId = `{'$oid': '${req.params.id}'}`
+  // groupId = `'${req.params.id}'`
+  groupId = req.params.id
+
+  Group.deleteOne( { _id : groupId } )
+    .then(() => res.status(200).json({msg: 'success'}))
 })
 
 
 module.exports = router
+
+// {"_id":{"$oid":"6230aea05144323e3a95151b"},"name":"the best group","shareCode":"581886","users":[{"$oid":"6230ae01980873233da45e9c"}],"userGroupCreator":{"$oid":"6230ae01980873233da45e9c"},"__v":{"$numberInt":"0"}}
