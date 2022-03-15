@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-
+// import './login.scss'
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
@@ -74,7 +74,7 @@ class LoginForm extends React.Component {
                 placeholder="Password"
               />
             <br/>
-            <input type="submit" value="Submit" />
+            <input className='signup' type="submit" value="Submit" />
             {this.renderErrors()}
           </div>
         </form>
