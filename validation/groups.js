@@ -1,20 +1,16 @@
 const Validator = require('validator');
 const validText = require('./valid-text');
 
-module.exports = function validateGameInput(data) {
+module.exports = function validateGroupInput(data) {
   let errors = {};
 
   data.name = validText(data.name) ? data.name : '';
-  data.image = validText(data.image) ? data.image : '';
-  
-  
+
   if (Validator.isEmpty(data.name)) {
     errors.name = 'Name field is required';
   }
-  
-  if (Validator.isEmpty(data.image)) {
-    errors.image = 'Image field is required';
-  }
+
+  // group code depending on unlikely collision
 
   // if (!Validator.isLength(data.category.split(", ").length, { min: 1 })) {
   //   errors.category = 'Category cannot be empty';

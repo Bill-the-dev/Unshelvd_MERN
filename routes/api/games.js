@@ -31,6 +31,10 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req,res) => {
     if (!isValid) {
         return res.status(400).json(errors)
     }
+    // debugger
+    const categoryValues = req.body.category.split(", ")
+    const gameTypeValues = req.body.gameType.split(", ")
+
     const newGame = new Game({
         name: req.body.name,
         image: req.body.image,
@@ -38,9 +42,8 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req,res) => {
             min: req.body.min,
             max: req.body.max
         },
-        playerCountMax: req.body.playerCount.max,
-        category: req.body.category,
-        gameType: req.body.gameType,
+        category: categoryValues,
+        gameType: gameTypeValues,
         description: req.body.description,
         rulesLink: req.body.rulesLink,
         userCreator: req.user.id
