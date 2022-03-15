@@ -6,6 +6,7 @@ import SplashPage from './splash/splash';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 // import LibraryContainer from './library/library_container'
+import SuggestContainer from './suggest/suggest_container';
 
 const App = () => (
     <div>
@@ -15,6 +16,7 @@ const App = () => (
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             <AuthRoute exact path="/" component={SplashPage} />
             {/* <ProtectedRoute exact path="library" component={LibraryContainer} /> */}
+            <ProtectedRoute exact path="/suggest" component={SuggestContainer} />
         </Switch>
     </div>
 );
