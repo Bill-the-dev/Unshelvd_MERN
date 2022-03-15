@@ -57,6 +57,7 @@ class SignupForm extends React.Component {
   }
 
   render() {
+    const {loginDemo} = this.props
     return (
       <div className="signup-form-container">
         <h2>Sign Up</h2>
@@ -94,6 +95,7 @@ class SignupForm extends React.Component {
             {/* </div> */}
           </div>
         </form>
+        <button className="form-button" onClick={() => loginDemo()}>Demo Log In</button>
       </div>
     );
   }
