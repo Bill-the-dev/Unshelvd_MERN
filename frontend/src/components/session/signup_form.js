@@ -13,33 +13,35 @@ class SignupForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.clearedErrors = false;
+    // this.clearedErrors = false;
   }
 
   // componentWillReceiveProps(nextProps) {
   //   if (nextProps.signedIn === true) {
-  //     this.props.history.push('/library');
-  //   }
-
-  //   this.setState({errors: nextProps.errors})
-  // }
-
-  update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    let user = {
-      email: this.state.email,
-      username: this.state.username,
-      password: this.state.password,
-      password2: this.state.password2
-    };
-
-    this.props.signup(user, this.props.history); 
+    //   }
+    
+    //   this.setState({errors: nextProps.errors})
+    // }
+    
+    update(field) {
+      return e => this.setState({
+        [field]: e.currentTarget.value
+      });
+    }
+    
+    handleSubmit(e) {
+      e.preventDefault();
+      // debugger
+      let user = {
+        email: this.state.email,
+        username: this.state.username,
+        password: this.state.password,
+        password2: this.state.password2
+      };
+      
+      // this.props.signup(user, this.props.history); 
+      this.props.signup(user)
+      this.props.history.push('/library');
   }
 
   renderErrors() {
@@ -60,7 +62,7 @@ class SignupForm extends React.Component {
         <h2>Sign Up</h2>
         <h4><Link to='/login'>Log In</Link> instead</h4>
         <form onSubmit={this.handleSubmit}>
-          <div classNames="signup-form">
+          <div className="signup-form">
             <br/>
               <input type="text"
                 value={this.state.email}

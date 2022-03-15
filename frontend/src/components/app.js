@@ -12,14 +12,14 @@ import GameShowContainer from './game/game_show_container';
 const App = () => (
     <div>
         <Modal />
-        <Switch>
+        {/* <Switch> */}
             <ProtectedRoute exact path="/library/games/:id" component={GameShowContainer} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             <AuthRoute exact path="/" component={SplashPage} />
             <ProtectedRoute path='/' component={NavBarContainer}/>
             {/* <ProtectedRoute exact path="/library" component={LibraryContainer} /> */}
-        </Switch>
+        {/* </Switch> */}
     </div>
 );
 
