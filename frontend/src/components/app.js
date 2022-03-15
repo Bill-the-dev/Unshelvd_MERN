@@ -5,10 +5,12 @@ import NavBarContainer from './nav/navbar_container';
 import SplashPage from './splash/splash';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
+import Modal from './modal/modal';
 // import LibraryContainer from './library/library_container'
 
 const App = () => (
     <div>
+        <Modal />
         <NavBarContainer />
         <Switch>
             <AuthRoute exact path="/login" component={LoginFormContainer} />
