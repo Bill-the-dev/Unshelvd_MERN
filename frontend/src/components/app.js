@@ -5,16 +5,18 @@ import NavBarContainer from './nav/navbar_container';
 import SplashPage from './splash/splash';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
+import GameShowContainer from './game/game_show_container';
 // import LibraryContainer from './library/library_container'
 
 const App = () => (
     <div>
         <NavBarContainer />
         <Switch>
+            <ProtectedRoute exact path="/library/games/:id" component={GameShowContainer} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             <AuthRoute exact path="/" component={SplashPage} />
-            {/* <ProtectedRoute exact path="library" component={LibraryContainer} /> */}
+            {/* <ProtectedRoute exact path="/library" component={LibraryContainer} /> */}
         </Switch>
     </div>
 );
