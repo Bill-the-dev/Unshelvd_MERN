@@ -16,7 +16,7 @@ module.exports = function validateGameInput(data) {
     errors.image = 'Image field is required';
   }
 
-  // if (!Validator.isLength(data.category.split(", ").length, { min: 1 })) {
+  // if (!Validator.isInt(data.category.split(", ").length, { min: 1 })) {
   //   errors.category = 'Category cannot be empty';
   // }
 
