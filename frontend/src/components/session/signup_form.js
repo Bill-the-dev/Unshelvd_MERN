@@ -16,13 +16,13 @@ class SignupForm extends React.Component {
     this.clearedErrors = false;
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.signedIn === true) {
-      this.props.history.push('/library');
-    }
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.signedIn === true) {
+  //     this.props.history.push('/library');
+  //   }
 
-    this.setState({errors: nextProps.errors})
-  }
+  //   this.setState({errors: nextProps.errors})
+  // }
 
   update(field) {
     return e => this.setState({
