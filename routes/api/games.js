@@ -2,8 +2,6 @@ const express = require("express");
 const router = express.Router();
 const Game = require('../../models/Game')
 const passport = require('passport');
-const { request } = require("express");
-
 
 const validateGameInput = require('../../validation/games')
 
@@ -31,7 +29,7 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req,res) => {
     if (!isValid) {
         return res.status(400).json(errors)
     }
-    
+
     const categoryValues = req.body.category.split(", ")
     const gameTypeValues = req.body.gameType.split(", ")
 
