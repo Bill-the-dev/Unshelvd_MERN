@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -44,7 +44,7 @@ class SignupForm extends React.Component {
 
   renderErrors() {
     return(
-      <ul>
+      <ul className='signup-errors'>
         {Object.keys(this.state.errors).map((error, i) => (
           <li key={`error-${i}`}>
             {this.state.errors[error]}
@@ -57,8 +57,10 @@ class SignupForm extends React.Component {
   render() {
     return (
       <div className="signup-form-container">
+        <h2>Sign Up</h2>
+        <h4><Link to='/login'>Log In</Link> instead</h4>
         <form onSubmit={this.handleSubmit}>
-          <div className="signup-form">
+          <div classNames="signup-form">
             <br/>
               <input type="text"
                 value={this.state.email}
@@ -84,8 +86,10 @@ class SignupForm extends React.Component {
                 placeholder="Confirm Password"
               />
             <br/>
-            <input className='signup' type="submit" value="Submit" />
-            {this.renderErrors()}
+            <input className='signup' type="submit" value="Sign Up" />
+            {/* <div className='signup-errors'> */}
+              {this.renderErrors()}
+            {/* </div> */}
           </div>
         </form>
       </div>
