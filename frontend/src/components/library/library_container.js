@@ -71,7 +71,7 @@ class CreateGameForm extends React.Component {
             image: this.state.image,
             min: this.state.min,
             max: this.state.max,
-            category: this.state.category,
+            category: this.state.category, //require select one overall then optional multi select categories
             gameType: this.state.gameType,
             description: this.state.description,
             rulesLink: this.state.rulesLink,
