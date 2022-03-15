@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const users = require("./routes/api/users");
 const games = require("./routes/api/games");
+const groups = require("./routes/api/groups");
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const db = require('./config/keys').mongoURI
@@ -28,6 +29,7 @@ require('./config/passport')(passport);
 // app.get("/", (req, res) => res.send("Hello World"));
 app.use("/api/users", users);
 app.use("/api/games", games);
+app.use("/api/groups", groups);
 
 
 const port = process.env.PORT || 5500;
