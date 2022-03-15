@@ -7,7 +7,8 @@ const mapStateToProps = state => ({
     loggedIn: state.session.isAuthenticated
 });
 
-export default connect(
-    mapStateToProps,
-    { logout } //refactor w mDTP ??
-)(NavBar);
+const mapDispatchToProps = dispatch => ({
+    logout: () => dispatch(logout())
+})
+
+export default connect(mapStateToProps,mapDispatchToProps)(NavBar);
