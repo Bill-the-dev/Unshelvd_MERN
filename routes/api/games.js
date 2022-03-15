@@ -31,7 +31,7 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req,res) => {
     if (!isValid) {
         return res.status(400).json(errors)
     }
-    // debugger
+    
     const categoryValues = req.body.category.split(", ")
     const gameTypeValues = req.body.gameType.split(", ")
 
