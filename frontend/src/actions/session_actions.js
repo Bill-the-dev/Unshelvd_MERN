@@ -59,3 +59,12 @@ export const logout = () => dispatch => {
     APIUtil.setAuthToken(false)
     dispatch(logoutUser())
 };
+
+export const loginDemo = () => dispatch => {
+    const user = {username: 'demoUser', password: '123456'};
+    return(
+      APIUtil.login(user)
+      .then(user => dispatch(receiveCurrentUser(user)))
+      .fail(errors => dispatch(receiveErrors(errors))) 
+    )
+  }
