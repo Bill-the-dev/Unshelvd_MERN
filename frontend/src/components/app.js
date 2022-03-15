@@ -11,11 +11,11 @@ import Modal from './modal/modal';
 const App = () => (
     <div>
         <Modal />
-        <NavBarContainer />
         <Switch>
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             <AuthRoute exact path="/" component={SplashPage} />
+            <ProtectedRoute path='/' component={NavBarContainer}/>
             {/* <ProtectedRoute exact path="library" component={LibraryContainer} /> */}
         </Switch>
     </div>
