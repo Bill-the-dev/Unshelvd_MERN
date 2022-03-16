@@ -1,23 +1,32 @@
 .signup-form-container {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 5% auto;
-
+  // margin: 5% auto;
+  background-image: url('../../background.jpg');
+  background-size: 1100px;
   h2 {
-    color: $dark-blue;
+    color: $lightest-tan;
     font-size: larger;
     font-weight: bold;
+    padding: 5%;
   }
   h4 {
-    color: $light-blue;
+    color: $lightest-tan;
     font-size: x-small;
     font-style: italic;
   }
 }
 
 .signup-form {
-  
+  // background-color: $lightest-tan;
+  // background-color: rgb(233, 229, 220, .6);
+  background-color: fade-out($color: $lightest-tan, $amount: 0.4);
+  margin-top: 10%;
+  padding: 5%;
+  border-radius: 5px;
+  // box-sizing: border-box;
 }
 
 .signup-errors {
