@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 // import { openModal } from "../../actions/modal_actions";
 import GroupShow from "./group_show";
+import { fetchGroup } from "../../actions/group_actions";
 
 const mapStateToProps = (state) => ({
   groups: Object.values(state.entities.groups)

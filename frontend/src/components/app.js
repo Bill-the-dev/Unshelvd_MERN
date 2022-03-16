@@ -7,7 +7,7 @@ import SplashPage from './splash/splash';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 // import LibraryContainer from './library/library_container';
-import GroupIndexContainer from './group/group_index_container';
+import GroupShowContainer from './group/group_show_container';
 const App = () => (
     <div>
         <NavBarContainer />
@@ -16,7 +16,7 @@ const App = () => (
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             <AuthRoute exact path="/" component={SplashPage} />
             {/* <ProtectedRoute exact path="/library" component={LibraryContainer} /> */}
-            <Route path="/groups/:id" component={GroupIndexContainer}/>
+            <Route path="/groups/:id" component={GroupShowContainer}/>
         </Switch>
     </div>
 );

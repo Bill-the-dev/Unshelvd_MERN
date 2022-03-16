@@ -14,6 +14,7 @@ class GroupShow extends React.Component {
                 <h1>Group Users List</h1>
                 <button>Group Suggest</button>
                 <ul className="group-games-index">
+                    <li>Test</li>
                     {/* {
                     games.map(game => 
                     <GameIndexItem openModal={openModal} game={game} key={game.id}/>)
