@@ -5,6 +5,7 @@ class SuggestForm extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
+            currentUserGroups: [],
             library: '',
             numPlayers: '',
             category: [],
@@ -12,7 +13,6 @@ class SuggestForm extends React.Component{
             errors: {},
             filteredGames: {}
         }
-
         this.handleSubmit = this.handleSubmit.bind(this);
         this.clearedErrors = false //DEPENDS IF ERRORS EVEN RENDER IN THIS FORM
         this.categoryUpdate = this.categoryUpdate.bind(this);
@@ -21,8 +21,13 @@ class SuggestForm extends React.Component{
 
 
     componentDidMount(){
+        debugger
         this.props.fetchUser(this.props.sessionUser.id)
-        // this.props.
+        this.props.fetchUsers()
+        this.props.fetchGames()
+        this.props.fetchGroups()
+        .then(() => this.setState({currentUserGroups: this.props.currentGroups.filter(group => group.users.includes(this.props.sessionUser.id))}))
+        debugger
     }
 
     update(field) {
@@ -91,7 +96,7 @@ class SuggestForm extends React.Component{
 
     render() {
         const categories = ["Board Game", "Playing Cards", "Dice", "Pen & Paper", "App", "Party", "Word", "Puzzle", "Quick", "Team Play", "Bluffing", "Deduction"]
-
+        debugger
         return (
             <div>
 
@@ -105,7 +110,7 @@ class SuggestForm extends React.Component{
 
                     <label>Find game from:
                         <select onChange={this.update("library")}>
-                            {this.props.currentUser.groups?.map((group, i) => (
+                            {this.state.currentUserGroups.map((group, i) => (
                                 <option key={i} value={group.id}>{group.name}</option>
                             ))}
                         </select>
