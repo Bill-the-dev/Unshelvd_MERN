@@ -31,11 +31,9 @@ class SuggestForm extends React.Component{
     }
 
     categoryUpdate(e) {
-        debugger
         let selection = e.currentTarget
         let stateCopy = [...this.state.category]
 
-        debugger
         if (selection.checked) {
             this.setState({
                 category: this.state.category.concat(selection.value)
@@ -115,15 +113,7 @@ class SuggestForm extends React.Component{
 
                     {/* CATEGORY SELECTOR */}
                     <label>Pick a category!
-                        {/* <select multiple onChange={this.update("category")}> */}
-                            {/* {categories.overall.map((category, i) => (
-                                <option key={i} value={category}>{category}</option>
-                                // <input key={i} type="checkbox" value={category}>{category}</input>
-                            ))}
-                            {categories.descriptors.map((category, i) => (
-                                // <input key={i} type="checkbox" value={category}>{category}</input>
-                                <option key={i} value={category}>{category}</option>
-                            ))} */}
+                    
 
                             {categories.map((category, i) => (
                                 <label>
