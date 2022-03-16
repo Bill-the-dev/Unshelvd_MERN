@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route } from 'react-router';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Switch } from 'react-router-dom';
 import NavBarContainer from './nav/navbar_container';
@@ -7,12 +8,13 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import Modal from './modal/modal';
 import GameShowContainer from './game/game_show_container';
+import GroupShowContainer from './group/group_show_container';
 // import LibraryContainer from './library/library_container'
 import GameFormContainer from './game/game_create_form_container'
 import SuggestContainer from './suggest/suggest_container';
 
 const App = () => (
-    <div>
+    <div className='app-container'>
         <Modal />
         <ProtectedRoute path='/' component={NavBarContainer}/>
         <Switch>
