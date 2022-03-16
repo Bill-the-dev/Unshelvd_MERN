@@ -39,7 +39,7 @@ class GameShow extends React.Component {
                     
                     {/* <h1 id="game-show-title">{this.state.entities.games.game.title}</h1> */}
 
-                    <h1 id="game-show-title">{game.name}</h1>
+                    {/* <h1 id="game-show-title">{game.name}</h1> */}
                     {/* <img src="" alt="game" id="game-photo" />
                     <h2 id="game-show-status">{currentGame.status}</h2>
                     <h2 id="game-show-num-players">{currentGame.numPlayers}</h2>
