@@ -1,10 +1,11 @@
 ## Categories
 
 Overall Category: (require 1)
-Board Game, Playing Cards, Dice, Pen & Paper, App (phone)
+Board Game, Playing Cards, Dice, Pen & Paper, App (phone), Tile
 
 Descriptors (optional):
-Party, Word, Puzzle, Quick, Team Play, Bluffing, Deduction
+Party, Word, Puzzle, Quick, Team Play, Bluffing, Deduction,
+Strategy
 
 
 
@@ -163,5 +164,126 @@ Board Game, Party, Bluffing, Quick, App, Deduction
 An app-driven Werewolf that lasts but a single night. Wolves and villagers beware!
 Connected Play: https://netgames.io/games/onu-werewolf/
 https://ultraboardgames.com/one-night-ultimate-werewolf/game-rules.php
+
+---
+
+
+
+
+
+
+
+added :
+
+
+Catan
+(img not saved)
+3-4
+Board Game, Party, Strategy, Dice
+Players take on the roles of settlers, each attempting to build and develop holdings while trading and acquiring resources. Players gain victory points as their settlements grow; the first to reach a set number of victory points, typically 10, wins.
+
+---
+
+Scrabble
+(img not saved)
+2-4
+Board Game, Word, Tile
+Scrabble is a word game in which two to four players score points by placing tiles, each bearing a single letter, onto a game board divided into a 15×15 grid of squares. The tiles must form words that, in crossword fashion, read left to right in rows or downward in columns, and be included in a standard dictionary or lexicon.
+
+---
+
+Bananagrams
+(img not saved)
+2-8
+Tile, Word, Quick
+Bananagrams is a word game wherein lettered tiles are used to spell words. Gameplay involves arranging one's tiles into a grid of connected words faster than one's opponents. The object of the game is to be the first to complete a word grid after the pool of tiles has been exhausted.
+
+---
+
+Ticket to Ride
+(img not saved)
+2-5
+Board Game, Strategy
+Ticket to Ride is a cross-country train adventure in which players collect and play matching train cards to claim railway routes connecting cities throughout North America.The longer the routes, the more points they earn. Additional points come to those who can fulfill their Destination Tickets by connecting two distant cities, and to the player who builds the longest continuous railway.
+
+---
+
+Cards Against Humanity
+(img not saved)
+4-10+
+Board Game, Party
+Cards Against Humanity is a party game for horrible people. The game is simple. Each round, one player asks a question from a black card, and everyone else answers with their funniest white card.
+
+---
+
+Rummikub
+(img not saved)
+2-4
+Tile, Puzzle
+Rummikub is a tile-based game combining elements of the card game rummy and mahjong. Players take turns putting down tiles from their racks into sets (groups or runs) of at least three, drawing a tile if they cannot play. The first player to use all their tiles scores a positive score based on the total of the other players' hands, while the losers get negative scores. An important feature of the game is that players can work with the tiles that have already been played.
+
+---
+
+Sushi Go Party!
+(img not saved)
+2-8
+Board Game, Party, Strategy
+It's a party platter of Mega Maki, Super sashimi, and endless edamame in this expanded version of the best-selling card game. You still earn points by picking winning sushi combos, but now you can customize each game by choosing a La carte from a menu of more than 20 delectable dishes. What's more, up to 8 players can join in on the sushi-feast let the good times roll!.
+
+---
+
+Jenga
+(img not saved)
+2-10+
+Tile, Party
+Players take turns removing one block from within the tower and placing it back on the top. Cross your fingers and hold your breath as the tower grows taller and more unstable with every move. See how many rounds you can go before the tower comes crashing down. The last person to successfully place a block before the tower tumbles is considered the winner.
+
+
+---
+
+Uno
+(img not saved)
+2-10+
+Playing Cards, Party, Quick
+Players take turns matching a card in their hand with the current card shown on top of the deck either by color or number. Before playing your next to last card, you must say "UNO". The first player to play all of the cards in their hand in each round scores points for the cards their opponents are left holding. The first player to score 500 points wins the game.
+
+
+Clue
+(img not saved)
+3-6
+Board Game, Deduction
+Clue is a murder mystery game where the object of the game is to determine who murdered the game's victim, where the crime took place, and which weapon was used. Each player assumes the role of one of the six suspects and attempts to deduce the correct answer by strategically moving around a game board representing the rooms of a mansion and collecting clues about the circumstances of the murder from the other players.
+
+
+---
+Monopoly
+(img not saved)
+2-8
+Board Game, Strategy, Dice
+Monopoly is a multi-player economics-themed board game. In the game, players roll two dice to move around the game board, buying and trading properties, and developing them with houses and hotels. Players collect rent from their opponents, with the goal being to drive them into bankruptcy.
+
+---
+
+Sequence
+(img not saved)
+2, 3, 4, 6, 8, 9, 10, or 12 (input as 2-12 then, i guess?)
+Board Game, Strategy, Team Play
+Sequence is an abstract strategy board-and-card game. The object of the game is to form rows of five poker chips on the board by placing the chips on the board spaces corresponding to cards played from the player's hand.
+
+---
+
+Pictionary
+(img not saved)
+2+
+Pen & Paper, Party, Quick, Team Play
+Pictionary is a charades-inspired word-guessing game. Teams take turns drawing and guessing as many words or phrases as possible in a timed round.
+
+---
+
+Coup
+(img not saved)
+3-6
+Board Game, Bluffing, Deduction
+In the not too distant future, The government is run for profit by a new "royal class" Of multi national CEOs. Their greed and absolute control of the economy has reduced all but a privileged few to lives of poverty and Desperation.Out of the oppressed masses rose The resistance, an underground organization focused on overthrowing these powerful rulers. The Valiant efforts of the resistance have created Discord, intrigue and weakness in the political courts of the nouveau royal, bringing the government to brink of collapse. But for you, a powerful government official, this is your opportunity to manipulate, bribe and bluff your way into absolute power. To be successful, you must destroy the influence of your rivals and drive them into Exile. In these Turbulent times there is only room for one to survive.
 
 ---
