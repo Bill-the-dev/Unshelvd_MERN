@@ -7,7 +7,7 @@
   grid-template-rows: 100% ;
   align-items: center;
   background-color: $lightest-tan;
-  position: absolute;
+  position: sticky; //COMMAND Z TWICE TO UNDO THIS WHEN COMPONENT IS DONE
 }
 
 #logo {

@@ -22,6 +22,7 @@ class SuggestForm extends React.Component{
 
     componentDidMount(){
         this.props.fetchUser(this.props.sessionUser.id)
+        // this.props.
     }
 
     update(field) {
@@ -69,6 +70,8 @@ class SuggestForm extends React.Component{
             category: this.state.category,
             gameType: this.state.gameType
         };
+
+        
         // this.props.filterGames(preferences) //THUNK ACTION TO QUERY/FILTER GAMES INDEX BY THESE COMPONENTS
         // Want to pass all games from library that user selected through the filter defined by form submitted by user
     }

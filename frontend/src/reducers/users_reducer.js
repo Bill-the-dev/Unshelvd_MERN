@@ -11,14 +11,15 @@ const UsersReducer = (state = {currentUser: {}, groupUsers: []}, action) => {
     case RECEIVE_USER:
       nextState.currentUser = action.user.data
 
-      let mutualUsers = []
-      action.user.data.groups.map (group => {
-        group.users.map (user => {
-          if (!mutualUsers.includes(user.id)) mutualUsers.concat(user.id)
-        })
-      })
+      // let mutualUsers = []
+      // action.user.data.groups.map (group => {
+      //   debugger
+      //   group.users.map (user => {
+      //     if (!mutualUsers.includes(user.id)) mutualUsers.concat(user.id)
+      //   })
+      // })
 
-      nextState.groupUsers = mutualUsers
+      // nextState.groupUsers = mutualUsers
       return nextState;
     default: 
       return state;
