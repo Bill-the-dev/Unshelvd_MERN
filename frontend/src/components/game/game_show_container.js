@@ -4,7 +4,6 @@ import GameShow from './game_show';
 // import { closeModal } from "../../actions/modal_actions";
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
     return {
         allGames: Object.values(state.entities.games.games),
         // TO DISCUSS IN STANDUP

@@ -8,7 +8,6 @@ const GamesReducer = (state = { userGames: {}, currentGame: {}}, action) => {
   let nextState = Object.assign({}, state);
   switch (action.type) {
     case RECEIVE_GAMES:
-      // debugger
       // nextState.games = action.games.data
       action.games.data.forEach(game => nextState.games[game._id] = game);
       return nextState;
