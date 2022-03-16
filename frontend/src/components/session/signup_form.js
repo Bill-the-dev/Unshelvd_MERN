@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -13,38 +13,40 @@ class SignupForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.clearedErrors = false;
+    // this.clearedErrors = false;
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.signedIn === true) {
-      this.props.history.push('/login');
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.signedIn === true) {
+    //   }
+    
+    //   this.setState({errors: nextProps.errors})
+    // }
+    
+    update(field) {
+      return e => this.setState({
+        [field]: e.currentTarget.value
+      });
     }
-
-    this.setState({errors: nextProps.errors})
-  }
-
-  update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    let user = {
-      email: this.state.email,
-      username: this.state.username,
-      password: this.state.password,
-      password2: this.state.password2
-    };
-
-    this.props.signup(user, this.props.history); 
+    
+    handleSubmit(e) {
+      e.preventDefault();
+      // debugger
+      let user = {
+        email: this.state.email,
+        username: this.state.username,
+        password: this.state.password,
+        password2: this.state.password2
+      };
+      
+      // this.props.signup(user, this.props.history); 
+      this.props.signup(user)
+      this.props.history.push('/library');
   }
 
   renderErrors() {
     return(
-      <ul>
+      <ul className='signup-errors'>
         {Object.keys(this.state.errors).map((error, i) => (
           <li key={`error-${i}`}>
             {this.state.errors[error]}
@@ -55,8 +57,11 @@ class SignupForm extends React.Component {
   }
 
   render() {
+    const {loginDemo} = this.props
     return (
       <div className="signup-form-container">
+        <h2>Sign Up</h2>
+        <h4><Link to='/login'>Log In</Link> instead</h4>
         <form onSubmit={this.handleSubmit}>
           <div className="signup-form">
             <br/>
@@ -84,10 +89,13 @@ class SignupForm extends React.Component {
                 placeholder="Confirm Password"
               />
             <br/>
-            <input className='signup' type="submit" value="Submit" />
-            {this.renderErrors()}
+            <input className='signup' type="submit" value="Sign Up" />
+            {/* <div className='signup-errors'> */}
+              {this.renderErrors()}
+            {/* </div> */}
           </div>
         </form>
+        <button className="form-button" onClick={() => loginDemo()}>Demo Log In</button>
       </div>
     );
   }

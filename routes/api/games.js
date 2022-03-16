@@ -17,7 +17,7 @@ router.get('/', (req,res) => {
 
 // SINGLE GAME
 router.get('/:id', (req,res) => {
-    Games.findById(req.params.id)
+    Game.findById(req.params.id)
         .then(game => res.json(game))
         .catch(err => res.status(404).json({nogamesfound: 'no game found with id'}))
 })
