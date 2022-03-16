@@ -11,6 +11,7 @@ class GroupShow extends React.Component {
   componentDidMount() {
     this.props.fetchGroups();
     this.props.fetchGroup(this.props.match.params.id);
+    this.props.fetchUsers();
   }
 
   render () {
@@ -31,17 +32,17 @@ class GroupShow extends React.Component {
             <h2>Group Members</h2>
             {/* currentGroup.users is an [] idx start at 0, values are ObjectIDs */}
             <ul>
-              {/* { 
+              { 
               currentGroup.users?.map((user, index) => {
                 
                 <li className="gs-user-li" key={user.id}>{`${index+1} ${user.username}`}</li>})
-              } */}
-              <li className="gs-user-li">member 1</li>
+              }
+              {/* <li className="gs-user-li">member 1</li>
               <li className="gs-user-li">member 2</li>
               <li className="gs-user-li">member 3</li>
               <li className="gs-user-li">member 1</li>
               <li className="gs-user-li">member 2</li>
-              <li className="gs-user-li">member 3</li>
+              <li className="gs-user-li">member 3</li> */}
             </ul>
             {/* <button>Group Suggest</button> */}
           </div>
