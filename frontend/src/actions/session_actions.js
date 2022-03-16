@@ -39,6 +39,7 @@ export const signup = user => dispatch => (
     //     dispatch(receiveErrors(err.response.data))
     // ))
     APIUtil.signup(user).then(res => {
+        // debugger
         const {token} = res.data;
         localStorage.setItem('jwtToken', token);
         APIUtil.setAuthToken(token);
@@ -46,6 +47,7 @@ export const signup = user => dispatch => (
         dispatch(receiveCurrentUser(decoded));
     })
     .catch(err => {
+        // debugger
         dispatch(receiveErrors(err.response.data))
     })
 );

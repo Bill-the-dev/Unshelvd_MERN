@@ -18,10 +18,11 @@ class SignupForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.signedIn === true) {
+      // debugger
+      this.props.history.push('/library');
       }
     
       this.setState({errors: nextProps.errors})
-      this.props.history.push('/library');
     }
     
     update(field) {

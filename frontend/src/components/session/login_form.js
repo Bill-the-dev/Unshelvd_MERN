@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-// import './login.scss'
+
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
@@ -17,6 +17,7 @@ class LoginForm extends React.Component {
 
   // Once the user has been authenticated, redirect to the Tweets page
   componentWillReceiveProps(nextProps) {
+    // debugger
     if (nextProps.currentUser === true) {
       this.props.history.push('/library');
     }
@@ -36,7 +37,7 @@ class LoginForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    let user = {
+    const user = {
       username: this.state.username,
       password: this.state.password
     };
@@ -46,6 +47,7 @@ class LoginForm extends React.Component {
 
   // Render the session errors if there are any
   renderErrors() {
+    // debugger
     return(
       <ul>
         {Object.keys(this.state.errors).map((error, i) => (
