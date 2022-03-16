@@ -17,6 +17,14 @@ router.get('/:id', (req,res) => {
       .catch(err => res.status(404).json({nogroupsfound: 'no group found with id'}))
 })
 
+// ALL GROUPS
+router.get('/', (req, res) => {
+  Group.find()
+    .sort({ name: 1 })
+    .then(groups => res.json(groups))
+    .catch(err => res.status(404).json({ nogroupsfound: 'no groups found' }));
+})
+
 
 // GREAT NEW GROUP
 router.post('/', passport.authenticate('jwt', {session: false}), (req,res) => {

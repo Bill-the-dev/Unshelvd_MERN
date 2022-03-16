@@ -5,6 +5,10 @@ import axios from 'axios';
 //   // Assuming incomplete route and final route will look something like this 
 // )
 
+export const getAllGroups = () => (
+  axios.get('/api/groups/')
+)
+
 export const getGroup = groupId => (
   axios.get(`/api/groups/${groupId}`)
 )
