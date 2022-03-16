@@ -4,9 +4,10 @@ import GameShow from './game_show';
 // import { closeModal } from "../../actions/modal_actions";
 
 const mapStateToProps = (state, ownProps) => {
-    
+    debugger
     return {
         games: Object.values(state.entities.games),
+        // TO DISCUSS IN STANDUP
         // gameId: ownProps.gameId,
         // currentGame: Object.values(state.entities.games)[gameId],
         // game: state.entities.games.games.filter(game => game._id === ownProps.match.params.id)[0]
