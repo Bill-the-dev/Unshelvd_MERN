@@ -13,17 +13,16 @@ import GroupShowContainer from './group/group_show_container';
 
 const App = () => (
     <div className='app-container'>
-        {/* <Modal /> */}
+        <Modal />
         <ProtectedRoute path='/' component={NavBarContainer}/>
-        {/* <Switch> */}
+        <Switch>
             <AuthRoute exact path="/" component={SplashPage} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
-            <AuthRoute exact path="/" component={SplashPage} />
-            <Route path="/groups/:id" component={GroupShowContainer}/>
-            <ProtectedRoute exact path="/library/games/:id" component={GameShowContainer} />
-            
-        {/* </Switch> */}
+            <ProtectedRoute exact path="/groups/:id" component={GroupShowContainer}/>
+            <ProtectedRoute exact path="/library/games/:id" component={GameShowContainer} />  
+            {/* <ProtectedRoute exact path="/library" component={LibraryContainer} /> */} 
+        </Switch>
     </div>
 );
 

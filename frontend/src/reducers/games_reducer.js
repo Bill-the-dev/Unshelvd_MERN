@@ -10,10 +10,10 @@ const GamesReducer = (state = { userGames: {}, currentGame: {}}, action) => {
     case RECEIVE_GAMES:
       // debugger
       // nextState.games = action.games.data
-      action.games.data.forEach(game => nextState.games[game._id] = game);
+      action.games.data.forEach(game => nextState.userGames[game._id] = game);
       return nextState;
     case RECEIVE_GAME:
-      nextState.game = action.game.data;
+      nextState.currentGame = action.game.data;
       return nextState;
     default:
       return state;

@@ -8,19 +8,34 @@ class GroupShow extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.fetchGroups();
+    this.props.fetchGroup(this.props.match.params.id);
+  }
+
   render () {
+    const { currentGroup } = this.props;
+    if (!currentGroup) return null
     
+    
+    debugger
     return(
       <div className="group-show-container">
         {/* <NavBar /> */}
         <div className="gs-sub-header">
-          <h1>Group Name</h1>
-          <div className="btn--share-group">Share Group</div>
+          <h1>{currentGroup.name}</h1>
+          <div className="btn--share-group">Share Code: {currentGroup.shareCode}</div>
         </div>
         <div className="gs-content">
           <div className="gs-user-list-container">
-            <h2>Group Users List</h2>
+            <h2>Group Members</h2>
+            {/* currentGroup.users is an [] idx start at 0, values are ObjectIDs */}
             <ul>
+              {/* { 
+              currentGroup.users?.map((user, index) => {
+                
+                <li className="gs-user-li" key={user.id}>{`${index+1} ${user.username}`}</li>})
+              } */}
               <li className="gs-user-li">member 1</li>
               <li className="gs-user-li">member 2</li>
               <li className="gs-user-li">member 3</li>
