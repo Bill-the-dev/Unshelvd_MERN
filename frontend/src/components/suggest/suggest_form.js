@@ -8,7 +8,7 @@ class SuggestForm extends React.Component{
             library: '',
             numPlayers: '',
             category: [],
-            gameType: '',
+            gameType: [],
             errors: {},
             filteredGames: {}
         }
@@ -33,7 +33,7 @@ class SuggestForm extends React.Component{
     categoryUpdate(e) {
         let selection = e.currentTarget
         let stateCopy = [...this.state.category]
-
+        
         if (selection.checked) {
             this.setState({
                 category: this.state.category.concat(selection.value)
@@ -41,6 +41,21 @@ class SuggestForm extends React.Component{
         } else {
             this.setState({
                 category: stateCopy.filter(word => word !== selection.value)
+            })
+        }
+    }
+
+    typeUpdate(e) {
+        let selection = e.currentTarget
+        let stateCopy = [...this.state.gameType]
+        debugger
+        if (selection.checked) {
+            this.setState({
+                gameType: this.state.gameType.concat(selection.value)
+            })
+        } else {
+            this.setState({
+                gameType: stateCopy.filter(word => word !== selection.value)
             })
         }
     }
@@ -115,10 +130,10 @@ class SuggestForm extends React.Component{
                     <label>Pick a category!
                     
 
-                            {categories.map((category, i) => (
+                            {categories.map((category) => (
                                 <label>
                                     {category}
-                                    <input type="checkbox" id={category} onChange = {(e) => this.categoryUpdate(e)} className='category-checkbox' value={category}/>
+                                    <input type="checkbox" onChange = {(e) => this.categoryUpdate(e)} className='category-checkbox' value={category}/>
                                 </label>
                             ))}
 
@@ -127,8 +142,15 @@ class SuggestForm extends React.Component{
 
 
                     <div>
-                        <button>Unplugged</button>
-                        <button>Connected</button>
+                        <label>
+                            Unplugged
+                            <input type="checkbox" onChange = {(e) => this.typeUpdate(e)} className='type-checkbox' value={"Unplugged"}></input>
+                        </label>
+                       
+                        <label>
+                            Connected
+                            <input type="checkbox" onChange = {(e) => this.typeUpdate(e)} className='type-checkbox' value={"Connected"}></input>
+                        </label>
                     </div>
 
                     {/* FORM SUBMIT */}
