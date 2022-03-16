@@ -7,15 +7,16 @@ const keys = require('../../config/keys');
 const passport = require('passport');
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
-const { db } = require("../../models/User");
+// const { db } = require("../../models/User");
 
 // GET CURRENT USER
 router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
-  res.json({
-    id: req.user.id,
-    username: req.user.username,
-    email: req.user.email
-  });
+  // res.json({
+  //   id: req.user.id,
+  //   username: req.user.username,
+  //   email: req.user.email
+  // });
+  res.send(req.user)
 })
 
 // USER SHOW PAGE
@@ -60,7 +61,8 @@ router.post("/register", (req, res) => {
                 });
               });
             })
-            .catch(err => console.log(err));
+            // .catch(err => console.log(err));
+            .catch(err => res.send(err))
         });
       });
     }
@@ -82,12 +84,12 @@ router.post("/login", (req, res) => {
   User.findOne({ username }).then(user => {
     if (!user) {
       errors.username = "This user does not exist";
-      return res.status(400).json(errors);
+      return res.status(404).json(errors);
     }
 
     bcrypt.compare(password, user.password).then(isMatch => {
       if (isMatch) {
-        const payload = { id: user.id, username: user.username };
+        const payload = { id: user.id, username: user.username, email: user.email };
 
         jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
           res.json({
