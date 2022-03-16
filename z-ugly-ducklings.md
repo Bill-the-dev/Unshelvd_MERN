@@ -15,3 +15,8 @@
 `/models/Game` unique index needed
 
 ^ also groups
+
+
+change "gameType" to "setting"
+
+add game.status to display if the game is in a user's library

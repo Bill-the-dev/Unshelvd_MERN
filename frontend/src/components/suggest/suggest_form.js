@@ -13,10 +13,10 @@ class SuggestForm extends React.Component{
             filteredGames: {}
         }
 
-        this.handleSubmit = this.handleSubmit.bind(this) 
+        this.handleSubmit = this.handleSubmit.bind(this);
         this.clearedErrors = false //DEPENDS IF ERRORS EVEN RENDER IN THIS FORM
-        // this.include = this.include.bind(this);
-        this.categoryUpdate = this.categoryUpdate.bind(this)
+        this.categoryUpdate = this.categoryUpdate.bind(this);
+        this.typeUpdate = this.typeUpdate.bind(this);
     }
 
 

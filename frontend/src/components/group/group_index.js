@@ -13,8 +13,8 @@ class GroupIndex extends React.Component {
                 <h1>Your Groups</h1>
                 <ul className="group-games-index">
                     {
-                        groups.map(group =>
-                            <GroupIndexItem key={group.id} />)  ///this is group show???! No such GroupIndexItem?
+                        // groups.map(group =>
+                        //     <GroupIndexItem key={group.id} />)  ///this is group show???! No such GroupIndexItem?
                     }
                 </ul>
             </div>
