@@ -1,0 +1,45 @@
+body {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.game-show-item {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // background-image: url('../../background.jpg');
+  background: linear-gradient(180deg, $dark-blue,$light-blue);
+  background-size: 1100px;
+  
+  h1 {
+    // font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: $lightest-tan;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1%;
+    margin: 1rem;
+    border: 1px solid lightblue;
+  }
+  h2 {
+    // font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: $lightest-tan;
+    font-size: 1rem;
+    // font-weight: bold;
+    padding: 1%;
+    border: 1px solid lightblue;
+  }
+  p {
+    // font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: $lightest-tan;
+    font-size: .75rem;
+    padding: 1%;
+    border: 1px solid lightblue;
+  }
+  img {
+    color: $lightest-tan;
+    padding: 1%;
+    margin: 1rem;
+    border: 1px solid lightblue;
+  }
+
+}
