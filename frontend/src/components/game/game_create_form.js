@@ -31,11 +31,11 @@ class CreateGameForm extends React.Component {
     }
 
     updateSelect(field) {
-        // debugger
-        const curStateVal = this.state[field]
-        return e => this.setState({
-            [field]: curStateVal.concat(e.currentTarget.value)
-        })
+        const curStateVals = this.state[field]
+        
+        return e => curStateVals.includes(e.currentTarget.value) ?
+            this.setState({[field]: curStateVals.filter(val => val !== e.currentTarget.value)})
+            : this.setState({[field]: curStateVals.concat(e.currentTarget.value)})
     }
 
     handleSubmit(e) {
@@ -51,7 +51,9 @@ class CreateGameForm extends React.Component {
             rulesLink: this.state.rulesLink,
             userCreator: this.state.userCreator
         };
-        debugger
+
+        let submitGame = async () => this.props.createGame(game);
+
         if (this.state.category.length === 0) {
             console.log('category blank');
             return;
@@ -59,7 +61,11 @@ class CreateGameForm extends React.Component {
             console.log('game type blank');
             return;
         } else {
-            this.props.createGame(game) //MIGHT NEED this.props.history PASSED IN ALSO=
+            submitGame()
+                .then(game => {
+                    debugger
+                    this.props.history.push({pathname: `/library`})
+                })
         }
     }
 
@@ -82,7 +88,7 @@ class CreateGameForm extends React.Component {
                 <form onSubmit = {this.handleSubmit}>
                     <div>
                         <label>Name: 
-                            <input type='text' onChange={this.update('name')}/>
+                            <input type='text' value={this.state.name} onChange={this.update('name')}/>
                         </label>
                     </div>
                     <div>Number of Players (leave blank if no restriction):
