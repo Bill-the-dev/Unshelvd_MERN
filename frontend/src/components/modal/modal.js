@@ -1,9 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 import { closeModal } from "../../actions/modal_actions";
-import LoginFormContainer from "../session_form/login_form_container";
-import SignupFormContainer from "../session_form/signup_form_container";
-import GameShowContainer from "../game_show/game_show_container";
+import LoginFormContainer from '../session/login_form_container'
+import SignupFormContainer from '../session/signup_form_container'
+// import GameShowContainer from "../game/game_show_container";
+import AboutShow from "../splash/about";
+import TeamShow from "../splash/team";
 
 
 const Modal = ({ modal, closeModal }) => {
@@ -18,21 +20,27 @@ const Modal = ({ modal, closeModal }) => {
         case 'Signup':
             component = <SignupFormContainer />;
             break;
-        case modal:
-            component = <GameShowContainer gameId={modal} />; //e.g. modal==1
-            return (
-                <div className="modal-background" onClick={closeModal}>
-                    <div className="modal-content-game" onClick={e => e.stopPropagation()}>
-                        {component}
-                    </div>
-                </div>
-            );
+        case 'About':
+            component = <AboutShow />;
+            break;
+        case 'Team':
+            component = <TeamShow />;
+            break;
+        // case modal:
+        //     component = <GameShowContainer gameId={modal} />; //e.g. modal==1
+        //     return (
+        //         <div className="modal-background" onClick={closeModal}>
+        //             <div className="modal-content-game" onClick={e => e.stopPropagation()}>
+        //                 {component}
+        //             </div>
+        //         </div>
+        //     );
         default:
             return null;
     };
     return (
         <div className="modal-background" onClick={closeModal}>
-            <div className="modal-content-signin" onClick={e => e.stopPropagation()}>
+            <div className="modal-child" onClick={e => e.stopPropagation()}>
                 {component}
             </div>
         </div>
@@ -42,7 +50,7 @@ const Modal = ({ modal, closeModal }) => {
 
 const mapStateToProps = (state) => {
     return ({
-        modal: state.ui.modal,
+        modal: state.modal,
     });
 
 };

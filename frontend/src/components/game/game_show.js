@@ -27,7 +27,7 @@ class GameShow extends React.Component {
         //         currentGame = game;
         //     }
         // }
-        
+        // debugger
         const {game} = this.props;
         if (!game) return null;
     

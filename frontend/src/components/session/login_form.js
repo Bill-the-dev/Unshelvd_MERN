@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 // import './login.scss'
 class LoginForm extends React.Component {
   constructor(props) {
@@ -58,8 +58,11 @@ class LoginForm extends React.Component {
   }
 
   render() {
+    const {loginDemo} = this.props
     return (
       <div>
+        <h2>Log In</h2>
+        <h4><Link to='/signup'>Sign Up</Link> instead</h4>
         <form onSubmit={this.handleSubmit}>
           <div>
               <input type="text"
@@ -78,6 +81,7 @@ class LoginForm extends React.Component {
             {this.renderErrors()}
           </div>
         </form>
+        <button className="form-button" onClick={() => loginDemo()}>Demo Log In</button>
       </div>
     );
   }

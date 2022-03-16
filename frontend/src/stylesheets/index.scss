@@ -1,3 +1,7 @@
 @import './reset';
 @import './colors';
-@import './login.scss';
+
+@import './splash/splash.scss';
+@import './splash/session_form.scss';
+
+@import './nav/nav.scss';
