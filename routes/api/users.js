@@ -7,7 +7,7 @@ const keys = require('../../config/keys');
 const passport = require('passport');
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
-// const { db } = require("../../models/User");
+const { db } = require("../../models/User");
 
 // GET CURRENT USER
 router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
@@ -125,11 +125,13 @@ router.post("/login", (req, res) => {
 // });
 router.patch('/:id', (req,res) => {
   const userID = req.params.id;
-  const updateObject = req.body 
+  const updatedUser = req.body 
   // debugger
   // const newObject = {}
 
-  // db.User.update({_id : ObjectId(userID)}, {$set: newObject})
+  // User.updateOne({_id : userID}, {$set: updatedUser})
+  User.findByIdAndUpdate(userID, {games: updatedUser.games})
+  res.json(updatedUser)
 })
 
 // // ALL GAMES FROM USER
