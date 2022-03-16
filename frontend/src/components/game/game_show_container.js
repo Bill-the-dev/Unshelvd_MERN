@@ -4,13 +4,14 @@ import GameShow from './game_show';
 // import { closeModal } from "../../actions/modal_actions";
 
 const mapStateToProps = (state, ownProps) => {
+    
     return {
-        allGames: Object.values(state.entities.games.games),
+        userGames: Object.values(state.entities.games.userGames),
         // TO DISCUSS IN STANDUP
         // gameId: ownProps.gameId,
         // currentGame: Object.values(state.entities.games)[gameId],
         // game: state.entities.games.games.filter(game => game._id === ownProps.match.params.id)[0]
-        currentGame: state.entities.games.game
+        currentGame: state.entities.games.currentGame
     };
 };
 
