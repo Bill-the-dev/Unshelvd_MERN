@@ -12,8 +12,8 @@ class GroupShow extends React.Component {
     
     return(
       <div className="group-show-container">
-        <NavBar />
-        <div className="temp-header">
+        {/* <NavBar /> */}
+        <div className="gs-sub-header">
           <h1>Group Name</h1>
           <div className="btn--share-group">Share Group</div>
         </div>
@@ -21,21 +21,28 @@ class GroupShow extends React.Component {
           <div className="gs-user-list-container">
             <h2>Group Users List</h2>
             <ul>
-              <li>member 1</li>
-              <li>member 2</li>
-              <li>member 3</li>
+              <li className="gs-user-li">member 1</li>
+              <li className="gs-user-li">member 2</li>
+              <li className="gs-user-li">member 3</li>
+              <li className="gs-user-li">member 1</li>
+              <li className="gs-user-li">member 2</li>
+              <li className="gs-user-li">member 3</li>
             </ul>
             {/* <button>Group Suggest</button> */}
           </div>
           <div className="gs-games-container">
             <ul className="gs-games-list">
-              <li>Game 1</li>
-              <li>Game 2</li>
-              <li>Game 3</li>
-              <li>Game 4</li>
-              <li>Game 5</li>
-              <li>Game 6</li>
-              <li>Game 7</li>
+              <li className="gs-game-item">Game 1</li>
+              <li className="gs-game-item">Game 2</li>
+              <li className="gs-game-item">Game 3</li>
+              <li className="gs-game-item">Game 4</li>
+              <li className="gs-game-item">Game 5</li>
+              <li className="gs-game-item">Game 6</li>
+              <li className="gs-game-item">Game 7</li>
+              <li className="gs-game-item">Game 8</li>
+              <li className="gs-game-item">Game 9</li>
+              <li className="gs-game-item">Game 10</li>
+              <li className="gs-game-item">Game 11</li>
               {/* {
               games.map(game => 
               <GameIndexItem openModal={openModal} game={game} key={game.id}/>)

@@ -13,8 +13,8 @@ import GroupShowContainer from './group/group_show_container';
 
 const App = () => (
     <div className='app-container'>
-        <Modal />
-        {/* <ProtectedRoute path='/' component={NavBarContainer}/> */}
+        {/* <Modal /> */}
+        <ProtectedRoute path='/' component={NavBarContainer}/>
         {/* <Switch> */}
             <AuthRoute exact path="/" component={SplashPage} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />
