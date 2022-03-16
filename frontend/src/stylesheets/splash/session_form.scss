@@ -5,7 +5,7 @@
   align-items: center;
   // margin: 5% auto;
   background-image: url('../../background.jpg');
-  background-size: 1000px;
+  background-size: 1100px;
   h2 {
     color: $lightest-tan;
     font-size: larger;
@@ -23,6 +23,7 @@
   // background-color: $lightest-tan;
   // background-color: rgb(233, 229, 220, .6);
   background-color: fade-out($color: $lightest-tan, $amount: 0.4);
+  margin-top: 10%;
   padding: 5%;
   border-radius: 5px;
   // box-sizing: border-box;

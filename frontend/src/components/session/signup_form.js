@@ -16,12 +16,13 @@ class SignupForm extends React.Component {
     // this.clearedErrors = false;
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps.signedIn === true) {
-    //   }
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.signedIn === true) {
+      }
     
-    //   this.setState({errors: nextProps.errors})
-    // }
+      this.setState({errors: nextProps.errors})
+      this.props.history.push('/library');
+    }
     
     update(field) {
       return e => this.setState({
@@ -41,7 +42,6 @@ class SignupForm extends React.Component {
       
       // this.props.signup(user, this.props.history); 
       this.props.signup(user)
-      this.props.history.push('/library');
   }
 
   renderErrors() {
@@ -60,9 +60,9 @@ class SignupForm extends React.Component {
     const {loginDemo} = this.props
     return (
       <div className="signup-form-container">
+        <div className="signup-form">
         <h2>Sign Up</h2>
         <h4><Link to='/login'>Log In</Link> instead</h4>
-        <div className="signup-form">
           <form onSubmit={this.handleSubmit}>
               <br/>
                 <input type="text"
