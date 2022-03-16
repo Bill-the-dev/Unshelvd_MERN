@@ -1,31 +1,37 @@
 import {
-  RECEIVE_USER
-} from '../actions/user_actions'
+  RECEIVE_USER,
+  RECEIVE_USERS
+} from '../actions/user_actions';
 
 
-const UsersReducer = (state = {currentUser: {}, groupUsers: []}, action) => {
-
+const UsersReducer = (state = { currentUser: {}, allUsers: {} }, action) => {
+  // debugger
   Object.freeze(state);
   let nextState = Object.assign({}, state);
-  switch(action.type) {
-    case RECEIVE_USER:
-      nextState.currentUser = action.user.data
+  switch (action.type) {
 
-      let mutualUsers = []
-      action.user.data.groups.map (group => {
-        group.users.map (user => {
-          if (!mutualUsers.includes(user.id)) mutualUsers.concat(user.id)
-        })
-      })
-
-      nextState.groupUsers = mutualUsers
+    case RECEIVE_USERS:
+      action.users.data.forEach(user => nextState.allUsers[user._id] = user);
       return nextState;
-    default: 
+
+    case RECEIVE_USER:
+      nextState.currentUser = action.user.data;
+
+      // let mutualUsers = [];
+      // action.user.data.groups.map(group => {
+      //   group.users.map(user => {
+      //     if (!mutualUsers.includes(user.id)) mutualUsers.concat(user.id);
+      //   });
+      // });
+
+      // nextState.groupUsers = mutualUsers;
+      return nextState;
+    default:
       return state;
   }
-}
+};
 
-export default UsersReducer
+export default UsersReducer;
 
 
 
@@ -33,5 +39,3 @@ export default UsersReducer
 
 // one user's groups => map over groups map over group's users => 
 // add those users to groupUsers slice of state
-
-

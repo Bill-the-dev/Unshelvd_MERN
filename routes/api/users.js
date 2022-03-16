@@ -19,6 +19,15 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
   res.send(req.user)
 })
 
+// ALL USERS
+router.get('/', (req, res) => {
+  User.find()
+    .sort({ name: 1 })
+    .then(users => res.json(users))
+    .catch(err => res.status(404).json({ nousersfound: 'no users found' }));
+})
+
+
 // USER SHOW PAGE
 router.get('/:id', (req,res) => {
   User.findById(req.params.id)
