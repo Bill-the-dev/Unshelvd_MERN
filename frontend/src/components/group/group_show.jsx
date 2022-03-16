@@ -19,7 +19,7 @@ class GroupShow extends React.Component {
     if (!currentGroup) return null
     
     
-    debugger
+    // debugger
     return(
       <div className="group-show-container">
         {/* <NavBar /> */}

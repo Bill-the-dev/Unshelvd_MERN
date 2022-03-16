@@ -38,8 +38,8 @@ router.get('/:id', (req,res) => {
 // USER CREATE
 router.post("/register", (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
-
   if (!isValid) {
+
     return res.status(400).json(errors);
   }
 
@@ -48,6 +48,7 @@ router.post("/register", (req, res) => {
       errors.username = "User already exists";
       return res.status(400).json(errors);
     } else {
+  
       const newUser = new User({
         username: req.body.username,
         email: req.body.email,
@@ -61,6 +62,7 @@ router.post("/register", (req, res) => {
           newUser
             .save()
             .then(user => {
+          
               const payload = { id: user.id, username: user.username };
 
               jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
@@ -71,7 +73,7 @@ router.post("/register", (req, res) => {
               });
             })
             // .catch(err => console.log(err));
-            .catch(err => res.send(err))
+            .catch(err => res.json(err))
         });
       });
     }

@@ -11,7 +11,7 @@ import { fetchUsers } from "../../actions/user_actions";
 // });
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
+  // debugger
   return {
     userGroups: Object.values(state.entities.groups.userGroups),
     currentGroup: state.entities.groups.currentGroup,

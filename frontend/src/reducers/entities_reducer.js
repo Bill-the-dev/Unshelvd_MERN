@@ -7,7 +7,7 @@ import GroupsReducer from './groups_reducer';
 const EntitiesReducer = combineReducers({
     users: UsersReducer,
     games: GamesReducer,
-    groups: GroupsReducer
+    groups: GroupsReducer,
 });
 
 export default EntitiesReducer;
