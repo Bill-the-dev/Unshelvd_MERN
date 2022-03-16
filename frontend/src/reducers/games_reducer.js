@@ -3,7 +3,7 @@ import {
   RECEIVE_GAME,
 } from '../actions/game_actions';
 
-const GamesReducer = (state = { games: {}, game: {}}, action) => {
+const GamesReducer = (state = { userGames: {}, currentGame: {}}, action) => {
   Object.freeze(state);
   let nextState = Object.assign({}, state);
   switch (action.type) {
