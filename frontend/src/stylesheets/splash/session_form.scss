@@ -1,0 +1,29 @@
+.signup-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5% auto;
+
+  h2 {
+    color: $dark-blue;
+    font-size: larger;
+    font-weight: bold;
+  }
+  h4 {
+    color: $light-blue;
+    font-size: x-small;
+    font-style: italic;
+  }
+}
+
+.signup-form {
+  
+}
+
+.signup-errors {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: x-small;
+  color: $dark-red;
+}

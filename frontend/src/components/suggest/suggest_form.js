@@ -7,9 +7,10 @@ class SuggestForm extends React.Component{
         this.state = {
             library: '',
             numPlayers: '',
-            category: '',
+            category: [],
             gameType: '',
-            currentUserGroups: this.props.currentUser.groups
+            errors: {},
+            filteredGames: {}
         }
 
         this.handleSubmit = this.handleSubmit.bind(this) 
@@ -17,7 +18,9 @@ class SuggestForm extends React.Component{
     }
 
 
-    componentDidMount()
+    componentDidMount(){
+        this.props.fetchUser(this.props.sessionUser.id)
+    }
 
     update(field) {
         return e => this.setState({
@@ -33,7 +36,8 @@ class SuggestForm extends React.Component{
             category: this.state.category,
             gameType: this.state.gameType
         };
-        this.props.filterGames(preferences) //THUNK ACTION TO QUERY/FILTER GAMES INDEX BY THESE COMPONENTS
+        // this.props.filterGames(preferences) //THUNK ACTION TO QUERY/FILTER GAMES INDEX BY THESE COMPONENTS
+        // Want to pass all games from library that user selected through the filter defined by form submitted by user
     }
 
     renderErrors() {
@@ -50,11 +54,7 @@ class SuggestForm extends React.Component{
 
 
     render() {
-
-        const categories = {
-            overall: [board, game, card, dice, penpaper, app],
-            descriptors: [party, word, puzzle, quick, team, bluff, deduction]
-        }
+        const categories = ["Board Game", "Playing Cards", "Dice", "Pen & Paper", "App", "Party", "Word", "Puzzle", "Quick", "Team Play", "Bluffing", "Deduction"]
 
         return (
             <div>
@@ -66,9 +66,10 @@ class SuggestForm extends React.Component{
                 <form onSubmit={this.handleSubmit}>
 
                     {/* LIBRARY SELECTOR */}
+
                     <label>Find game from:
-                        <select>
-                            {this.store.currentUserGroups.map((group, i) => (
+                        <select onChange={this.update("library")}>
+                            {this.props.currentUser.groups?.map((group, i) => (
                                 <option key={i} value={group.id}>{group.name}</option>
                             ))}
                         </select>
@@ -76,7 +77,7 @@ class SuggestForm extends React.Component{
 
                     {/* NUMBER OF PLAYERS SELECTOR */}
                     <label>Number of Players
-                        <select>
+                        <select onChange={this.update("numPlayers")}>
                             <option>2</option>
                             <option>3</option>
                             <option>4</option>
@@ -94,13 +95,20 @@ class SuggestForm extends React.Component{
 
                     {/* CATEGORY SELECTOR */}
                     <label>Pick a category!
-                        <select multiple>
-                            {categories.overall.map((category, i) => (
+                        <select multiple onChange={this.update("category")}>
+                            {/* {categories.overall.map((category, i) => (
                                 <option key={i} value={category}>{category}</option>
+                                // <input key={i} type="checkbox" value={category}>{category}</input>
                             ))}
                             {categories.descriptors.map((category, i) => (
+                                // <input key={i} type="checkbox" value={category}>{category}</input>
+                                <option key={i} value={category}>{category}</option>
+                            ))} */}
+
+                            {categories.map((category, i) => (
                                 <option key={i} value={category}>{category}</option>
                             ))}
+
                         </select>
                     </label>
 
@@ -111,8 +119,8 @@ class SuggestForm extends React.Component{
                     </div>
 
                     {/* FORM SUBMIT */}
-                    <input type="submit">Go Fish</input>
-
+                    <input type="submit" value="Go Fish"/>
+                    {this.renderErrors()}
                 </form>
 
 
