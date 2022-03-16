@@ -17,7 +17,7 @@ class NavBar extends React.Component {
     getLinks() {
         if (this.props.loggedIn) {
             return (
-                <div>
+                <div >
                     <Link to={'/library'}>Library</Link>
                     <Link to={'/groups'}>Groups</Link>
                     <Link to={'/suggest'}>Suggest</Link>
@@ -33,7 +33,7 @@ class NavBar extends React.Component {
         //     return null;
         // }
         return (
-            <div>
+          <div className='navbar-container'>
                 <h1>Unshelvd</h1>
                 {this.getLinks()}
             </div>

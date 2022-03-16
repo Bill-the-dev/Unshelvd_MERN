@@ -1,5 +1,31 @@
 @import './reset';
 @import './colors';
+@import './fonts';
 
 @import './splash/splash.scss';
 @import './splash/session_form.scss';
+@import './group_show/group_show.scss';
+
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+.app-container {
+  // display: flex;
+  // height: 100%;
+  // width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  // grid-template-columns: 0.5fr 2fr 5fr 2fr 0.5fr;
+  // grid-template-rows: 0.5fr 2fr 3fr 3fr 1.5fr;
+  // gap: 15px 10px;
+  height: 100%;
+}
