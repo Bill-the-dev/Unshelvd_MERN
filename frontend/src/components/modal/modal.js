@@ -5,6 +5,7 @@ import LoginFormContainer from '../session/login_form_container'
 import SignupFormContainer from '../session/signup_form_container'
 // import GameShowContainer from "../game/game_show_container";
 import AboutShow from "../splash/about";
+import TeamShow from "../splash/team";
 
 
 const Modal = ({ modal, closeModal }) => {
@@ -21,6 +22,9 @@ const Modal = ({ modal, closeModal }) => {
             break;
         case 'About':
             component = <AboutShow />;
+            break;
+        case 'Team':
+            component = <TeamShow />;
             break;
         // case modal:
         //     component = <GameShowContainer gameId={modal} />; //e.g. modal==1

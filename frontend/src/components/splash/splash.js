@@ -12,7 +12,7 @@ class Splash extends React.Component {
         <div className='splash-row-1'>
           <p onClick={() => openModal('About')}>About</p>
           <h1>Unshelvd</h1>
-          <p>The Team</p>
+          <p onClick={() => openModal('Team')}>The Team</p>
         </div>
         <div className='splash-row-2'>
             <Link to={'/signup'}>Sign Up</Link>

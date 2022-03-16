@@ -13,14 +13,14 @@ import SuggestContainer from './suggest/suggest_container';
 const App = () => (
     <div>
         <Modal />
+      
+        <ProtectedRoute path='/' component={NavBarContainer}/>
         <Switch>
-            <ProtectedRoute exact path="/library/games/:id" component={GameShowContainer} />
+            <AuthRoute exact path="/" component={SplashPage} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
-            <AuthRoute exact path="/" component={SplashPage} />
-            {/* <ProtectedRoute exact path="library" component={LibraryContainer} /> */}
             <ProtectedRoute exact path="/suggest" component={SuggestContainer} />
-            <ProtectedRoute path='/' component={NavBarContainer}/>
+            <ProtectedRoute exact path="/library/games/:id" component={GameShowContainer} />
             {/* <ProtectedRoute exact path="/library" component={LibraryContainer} /> */}
         </Switch>
     </div>

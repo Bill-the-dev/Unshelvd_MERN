@@ -32,12 +32,22 @@ export const logoutUser = () => ({
 
 // Upon signup, dispatch the approporiate action depending on which type of response we receieve from the backend
 export const signup = user => dispatch => (
-    APIUtil.signup(user).then(() => (
-        dispatch(receiveUserSignIn())
-        // dispatch(receiveCurrentUser)
-    ), err => (
+    // APIUtil.signup(user).then(() => (
+    //     // dispatch(receiveUserSignIn())
+    //     dispatch(receiveCurrentUser())
+    // ), err => (
+    //     dispatch(receiveErrors(err.response.data))
+    // ))
+    APIUtil.signup(user).then(res => {
+        const {token} = res.data;
+        localStorage.setItem('jwtToken', token);
+        APIUtil.setAuthToken(token);
+        const decoded = jwt_decode(token);
+        dispatch(receiveCurrentUser(decoded));
+    })
+    .catch(err => {
         dispatch(receiveErrors(err.response.data))
-    ))
+    })
 );
 
 // Upon login, set the session token and dispatch the current user. Dispatch errors on failure.
@@ -59,3 +69,19 @@ export const logout = () => dispatch => {
     APIUtil.setAuthToken(false)
     dispatch(logoutUser())
 };
+
+export const loginDemo = () => dispatch => {
+    const user = {username: 'demoUser', password: '123456'};
+    // return (
+        APIUtil.login(user).then(res => {
+            const { token } = res.data;
+            localStorage.setItem('jwtToken', token);
+            APIUtil.setAuthToken(token);
+            const decoded = jwt_decode(token);
+            dispatch(receiveCurrentUser(decoded));
+        })
+            .catch(err => {
+                dispatch(receiveErrors(err.response.data));
+            })
+//  )
+ }

@@ -58,6 +58,7 @@ class LoginForm extends React.Component {
   }
 
   render() {
+    const {loginDemo} = this.props
     return (
       <div>
         <h2>Log In</h2>
@@ -80,6 +81,7 @@ class LoginForm extends React.Component {
             {this.renderErrors()}
           </div>
         </form>
+        <button className="form-button" onClick={() => loginDemo()}>Demo Log In</button>
       </div>
     );
   }
