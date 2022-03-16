@@ -126,10 +126,10 @@ router.post("/login", (req, res) => {
 router.patch('/:id', (req,res) => {
   const userID = req.params.id;
   const updateObject = req.body 
-  
-  const newObject = {}
+  // debugger
+  // const newObject = {}
 
-  db.User.update({_id : ObjectId(userID)}, {$set: newObject})
+  // db.User.update({_id : ObjectId(userID)}, {$set: newObject})
 })
 
 // // ALL GAMES FROM USER

@@ -3,7 +3,8 @@ const router = express.Router();
 const Game = require('../../models/Game')
 const passport = require('passport');
 
-const validateGameInput = require('../../validation/games')
+const validateGameInput = require('../../validation/games');
+const User = require("../../models/User");
 
 // router.get("/test", (req, res) => res.json({ msg: "This is the tweets route" }));
 
@@ -48,9 +49,16 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req,res) => {
         rulesLink: req.body.rulesLink,
         userCreator: req.user.id
     })
-
+    const currentUser = User.findById(req.user.id);
+    // debugger
     newGame.save()
-        .then(game => res.json(game))
+        .then(game => {
+            // debugger
+            // currentUser.games.concat(game)
+            res.json(game)
+        })
+        
+
 })
 
 
