@@ -15,6 +15,8 @@ class SuggestForm extends React.Component{
 
         this.handleSubmit = this.handleSubmit.bind(this) 
         this.clearedErrors = false //DEPENDS IF ERRORS EVEN RENDER IN THIS FORM
+        // this.include = this.include.bind(this);
+        this.categoryUpdate = this.categoryUpdate.bind(this)
     }
 
 
@@ -27,6 +29,24 @@ class SuggestForm extends React.Component{
             [field]: e.currentTarget.value
         });
     }
+
+    categoryUpdate(e) {
+        debugger
+        let selection = e.currentTarget
+        let stateCopy = [...this.state.category]
+
+        debugger
+        if (selection.checked) {
+            this.setState({
+                category: this.state.category.concat(selection.value)
+            })
+        } else {
+            this.setState({
+                category: stateCopy.filter(word => word !== selection.value)
+            })
+        }
+    }
+
 
     handleSubmit(e) {
         e.preventDefault();
@@ -78,24 +98,24 @@ class SuggestForm extends React.Component{
                     {/* NUMBER OF PLAYERS SELECTOR */}
                     <label>Number of Players
                         <select onChange={this.update("numPlayers")}>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                            <option>10</option>
-                            <option>11</option>
-                            <option>12+</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12   ">12+</option>
                         </select>
                     </label>
 
 
                     {/* CATEGORY SELECTOR */}
                     <label>Pick a category!
-                        <select multiple onChange={this.update("category")}>
+                        {/* <select multiple onChange={this.update("category")}> */}
                             {/* {categories.overall.map((category, i) => (
                                 <option key={i} value={category}>{category}</option>
                                 // <input key={i} type="checkbox" value={category}>{category}</input>
@@ -106,10 +126,13 @@ class SuggestForm extends React.Component{
                             ))} */}
 
                             {categories.map((category, i) => (
-                                <option key={i} value={category}>{category}</option>
+                                <label>
+                                    {category}
+                                    <input type="checkbox" id={category} onChange = {(e) => this.categoryUpdate(e)} className='category-checkbox' value={category}/>
+                                </label>
                             ))}
 
-                        </select>
+                        {/* </select> */}
                     </label>
 
 
