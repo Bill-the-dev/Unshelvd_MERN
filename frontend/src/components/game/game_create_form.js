@@ -21,7 +21,10 @@ class CreateGameForm extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.clearedErrors = false;
-    
+    }
+
+    componentDidMount() {
+        this.props.fetchUser(this.props.currentUserId)
     }
 
     update(field) {
@@ -53,7 +56,9 @@ class CreateGameForm extends React.Component {
         };
 
         let submitGame = async () => this.props.createGame(game);
-        debugger
+        // debugger
+
+
         if (this.state.category.length === 0) {
             console.log('category blank');
             return;
@@ -63,7 +68,10 @@ class CreateGameForm extends React.Component {
         } else {
             submitGame()
                 .then(game => {
-
+                    // this.props.currentUser.games.concat(game.game.data._id)
+                    const updatedUser = this.props.currentUser
+                    updatedUser.games = this.props.currentUser.games.concat(game.game.data._id)
+                        // debugger
                     this.props.history.push({pathname: `/library`})
                 })
         }

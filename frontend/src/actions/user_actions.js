@@ -32,6 +32,6 @@ export const updateUser = user => dispatch => {
   return(
     UserAPIUtil.updateUser(user)
       .then(user => dispatch(receiveUser(user)))
-      // .catch(err => )
+      .catch(err => console.log(err))
   )
 }
