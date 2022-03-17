@@ -5,7 +5,10 @@
     // border-radius: 4px;
     justify-content: center;
     display: flex;
-    // background: linear-gradient(75deg, $body-lightest,$light-green);
+    border: 1px solid $body-lightest;
+    border-radius: 4px;
+    background: linear-gradient(135deg, $beige,$dark-brown);
+    box-shadow:  4px 4px 4px black;
       &:hover {
         transform: scale(1.5);
         transition: all .4s ease;
@@ -30,18 +33,20 @@
 
   #game-title--library {
     font-family: $sans-serif;
-    color: $dark-blue;
+    padding: .25rem;
+    color: $lightest-tan;
+    text-shadow: 1px 1px black;
     text-decoration: none;
     text-align: center;
     visibility: hidden;
     position: absolute;
-    background: linear-gradient(75deg, $body-lightest,$lightest-tan);
-    border-radius: 2px;
+    background: linear-gradient(75deg, $light-blue,$dark-blue);
     // border: .2rem solid $dark-green;
-    width: 90%;
-    font-size: 1.5rem;
-    top: 43%;
-    left: 5%;
+    width: 94.75%;
+    font-size: 1rem;
+    box-shadow:  4px 4px 4px black;
+    top: 40%;
+    left: 0%;
     
     
   }

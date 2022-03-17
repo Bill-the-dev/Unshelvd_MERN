@@ -31,10 +31,7 @@ const App = () => (
             <ProtectedRoute exact path="/groups" component={GroupIndexContainer} />
             <ProtectedRoute exact path='/newgame' component={GameFormContainer} />
             <ProtectedRoute exact path='/newgroup' component={GroupFormContainer} />
-
-            {/* <ProtectedRoute exact path="library" component={LibraryContainer} /> */}
             <ProtectedRoute exact path="/suggest" component={SuggestContainer} />
-            {/* <ProtectedRoute exact path="/library" component={LibraryContainer} /> */}
         </Switch>
     </div>
 );
