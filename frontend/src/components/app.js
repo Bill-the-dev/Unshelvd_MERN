@@ -7,6 +7,7 @@ import SplashPage from './splash/splash';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import Modal from './modal/modal';
+import GroupModal from './modal/group_modal'
 import GameShowContainer from './game/game_show_container';
 import GroupShowContainer from './group/group_show_container';
 import LibraryContainer from './library/library_container'
@@ -19,8 +20,9 @@ import GroupFormContainer from './group/group_create_container'
 const App = () => (
     <div className='app-container'>
         <Modal />
-      
+        <GroupModal />
         <ProtectedRoute path='/' component={NavBarContainer}/>
+
         <Switch>
             <AuthRoute exact path="/" component={SplashPage} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />
