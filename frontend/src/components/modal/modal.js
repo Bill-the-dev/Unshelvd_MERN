@@ -31,6 +31,9 @@ const Modal = ({ modal, closeModal }) => {
         case 'addGroup':
             component = <GroupFormContainer />;
             break;
+        case 'joinGroup':
+            component = <GroupFormContainer />;
+            break;
         // case modal:
         //     component = <GameShowContainer gameId={modal} />; //e.g. modal==1
         //     return (

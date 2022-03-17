@@ -5,7 +5,8 @@ class CreateGroup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: ''
+      name: '',
+      code: ''
     }
     this.handleSubmit = this.handleSubmit.bind(this)
   }
@@ -19,33 +20,63 @@ class CreateGroup extends React.Component {
       [field]: e.currentTarget.value
     })
   }
+
   handleSubmit(e) {
     e.preventDefault();
     // debugger
     let submitGroup = async() => this.props.createGroup(this.state)
-    submitGroup()
-      .then(group => {
-        const updatedUser = this.props.currentUser;
-        // debugger
-        updatedUser.groups = this.props.currentUser.groups.concat(group.group.data._id);
-        this.props.updateUser(updatedUser);
-        // this.props.history.push({pathname: `/groups/${group.group.data._id}`})
-        // this.props.history.push({pathname: `/groups`})
+    if (this.props.modal === 'addGroup') {
+      submitGroup()
+        .then(group => {
+          const updatedUser = this.props.currentUser;
+          // debugger
+          updatedUser.groups = this.props.currentUser.groups.concat(group.group.data._id);
+          this.props.updateUser(updatedUser);
+          // this.props.history.push({pathname: `/groups/${group.group.data._id}`})
+          // this.props.history.push({pathname: `/groups`})
+        })
+        .then(() => this.props.closeModal())
+    } else {
+      let curGroup;
+      this.props.allGroups.forEach(group => {
+        if (group.shareCode === this.state.code) {
+          curGroup = group
+        }
       })
-      .then(() => this.props.closeModal())
+      // debugger
+      const updatedUser = this.props.currentUser;
+      updatedUser.groups = this.props.currentUser.groups.concat(curGroup);
+      this.props.updateUser(updatedUser);
+      this.props.closeModal()
+    }
   }
 
   render() {
     let groupErrors = this.props.errors
+    const {modal} = this.props
     return (
       <div>
-        <h1>Create a New Group</h1>
+        {modal === 'addGroup' ? 
+        <div>
+          <h1>Create a New Group</h1>
+          <form onSubmit={this.handleSubmit}>
+              <label>Name:
+                  <input type='text' value={this.state.name} onChange={this.update('name')}/>
+              </label>
+              <input type='submit' value='Create Group'/>
+          </form>
+        </div>
+        :
+        <div>
+        <h1>Join a Group</h1>
         <form onSubmit={this.handleSubmit}>
-            <label>Name:
-                <input type='text' value={this.state.name} onChange={this.update('name')}/>
+            <label>Enter Code:
+                <input type='text' value={this.state.code} onChange={this.update('code')}/>
             </label>
-            <input type='submit' value='Create Group'/>
+            <input type='submit' value='Join Group'/>
         </form>
+      </div>
+        }
       </div>
     )
   }

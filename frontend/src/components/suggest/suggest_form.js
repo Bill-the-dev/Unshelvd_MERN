@@ -152,7 +152,7 @@ class SuggestForm extends React.Component{
 
     render() {
         const categories = ["Board Game", "Playing Cards", "Dice", "Pen & Paper", "App", "Party", "Word", "Puzzle", "Quick", "Team Play", "Bluffing", "Deduction"]
-        debugger
+        // debugger
         return (
             <div className='suggest-form-container'>
 
