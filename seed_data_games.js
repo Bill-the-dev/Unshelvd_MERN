@@ -125,7 +125,7 @@ for (let i = 0; i < games.length; i++) {
       exit() 
     }
   });
-  // should add documents, then disconnect once finished (callback)
+  // should add documents, then disconnect once finished (callback below)
   
 }
 const exit = () => {
