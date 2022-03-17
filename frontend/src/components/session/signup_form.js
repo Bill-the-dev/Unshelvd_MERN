@@ -18,10 +18,10 @@ class SignupForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.signedIn === true) {
+      this.props.history.push('/library');
       }
     
       this.setState({errors: nextProps.errors})
-      this.props.history.push('/library');
     }
     
     update(field) {
@@ -32,7 +32,6 @@ class SignupForm extends React.Component {
     
     handleSubmit(e) {
       e.preventDefault();
-      // debugger
       let user = {
         email: this.state.email,
         username: this.state.username,
@@ -40,7 +39,6 @@ class SignupForm extends React.Component {
         password2: this.state.password2
       };
       
-      // this.props.signup(user, this.props.history); 
       this.props.signup(user)
   }
 
@@ -90,11 +88,9 @@ class SignupForm extends React.Component {
                 />
               <br/>
               <input className='signup' type="submit" value="Sign Up" />
-              {/* <div className='signup-errors'> */}
-                {this.renderErrors()}
-              {/* </div> */}
+              <button className="form-button" onClick={() => loginDemo()}>Demo Log In</button>
+              {this.renderErrors()}
           </form>
-          <button className="form-button" onClick={() => loginDemo()}>Demo Log In</button>
         </div>
       </div>
     );

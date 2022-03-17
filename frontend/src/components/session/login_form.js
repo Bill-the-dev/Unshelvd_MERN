@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-// import './login.scss'
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
@@ -36,7 +35,7 @@ class LoginForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    let user = {
+    const user = {
       username: this.state.username,
       password: this.state.password
     };
@@ -78,10 +77,10 @@ class LoginForm extends React.Component {
               />
             <br/>
             <input className='signup' type="submit" value="Submit" />
+            <button className="form-button" onClick={() => loginDemo()}>Demo Log In</button>
             {this.renderErrors()}
           </div>
         </form>
-        <button className="form-button" onClick={() => loginDemo()}>Demo Log In</button>
       </div>
     );
   }
