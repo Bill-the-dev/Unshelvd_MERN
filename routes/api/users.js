@@ -124,35 +124,12 @@ router.post("/login", (req, res) => {
 //   db.users.update({_id  : ObjectId(id)}, {$set: updateObject});
 // });
 router.patch('/:id', (req,res) => {
-  const userID = req.params.id;
+  const userID = req.body.user._id;
   const updatedUser = req.body.user 
-  debugger
-  // const newObject = {}
-  // console.log(req);
-  console.log(req.body.user);
-  // User.updateOne({_id : userID}, {$set: updatedUser})
+
   User.findByIdAndUpdate(userID, {games: updatedUser.games})
-  res.json(updatedUser)
+  .then(res => console.log({res}))
+  .catch(err => console.log({err}))
 })
-
-// // ALL GAMES FROM USER
-// router.get('/user/:user_id', (req,res) => {
-//   Game.find({ user: req.params.user_id})
-//       .then(games => res.json(games))
-//       .catch(err => res.status(404).json({nogamesfound: 'no games found from user'}))
-// })
-
-// // ALL GROUPS FROM USER
-// router.get('/user/:user_id', (req,res) => {
-//   Game.find({ user: req.params.user_id})
-//       .then(games => res.json(games))
-//       .catch(err => res.status(404).json({nogamesfound: 'no games found from user'}))
-// })
-
-// patch game/:id add game
-// delete game/:id delete game (only from library)
-
-
-// router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
 
 module.exports = router;

@@ -71,6 +71,7 @@ class CreateGameForm extends React.Component {
                     // this.props.currentUser.games.concat(game.game.data._id)
                     const updatedUser = this.props.currentUser
                     updatedUser.games = this.props.currentUser.games.concat(game.game.data._id)
+                    debugger
                     this.props.updateUser(updatedUser)
                     this.props.history.push({pathname: `/library`})
                 })
