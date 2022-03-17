@@ -11,6 +11,7 @@ class ProductIndexItem extends React.Component {
 
 
   render(){
+    debugger
     const { currentUser, game } = this.props;
     return(
       <div>

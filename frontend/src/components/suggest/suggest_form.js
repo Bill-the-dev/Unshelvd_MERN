@@ -152,7 +152,7 @@ class SuggestForm extends React.Component{
 
     render() {
         const categories = ["Board Game", "Playing Cards", "Dice", "Pen & Paper", "App", "Party", "Word", "Puzzle", "Quick", "Team Play", "Bluffing", "Deduction"]
-        // debugger
+        debugger
         return (
             <div className='suggest-form-container'>
 
@@ -241,15 +241,24 @@ class SuggestForm extends React.Component{
 
                 </form>
 
-               {
-                   (this.state.filteredGames) ?
-                   <div>
-                       {this.state.filteredGames.map((game) => {
-                           <LibraryItem game={game}/>
-                       })}
-                   </div> 
-                   : null
-               }
+
+                <div className='suggest-results'>
+                {
+                    (this.state.filteredGames) ?
+                    <div>
+                        <ul>
+                        {this.state.filteredGames.map((game) => {
+                            return(
+                            <li>
+                                <LibraryItem game={game}/>
+                            </li>
+                            )
+                        })}
+                        </ul>
+                    </div> 
+                    : null
+                }
+                </div>
 
             </div>
         )
