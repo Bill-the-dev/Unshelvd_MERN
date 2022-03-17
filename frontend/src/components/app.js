@@ -17,6 +17,7 @@ import SuggestContainer from './suggest/suggest_container';
 const App = () => (
     <div className='app-container'>
         <Modal />
+      
         <ProtectedRoute path='/' component={NavBarContainer}/>
         <Switch>
             <AuthRoute exact path="/" component={SplashPage} />
