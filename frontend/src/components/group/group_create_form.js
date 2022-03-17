@@ -1,4 +1,5 @@
 import React from "react";
+import { closeModal } from "../../actions/modal_actions";
 
 class CreateGroup extends React.Component {
   constructor(props) {
@@ -25,12 +26,13 @@ class CreateGroup extends React.Component {
     submitGroup()
       .then(group => {
         const updatedUser = this.props.currentUser;
-        debugger
+        // debugger
         updatedUser.groups = this.props.currentUser.groups.concat(group.group.data._id);
         this.props.updateUser(updatedUser);
         // this.props.history.push({pathname: `/groups/${group.group.data._id}`})
-        this.props.history.push({pathname: `/groups`})
+        // this.props.history.push({pathname: `/groups`})
       })
+      .then(() => this.props.closeModal())
   }
 
   render() {
