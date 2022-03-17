@@ -46,7 +46,7 @@ class LoginForm extends React.Component {
   // Render the session errors if there are any
   renderErrors() {
     return(
-      <ul>
+      <ul className='login-errors'>
         {Object.keys(this.state.errors).map((error, i) => (
           <li key={`error-${i}`}>
             {this.state.errors[error]}
@@ -59,28 +59,31 @@ class LoginForm extends React.Component {
   render() {
     const {loginDemo} = this.props
     return (
-      <div>
-        <h2>Log In</h2>
-        <h4><Link to='/signup'>Sign Up</Link> instead</h4>
-        <form onSubmit={this.handleSubmit}>
-          <div>
-              <input type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
-                placeholder="Username"
-              />
-            <br/>
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                placeholder="Password"
-              />
-            <br/>
-            <input className='signup' type="submit" value="Submit" />
-            <button className="form-button" onClick={() => loginDemo()}>Demo Log In</button>
-            {this.renderErrors()}
-          </div>
-        </form>
+      <div className='login-form-container'>
+        <div className='login-form'>
+          <h1><Link to='./'>Unshelved</Link></h1>
+          <h2>Log In</h2>
+          <h4><Link to='/signup'>Sign Up</Link> instead</h4>
+          <form onSubmit={this.handleSubmit}>
+            <div>
+                <input type="text"
+                  value={this.state.username}
+                  onChange={this.update('username')}
+                  placeholder="Username"
+                />
+              <br/>
+                <input type="password"
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  placeholder="Password"
+                />
+              <br/>
+              <input className='login' type="submit" value="Log In" />
+              <button className="form-button" onClick={() => loginDemo()}>Demo Log In</button>
+              {this.renderErrors()}
+            </div>
+          </form>
+        </div>
       </div>
     );
   }

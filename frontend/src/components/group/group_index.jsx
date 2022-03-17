@@ -15,7 +15,7 @@ class GroupIndex extends React.Component {
   }
 
   render() {
-    const {currentUser, userGroups} = this.props;
+    const {currentUser, userGroups, openModal} = this.props;
     if (!userGroups) return null;
     if (!currentUser) return null;
 
@@ -23,7 +23,7 @@ class GroupIndex extends React.Component {
       <div className="group-index-container">
         <div className="gi-sub-header">
           <h1>Your Groups</h1>
-          <div className="btn btn--join-group">Add Group</div>          
+          <div className="btn btn--join-group" onClick={() => openModal('addGroup')}>Add Group</div>          
         </div>
         <div className="gi-content">
           <div className="gi-groups-container">

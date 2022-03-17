@@ -11,39 +11,55 @@ function TeamShow() {
       <div className="team-body">
         <div className="team-bill">
           <p>Bill Camarco</p>
-          <Link to='https://github.com/Bill-the-dev' className="link">
-            <FontAwesomeIcon icon={faGithub}/>
-          </Link>
-          <Link to='https://www.linkedin.com/in/bill-camarco'>
-            <FontAwesomeIcon icon={faLinkedin} />
-          </Link>
+          <button>
+            <a href="https://github.com/Bill-the-dev" target='_blank'>
+              <FontAwesomeIcon className='icon' icon={faGithub} size='2x'/>
+            </a>
+          </button>
+          <button>
+            <a href="https://www.linkedin.com/in/bill-camarco" target='_blank'>
+              <FontAwesomeIcon className='icon' icon={faLinkedin} size='2x'/>
+            </a>
+          </button>
         </div>
         <div className="team-emily">
           <p>Emily Lichtenberg</p>
-          <Link to='https://github.com/emilylichtenberg' className="link">
-            <FontAwesomeIcon icon={faGithub}/>
-          </Link>
-          <Link to='https://www.linkedin.com/in/emilylichtenberg/'>
-            <FontAwesomeIcon icon={faLinkedin} />
-          </Link>
+          <button>
+            <a href="https://github.com/emilylichtenberg" target='_blank'>
+              <FontAwesomeIcon className='icon' icon={faGithub} size='2x'/>
+            </a>
+          </button>
+          <button>
+            <a href="https://www.linkedin.com/in/emilylichtenberg/" target='_blank'>
+              <FontAwesomeIcon className='icon' icon={faLinkedin} size='2x'/>
+            </a>
+          </button>
         </div>
         <div className="team-ethan">
           <p>Ethan Lam</p>
-          <Link to='https://github.com/EthanLam17' className="link">
-            <FontAwesomeIcon icon={faGithub}/>
-          </Link>
-          <Link to=''>
-            <FontAwesomeIcon icon={faLinkedin} />
-          </Link>
+          <button>
+            <a href="https://github.com/EthanLam17" target='_blank'>
+              <FontAwesomeIcon className='icon' icon={faGithub} size='2x'/>
+            </a>
+          </button>
+          <button>
+            <a href="https://www.linkedin.com/in/ethanlam0123/" target='_blank'>
+              <FontAwesomeIcon className='icon' icon={faLinkedin} size='2x'/>
+            </a>
+          </button>
         </div>
         <div className="team-kirby">
           <p>Kirby Neaton</p>
-          <Link to='https://github.com/kirbyneaton' className="link">
-            <FontAwesomeIcon icon={faGithub}/>
-          </Link>
-          <Link to='https://www.linkedin.com/in/kirbyneaton'>
-            <FontAwesomeIcon icon={faLinkedin} />
-          </Link>
+          <button>
+            <a href="https://github.com/kirbyneaton" target='_blank'>
+              <FontAwesomeIcon className='icon' icon={faGithub} size='2x'/>
+            </a>
+          </button>
+          <button>
+            <a href="https://www.linkedin.com/in/kirbyneaton" target='_blank'>
+              <FontAwesomeIcon className='icon' icon={faLinkedin} size='2x'/>
+            </a>
+          </button>
         </div>
       </div>
     </div>
