@@ -6,6 +6,8 @@ import SignupFormContainer from '../session/signup_form_container'
 // import GameShowContainer from "../game/game_show_container";
 import AboutShow from "../splash/about";
 import TeamShow from "../splash/team";
+import GroupFormContainer from '../group/group_create_container'
+import { withRouter } from "react-router-dom";
 
 
 const Modal = ({ modal, closeModal }) => {
@@ -25,6 +27,9 @@ const Modal = ({ modal, closeModal }) => {
             break;
         case 'Team':
             component = <TeamShow />;
+            break;
+        case 'addGroup':
+            component = <GroupFormContainer />;
             break;
         // case modal:
         //     component = <GameShowContainer gameId={modal} />; //e.g. modal==1
@@ -59,4 +64,4 @@ const mapDispatchToProps = (dispatch) => ({
     closeModal: () => dispatch(closeModal())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Modal);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Modal));

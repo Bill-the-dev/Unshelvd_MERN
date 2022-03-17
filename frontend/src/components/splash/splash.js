@@ -19,8 +19,11 @@ class Splash extends React.Component {
             <Link to={'/login'}>Login</Link>
         </div>
         <div className='splash-row-3'>
+          <div>
             <p>"I dunno, what do you want to do?"</p>
             <p>Unshelvd is here to solve your friend group's indecision</p>
+
+          </div>
         </div>
         <div className='splash-row-4'>
           <footer>
