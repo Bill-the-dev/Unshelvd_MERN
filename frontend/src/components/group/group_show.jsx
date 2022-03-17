@@ -7,10 +7,10 @@ class GroupShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      
+      currentUserGames: {}
     }
     
-    this.groupGames = this.groupGames.bind(this)
+    // this.groupGames = this.groupGames.bind(this)
   }
 
   componentDidMount() {
@@ -22,7 +22,20 @@ class GroupShow extends React.Component {
       .then(() => console.log(this.props))
     this.props.fetchGames()
       .then(() => console.log(this.props))
-      .then(() => this.groupGames())
+    this.props.fetchUserLibrary(this.props.currentUser?.id)
+      .then(() => this.setState({ currentUserGames: this.props.userGames }))
+      // .then((userLib) => {
+      //   let gameIds = Object.values(userLib)
+      //   console.log(`Game Ids after values: ${gameIds} and ${userLib}`)
+      //   let games = []
+      //   gameIds.map((gameId) => {
+      //     console.log(`This is game Id ${gameId}`)
+      //     games.push(this.props.allGames[gameId])
+      //   })
+      //   console.log(games)
+      // })
+      .then(() => console.log(this.state))
+      
       // .then(() => this.setState({ currentUserGroups: Object.values(this.props.currentGroups).filter(group => group.users.includes(this.props.sessionUser.id)) }))
       
   }
@@ -46,27 +59,27 @@ class GroupShow extends React.Component {
   //       this.setState({ gameObjects: games });
   //     });
 
-  //   // this.props.fetchGame(this.props.match.params.id);
-  //   // this.props.fetchUserLibrary();
+  //   this.props.fetchGame(this.props.match.params.id);
+  //   this.props.fetchUserLibrary();
 
+  // // }
+
+
+
+
+  // groupGames() {
+  //   // debugger
+  //   let allGroupGames = [];
+  //   let groupUserIds = this.props.currentGroup?.users;
+  //   let groupUsers = groupUserIds?.map((userId) => {
+  //     // debugger
+  //     return this.props.allUsers[userId]
+  //   })
+  //   groupUsers.map((user) => {
+  //     user.games?.concat(allGroupGames)
+  //   })
+  //   return allGroupGames;
   // }
-
-
-
-
-  groupGames() {
-    // debugger
-    let allGroupGames = [];
-    let groupUserIds = this.props.currentGroup?.users;
-    let groupUsers = groupUserIds?.map((userId) => {
-      // debugger
-      return this.props.allUsers[userId]
-    })
-    groupUsers.map((user) => {
-      user.games?.concat(allGroupGames)
-    })
-    return allGroupGames;
-  }
   //   let groupGamesArr = this.props.currentGroup.users?.map((user, index) => {
   //     debugger
   //     let userGamesArr = this.props.allUsers[user].games
@@ -152,7 +165,7 @@ class GroupShow extends React.Component {
               } */}
               {/* { currentGroup.users ? this.groupGames() } */}
 
-              {/* <li className="gs-game-item">Game 1</li>
+              <li className="gs-game-item">Game 1</li>
               <li className="gs-game-item">Game 2</li>
               <li className="gs-game-item">Game 3</li>
               <li className="gs-game-item">Game 4</li>
@@ -162,7 +175,7 @@ class GroupShow extends React.Component {
               <li className="gs-game-item">Game 8</li>
               <li className="gs-game-item">Game 9</li>
               <li className="gs-game-item">Game 10</li>
-              <li className="gs-game-item">Game 11</li> */}
+              <li className="gs-game-item">Game 11</li>
               {/* {
               games.map(game => 
               <GameIndexItem openModal={openModal} game={game} key={game.id}/>)

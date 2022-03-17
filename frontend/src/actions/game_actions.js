@@ -37,6 +37,11 @@ export const fetchGames = () => dispatch => (
   .catch(err => console.log(err))
 )
 
+export const fetchUserLibrary = userId => dispatch => (
+  GameAPIUtil.getUserGames(userId)
+  .then(games => dispatch(receiveLibrary(games)))
+  .catch(err => console.log(err))
+)
 
 export const fetchGame = (gameId) => dispatch => (
   GameAPIUtil.getGame(gameId)
@@ -52,15 +57,10 @@ export const createGame = data => dispatch => (
 )
 
 
-  export const fetchUserLibrary = userId => dispatch => (
-    GameAPIUtil.getUserGames(userId)
-    .then(games => dispatch(receiveGames(games)))
-    .catch(err => console.log(err))
-  )
   
   export const fetchGroupLibrary = groupId => dispatch => (
     GameAPIUtil.getGroupGames(groupId)
-    .then(games => dispatch(receiveLibrary(games)))
+    .then(games => dispatch(receiveGames(games)))
     .catch(err => console.log(err))
   )
 

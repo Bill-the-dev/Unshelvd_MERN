@@ -34,10 +34,10 @@ router.get('/:id', (req,res) => {
       .catch(err => res.status(404).json({nouserfound: 'no user found with id'}))
 })
 
-// USER SHOW GAMES
+// USER SHOW GAMES (LIBRARY)
 router.get('/:id/games', (req, res) => {
   User.findById(req.params.id)
-    .then(user => res.json(user))
+    .then(user => res.json(user.games))
     .catch(err => res.status(404).json({ nouserfound: 'no user found with id' }));
 })
 
