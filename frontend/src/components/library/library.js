@@ -12,8 +12,9 @@ class Library extends React.Component {
 
   componentDidMount() {
     this.props.fetchGames();
-    this.props.fetchUser(this.props.match.params.id)
-      .then(() => console.log(this.props));;
+    this.props.fetchUser(this.props.sessionUser.id)
+      .then(() => console.log(this.props))
+      // .then((currentUser) => setState(currentUser.games));
 
     // this.props.fetchGame(this.props.match.params.id);
     // this.props.fetchUserLibrary();
@@ -24,7 +25,7 @@ class Library extends React.Component {
         const {currentUser, userGames, fetchGames, fetchGame, createGame, fetchUserGames, openModal} = this.props
         if (!userGames) return null;
         if (!currentUser) return null;
-      
+        debugger
         return(
           
           <div className='library-container'>

@@ -4,9 +4,10 @@ import { fetchUser} from '../../actions/user_actions';
 import Library from './library';
 
 const mapStateToProps = state => ({
-    currentUser: state.session.user, 
+    sessionUser: state.session.user, 
+    userGames: state.users.currentUser.games, 
     //Current user's games will be rendered in the library
-    userGames: Object.values(state.entities.games.userGames) //So that clicking on a game in library shows the game information (renders a game show/modal)
+    allGames: Object.values(state.entities.games.userGames) //So that clicking on a game in library shows the game information (renders a game show/modal)
 })
 
 
