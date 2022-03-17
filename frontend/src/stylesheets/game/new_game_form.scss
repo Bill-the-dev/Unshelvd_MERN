@@ -2,6 +2,7 @@
   height: 100%;
   // border: 1px solid black;
   color: $dark-blue;
+  padding-top: 8vh;
 }
 
 .game-form-header {
@@ -15,9 +16,9 @@
 
 .new-game-form {
   display: grid;
-  // height: 100%;
+  height: 100%;
   grid-template-columns: 0.5fr 2fr 5fr 2fr 0.5fr;
-  grid-template-rows: 0.05fr 1fr 2fr 2fr 2fr 2fr 1fr 1fr;
+  grid-template-rows: 0.05fr 1fr 2fr 2fr 2fr 2fr 2fr 2fr 1fr 1fr 5fr;
 }
 
 .game-form-name {
@@ -141,11 +142,18 @@
 
 .game-form-rules {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   grid-column: 2/5;
   grid-row: 8/9;
+  font-weight: bold;
+  label{ 
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  input {
+    margin-left: 1%;
+  }
 }
 
 .game-form-submit {
@@ -155,5 +163,25 @@
   align-items: center;
   grid-column: 2/5;
   grid-row: 9/10;
+  input {
+    border: 1px solid $dark-blue;
+    background-color: white;
+    border-radius: 2px;
+    padding: .5%;
+    color: $dark-blue;
+    cursor: pointer;
+    &:hover {
+      background-color: $light-blue;
+      color: white;
+    }
+  }
 }
 
+.game-errors {
+  grid-column: 2/5;
+  grid-row: 10/11;
+  display: flex;
+  justify-content: center;
+  padding: 1%;
+  color: $dark-red;
+}

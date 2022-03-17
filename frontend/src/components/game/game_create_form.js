@@ -56,42 +56,36 @@ class CreateGameForm extends React.Component {
         };
 
         let submitGame = async () => this.props.createGame(game);
-        // debugger
-
-
-        if (this.state.category.length === 0) {
-            console.log('category blank');
-            return;
-        } else if (this.state.gameType.length === 0) {
-            console.log('game type blank');
-            return;
-        } else {
+  
             submitGame()
                 .then(game => {
                     // this.props.currentUser.games.concat(game.game.data._id)
                     const updatedUser = this.props.currentUser
+                    // debugger
+
                     updatedUser.games = this.props.currentUser.games.concat(game.game.data._id)
-                    debugger
                     this.props.updateUser(updatedUser)
                     this.props.history.push({pathname: `/library`})
                 })
-        }
+                .catch(err => null)
+        // }
     }
 
-    renderErrors() {
-        return(
-            <ul>
-                {Object.keys(this.state.errors).map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {this.state.errors[error]}
-                    </li>
-                ))}
-            </ul>
-        )
-    }
+    // renderErrors() {
+    //     return(
+    //         <ul>
+    //             {Object.keys(this.state.errors).map((error, i) => (
+    //                 <li key={`error-${i}`}>
+    //                     {this.state.errors[error]}
+    //                 </li>
+    //             ))}
+    //         </ul>
+    //     )
+    // }
 
     render() {  
-
+        let gameErrors = this.props.errors
+        // debugger
         return (
             <div className='new-game-form-container'>
                 <h1 className='game-form-header'>Create a New Game</h1>
@@ -191,10 +185,10 @@ class CreateGameForm extends React.Component {
                     <div className='game-form-submit'>
                         <input type='submit' value='Create Game'/>
                     </div>
-
-
+                    <div  className='game-errors'>
+                        <p>{gameErrors}</p>
+                    </div>
                 </form>
-
             </div>
 
 
