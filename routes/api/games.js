@@ -26,9 +26,12 @@ router.get('/:id', (req,res) => {
 // CREATE GAME
 router.post('/', passport.authenticate('jwt', {session: false}), (req,res) => {
     const {errors, isValid} = validateGameInput(req.body);
-
+    // console.log({body: req.body})
+    // console.log({errors: errors})
+    // console.log({valid: isValid})
     if (!isValid) {
         return res.status(400).json(errors)
+        // return res.json(errors)
     }
     
     // const categoryValues = req.body.category.split(", ")
@@ -52,12 +55,10 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req,res) => {
     const currentUser = User.findById(req.user.id);
     // debugger
     newGame.save()
-        .then(game => {
-            // debugger
-            // currentUser.games.concat(game)
-            res.json(game)
-        })
-        
+        .then(game => res.json(game))
+        .catch(err => res.json(err))        
+        // .then(game => console.log(game))
+        // .catch(err => console.log(err))        
 
 })
 
