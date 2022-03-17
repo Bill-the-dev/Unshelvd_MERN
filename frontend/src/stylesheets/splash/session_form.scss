@@ -1,34 +1,86 @@
-.signup-form-container {
+.signup-form-container, .login-form-container{
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   // margin: 5% auto;
   background-image: url('../../background.jpg');
-  background-size: 1100px;
-  h2 {
-    color: $lightest-tan;
-    font-size: larger;
+  background-size: cover;
+  h1 {
+    :any-link{
+      color: $dark-blue;
+      text-decoration: none;
+    }
+    margin-bottom: 5%;
+    font-size: 1.5rem;
+    font-family: $unshelvd;
     font-weight: bold;
-    padding: 5%;
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+  h2 {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    // padding: 5%;
   }
   h4 {
-    color: $lightest-tan;
-    font-size: x-small;
+    color: white;
+    font-size: 1rem;
     font-style: italic;
+    padding-bottom: 5%;
   }
 }
 
-.signup-form {
+.signup-form, .login-form {
   // background-color: $lightest-tan;
   // background-color: rgb(233, 229, 220, .6);
   background-color: fade-out($color: $lightest-tan, $amount: 0.4);
-  margin-top: 10%;
-  padding: 5%;
+  margin-top: 5%;
   border-radius: 5px;
+  // height: 30%;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   // box-sizing: border-box;
+  padding: 5%;
+  form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  input {
+    padding: 2%;
+    margin: 1%;
+  }
 }
 
-.signup-errors {
+.signup, .signup-form button {
+  border: 1px solid $light-blue;
+  color: $light-blue;
+  background-color: $lightest-tan;
+  height: 4vh;
+  width: 60%;
+}
+
+.login, .login-form button{
+  border: 1px solid $light-blue;
+  color: $light-blue;
+  background-color: $lightest-tan;
+  height: 4vh;
+  width: 80%;
+}
+.signup-errors, .login-form {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: $dark-red;
+  font-size: .9rem;
+  padding-top: 5%;
 }

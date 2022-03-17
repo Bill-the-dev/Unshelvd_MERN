@@ -59,28 +59,29 @@ class SignupForm extends React.Component {
     return (
       <div className="signup-form-container">
         <div className="signup-form">
+        <h1><Link to='./'>Unshelved</Link></h1>
         <h2>Sign Up</h2>
         <h4><Link to='/login'>Log In</Link> instead</h4>
           <form onSubmit={this.handleSubmit}>
-              <br/>
+  
                 <input type="text"
                   value={this.state.email}
                   onChange={this.update('email')}
                   placeholder="Email"
                 />
-              <br/>
+  
                 <input type="text"
                   value={this.state.username}
                   onChange={this.update('username')}
                   placeholder="Username"
                 />
-              <br/>
+  
                 <input type="password"
                   value={this.state.password}
                   onChange={this.update('password')}
                   placeholder="Password"
                 />
-              <br/>
+  
                 <input type="password"
                   value={this.state.password2}
                   onChange={this.update('password2')}
