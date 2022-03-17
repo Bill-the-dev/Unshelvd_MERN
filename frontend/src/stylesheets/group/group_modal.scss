@@ -1,0 +1,53 @@
+.modal-child_group {
+  position: absolute;
+  background-color: white;
+  color: $light-blue;
+  top: 50%;
+  left: 50%;
+  height: 7vh;
+  // min-height: 300px;
+  width: 20vw;
+  min-width: 400px;
+  transform: translate(-50%, -50%);
+  border-radius: 6px;
+  box-shadow: 3px 3px 20px black;
+  padding: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  h1 {
+    font-size: 1.5rem;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  label {
+    padding: 2%;
+  }
+  input {
+    margin-left: 5%;
+  }
+}
+
+.group-form-submit {
+  width: 40%;
+  color: $dark-blue;
+  align-self: center;
+  border: 1px solid $light-blue;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 1%;
+  &:hover {
+    background-color: $lightest-tan; 
+  }
+}
+.group-form-container {
+  width: 100%;
+}
+
+.group-form {
+  width: 100%;
+}
