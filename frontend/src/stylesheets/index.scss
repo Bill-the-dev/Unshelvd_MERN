@@ -4,8 +4,13 @@
 
 @import './splash/splash.scss';
 @import './splash/session_form.scss';
-@import './group_show/group_show.scss';
+@import './group/group_show.scss';
+@import './group/group_index.scss';
 
+@import './nav/nav.scss';
+
+@import './game//new_game_form.scss';
+@import './game/game_show.scss';
 
 html, body {
   height: 100%;
@@ -31,7 +36,10 @@ html, body {
   // height: 100%;
 }
 
+<<<<<<< HEAD
 @import './nav/nav.scss';
 
 
 
+=======
+>>>>>>> b2ccaca0757dadfdaec73c3d393b4a15dd4a6450

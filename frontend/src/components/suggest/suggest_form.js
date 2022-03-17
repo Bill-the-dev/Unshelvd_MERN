@@ -78,7 +78,7 @@ class SuggestForm extends React.Component{
         
         const userPoolId = currentGroups[this.state.library]?.users //FINDS USERS IN SELECTED GROUP
         let gamePool = []
-        debugger
+        // debugger
         for (let i = 0; i < userPoolId.length; i++) {
             // const allUsers = this.props.allUsers
             // gamePool.push(...this.props.allUsers[userPoolId[i]].games);
@@ -88,14 +88,14 @@ class SuggestForm extends React.Component{
         const realGamePool = gamePool.filter(item => {
             if (item) return item
         })
-        debugger
+        // debugger
 
         for (let i = 0; i < realGamePool.length; i++) {
             if (!filteredGames.includes(allGames[realGamePool[i]])) {
                 filteredGames.push(allGames[realGamePool[i]])
             }
         }
-        debugger
+        // debugger
 
         const categoryFilter = (game, player) => {
             for (const ele of player) {
@@ -130,7 +130,7 @@ class SuggestForm extends React.Component{
         //     typeFilter(game.gameType, preferences.gameType)
         // })
         
-        debugger
+        // debugger
         this.setState({
             filteredGames: userFiltered
         })
@@ -161,7 +161,7 @@ class SuggestForm extends React.Component{
 
     render() {
         const categories = ["Board Game", "Playing Cards", "Dice", "Pen & Paper", "App", "Party", "Word", "Puzzle", "Quick", "Team Play", "Bluffing", "Deduction"]
-        debugger
+        // debugger
         return (
             <div>
 

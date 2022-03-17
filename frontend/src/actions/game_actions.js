@@ -1,7 +1,5 @@
 import * as GameAPIUtil from '../util/games_util';
 
-
-
 export const RECEIVE_GAMES = "RECEIVE_GAMES";
 export const RECEIVE_GAME = "RECEIVE_GAME";
 // export const RECEIVE_USER_GAMES = "RECEIVE_USER_GAMES"
@@ -17,8 +15,6 @@ export const receiveGame = game => ({
   game
   
 })
-
-
 
 export const fetchGames = () => dispatch => (
   GameAPIUtil.getAllGames()

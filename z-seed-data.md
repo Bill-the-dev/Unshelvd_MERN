@@ -7,7 +7,19 @@ Descriptors (optional):
 Party, Word, Puzzle, Quick, Team Play, Bluffing, Deduction,
 Strategy
 
+---
 
+## Users
+
+{
+  "_id":{"$oid":"6230eaea10b67bccd3f66201"},"username":"ethan",
+  "email":"ethan@gmail.com",
+  "password":"$2a$10$UBA1D38hQ.U3hg1gUNLaB.ToOtH4JjjwvQKTgHE/ZYbhtyJKg8qzK",
+  "games":[{"$oid":"6230a0fde8ef09734844ebe6"}],
+  "groups":[{"$oid":"6232282fe68f33922e4fe8f3"}],"createdAt":{"$date":{"$numberLong":"1647373035017"}},
+  "updatedAt":{"$date":{"$numberLong":"1647373035017"}},
+  "__v":{"$numberInt":"0"}
+}
 
 
 Title

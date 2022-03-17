@@ -27,3 +27,14 @@ export const fetchUsers = () => dispatch => (
     .then(users => dispatch(receiveUsers(users)))
     .catch(err => console.log(err))
 );
+<<<<<<< HEAD
+=======
+
+export const updateUser = user => dispatch => {
+  return(
+    UserAPIUtil.updateUser(user)
+      .then(user => dispatch(receiveUser(user)))
+      .catch(err => console.log(err))
+  )
+}
+>>>>>>> b2ccaca0757dadfdaec73c3d393b4a15dd4a6450

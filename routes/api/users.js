@@ -7,7 +7,7 @@ const keys = require('../../config/keys');
 const passport = require('passport');
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
-// const { db } = require("../../models/User");
+const { db } = require("../../models/User");
 
 // GET CURRENT USER
 router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
@@ -38,8 +38,8 @@ router.get('/:id', (req,res) => {
 // USER CREATE
 router.post("/register", (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
-
   if (!isValid) {
+
     return res.status(400).json(errors);
   }
 
@@ -48,6 +48,7 @@ router.post("/register", (req, res) => {
       errors.username = "User already exists";
       return res.status(400).json(errors);
     } else {
+  
       const newUser = new User({
         username: req.body.username,
         email: req.body.email,
@@ -61,6 +62,7 @@ router.post("/register", (req, res) => {
           newUser
             .save()
             .then(user => {
+          
               const payload = { id: user.id, username: user.username };
 
               jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
@@ -71,7 +73,7 @@ router.post("/register", (req, res) => {
               });
             })
             // .catch(err => console.log(err));
-            .catch(err => res.send(err))
+            .catch(err => res.json(err))
         });
       });
     }
@@ -122,32 +124,12 @@ router.post("/login", (req, res) => {
 //   db.users.update({_id  : ObjectId(id)}, {$set: updateObject});
 // });
 router.patch('/:id', (req,res) => {
-  const userID = req.params.id;
-  const updateObject = req.body 
-  
-  const newObject = {}
+  const userID = req.body.user._id;
+  const updatedUser = req.body.user 
 
-  db.User.update({_id : ObjectId(userID)}, {$set: newObject})
+  User.findByIdAndUpdate(userID, {games: updatedUser.games})
+  .then(res => console.log({res}))
+  .catch(err => console.log({err}))
 })
-
-// // ALL GAMES FROM USER
-// router.get('/user/:user_id', (req,res) => {
-//   Game.find({ user: req.params.user_id})
-//       .then(games => res.json(games))
-//       .catch(err => res.status(404).json({nogamesfound: 'no games found from user'}))
-// })
-
-// // ALL GROUPS FROM USER
-// router.get('/user/:user_id', (req,res) => {
-//   Game.find({ user: req.params.user_id})
-//       .then(games => res.json(games))
-//       .catch(err => res.status(404).json({nogamesfound: 'no games found from user'}))
-// })
-
-// patch game/:id add game
-// delete game/:id delete game (only from library)
-
-
-// router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
 
 module.exports = router;
