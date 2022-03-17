@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/Bill-the-dev/Unshelvd_MERN#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.2",
     "command": "^0.0.5",
