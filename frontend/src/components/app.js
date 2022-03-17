@@ -14,10 +14,12 @@ import GroupIndexContainer from './group/group_index_container';
 // import LibraryContainer from './library/library_container'
 import GameFormContainer from './game/game_create_form_container'
 import SuggestContainer from './suggest/suggest_container';
+import GroupFormContainer from './group/group_create_container'
 
 const App = () => (
     <div className='app-container'>
         <Modal />
+      
         <ProtectedRoute path='/' component={NavBarContainer}/>
         <Switch>
             <AuthRoute exact path="/" component={SplashPage} />
@@ -28,6 +30,9 @@ const App = () => (
             <ProtectedRoute exact path="/library" component={LibraryContainer} />
             <ProtectedRoute exact path="/groups" component={GroupIndexContainer} />
             <ProtectedRoute exact path='/newgame' component={GameFormContainer} />
+            <ProtectedRoute exact path='/newgroup' component={GroupFormContainer} />
+
+            {/* <ProtectedRoute exact path="library" component={LibraryContainer} /> */}
             <ProtectedRoute exact path="/suggest" component={SuggestContainer} />
             {/* <ProtectedRoute exact path="/library" component={LibraryContainer} /> */}
         </Switch>

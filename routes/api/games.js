@@ -31,9 +31,6 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req,res) => {
         return res.status(400).json(errors)
     }
     
-    // const categoryValues = req.body.category.split(", ")
-    // const gameTypeValues = req.body.gameType.split(", ")
-    
     const newGame = new Game({
         name: req.body.name,
         image: req.body.image,
@@ -41,8 +38,7 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req,res) => {
             min: req.body.min,
             max: req.body.max
         },
-        // category: categoryValues,
-        // gameType: gameTypeValues,
+
         category: req.body.category,
         gameType: req.body.gameType,
         description: req.body.description,
@@ -50,14 +46,10 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req,res) => {
         userCreator: req.user.id
     })
     const currentUser = User.findById(req.user.id);
-    // debugger
     newGame.save()
-        .then(game => {
-            // debugger
-            // currentUser.games.concat(game)
-            res.json(game)
-        })
-        
+        .then(game => res.json(game))
+        .catch(err => res.json(err))        
+
 
 })
 
