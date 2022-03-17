@@ -6,6 +6,9 @@ import NavBar from "../nav/navbar";
 class GroupShow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      
+    }
     
     this.groupGames = this.groupGames.bind(this)
   }
@@ -23,6 +26,33 @@ class GroupShow extends React.Component {
       // .then(() => this.setState({ currentUserGroups: Object.values(this.props.currentGroups).filter(group => group.users.includes(this.props.sessionUser.id)) }))
       
   }
+
+  // Kirby version
+  // componentDidMount() {
+  //   this.props.fetchGames();
+  //   this.props.fetchUser(this.props.sessionUser.id)
+  //     .then(() => console.log(this.props))
+  //     .then(() => this.setState({ currentUserGames: this.props.userGames }))
+  //     .then(() => console.log(this.state))
+  //     .then(() => {
+  //       let games = [];
+  //       this.props.allGames?.map(game => {
+
+  //         if (this.state.currentUserGames.includes(game._id)) {
+  //           games.concat(game);
+  //         }
+  //       });
+  //       console.log(games);
+  //       this.setState({ gameObjects: games });
+  //     });
+
+  //   // this.props.fetchGame(this.props.match.params.id);
+  //   // this.props.fetchUserLibrary();
+
+  // }
+
+
+
 
   groupGames() {
     // debugger
