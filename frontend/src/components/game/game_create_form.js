@@ -95,92 +95,96 @@ class CreateGameForm extends React.Component {
         return (
             <div className='new-game-form-container'>
                 <h1 className='game-form-header'>Create a New Game</h1>
-                <form onSubmit = {this.handleSubmit}>
-                    <div >
+                <form className='new-game-form' onSubmit = {this.handleSubmit}>
+                    <div className='game-form-name'>
                         <label >Name: 
-                            <input className='game-form-name' type='text' value={this.state.name} onChange={this.update('name')}/>
+                            <input type='text' value={this.state.name} onChange={this.update('name')}/>
                         </label>
                     </div>
-                    <div className='game-form-numplayers'>Number of Players (leave blank if no restriction):
-                        <label>Min 
-                            <input type='number' onChange={this.update('min')}/>
-                        </label>
-                        <label>Max 
-                            <input type='number' onChange={this.update('max')}/>
-                        </label>
+                    <div className='game-form-numplayers'>
+                        <p><span>Number of Players</span> (leave blank if no restriction):</p>
+                        <div>
+                            <label>Min 
+                                <input type='number' onChange={this.update('min')}/>
+                            </label>
+                            <label>Max 
+                                <input type='number' onChange={this.update('max')}/>
+                            </label>
+                        </div>
                     </div>
                     <div className='game-form-category'>
                         <h2>Select all categories that apply:</h2>
-                        <label>Board Game
-                            <input type='checkbox' name='category' value='Board Game' onClick={this.updateSelect('category')}/>
-                        </label>
-                        <br/>
-                        <label>Playing Cards
-                            <input type='checkbox' name='category' value='Playing Cards' onClick={this.updateSelect('category')}/>
-                        </label>
-                        <br/>
-                        <label>Dice
-                            <input type='checkbox' name='category' value='Dice' onClick={this.updateSelect('category')}/>
-                        </label>
-                        <br/>
-                        <label>Pen and Paper
-                            <input type='checkbox' name='category' value='Pen and Paper' onClick={this.updateSelect('category')}/>
-                        </label>
-                        <br/>
-                        <label>App
-                            <input type='checkbox' name='category' value='App' onClick={this.updateSelect('category')}/>
-                        </label>
-                        <br/>
+                        <div>
+                            <label>Board Game
+                                <input type='checkbox' name='category' value='Board Game' onClick={this.updateSelect('category')}/>
+                            </label>
+
+                            <label>Playing Cards
+                                <input type='checkbox' name='category' value='Playing Cards' onClick={this.updateSelect('category')}/>
+                            </label>
+                            {/* <button  onClick={this.updateSelect('category')} value='Board Game'>Board Game</button> */}
+
+                            <label>Dice
+                                <input type='checkbox' name='category' value='Dice' onClick={this.updateSelect('category')}/>
+                            </label>
+
+                            <label>Pen and Paper
+                                <input type='checkbox' name='category' value='Pen and Paper' onClick={this.updateSelect('category')}/>
+                            </label>
+
+                            <label>App
+                                <input type='checkbox' name='category' value='App' onClick={this.updateSelect('category')}/>
+                            </label>
+
+                        </div>
                     </div>
                     <div className='game-form-descriptors'>
                         <h2>Select additional descriptors:</h2>
-                        <label>Party
-                            <input type='checkbox' name='descriptors' value='Party' onClick={this.updateSelect('descriptors')}/>
-                        </label>
-                        <br/>
-                        <label>Word
-                            <input type='checkbox' name='descriptors' value='Word' onClick={this.updateSelect('descriptors')}/>
-                        </label>
-                        <br/>
-                        <label>Puzzle
-                            <input type='checkbox' name='descriptors' value='Puzzle' onClick={this.updateSelect('descriptors')}/>
-                        </label>
-                        <br/>
-                        <label>Quick
-                            <input type='checkbox' name='descriptors' value='Quick' onClick={this.updateSelect('descriptors')}/>
-                        </label>
-                        <br/>
-                        <label>Team Play
-                            <input type='checkbox' name='descriptors' value='Team Play' onClick={this.updateSelect('descriptors')}/>
-                        </label>
-                        <br/>
-                        <label>Bluffing
-                            <input type='checkbox' name='descriptors' value='Bluffing' onClick={this.updateSelect('descriptors')}/>
-                        </label>
-                        <br/>
-                        <label>Deduction
-                            <input type='checkbox' name='descriptors' value='Deduction' onClick={this.updateSelect('descriptors')}/>
-                        </label>
-                        <br/>
+                        <div>
+
+                            <label>Party
+                                <input type='checkbox' name='descriptors' value='Party' onClick={this.updateSelect('descriptors')}/>
+                            </label>
+                            <label>Word
+                                <input type='checkbox' name='descriptors' value='Word' onClick={this.updateSelect('descriptors')}/>
+                            </label>
+                            <label>Puzzle
+                                <input type='checkbox' name='descriptors' value='Puzzle' onClick={this.updateSelect('descriptors')}/>
+                            </label>
+                            <label>Quick
+                                <input type='checkbox' name='descriptors' value='Quick' onClick={this.updateSelect('descriptors')}/>
+                            </label>
+                            <label>Team Play
+                                <input type='checkbox' name='descriptors' value='Team Play' onClick={this.updateSelect('descriptors')}/>
+                            </label>
+                            <label>Bluffing
+                                <input type='checkbox' name='descriptors' value='Bluffing' onClick={this.updateSelect('descriptors')}/>
+                            </label>
+                            <label>Deduction
+                                <input type='checkbox' name='descriptors' value='Deduction' onClick={this.updateSelect('descriptors')}/>
+                            </label>
+                        </div>
                     </div>
                     <div className='game-form-type'>
-                        <h2>Select ??:</h2>
-                        <label>Connected (online)
-                            <input type='checkbox' name='gameType' value='Connected' onClick={this.updateSelect('gameType')}/>
-                        </label>
-                        <br/>
-                        <label>Unplugged (in person)
-                            <input type='checkbox' name='gameType' value='Unplugged' onClick={this.updateSelect('gameType')}/>
-                        </label>
-                        <br/>
+                        <h2>What setting is this best played in?</h2>
+                        <div>
+                            <label>Connected (online)
+                                <input type='checkbox' name='gameType' value='Connected' onClick={this.updateSelect('gameType')}/>
+                            </label>
+                            <label>Unplugged (in person)
+                                <input type='checkbox' name='gameType' value='Unplugged' onClick={this.updateSelect('gameType')}/>
+                            </label>
+                        </div>
                     </div>
                     <div className='game-form-description'>
                         <label>Description:
+                            <br/>
                             <textarea placeholder='Include link to play online if applicable' onChange={this.update('description')}/>
                         </label>
                     </div>
                     <div className='game-form-rules'>
                         <label>Link to Rules:
+                            <br/>
                             <input type='text' onChange={this.update('rulesLink')}/>
                         </label>
                     </div>

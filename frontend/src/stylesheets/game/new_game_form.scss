@@ -1,9 +1,7 @@
 .new-game-form-container {
-
-  border: 1px solid black;
-  display: grid;
-  grid-template-columns: 0.5fr 2fr 5fr 2fr 0.5fr;
-  grid-template-rows: 0.5fr 1fr 1fr 1fr 3fr 3fr 1fr 1fr 1fr 1.5fr;
+  height: 100%;
+  // border: 1px solid black;
+  color: $dark-blue;
 }
 
 .game-form-header {
@@ -11,43 +9,95 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  grid-column: 2/5;
-  grid-row: 2/3;
+  font-size: 2rem;
+  padding: 1%;
 }
+
+.new-game-form {
+  display: grid;
+  // height: 100%;
+  grid-template-columns: 0.5fr 2fr 5fr 2fr 0.5fr;
+  grid-template-rows: 0.05fr 1fr 2fr 2fr 2fr 2fr 1fr 1fr;
+}
+
 .game-form-name {
   display: flex;
-  // flex-direction: column;
-  justify-content: center;
-  align-items: center;
   grid-column: 2/5;
-  grid-row: 3/4;
+  grid-row: 2/3;
+  font-weight: bold;
+  label{ 
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  input {
+    margin-left: 1%;
+  }
 }
 
 .game-form-numplayers {
   display: flex;
-  // flex-direction: column;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   grid-column: 2/5;
-  grid-row: 4/5;
+  grid-row: 3/4;
+  span {
+    font-weight: bold;
+  }
+  div {
+    width: 100%;
+    text-align: center;
+  }
+  label {
+    width: 100%;
+  }
+  input {
+    width: 4vw;
+    height: 2vh;
+    margin: .5%;
+  }
 }
 
 .game-form-category {
   display: flex;
-  // flex-direction: column;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   grid-column: 2/5;
   grid-row: 4/5;
+  h2 {
+    font-weight: bold;
+  }
+  div {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  label {
+    padding: 1%;
+  }
 }
 
 .game-form-descriptors {
   display: flex;
-  // flex-direction: column;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   grid-column: 2/5;
   grid-row: 5/6;
+  h2 {
+    font-weight: bold;
+  }
+  div {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  label {
+    padding: 1%;
+  }
 }
 
 .game-form-type {
@@ -57,6 +107,17 @@
   align-items: center;
   grid-column: 2/5;
   grid-row: 6/7;
+  h2 {
+    font-weight: bold;
+  }
+  div {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  label {
+    padding: 1%;
+  }
 }
 
 .game-form-description {
@@ -66,6 +127,16 @@
   align-items: center;
   grid-column: 2/5;
   grid-row: 7/8;
+  label{ 
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+  }
+  textarea {
+    width: 30%;
+    height: 70%;
+    align-self: center;
+  }
 }
 
 .game-form-rules {
