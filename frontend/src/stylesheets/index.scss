@@ -4,7 +4,8 @@
 
 @import './splash/splash.scss';
 @import './splash/session_form.scss';
-@import './group_show/group_show.scss';
+@import './group/group_show.scss';
+@import './group/group_index.scss';
 
 @import './game/game_show.scss';
 @import './library/library.scss';
@@ -12,6 +13,10 @@
 
 
 
+@import './nav/nav.scss';
+
+@import './game//new_game_form.scss';
+@import './game/game_show.scss';
 
 html, body {
   height: 100%;
@@ -36,8 +41,4 @@ html, body {
   // gap: 15px 10px;
   // height: 100%;
 }
-
-@import './nav/nav.scss';
-
-
 

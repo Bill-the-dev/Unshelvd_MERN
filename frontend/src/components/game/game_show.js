@@ -36,6 +36,17 @@ class GameShow extends React.Component {
                 {/* <div className='modal-close' onClick={this.props.closeModal}>✕</div> */}
                 <div className="game-show-item">
                     <h1>Test Item</h1>
+                    
+                    {/* <h1 id="game-show-title">{this.state.entities.games.game.title}</h1> */}
+
+                    {/* <h1 id="game-show-title">{game.name}</h1> */}
+                    {/* <img src="" alt="game" id="game-photo" />
+                    <h2 id="game-show-status">{currentGame.status}</h2>
+                    <h2 id="game-show-num-players">{currentGame.numPlayers}</h2>
+                    <h2 id="game-show-category">{currentGame.category}</h2>
+                    <p id="game-show-description">{currentGame.description}</p>
+                    <a id="game-show-rules" href="">{currentGame.rules}</a>
+                    <h2 id="game-show-setting">{currentGame.setting}</h2> */}
 
                     <h1 id="game-show-title">{currentGame.name}</h1>
                     <img src="" alt={currentGame.image} id="game-img--show" />

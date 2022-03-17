@@ -3,7 +3,8 @@ const router = express.Router();
 const Game = require('../../models/Game')
 const passport = require('passport');
 
-const validateGameInput = require('../../validation/games')
+const validateGameInput = require('../../validation/games');
+const User = require("../../models/User");
 
 // router.get("/test", (req, res) => res.json({ msg: "This is the tweets route" }));
 
@@ -29,10 +30,10 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req,res) => {
     if (!isValid) {
         return res.status(400).json(errors)
     }
-
-    const categoryValues = req.body.category.split(", ")
-    const gameTypeValues = req.body.gameType.split(", ")
-
+    
+    // const categoryValues = req.body.category.split(", ")
+    // const gameTypeValues = req.body.gameType.split(", ")
+    
     const newGame = new Game({
         name: req.body.name,
         image: req.body.image,
@@ -40,15 +41,24 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req,res) => {
             min: req.body.min,
             max: req.body.max
         },
-        category: categoryValues,
-        gameType: gameTypeValues,
+        // category: categoryValues,
+        // gameType: gameTypeValues,
+        category: req.body.category,
+        gameType: req.body.gameType,
         description: req.body.description,
         rulesLink: req.body.rulesLink,
         userCreator: req.user.id
     })
-
+    const currentUser = User.findById(req.user.id);
+    // debugger
     newGame.save()
-        .then(game => res.json(game))
+        .then(game => {
+            // debugger
+            // currentUser.games.concat(game)
+            res.json(game)
+        })
+        
+
 })
 
 
