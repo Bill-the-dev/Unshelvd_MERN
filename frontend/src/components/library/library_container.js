@@ -1,19 +1,23 @@
 import {connect} from 'react-redux';
-import {fetchAllGames, fetchGame, createGame} from '../../actions/game_actions';
-import {fetchUserGames} from '../../actions/user_actions';
+import {fetchGames, fetchGame, createGame, fetchUserLibrary} from '../../actions/game_actions';
+import { fetchUser} from '../../actions/user_actions';
 import Library from './library';
 
 const mapStateToProps = state => ({
-    currentUser: state.session.currentUser, //Current user's games will be rendered in the library
-    games: state.entities.games, //So that clicking on a game in library shows the game information (renders a game show/modal)
+    sessionUser: state.session.user, 
+    currentUser: state.entities.users.currentUser, 
+    userGames: state.entities.users.currentUser.games, 
+    //Current user's games will be rendered in the library
+    allGames: Object.values(state.entities.games.userGames) //So that clicking on a game in library shows the game information (renders a game show/modal)
 })
 
 
 const mapDispatchToProps = dispatch => ({
-    fetchAllGames: () => dispatch(fetchAllGames()),
-    fetchGame: id => dispatch(fetchGame(id)),
+    fetchUser: (userId) => (dispatch(fetchUser(userId))),
+    fetchGames: () => dispatch(fetchGames()),
+    fetchGame: gameId => dispatch(fetchGame(gameId)),
     createGame: data => dispatch(createGame(data)),
-    fetchUserGames: id => dispatch(fetchUserGames(id))
+    fetchUserLibrary: (userId) => dispatch(fetchUserLibrary(userId))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Library)
