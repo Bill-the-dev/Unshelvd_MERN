@@ -61,6 +61,14 @@
     padding: 1%;
     color: $light-blue;
   }
+  button{
+    border: none;
+    background-color: transparent;
+    padding: 2%;
+  }
+  a {
+    color: $dark-blue;
+  }
 }
 
 .splash-container {
