@@ -41,13 +41,15 @@ class Library extends React.Component {
         const {currentUser, userGames, fetchGames, fetchGame, createGame, fetchUserGames, openModal} = this.props
         // if (!userGames) return null;
         if (!currentUser) return null;
-        debugger
+        
         return(
           
           <div className='library-container'>
             <h1 className="welcome-msg--library">{currentUser.username}'s Library</h1>
             
-            <Link to="/new/game"><button className='button--add-game'>+Add Game</button></Link>
+            <Link to="/newgame" className='button--add-game'>
+              <button>+Add Game</button>
+            </Link>
             <div className='library-index-container'>
               <ul className='library-index-list'>
                 {
