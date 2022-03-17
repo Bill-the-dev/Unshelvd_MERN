@@ -1,5 +1,5 @@
 import React from 'react';
-
+// import LibraryItem from '../library/library_item'
 
 class SuggestForm extends React.Component{
     constructor(props) {
@@ -134,6 +134,7 @@ class SuggestForm extends React.Component{
         this.setState({
             filteredGames: userFiltered
         })
+      
         // this.props.filterGames(preferences) //THUNK ACTION TO QUERY/FILTER GAMES INDEX BY THESE COMPONENTS
         // Want to pass all games from library that user selected through the filter defined by form submitted by user
     }
@@ -144,6 +145,7 @@ class SuggestForm extends React.Component{
         }
 
     }
+
 
 
     renderErrors() {
@@ -163,13 +165,13 @@ class SuggestForm extends React.Component{
         const categories = ["Board Game", "Playing Cards", "Dice", "Pen & Paper", "App", "Party", "Word", "Puzzle", "Quick", "Team Play", "Bluffing", "Deduction"]
         // debugger
         return (
-            <div>
+            <div className='suggest-form-container'>
 
-                <div>
+                <div className='suggest-form-header'>
                     Suggest a Game
                 </div>
 
-                <form onSubmit={this.handleSubmit}>
+                <form className='suggest-form' onSubmit={this.handleSubmit}>
 
                     {/* LIBRARY SELECTOR */}
 
@@ -232,11 +234,15 @@ class SuggestForm extends React.Component{
                     {this.renderErrors()}
                 </form>
 
-                {/* {if (this.state.filteredGames) {
-                    this.state.filteredGames.map(game => {
-                        return 
-                    })
-                }} */}
+               {/* {
+                   (this.state.filteredGames) ?
+                   <div>
+                       {this.state.filteredGames.map((game) => {
+                           <LibraryItem game={game}/>
+                       })}
+                   </div> 
+                   : null
+               } */}
 
             </div>
         )

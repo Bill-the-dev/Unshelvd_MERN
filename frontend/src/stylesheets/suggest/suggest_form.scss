@@ -1,0 +1,22 @@
+.suggest-form-container {
+  height: 100%;
+  // border: 1px solid black;
+  color: $dark-blue;
+  padding-top: 8vh;
+}
+
+.suggest-form-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  padding: 1%;
+}
+
+.suggest-form {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 0.5fr 2fr 5fr 2fr 0.5fr;
+  grid-template-rows: 0.05fr 1fr 2fr 2fr 2fr 2fr 2fr 2fr 1fr 1fr 5fr;
+}
