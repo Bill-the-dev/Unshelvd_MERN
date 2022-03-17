@@ -76,7 +76,7 @@ const gamesTest = [
         'Board Game', 'Party', 'Word', 'Puzzle', 'Quick', 'Team Play', 'Deduction'
       ],
       description: 'Codenames is an easy deduction party game. The game is divided into red and blue, each side has a team leader, the team leader\'s goal is to lead their team to the final victory.The two rival spymasters know the secret identities of 25 agents.Their teammates know the agents only by their CODENAMES. Connected Play: https://codenames.game/ Instructions: https://czechgames.com/en/codenames/video/',
-      userCreator: 'Unshelvd'
+      // userCreator: ObjectId('62311d449bd3bc8378ded480')
     }
   ),
   new Game(
@@ -94,7 +94,7 @@ const gamesTest = [
         'Connected', 'Unplugged'
       ],
       description: 'Scrabble is a word game in which two to four players score points by placing tiles, each bearing a single letter, onto a game board divided into a 15×15 grid of squares. The tiles must form words that, in crossword fashion, read left to right in rows or downward in columns, and be included in a standard dictionary or lexicon. Connected Play: https://www.lexulous.com/',
-      userCreator: 'Unshelvd'
+      // userCreator: ObjectId('62311d449bd3bc8378ded480')
     }
   ),
   new Game(
@@ -112,7 +112,7 @@ const gamesTest = [
         'Unplugged'
       ],
       description: 'Dig into this fast paced card swapping game!',
-      userCreator: 'Unshelvd'
+      // userCreator: ObjectId('62311d449bd3bc8378ded480')
     },
   )
 ]
@@ -122,16 +122,19 @@ const loadCounter = () => {
   for (let i = 0; i < gamesTest.length; i++) {
     debugger
     gamesTest[i].save((err, res) => {
+      console.log(`errors = ${err} res = ${res} `)
+      console.log(`i = ${i} game = ${gamesTest[i]} `)
       gamesDone++
       if (gamesDone === gamesTest.length) {
         debugger
-        console.log(`${gamesTest[i]}`)
+        console.log(`${i}`)
         exit() 
       }
       debugger
     });
 }
-  // should add documents, then disconnect once finished (callback below)
+
+// should add documents, then disconnect once finished (callback below)
   
 }
 const exit = () => {
