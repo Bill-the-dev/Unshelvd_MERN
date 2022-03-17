@@ -28,7 +28,8 @@ class CreateGroup extends React.Component {
         debugger
         updatedUser.groups = this.props.currentUser.groups.concat(group.group.data._id);
         this.props.updateUser(updatedUser);
-        this.props.history.push({pathname: `/groups/${group.group.data._id}`})
+        // this.props.history.push({pathname: `/groups/${group.group.data._id}`})
+        this.props.history.push({pathname: `/groups`})
       })
   }
 
