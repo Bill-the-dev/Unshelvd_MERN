@@ -20,7 +20,7 @@ class CreateGameForm extends React.Component {
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.clearedErrors = false;
+        // this.clearedErrors = false;
     }
 
     componentDidMount() {
@@ -185,7 +185,7 @@ class CreateGameForm extends React.Component {
                     <div className='game-form-submit'>
                         <input type='submit' value='Create Game'/>
                     </div>
-                    <div  className='game-errors'>
+                    <div className='game-errors'>
                         <p>{gameErrors}</p>
                     </div>
                 </form>

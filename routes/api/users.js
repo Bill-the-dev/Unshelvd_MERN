@@ -127,7 +127,7 @@ router.patch('/:id', (req,res) => {
   const userID = req.body.user._id;
   const updatedUser = req.body.user 
 
-  User.findByIdAndUpdate(userID, {games: updatedUser.games})
+  User.findByIdAndUpdate(userID, {games: updatedUser.games, groups: updatedUser.groups})
   .then(res => console.log({res}))
   .catch(err => console.log({err}))
 })
