@@ -25,12 +25,12 @@ class GroupShow extends React.Component {
           groupGamesArr = groupGamesArr.concat(userGames)
           console.log(groupGamesArr)
         })
-        debugger
+        // debugger
         this.setState({groupGames: groupGamesArr})
       })
       .then(() => {
         let gameObjectsArr = []
-        debugger
+        // debugger
         this.state.groupGames?.map((gameId) =>{
           let gameObject = this.props?.allGames[gameId]
           gameObjectsArr.push(gameObject)
@@ -55,7 +55,7 @@ class GroupShow extends React.Component {
     // if (allGames && allUsers && currentGroup) return this.groupGames()
 
     const gameTiles = () => {
-      debugger
+      // debugger
       return (
         
         (this.state.groupGameObjects?.length > 0)
@@ -77,7 +77,7 @@ class GroupShow extends React.Component {
     }
 
     
-    debugger
+    // debugger
     return(
       <div className="group-show-container">
         {/* <NavBar /> */}
