@@ -98,7 +98,7 @@ https://bicyclecards.com/how-to-play/left-center-right/
 
 Spoons
 3+
-Playing Cards
+'Playing Cards', 'Party', 'Quick'
 Dig into this fast paced card swapping game!
 https://bicyclecards.com/how-to-play/spoons/
 
@@ -151,7 +151,7 @@ Connected / Unplugged
 Codenames
 (img saved)
 2 - 8+
-Board Game, Party, Word, Puzzle, Quick, Team Play, Deduction
+'Board Game', 'Party', 'Word', 'Puzzle', 'Quick', 'Team Play', 'Deduction'
 Codenames is an easy deduction party game. The game is divided into red and blue, each side has a team leader, the team leader's goal is to lead their team to the final victory. The two rival spymasters know the secret identities of 25 agents. Their teammates know the agents only by their CODENAMES.
 Connected Play: https://codenames.game/
 https://czechgames.com/en/codenames/video/
