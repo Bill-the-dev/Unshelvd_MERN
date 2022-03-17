@@ -94,13 +94,14 @@ class CreateGameForm extends React.Component {
 
         return (
             <div className='new-game-form-container'>
+                <h1 className='game-form-header'>Create a New Game</h1>
                 <form onSubmit = {this.handleSubmit}>
-                    <div>
-                        <label>Name: 
-                            <input type='text' value={this.state.name} onChange={this.update('name')}/>
+                    <div >
+                        <label >Name: 
+                            <input className='game-form-name' type='text' value={this.state.name} onChange={this.update('name')}/>
                         </label>
                     </div>
-                    <div>Number of Players (leave blank if no restriction):
+                    <div className='game-form-numplayers'>Number of Players (leave blank if no restriction):
                         <label>Min 
                             <input type='number' onChange={this.update('min')}/>
                         </label>
@@ -108,7 +109,7 @@ class CreateGameForm extends React.Component {
                             <input type='number' onChange={this.update('max')}/>
                         </label>
                     </div>
-                    <div>
+                    <div className='game-form-category'>
                         <h2>Select all categories that apply:</h2>
                         <label>Board Game
                             <input type='checkbox' name='category' value='Board Game' onClick={this.updateSelect('category')}/>
@@ -131,7 +132,7 @@ class CreateGameForm extends React.Component {
                         </label>
                         <br/>
                     </div>
-                    <div>
+                    <div className='game-form-descriptors'>
                         <h2>Select additional descriptors:</h2>
                         <label>Party
                             <input type='checkbox' name='descriptors' value='Party' onClick={this.updateSelect('descriptors')}/>
@@ -162,7 +163,7 @@ class CreateGameForm extends React.Component {
                         </label>
                         <br/>
                     </div>
-                    <div>
+                    <div className='game-form-type'>
                         <h2>Select ??:</h2>
                         <label>Connected (online)
                             <input type='checkbox' name='gameType' value='Connected' onClick={this.updateSelect('gameType')}/>
@@ -173,17 +174,17 @@ class CreateGameForm extends React.Component {
                         </label>
                         <br/>
                     </div>
-                    <div>
+                    <div className='game-form-description'>
                         <label>Description:
                             <textarea placeholder='Include link to play online if applicable' onChange={this.update('description')}/>
                         </label>
                     </div>
-                    <div>
+                    <div className='game-form-rules'>
                         <label>Link to Rules:
                             <input type='text' onChange={this.update('rulesLink')}/>
                         </label>
                     </div>
-                    <div>
+                    <div className='game-form-submit'>
                         <input type='submit' value='Create Game'/>
                     </div>
 
