@@ -51,6 +51,7 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req,res) => {
 
   newGroup.save()
       .then(game => res.json(game))
+      .catch(err => res.json(err))
 })
 
 // DELETE GROUP
