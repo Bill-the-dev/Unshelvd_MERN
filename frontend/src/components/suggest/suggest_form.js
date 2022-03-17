@@ -1,5 +1,5 @@
 import React from 'react';
-// import LibraryItem from '../library/library_item'
+import LibraryItem from '../library/library_item'
 
 class SuggestForm extends React.Component{
     constructor(props) {
@@ -122,21 +122,10 @@ class SuggestForm extends React.Component{
                 ) userFiltered.push(game)
         })
 
-        // let userFiltered = filteredGames.filter((game) => {
-        //     debugger
-        //     game?.playerCount.max >= parseInt(preferences?.numPlayers) && 
-        //     game?.playerCount.min <= parseInt(preferences?.numPlayers) &&
-        //     categoryFilter(game.category, preferences.category) &&
-        //     typeFilter(game.gameType, preferences.gameType)
-        // })
-        
-        // debugger
+    
         this.setState({
             filteredGames: userFiltered
         })
-      
-        // this.props.filterGames(preferences) //THUNK ACTION TO QUERY/FILTER GAMES INDEX BY THESE COMPONENTS
-        // Want to pass all games from library that user selected through the filter defined by form submitted by user
     }
 
     componentDidUpdate(prevState) {
@@ -175,66 +164,84 @@ class SuggestForm extends React.Component{
 
                     {/* LIBRARY SELECTOR */}
 
-                    <label>Find game from:
-                        <select onChange={this.update("library")}>
-                                <option selected disabled hidden></option>
-                            {this.state.currentUserGroups.map((group, i) => {
-                                return <option key={i} value={group._id}>{group.name}</option>
-                        })}
-                        </select>
-                    </label>
+                    <div className='suggest-form-library'>
+                        <h2>Find game from:
+                        <div>
+                            <select onChange={this.update("library")}>
+                                    <option selected disabled hidden></option>
+                                {this.state.currentUserGroups.map((group, i) => {
+                                    return <option key={i} value={group._id}>{group.name}</option>
+                            })}
+                            </select>
+                        </div>
+                        </h2>
+                    </div>
 
                     {/* NUMBER OF PLAYERS SELECTOR */}
-                    <label>Number of Players
-                        <select onChange={this.update("numPlayers")}>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12+</option>
-                        </select>
-                    </label>
+                    <div className='suggest-form-numplayers'>
+                        <h2>Number of Players
+                            <div>
+                                <select onChange={this.update("numPlayers")}>
+                                    <option selected disabled hidden></option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12+</option>
+                                </select>
+                            </div>
+                        </h2>
+                    </div>
 
 
                     {/* CATEGORY SELECTOR */}
-                    <label>Pick a category!
-                    
+                    <div className='suggest-form-category'>
+                        
+                        <h2>Pick a category!</h2>
+                            <div className='category-grid'>
+                                {categories.map((category) => (
+                                    <label className='category-grid-item'>
+                                        {category}
+                                        <input type="checkbox" onChange = {(e) => this.categoryUpdate(e)} className='category-checkbox' value={category}/>
+                                    </label>
+                                ))}
+                            </div>
 
-                            {categories.map((category) => (
-                                <label>
-                                    {category}
-                                    <input type="checkbox" onChange = {(e) => this.categoryUpdate(e)} className='category-checkbox' value={category}/>
-                                </label>
-                            ))}
-
-                        {/* </select> */}
-                    </label>
+                            {/* </select> */}
+                    </div>
 
 
-                    <div>
-                        <label>
-                            Unplugged
-                            <input type="checkbox" onChange = {(e) => this.typeUpdate(e)} className='type-checkbox' value={"Unplugged"}></input>
-                        </label>
-                       
-                        <label>
-                            Connected
-                            <input type="checkbox" onChange = {(e) => this.typeUpdate(e)} className='type-checkbox' value={"Connected"}></input>
-                        </label>
+                    <div className='suggest-form-type'>
+                        <h2>What setting are you playing in?</h2>
+                        <div>
+                            <label>
+                                Unplugged
+                                <input type="checkbox" onChange = {(e) => this.typeUpdate(e)} className='type-checkbox' value={"Unplugged"}></input>
+                            </label>
+                        
+                            <label>
+                                Connected
+                                <input type="checkbox" onChange = {(e) => this.typeUpdate(e)} className='type-checkbox' value={"Connected"}></input>
+                            </label>
+                        </div>
                     </div>
 
                     {/* FORM SUBMIT */}
-                    <input type="submit" value="Go Fish"/>
-                    {this.renderErrors()}
+                    <div className='suggest-form-submit'>
+                        <input type="submit" value="Go Fish"/>
+                        {this.renderErrors()}
+                    </div>
+
+
                 </form>
 
-               {/* {
+               {
                    (this.state.filteredGames) ?
                    <div>
                        {this.state.filteredGames.map((game) => {
@@ -242,7 +249,7 @@ class SuggestForm extends React.Component{
                        })}
                    </div> 
                    : null
-               } */}
+               }
 
             </div>
         )
