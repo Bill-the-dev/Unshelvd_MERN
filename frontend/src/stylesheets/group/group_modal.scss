@@ -34,13 +34,14 @@
 
 .group-form-submit {
   width: 40%;
+  color: $dark-blue;
   align-self: center;
   border: 1px solid $light-blue;
   background-color: transparent;
   border-radius: 5px;
   padding: 1%;
   &:hover {
-    background-color: $lightest-tan;
+    background-color: $lightest-tan; 
   }
 }
 .group-form-container {
