@@ -21,7 +21,10 @@ class CreateGameForm extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.clearedErrors = false;
-    
+    }
+
+    componentDidMount() {
+        this.props.fetchUser(this.props.currentUserId)
     }
 
     update(field) {
@@ -53,6 +56,8 @@ class CreateGameForm extends React.Component {
         };
 
         let submitGame = async () => this.props.createGame(game);
+        // debugger
+
 
         if (this.state.category.length === 0) {
             console.log('category blank');
@@ -63,7 +68,11 @@ class CreateGameForm extends React.Component {
         } else {
             submitGame()
                 .then(game => {
+                    // this.props.currentUser.games.concat(game.game.data._id)
+                    const updatedUser = this.props.currentUser
+                    updatedUser.games = this.props.currentUser.games.concat(game.game.data._id)
                     debugger
+                    this.props.updateUser(updatedUser)
                     this.props.history.push({pathname: `/library`})
                 })
         }
@@ -155,11 +164,11 @@ class CreateGameForm extends React.Component {
                     </div>
                     <div>
                         <h2>Select ??:</h2>
-                        <label>Connected (in person)
+                        <label>Connected (online)
                             <input type='checkbox' name='gameType' value='Connected' onClick={this.updateSelect('gameType')}/>
                         </label>
                         <br/>
-                        <label>Unplugged (online)
+                        <label>Unplugged (in person)
                             <input type='checkbox' name='gameType' value='Unplugged' onClick={this.updateSelect('gameType')}/>
                         </label>
                         <br/>
