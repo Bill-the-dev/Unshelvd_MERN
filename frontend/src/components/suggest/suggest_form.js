@@ -65,7 +65,6 @@ class SuggestForm extends React.Component{
 
 
     handleSubmit(e) {
-
         const {allUsers, currentGroups, allGames} = this.props;
 
         e.preventDefault();
@@ -73,7 +72,7 @@ class SuggestForm extends React.Component{
             library: this.state.library,
             numPlayers: this.state.numPlayers,
             category: this.state.category, //[App, Dice]
-            gameType: this.state.gameType
+            gameType: this.state.gameType //[Unplugged, Connected]
         };
         let filteredGames = []
         
@@ -83,34 +82,57 @@ class SuggestForm extends React.Component{
         for (let i = 0; i < userPoolId.length; i++) {
             // const allUsers = this.props.allUsers
             // gamePool.push(...this.props.allUsers[userPoolId[i]].games);
-            gamePool.push(allUsers[userPoolId[i]]?.games);
+            // gamePool.push(allUsers[userPoolId[i]]?.games);
             gamePool = gamePool.concat(allUsers[userPoolId[i]]?.games)
         }
-        for (let i = 0; i < gamePool.length; i++) {
-            filteredGames.push(allGames[gamePool[i]])
-        }
+        const realGamePool = gamePool.filter(item => {
+            if (item) return item
+        })
+        debugger
 
-        const categoryFilter = (arr1, arr2) => {
-            let count = arr2.length
-            for (const ele of arr2) {
-                if (arr1.includes(ele)) count -= 1
+        for (let i = 0; i < realGamePool.length; i++) {
+            if (!filteredGames.includes(allGames[realGamePool[i]])) {
+                filteredGames.push(allGames[realGamePool[i]])
             }
-            if (count <= 0) {
-                return true
-            } else {
-                return false
-            } 
+        }
+        debugger
+
+        const categoryFilter = (game, player) => {
+            for (const ele of player) {
+                if (game.includes(ele)) return true
+            }
+            return false
         }
 
-        filteredGames.filter((game) => {
-            game?.playerCount.max >= preferences?.numPlayers && 
-            game?.playerCount.min <= preferences?.numPlayers &&
-            categoryFilter(game?.category, preferences?.category) &&
-            preferences.gameType.includes(game.gameType)
+        const typeFilter = (game, player) => {
+            for (const ele of player) {
+                if (game.includes(ele)) return true
+            }
+            return false
+        }
+
+        let userFiltered = []
+
+        filteredGames.forEach(game => {
+            if ( 
+                game?.playerCount.max >= parseInt(preferences?.numPlayers) && 
+                game?.playerCount.min <= parseInt(preferences?.numPlayers) &&
+                categoryFilter(game.category, preferences.category) &&
+                typeFilter(game.gameType, preferences.gameType)
+                ) userFiltered.push(game)
         })
 
+        // let userFiltered = filteredGames.filter((game) => {
+        //     debugger
+        //     game?.playerCount.max >= parseInt(preferences?.numPlayers) && 
+        //     game?.playerCount.min <= parseInt(preferences?.numPlayers) &&
+        //     categoryFilter(game.category, preferences.category) &&
+        //     typeFilter(game.gameType, preferences.gameType)
+        // })
+        
+        debugger
         this.setState({
-            filteredGames: filteredGames
+            filteredGames: userFiltered
         })
         // this.props.filterGames(preferences) //THUNK ACTION TO QUERY/FILTER GAMES INDEX BY THESE COMPONENTS
         // Want to pass all games from library that user selected through the filter defined by form submitted by user
@@ -210,6 +232,11 @@ class SuggestForm extends React.Component{
                     {this.renderErrors()}
                 </form>
 
+                {/* {if (this.state.filteredGames) {
+                    this.state.filteredGames.map(game => {
+                        return 
+                    })
+                }} */}
 
             </div>
         )
