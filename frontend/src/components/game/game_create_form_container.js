@@ -8,7 +8,8 @@ const mSTP = (state, ownProps) => {
   // debugger
   return({
     currentUserId: state.session.user.id,
-    currentUser: state.entities.users.currentUser
+    currentUser: state.entities.users.currentUser,
+    errors: state.errors.game
   })
 }
 
