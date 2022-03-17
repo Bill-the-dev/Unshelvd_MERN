@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import GroupShow from "./group_show";
 import { fetchGroup, fetchGroups } from "../../actions/group_actions";
 import { fetchUsers } from "../../actions/user_actions";
+import {fetchGames} from "../../actions/game_actions"
 
 // Original:
 // const mapStateToProps = (state, ownProps) => ({
@@ -15,14 +16,17 @@ const mapStateToProps = (state, ownProps) => {
   return {
     userGroups: Object.values(state.entities.groups.userGroups),
     currentGroup: state.entities.groups.currentGroup,
-    allUsers: state.entities.users.allUsers
+    allUsers: state.entities.users.allUsers,
+    allGames: Object.values(state.entities.games.userGames)
   }
 }
 
 const mapDispatchToProps = (dispatch) => ({
   fetchGroup: (groupId) => (dispatch(fetchGroup(groupId))),
   fetchGroups: () => (dispatch(fetchGroups())),
-  fetchUsers: () => (dispatch(fetchUsers()))
+  fetchUsers: () => (dispatch(fetchUsers())),
+  // fetchCurrentUser: () => (dispatch(fetchCurrentUser())),
+  fetchGames: () => (dispatch(fetchGames())),
 
   // openModal: (modal) => (dispatch(openModal(modal)))
 });

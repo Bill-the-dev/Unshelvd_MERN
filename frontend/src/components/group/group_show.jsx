@@ -6,18 +6,66 @@ import NavBar from "../nav/navbar";
 class GroupShow extends React.Component {
   constructor(props) {
     super(props);
+    
+    this.groupGames = this.groupGames.bind(this)
   }
 
   componentDidMount() {
-    this.props.fetchGroups();
-    this.props.fetchGroup(this.props.match.params.id);
-    this.props.fetchUsers();
+    this.props.fetchGroup(this.props.match.params.id)
+      .then(() => console.log(this.props))
+    this.props.fetchGroups()
+      .then(() => console.log(this.props))
+    this.props.fetchUsers()
+      .then(() => console.log(this.props))
+    this.props.fetchGames()
+      .then(() => console.log(this.props))
+      .then(() => this.groupGames())
+      // .then(() => this.setState({ currentUserGroups: Object.values(this.props.currentGroups).filter(group => group.users.includes(this.props.sessionUser.id)) }))
+      
   }
 
+  groupGames() {
+    // debugger
+    let allGroupGames = [];
+    let groupUserIds = this.props.currentGroup?.users;
+    let groupUsers = groupUserIds?.map((userId) => {
+      // debugger
+      return this.props.allUsers[userId]
+    })
+    groupUsers.map((user) => {
+      user.games?.concat(allGroupGames)
+    })
+    return allGroupGames;
+  }
+  //   let groupGamesArr = this.props.currentGroup.users?.map((user, index) => {
+  //     debugger
+  //     let userGamesArr = this.props.allUsers[user].games
+  //     return userGamesArr
+  //       //?.map((game)    
+  //       // user.games.map((game) => {
+  //     })
+  //   return groupGamesArr
+  // }
+  
+
+//   {
+//   currentGroup.users?.map((user, index) => {
+//     let listUsername = allUsers[user]?.username;
+//     return <li className="gs-user-li" key={user.id}>{`${index + 1} ${listUsername}`}</li>;
+//   });
+// }
+
   render () {
-    const { currentGroup } = this.props;
+    // debugger
+
+    const { currentGroup, allUsers, allGames, userGroups } = this.props;
     if (!currentGroup) return null
+    if (!allUsers) return null
+    if (!allGames) return null
+    // if (allGames && allUsers && currentGroup) return this.groupGames()
+
     
+
     
     // debugger
     return(
@@ -34,8 +82,8 @@ class GroupShow extends React.Component {
             <ul>
               { 
               currentGroup.users?.map((user, index) => {
-                
-                <li className="gs-user-li" key={user.id}>{`${index+1} ${user.username}`}</li>})
+                let listUsername = allUsers[user]?.username;
+                return <li className="gs-user-li" key={user.id}>{`${index+1} ${listUsername}`}</li>})
               }
               {/* <li className="gs-user-li">member 1</li>
               <li className="gs-user-li">member 2</li>
@@ -48,7 +96,33 @@ class GroupShow extends React.Component {
           </div>
           <div className="gs-games-container">
             <ul className="gs-games-list">
-              <li className="gs-game-item">Game 1</li>
+
+              {/* {
+                currentGroup.users?.map((user, index) => {
+                  allUsers[user]?.games?.map((game) => {
+                    // let listGame = allGames[game]
+                    return (
+                      game 
+                    // <li key={game.id}>
+                    //   <h1>{listGame.name}</h1>
+                    //   <p>{listGame.image}</p>
+                    // </li>
+                    )
+                  })
+                  return <li>{game}</li>
+                })
+              } */}
+
+
+              {/* {
+                currentGroup.users?.map((user, index) => {
+                  let listUserGames = allUsers[user]?.username;
+                  return <li className="gs-user-li" key={user.id}>{`${index + 1} ${listUsername}`}</li>;
+                })
+              } */}
+              {/* { currentGroup.users ? this.groupGames() } */}
+
+              {/* <li className="gs-game-item">Game 1</li>
               <li className="gs-game-item">Game 2</li>
               <li className="gs-game-item">Game 3</li>
               <li className="gs-game-item">Game 4</li>
@@ -58,7 +132,7 @@ class GroupShow extends React.Component {
               <li className="gs-game-item">Game 8</li>
               <li className="gs-game-item">Game 9</li>
               <li className="gs-game-item">Game 10</li>
-              <li className="gs-game-item">Game 11</li>
+              <li className="gs-game-item">Game 11</li> */}
               {/* {
               games.map(game => 
               <GameIndexItem openModal={openModal} game={game} key={game.id}/>)
@@ -69,7 +143,8 @@ class GroupShow extends React.Component {
       </div>
     )
   }
-
 }
 
 export default GroupShow;
+
+
