@@ -21,5 +21,5 @@ change "gameType" to "setting"
 
 add game.status to display if the game is in a user's library
 
-`/routes/users` when you create a user automatically add a set of free/online games
-  - double check update user
+<!-- `/routes/users` when you create a user automatically add a set of free/online games
+  - double check update user -->

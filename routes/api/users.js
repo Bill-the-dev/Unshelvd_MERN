@@ -52,9 +52,12 @@ router.post("/register", (req, res) => {
       const newUser = new User({
         username: req.body.username,
         email: req.body.email,
-        password: req.body.password
+        password: req.body.password,
+        groups: ['623364d13d62d71018de43e9','6233840373e6a199a3e359e1'],
+        games: ['6230b9b032774c1b65713ac6','6230ba4132774c1b65713ac9']
       });
 
+      
       bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {
           if (err) throw err;
