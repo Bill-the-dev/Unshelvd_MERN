@@ -9,5 +9,5 @@ export const getUser = userId => (
 );
 
 export const updateUser = user => (
-  axios.patch(`/api/users/${user.id}`)
+  axios.patch(`/api/users/${user.id}`, {user})
 )

@@ -125,10 +125,11 @@ router.post("/login", (req, res) => {
 // });
 router.patch('/:id', (req,res) => {
   const userID = req.params.id;
-  const updatedUser = req.body 
-  // debugger
+  const updatedUser = req.body.user 
+  debugger
   // const newObject = {}
-
+  // console.log(req);
+  console.log(req.body.user);
   // User.updateOne({_id : userID}, {$set: updatedUser})
   User.findByIdAndUpdate(userID, {games: updatedUser.games})
   res.json(updatedUser)
