@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 class GroupIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -12,6 +13,10 @@ class GroupIndex extends React.Component {
       .then(() => console.log(this.props));
     this.props.fetchGroups()
       .then(() => console.log(this.props))
+  }
+
+  handleClick() {
+    
   }
 
   render() {
@@ -34,15 +39,15 @@ class GroupIndex extends React.Component {
                 userGroups?.map((group, index) => {
                   return ( 
                     (currentUser.id === group.userGroupCreator) 
-                      ? <li className="gi-group-item" key={group.id}>
-                          <p>{group.name}</p>
-                          <p>{`${group.users.length} members`}</p>
-                          <p>Founder</p>
+                      ? <li className="gi-group-item" key={group.id} onClick={this.handleClick}>
+                          <p className="gi-group-name">{group.name}</p>
+                          <p className="gi-group-total">{`${group.users.length} members`}</p>
+                          <p className="gi-group-founder">Founder</p>
                         </li>
                       :<li className="gi-group-item" key={group.id}>
-                          <p>{group.name}</p>
-                          <p>{`${group.users.length} members`}</p>
-                          <p>Member</p>
+                        <p className="gi-group-name">{group.name}</p>
+                        <p className="gi-group-total">{`${group.users.length} members`}</p>
+                        <p className="gi-group-member">Member</p>
                         </li>
                     )
                 })

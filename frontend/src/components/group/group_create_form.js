@@ -55,25 +55,25 @@ class CreateGroup extends React.Component {
     let groupErrors = this.props.errors
     const {modal} = this.props
     return (
-      <div>
+      <div className="group-form-container">
         {modal === 'addGroup' ? 
-        <div>
+        <div className="group-form">
           <h1>Create a New Group</h1>
           <form onSubmit={this.handleSubmit}>
               <label>Name:
                   <input type='text' value={this.state.name} onChange={this.update('name')}/>
               </label>
-              <input type='submit' value='Create Group'/>
+              <input className="group-form-submit" type='submit' value='Create Group'/>
           </form>
         </div>
         :
-        <div>
+        <div className="group-form">
         <h1>Join a Group</h1>
         <form onSubmit={this.handleSubmit}>
             <label>Enter Code:
                 <input type='text' value={this.state.code} onChange={this.update('code')}/>
             </label>
-            <input type='submit' value='Join Group'/>
+            <input className="group-form-submit" type='submit' value='Join Group'/>
         </form>
       </div>
         }
