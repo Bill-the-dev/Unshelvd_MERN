@@ -1,0 +1,62 @@
+.library-container {
+  
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  grid-row: 1 / 13;
+  grid-column: 1 / 13;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(330deg, $dark-brown,$tan);
+  overflow-y: auto;
+  // h1 {
+  //   font-family: $serif;
+  //   font-weight: 600;
+  // }
+}
+
+.welcome-msg--library {
+  font-family: $serif;
+  font-weight: 600;
+  grid-row: 2 / 3;
+  grid-column: 4 / 7;
+  font-size: 1.5rem;
+  color: $body-lightest;
+
+}
+
+.button--add-game {
+  font-family: $sans-serif;
+  font-weight: 600;
+  grid-row: 2 / 3;
+  grid-column: 9 / 10;
+  // width: 10vh;
+  height: 5vh;
+  font-size: .75rem;
+  color: $dark-red;
+  box-shadow: inset;
+
+}
+
+
+.library-index-container {
+  // border: 1px solid gray;
+  grid-row: 3 / 12;
+  grid-column: 4 / 10;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: normal;
+  row-gap: normal;
+  
+}
+
+.library-index-list {
+  margin-top: 5vh;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  // height: 100%;
+ 
+  justify-content: space-around;
+}
+

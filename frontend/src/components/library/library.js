@@ -1,4 +1,6 @@
 import React from 'react';
+import LibraryItem from './library_item';
+
 
 
 class Library extends React.Component {
@@ -10,20 +12,28 @@ class Library extends React.Component {
 
   componentDidMount() {
     this.props.fetchGames();
-    this.props.fetchGame(this.props.match.params.id);
+    this.props.fetchUser(this.props.match.params.id)
+      .then(() => console.log(this.props));;
+
+    // this.props.fetchGame(this.props.match.params.id);
+    // this.props.fetchUserLibrary();
+
   }  
     
     render() {
-        const {currentUser, userGames, fetchGames, fetchGame, createGame, fetchUserGames} = this.props
+        const {currentUser, userGames, fetchGames, fetchGame, createGame, fetchUserGames, openModal} = this.props
         if (!userGames) return null;
-
+        if (!currentUser) return null;
+      
         return(
-          <div>
-            <h1>Library</h1>
-            <div className='library-index'>
-              <ul className='library-index'>
+          
+          <div className='library-container'>
+            <h1 className="welcome-msg--library">{currentUser.username}'s Library</h1>
+            <button className='button--add-game'>+Add Game</button>
+            <div className='library-index-container'>
+              <ul className='library-index-list'>
                 {
-                  userGames.map(game => <LibraryItem openModal= { openModal } game = { game }  key = { game.id } />)
+                  userGames.map(game => <LibraryItem currentUser={currentUser} openModal={ openModal } game={ game }  key={ game._id } />)
                 }
               </ul>
             </div>

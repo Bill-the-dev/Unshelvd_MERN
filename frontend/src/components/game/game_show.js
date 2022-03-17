@@ -38,7 +38,7 @@ class GameShow extends React.Component {
                     <h1>Test Item</h1>
 
                     <h1 id="game-show-title">{currentGame.name}</h1>
-                    <img src="" alt={currentGame.image} id="game-photo" />
+                    <img src="" alt={currentGame.image} id="game-img--show" />
                     {/* <h2 id="game-show-status">{game.status}</h2> */}
                     <h2 id="game-show-num-players">Players: {currentGame.playerCount?.min} - {currentGame.playerCount?.max}</h2>
                     <h2 id="game-show-category">Category: {currentGame.category}</h2>

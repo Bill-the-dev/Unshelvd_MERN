@@ -17,7 +17,8 @@ class NavBar extends React.Component {
 
         return (
             <div className='nav-container'>
-                <p id='logo'>LOGO</p>
+                {/* <p id='logo'>LOGO</p> */}
+                <NavLink to={'/'} id='logo'>Unshelvd</NavLink>
                 <div className='nav-main-links'>
                     <NavLink to={'/library'}>Library</NavLink>
                     <NavLink to={'/groups'}>Groups</NavLink>

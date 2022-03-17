@@ -5,7 +5,7 @@ import {
 
 
 const UsersReducer = (state = { currentUser: {}, allUsers: {} }, action) => {
-  debugger
+  // debugger
   Object.freeze(state);
   let nextState = Object.assign({}, state);
   switch (action.type) {
