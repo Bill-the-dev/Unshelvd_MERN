@@ -11,6 +11,7 @@ class GameShow extends React.Component {
     componentDidMount() {
         this.props.fetchGames();
         this.props.fetchGame(this.props.match.params.id);
+        this.props.fetchUser(this.props.currentUserId)
     }
 
     // componentDidUpdate(prevProps){
@@ -20,6 +21,15 @@ class GameShow extends React.Component {
     //     }
     // }
 
+    addGameLibrary() {
+        let updatedUser = this.props.currentUser
+        debugger
+        updatedUser.games = this.props.currentUser.games.concat(this.props.currentGame._id)
+        this.props.updateUser(updatedUser)
+        debugger
+        this.props.history.push({pathname: '/library'})
+    }
+
     render() {
         // let currentGame;
         // for (let game of this.props.games) {
@@ -27,7 +37,7 @@ class GameShow extends React.Component {
         //         currentGame = game;
         //     }
         // }
-        // debugger
+        debugger
         const {currentGame} = this.props;
         if (!currentGame) return null;
     
@@ -55,6 +65,13 @@ class GameShow extends React.Component {
                     <h2 id="game-show-category">Category: {currentGame.category}</h2>
                     <p id="game-show-description">{currentGame.description}</p>
                     <h2 id="game-show-setting">Setting: {currentGame.gameType}</h2>
+                    
+                    <div>
+                        { 
+                            (!this.props.currentUser.games?.includes(this.props.currentGame._id)) ?
+                            <button onClick={() => this.addGameLibrary()}>Add Game to Library</button> : null
+                        }
+                    </div>
 
                     {/* <Link to={`/game/${game.id}/edit`}><button onClick={this.props.closeModal} id="edit-game">Edit Game</button></Link>
                     <button onClick={() => this.props.deleteGame(game.id)} id="delete-game">Delete Game</button> */}
