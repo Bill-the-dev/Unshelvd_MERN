@@ -61,6 +61,7 @@
 }
 
 .signup, .signup-form button {
+  font: inherit;
   border: 1px solid $light-blue;
   color: $light-blue;
   background-color: $lightest-tan;
@@ -69,6 +70,7 @@
 }
 
 .login, .login-form button{
+  font: inherit;
   border: 1px solid $light-blue;
   color: $light-blue;
   background-color: $lightest-tan;
