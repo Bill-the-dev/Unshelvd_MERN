@@ -6,8 +6,10 @@ import { fetchGroups } from '../../actions/group_actions'
 
 const mapStateToProps = state => ({
     sessionUser: state.session.user, //Need to know who current user is because that will be an option for library selection 
-    currentGroups: Object.values(state.entities.groups.userGroups),
+    currentGroups: state.entities.groups.userGroups,
     currentUser: state.entities.users.currentUser,
+    allGames: state.entities.games.userGames,
+    allUsers: state.entities.users.allUsers
 })
 
 

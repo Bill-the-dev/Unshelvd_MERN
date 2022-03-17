@@ -11,7 +11,7 @@ class SuggestForm extends React.Component{
             category: [],
             gameType: [],
             errors: {},
-            filteredGames: {}
+            filteredGames: []
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.clearedErrors = false //DEPENDS IF ERRORS EVEN RENDER IN THIS FORM
@@ -21,13 +21,11 @@ class SuggestForm extends React.Component{
 
 
     componentDidMount(){
-        debugger
         this.props.fetchUser(this.props.sessionUser.id)
         this.props.fetchUsers()
         this.props.fetchGames()
         this.props.fetchGroups()
-        .then(() => this.setState({currentUserGroups: this.props.currentGroups.filter(group => group.users.includes(this.props.sessionUser.id))}))
-        debugger
+        .then(() => this.setState({currentUserGroups: Object.values(this.props.currentGroups).filter(group => group.users.includes(this.props.sessionUser.id))}))
     }
 
     update(field) {
@@ -54,7 +52,6 @@ class SuggestForm extends React.Component{
     typeUpdate(e) {
         let selection = e.currentTarget
         let stateCopy = [...this.state.gameType]
-        debugger
         if (selection.checked) {
             this.setState({
                 gameType: this.state.gameType.concat(selection.value)
@@ -68,18 +65,64 @@ class SuggestForm extends React.Component{
 
 
     handleSubmit(e) {
+
+        const {allUsers, currentGroups, allGames} = this.props;
+
         e.preventDefault();
         let preferences = {
             library: this.state.library,
             numPlayers: this.state.numPlayers,
-            category: this.state.category,
+            category: this.state.category, //[App, Dice]
             gameType: this.state.gameType
         };
-
+        let filteredGames = []
         
+        const userPoolId = currentGroups[this.state.library]?.users //FINDS USERS IN SELECTED GROUP
+        let gamePool = []
+        debugger
+        for (let i = 0; i < userPoolId.length; i++) {
+            // const allUsers = this.props.allUsers
+            // gamePool.push(...this.props.allUsers[userPoolId[i]].games);
+            gamePool.push(allUsers[userPoolId[i]]?.games);
+            gamePool = gamePool.concat(allUsers[userPoolId[i]]?.games)
+        }
+        for (let i = 0; i < gamePool.length; i++) {
+            filteredGames.push(allGames[gamePool[i]])
+        }
+
+        const categoryFilter = (arr1, arr2) => {
+            let count = arr2.length
+            for (const ele of arr2) {
+                if (arr1.includes(ele)) count -= 1
+            }
+            if (count <= 0) {
+                return true
+            } else {
+                return false
+            } 
+        }
+
+        filteredGames.filter((game) => {
+            game?.playerCount.max >= preferences?.numPlayers && 
+            game?.playerCount.min <= preferences?.numPlayers &&
+            categoryFilter(game?.category, preferences?.category) &&
+            preferences.gameType.includes(game.gameType)
+        })
+
+        this.setState({
+            filteredGames: filteredGames
+        })
         // this.props.filterGames(preferences) //THUNK ACTION TO QUERY/FILTER GAMES INDEX BY THESE COMPONENTS
         // Want to pass all games from library that user selected through the filter defined by form submitted by user
     }
+
+    componentDidUpdate(prevState) {
+        if (this.state.filteredGames !== prevState.filteredGames) {
+
+        }
+
+    }
+
 
     renderErrors() {
         return(
@@ -110,9 +153,10 @@ class SuggestForm extends React.Component{
 
                     <label>Find game from:
                         <select onChange={this.update("library")}>
-                            {this.state.currentUserGroups.map((group, i) => (
-                                <option key={i} value={group.id}>{group.name}</option>
-                            ))}
+                                <option selected disabled hidden></option>
+                            {this.state.currentUserGroups.map((group, i) => {
+                                return <option key={i} value={group._id}>{group.name}</option>
+                        })}
                         </select>
                     </label>
 
@@ -129,7 +173,7 @@ class SuggestForm extends React.Component{
                             <option value="9">9</option>
                             <option value="10">10</option>
                             <option value="11">11</option>
-                            <option value="12   ">12+</option>
+                            <option value="12">12+</option>
                         </select>
                     </label>
 
