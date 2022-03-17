@@ -41,7 +41,7 @@ class Library extends React.Component {
         const {currentUser, userGames, fetchGames, fetchGame, createGame, fetchUserGames, openModal} = this.props
         // if (!userGames) return null;
         if (!currentUser) return null;
-        debugger
+        // debugger
         return(
           
           <div className='library-container'>

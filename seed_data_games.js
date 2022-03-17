@@ -120,17 +120,17 @@ const gamesTest = [
 const loadCounter = () => {
   let gamesDone = 0;
   for (let i = 0; i < gamesTest.length; i++) {
-    debugger
+    // debugger
     gamesTest[i].save((err, res) => {
       console.log(`errors = ${err} res = ${res} `)
       console.log(`i = ${i} game = ${gamesTest[i]} `)
       gamesDone++
       if (gamesDone === gamesTest.length) {
-        debugger
+        // debugger
         console.log(`${i}`)
         exit() 
       }
-      debugger
+      // debugger
     });
 }
 

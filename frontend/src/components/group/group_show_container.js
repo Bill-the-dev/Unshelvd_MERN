@@ -18,7 +18,8 @@ const mapStateToProps = (state, ownProps) => {
     currentUser: state.session.user,
     currentGroup: state.entities.groups.currentGroup,
     allUsers: state.entities.users.allUsers,
-    allGames: Object.values(state.entities.games.userGames)
+    allGames: state.entities.games.userGames
+    // allGames: Object.values(state.entities.games.userGames)
   }
 }
 
