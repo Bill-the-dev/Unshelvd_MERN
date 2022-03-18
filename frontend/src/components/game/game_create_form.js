@@ -20,6 +20,7 @@ class CreateGameForm extends React.Component {
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.renderErrors = this.renderErrors.bind(this)
         // this.clearedErrors = false;
     }
 
@@ -56,9 +57,9 @@ class CreateGameForm extends React.Component {
         };
 
         let submitGame = async () => this.props.createGame(game);
-  
+        
             submitGame()
-                .then(game => {
+                .then(game => { 
                     // this.props.currentUser.games.concat(game.game.data._id)
                     const updatedUser = this.props.currentUser
                     // debugger
@@ -67,24 +68,31 @@ class CreateGameForm extends React.Component {
                     this.props.updateUser(updatedUser)
                     this.props.history.push({pathname: `/library`})
                 })
-                .catch(err => null)
+                .catch(err => console.log({err: err}))
         // }
     }
 
-    // renderErrors() {
-    //     return(
-    //         <ul>
-    //             {Object.keys(this.state.errors).map((error, i) => (
-    //                 <li key={`error-${i}`}>
-    //                     {this.state.errors[error]}
-    //                 </li>
-    //             ))}
-    //         </ul>
-    //     )
-    // }
+    renderErrors() {
+        return(
+            <ul>
+                {/* {Object.keys(this.state.errors).map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {this.state.errors[error]}
+                    </li>
+                ))} */}
+                {
+                    this.props.errors.map((err,i) => (
+                        <li key={`error-${i}`}>
+                            {err.message}
+                        </li>
+                    ))
+                }
+            </ul>
+        )
+    }
 
     render() {  
-        let gameErrors = this.props.errors
+        // let gameErrors = this.props.errors
         // debugger
         return (
             <div className='new-game-form-container'>
@@ -186,7 +194,13 @@ class CreateGameForm extends React.Component {
                         <input type='submit' value='Create Game'/>
                     </div>
                     <div className='game-errors'>
-                        <p>{gameErrors}</p>
+                        {
+                            this.props.errors?.map((err,i) => (
+                                <li key={`error-${i}`}>
+                                    {err.message}
+                                </li>
+                            ))
+                        }
                     </div>
                 </form>
             </div>
