@@ -173,6 +173,8 @@
 
 .suggest-results {
   display: flex;
+  flex-wrap: wrap;
+  max-width: 80vw;
   justify-content: center;
   padding: 3%;
   grid-column: 2/5;
