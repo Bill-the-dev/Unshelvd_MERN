@@ -23,10 +23,10 @@ class GameShow extends React.Component {
 
     addGameLibrary() {
         let updatedUser = this.props.currentUser
-        debugger
+        // debugger
         updatedUser.games = this.props.currentUser.games.concat(this.props.currentGame._id)
         this.props.updateUser(updatedUser)
-        debugger
+        // debugger
         this.props.history.push({pathname: '/library'})
     }
 
@@ -37,7 +37,7 @@ class GameShow extends React.Component {
         //         currentGame = game;
         //     }
         // }
-        debugger
+        // debugger
         const {currentGame} = this.props;
         if (!currentGame) return null;
     
