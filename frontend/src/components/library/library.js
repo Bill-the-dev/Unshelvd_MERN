@@ -15,7 +15,7 @@ class Library extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchGames();
+    this.props.fetchGames()
     this.props.fetchUser(this.props.sessionUser.id)
     .then(() => console.log(this.props))
     .then(() => this.setState({currentUserGames: this.props.userGames}))

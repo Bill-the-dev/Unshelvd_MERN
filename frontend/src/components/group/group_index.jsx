@@ -16,7 +16,7 @@ class GroupIndex extends React.Component {
   }
 
   handleClick() {
-    
+
   }
 
   render() {
@@ -39,16 +39,16 @@ class GroupIndex extends React.Component {
                 userGroups?.map((group, index) => {
                   return ( 
                     (currentUser.id === group.userGroupCreator) 
-                      ? <li className="gi-group-item" key={group.id} onClick={this.handleClick}>
+                      ? <Link to={`/groups/${group._id}`}><li className="gi-group-item" key={group.id} >
                           <p className="gi-group-name">{group.name}</p>
                           <p className="gi-group-total">{`${group.users.length} members`}</p>
                           <p className="gi-group-founder">Founder</p>
-                        </li>
-                      :<li className="gi-group-item" key={group.id}>
+                      </li></Link>
+                      : <Link to={`/groups/${group._id}`}> <li className="gi-group-item" key={group.id}>
                         <p className="gi-group-name">{group.name}</p>
                         <p className="gi-group-total">{`${group.users.length} members`}</p>
                         <p className="gi-group-member">Member</p>
-                        </li>
+                      </li></Link>
                     )
                 })
               }
