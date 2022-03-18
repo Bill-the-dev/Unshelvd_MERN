@@ -10,6 +10,8 @@ class GroupShow extends React.Component {
       groupGames: [],
       groupGameObjects: []
     }
+    this.handleMouseEnter = this.handleMouseEnter.bind(this)
+    this.handleMouseLeave = this.handleMouseLeave.bind(this)
   }
   
   componentDidMount() {
@@ -37,20 +39,31 @@ class GroupShow extends React.Component {
         console.log(this.state)
       })
     }
-    
-    
 
+  handleMouseEnter(e) {
+    e.target.innerHTML = `${this.props.currentGroup.shareCode}`
+  }
+  
+  handleMouseLeave(e) {
+    e.target.innerHTML = "Share Code"
+  }
+  
   render () {
     const { currentGroup, allUsers, allGames, userGroups } = this.props;
     if (!currentGroup) return null
     if (!allUsers) return null
     if (!allGames) return null
 
+
     return(
       <div className="group-show-container">
         <div className="gs-sub-header">
           <h1>{currentGroup.name}</h1>
-          <div className="btn--share-group">Share Code: {currentGroup.shareCode}</div>
+          <div 
+            className="btn--share-group" 
+            onMouseEnter={this.handleMouseEnter} 
+            onMouseLeave={this.handleMouseLeave}
+          >Share Code</div>
         </div>
         <div className="gs-content">
           <div className="gs-user-list-container">
@@ -59,7 +72,7 @@ class GroupShow extends React.Component {
               { 
               currentGroup.users?.map((user, index) => {
                 let listUsername = allUsers[user]?.username;
-                return <li className="gs-user-li" key={user.id}>{`${index+1} ${listUsername}`}</li>})
+                return <li className="gs-user-li" key={user.id}>{`${index+1} - ${listUsername}`}</li>})
               }
             </ul>
           </div>
@@ -68,10 +81,9 @@ class GroupShow extends React.Component {
               {
               (this.state.groupGameObjects)
               ? this.state.groupGameObjects?.map((game) => {
-                // debugger
                   return (
                   <li>
-                    <LibraryItem game={game} key={game._id} />
+                    <LibraryItem id="group-lib-item" game={game} key={game._id} />
                   </li>
                   )
                 })
