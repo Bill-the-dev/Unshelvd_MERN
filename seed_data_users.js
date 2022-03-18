@@ -12,21 +12,189 @@ mongoose
   .then(() => loadCounter())
   .catch(err => console.log(err));
 
-// const seedUsers = [
-//   {
-//     username: '',
-//     email: '',
-//     password: '',
-//     games: [{
-//       // type: Schema.Types.ObjectId,
-//       // ref: 'Game'
-//     }],
-//     groups: [{
-//       // Schema.Types.ObjectId,
-//       // ref: 'Group'
-//     }],
-//   },
-// ] 
+const seedUsers = [
+  new User (
+    {
+      username: 'ColonelMustard',
+      email: 'defNotSus@clue.com',
+      password: 'password',
+      games: [{
+        // type: Schema.Types.ObjectId,
+        // ref: 'Game'
+      }],
+      groups: [{
+        // Schema.Types.ObjectId,
+        // ref: 'Group'
+      }],
+    }
+  ),
+  new User(
+    {
+      username: 'ProfPlum',
+      email: 'aLittleSus@clue.com',
+      password: 'password',
+      games: [{
+        // type: Schema.Types.ObjectId,
+        // ref: 'Game'
+      }],
+      groups: [{
+        // Schema.Types.ObjectId,
+        // ref: 'Group'
+      }],
+    }
+  ),
+  new User(
+    {
+      username: 'misterGreen',
+      email: 'withEnvy@clue.com',
+      password: 'password',
+      games: [{
+        // type: Schema.Types.ObjectId,
+        // ref: 'Game'
+      }],
+      groups: [{
+        // Schema.Types.ObjectId,
+        // ref: 'Group'
+      }],
+    }
+  ),
+  new User(
+    {
+      username: 'MrsWhite',
+      email: 'jaccuse@clue.com',
+      password: 'password',
+      games: [{
+        // type: Schema.Types.ObjectId,
+        // ref: 'Game'
+      }],
+      groups: [{
+        // Schema.Types.ObjectId,
+        // ref: 'Group'
+      }],
+    }
+  ),
+  new User(
+    {
+      username: 'MsScarlett',
+      email: 'redWithWhat@clue.com',
+      password: 'password',
+      games: [{
+        // type: Schema.Types.ObjectId,
+        // ref: 'Game'
+      }],
+      groups: [{
+        // Schema.Types.ObjectId,
+        // ref: 'Group'
+      }],
+    }
+  ),
+  new User(
+    {
+      username: 'MissusPeacock',
+      email: 'theyWillNotice@clue.com',
+      password: '',
+      games: [{
+        // type: Schema.Types.ObjectId,
+        // ref: 'Game'
+      }],
+      groups: [{
+        // Schema.Types.ObjectId,
+        // ref: 'Group'
+      }],
+    }
+  ),
+  new User(
+    {
+      username: 'aCandleStick',
+      email: 'lumierreTheHost@clue.com',
+      password: 'password',
+      games: [{
+        // type: Schema.Types.ObjectId,
+        // ref: 'Game'
+      }],
+      groups: [{
+        // Schema.Types.ObjectId,
+        // ref: 'Group'
+      }],
+    }
+  ),
+  new User(
+    {
+      username: 'theLeadPipe',
+      email: 'theBetterOption@clue.com',
+      password: 'password',
+      games: [{
+        // type: Schema.Types.ObjectId,
+        // ref: 'Game'
+      }],
+      groups: [{
+        // Schema.Types.ObjectId,
+        // ref: 'Group'
+      }],
+    }
+  ),
+  new User(
+    {
+      username: 'TopsyKirby',
+      email: 'Kirby@unshelvd.com',
+      password: 'password',
+      games: [{
+        // type: Schema.Types.ObjectId,
+        // ref: 'Game'
+      }],
+      groups: [{
+        // Schema.Types.ObjectId,
+        // ref: 'Group'
+      }],
+    }
+  ),
+  new User(
+    {
+      username: 'WinnaBill',
+      email: 'Bill@unshelvd.com',
+      password: '',
+      games: [{
+        // type: Schema.Types.ObjectId,
+        // ref: 'Game'
+      }],
+      groups: [{
+        // Schema.Types.ObjectId,
+        // ref: 'Group'
+      }],
+    }
+  ),
+  new User(
+    {
+      username: 'EmilyTheUndefeated',
+      email: 'Emily@unshelvd.com',
+      password: 'password',
+      games: [{
+        // type: Schema.Types.ObjectId,
+        // ref: 'Game'
+      }],
+      groups: [{
+        // Schema.Types.ObjectId,
+        // ref: 'Group'
+      }],
+    }
+  ),
+  new User(
+    {
+      username: 'EthanWithTheW',
+      email: 'Ethan@unshelvd.com',
+      password: 'password',
+      games: [{
+        // type: Schema.Types.ObjectId,
+        // ref: 'Game'
+      }],
+      groups: [{
+        // Schema.Types.ObjectId,
+        // ref: 'Group'
+      }],
+    }
+  ),
+
+] 
 
 
 // LOAD LOGIC
