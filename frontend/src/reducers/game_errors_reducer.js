@@ -5,7 +5,7 @@ const gameErrorsReducer = (state = [], action) => {
   switch(action.type) {
     case RECEIVE_GAME_ERRORS:
       // debugger
-      return Object.values(action.errors);
+      return Object.values(action.errors.err.errors);
     default: 
       return state;
   }
