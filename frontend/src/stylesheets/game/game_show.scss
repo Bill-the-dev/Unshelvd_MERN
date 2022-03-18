@@ -21,7 +21,7 @@
     font-weight: bold;
     padding: 1%;
     margin: 1rem;
-    border: 1px solid lightblue;
+    // border: 1px solid lightblue;
   }
   h2 {
     // font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -29,14 +29,16 @@
     font-size: 1rem;
     // font-weight: bold;
     padding: 1%;
-    border: 1px solid lightblue;
+    // border: 1px solid lightblue;
   }
   p {
     // font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: $lightest-tan;
-    font-size: .75rem;
+    font-size: .8rem;
+    text-align: center;
     padding: 1%;
-    border: 1px solid lightblue;
+    max-width: 60%;
+    // border: 1px solid lightblue;
   }
   img {
     color: $lightest-tan;
