@@ -48,7 +48,7 @@ Crazy Eights
 Playing Cards
 Crazy Eights first known in the 1930s and was called Eights. In the 1940s the name became Crazy Eights after the military designation for the discharge of mentally unstable soldiers, Section 8. Crazy Eights is a card shedding game where one card is usually played at a time. There are many variations of the game, and Crazy Eights is also known as Craits, Last One, Mau-Mau, Pesten, Rockaway, Swedish Rummy, Switch, Last Card, Screw Your Neighbour, Püskiyon and Tschausepp. Bartok, Mao, Quango, Zar, and Taki are more extreme variations. 
 Connected Play: https://www.trapapps.com/web/044/site/game/crazyeights
-https://www.pagat.com/eights/crazy8s.html
+Instructions: https://www.pagat.com/eights/crazy8s.html
 
 ---
 

@@ -99,3 +99,7 @@ General style guide:
 [Digital Ocean](https://www.digitalocean.com/community/tutorials/css-rem-vs-em-units)
 
 
+### Icons
+[flaticon](https://www.flaticon.com/)
+
+
