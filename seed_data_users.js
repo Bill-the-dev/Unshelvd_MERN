@@ -18,14 +18,14 @@ const seedUsers = [
       username: 'ColonelMustard',
       email: 'defNotSus@clue.com',
       password: 'password',
-      games: [{
-        // type: Schema.Types.ObjectId,
-        // ref: 'Game'
-      }],
-      groups: [{
-        // Schema.Types.ObjectId,
-        // ref: 'Group'
-      }],
+      // games: [{
+      //   // type: Schema.Types.ObjectId,
+      //   // ref: 'Game'
+      // }],
+      // groups: [{
+      //   // Schema.Types.ObjectId,
+      //   // ref: 'Group'
+      // }],
     }
   ),
   new User(
@@ -33,14 +33,14 @@ const seedUsers = [
       username: 'ProfPlum',
       email: 'aLittleSus@clue.com',
       password: 'password',
-      games: [{
-        // type: Schema.Types.ObjectId,
-        // ref: 'Game'
-      }],
-      groups: [{
-        // Schema.Types.ObjectId,
-        // ref: 'Group'
-      }],
+      // games: [{
+      //   // type: Schema.Types.ObjectId,
+      //   // ref: 'Game'
+      // }],
+      // groups: [{
+      //   // Schema.Types.ObjectId,
+      //   // ref: 'Group'
+      // }],
     }
   ),
   new User(
@@ -48,14 +48,14 @@ const seedUsers = [
       username: 'misterGreen',
       email: 'withEnvy@clue.com',
       password: 'password',
-      games: [{
-        // type: Schema.Types.ObjectId,
-        // ref: 'Game'
-      }],
-      groups: [{
-        // Schema.Types.ObjectId,
-        // ref: 'Group'
-      }],
+      // games: [{
+      //   // type: Schema.Types.ObjectId,
+      //   // ref: 'Game'
+      // }],
+      // groups: [{
+      //   // Schema.Types.ObjectId,
+      //   // ref: 'Group'
+      // }],
     }
   ),
   new User(
@@ -63,14 +63,14 @@ const seedUsers = [
       username: 'MrsWhite',
       email: 'jaccuse@clue.com',
       password: 'password',
-      games: [{
-        // type: Schema.Types.ObjectId,
-        // ref: 'Game'
-      }],
-      groups: [{
-        // Schema.Types.ObjectId,
-        // ref: 'Group'
-      }],
+      // games: [{
+      //   // type: Schema.Types.ObjectId,
+      //   // ref: 'Game'
+      // }],
+      // groups: [{
+      //   // Schema.Types.ObjectId,
+      //   // ref: 'Group'
+      // }],
     }
   ),
   new User(
@@ -78,14 +78,14 @@ const seedUsers = [
       username: 'MsScarlett',
       email: 'redWithWhat@clue.com',
       password: 'password',
-      games: [{
-        // type: Schema.Types.ObjectId,
-        // ref: 'Game'
-      }],
-      groups: [{
-        // Schema.Types.ObjectId,
-        // ref: 'Group'
-      }],
+      // games: [{
+      //   // type: Schema.Types.ObjectId,
+      //   // ref: 'Game'
+      // }],
+      // groups: [{
+      //   // Schema.Types.ObjectId,
+      //   // ref: 'Group'
+      // }],
     }
   ),
   new User(
@@ -93,14 +93,14 @@ const seedUsers = [
       username: 'MissusPeacock',
       email: 'theyWillNotice@clue.com',
       password: '',
-      games: [{
-        // type: Schema.Types.ObjectId,
-        // ref: 'Game'
-      }],
-      groups: [{
-        // Schema.Types.ObjectId,
-        // ref: 'Group'
-      }],
+      // games: [{
+      //   // type: Schema.Types.ObjectId,
+      //   // ref: 'Game'
+      // }],
+      // groups: [{
+      //   // Schema.Types.ObjectId,
+      //   // ref: 'Group'
+      // }],
     }
   ),
   new User(
@@ -108,14 +108,14 @@ const seedUsers = [
       username: 'aCandleStick',
       email: 'lumierreTheHost@clue.com',
       password: 'password',
-      games: [{
-        // type: Schema.Types.ObjectId,
-        // ref: 'Game'
-      }],
-      groups: [{
-        // Schema.Types.ObjectId,
-        // ref: 'Group'
-      }],
+      // games: [{
+      //   // type: Schema.Types.ObjectId,
+      //   // ref: 'Game'
+      // }],
+      // groups: [{
+      //   // Schema.Types.ObjectId,
+      //   // ref: 'Group'
+      // }],
     }
   ),
   new User(
@@ -123,14 +123,14 @@ const seedUsers = [
       username: 'theLeadPipe',
       email: 'theBetterOption@clue.com',
       password: 'password',
-      games: [{
-        // type: Schema.Types.ObjectId,
-        // ref: 'Game'
-      }],
-      groups: [{
-        // Schema.Types.ObjectId,
-        // ref: 'Group'
-      }],
+      // games: [{
+      //   // type: Schema.Types.ObjectId,
+      //   // ref: 'Game'
+      // }],
+      // groups: [{
+      //   // Schema.Types.ObjectId,
+      //   // ref: 'Group'
+      // }],
     }
   ),
   new User(
@@ -138,14 +138,14 @@ const seedUsers = [
       username: 'TopsyKirby',
       email: 'Kirby@unshelvd.com',
       password: 'password',
-      games: [{
-        // type: Schema.Types.ObjectId,
-        // ref: 'Game'
-      }],
-      groups: [{
-        // Schema.Types.ObjectId,
-        // ref: 'Group'
-      }],
+      // games: [{
+      //   // type: Schema.Types.ObjectId,
+      //   // ref: 'Game'
+      // }],
+      // groups: [{
+      //   // Schema.Types.ObjectId,
+      //   // ref: 'Group'
+      // }],
     }
   ),
   new User(
@@ -153,14 +153,14 @@ const seedUsers = [
       username: 'WinnaBill',
       email: 'Bill@unshelvd.com',
       password: '',
-      games: [{
-        // type: Schema.Types.ObjectId,
-        // ref: 'Game'
-      }],
-      groups: [{
-        // Schema.Types.ObjectId,
-        // ref: 'Group'
-      }],
+      // games: [{
+      //   // type: Schema.Types.ObjectId,
+      //   // ref: 'Game'
+      // }],
+      // groups: [{
+      //   // Schema.Types.ObjectId,
+      //   // ref: 'Group'
+      // }],
     }
   ),
   new User(
@@ -168,14 +168,14 @@ const seedUsers = [
       username: 'EmilyTheUndefeated',
       email: 'Emily@unshelvd.com',
       password: 'password',
-      games: [{
-        // type: Schema.Types.ObjectId,
-        // ref: 'Game'
-      }],
-      groups: [{
-        // Schema.Types.ObjectId,
-        // ref: 'Group'
-      }],
+      // games: [{
+      //   // type: Schema.Types.ObjectId,
+      //   // ref: 'Game'
+      // }],
+      // groups: [{
+      //   // Schema.Types.ObjectId,
+      //   // ref: 'Group'
+      // }],
     }
   ),
   new User(
@@ -183,14 +183,14 @@ const seedUsers = [
       username: 'EthanWithTheW',
       email: 'Ethan@unshelvd.com',
       password: 'password',
-      games: [{
-        // type: Schema.Types.ObjectId,
-        // ref: 'Game'
-      }],
-      groups: [{
-        // Schema.Types.ObjectId,
-        // ref: 'Group'
-      }],
+      // games: [{
+      //   // type: Schema.Types.ObjectId,
+      //   // ref: 'Game'
+      // }],
+      // groups: [{
+      //   // Schema.Types.ObjectId,
+      //   // ref: 'Group'
+      // }],
     }
   ),
 
@@ -201,13 +201,13 @@ const seedUsers = [
 
 const loadCounter = () => {
   let gamesDone = 0;
-  for (let i = 0; i < gamesTest.length; i++) {
+  for (let i = 0; i < seedUsers.length; i++) {
     // debugger
-    gamesTest[i].save((err, res) => {
+    seedUsers[i].save((err, res) => {
       console.log(`errors = ${err} res = ${res} `);
-      console.log(`i = ${i} game = ${gamesTest[i]} `);
+      console.log(`i = ${i} game = ${seedUsers[i]} `);
       gamesDone++;
-      if (gamesDone === gamesTest.length) {
+      if (gamesDone === seedUsers.length) {
         // debugger
         console.log(`${i}`);
         exit();
