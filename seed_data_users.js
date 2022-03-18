@@ -12,34 +12,202 @@ mongoose
   .then(() => loadCounter())
   .catch(err => console.log(err));
 
-// const seedUsers = [
-//   {
-//     username: '',
-//     email: '',
-//     password: '',
-//     games: [{
-//       // type: Schema.Types.ObjectId,
-//       // ref: 'Game'
-//     }],
-//     groups: [{
-//       // Schema.Types.ObjectId,
-//       // ref: 'Group'
-//     }],
-//   },
-// ] 
+const seedUsers = [
+  new User (
+    {
+      username: 'ColonelMustard',
+      email: 'defNotSus@clue.com',
+      password: 'password',
+      // games: [{
+      //   // type: Schema.Types.ObjectId,
+      //   // ref: 'Game'
+      // }],
+      // groups: [{
+      //   // Schema.Types.ObjectId,
+      //   // ref: 'Group'
+      // }],
+    }
+  ),
+  new User(
+    {
+      username: 'ProfPlum',
+      email: 'aLittleSus@clue.com',
+      password: 'password',
+      // games: [{
+      //   // type: Schema.Types.ObjectId,
+      //   // ref: 'Game'
+      // }],
+      // groups: [{
+      //   // Schema.Types.ObjectId,
+      //   // ref: 'Group'
+      // }],
+    }
+  ),
+  new User(
+    {
+      username: 'misterGreen',
+      email: 'withEnvy@clue.com',
+      password: 'password',
+      // games: [{
+      //   // type: Schema.Types.ObjectId,
+      //   // ref: 'Game'
+      // }],
+      // groups: [{
+      //   // Schema.Types.ObjectId,
+      //   // ref: 'Group'
+      // }],
+    }
+  ),
+  new User(
+    {
+      username: 'MrsWhite',
+      email: 'jaccuse@clue.com',
+      password: 'password',
+      // games: [{
+      //   // type: Schema.Types.ObjectId,
+      //   // ref: 'Game'
+      // }],
+      // groups: [{
+      //   // Schema.Types.ObjectId,
+      //   // ref: 'Group'
+      // }],
+    }
+  ),
+  new User(
+    {
+      username: 'MsScarlett',
+      email: 'redWithWhat@clue.com',
+      password: 'password',
+      // games: [{
+      //   // type: Schema.Types.ObjectId,
+      //   // ref: 'Game'
+      // }],
+      // groups: [{
+      //   // Schema.Types.ObjectId,
+      //   // ref: 'Group'
+      // }],
+    }
+  ),
+  new User(
+    {
+      username: 'MissusPeacock',
+      email: 'theyWillNotice@clue.com',
+      password: '',
+      // games: [{
+      //   // type: Schema.Types.ObjectId,
+      //   // ref: 'Game'
+      // }],
+      // groups: [{
+      //   // Schema.Types.ObjectId,
+      //   // ref: 'Group'
+      // }],
+    }
+  ),
+  new User(
+    {
+      username: 'aCandleStick',
+      email: 'lumierreTheHost@clue.com',
+      password: 'password',
+      // games: [{
+      //   // type: Schema.Types.ObjectId,
+      //   // ref: 'Game'
+      // }],
+      // groups: [{
+      //   // Schema.Types.ObjectId,
+      //   // ref: 'Group'
+      // }],
+    }
+  ),
+  new User(
+    {
+      username: 'theLeadPipe',
+      email: 'theBetterOption@clue.com',
+      password: 'password',
+      // games: [{
+      //   // type: Schema.Types.ObjectId,
+      //   // ref: 'Game'
+      // }],
+      // groups: [{
+      //   // Schema.Types.ObjectId,
+      //   // ref: 'Group'
+      // }],
+    }
+  ),
+  new User(
+    {
+      username: 'TopsyKirby',
+      email: 'Kirby@unshelvd.com',
+      password: 'password',
+      // games: [{
+      //   // type: Schema.Types.ObjectId,
+      //   // ref: 'Game'
+      // }],
+      // groups: [{
+      //   // Schema.Types.ObjectId,
+      //   // ref: 'Group'
+      // }],
+    }
+  ),
+  new User(
+    {
+      username: 'WinnaBill',
+      email: 'Bill@unshelvd.com',
+      password: '',
+      // games: [{
+      //   // type: Schema.Types.ObjectId,
+      //   // ref: 'Game'
+      // }],
+      // groups: [{
+      //   // Schema.Types.ObjectId,
+      //   // ref: 'Group'
+      // }],
+    }
+  ),
+  new User(
+    {
+      username: 'EmilyTheUndefeated',
+      email: 'Emily@unshelvd.com',
+      password: 'password',
+      // games: [{
+      //   // type: Schema.Types.ObjectId,
+      //   // ref: 'Game'
+      // }],
+      // groups: [{
+      //   // Schema.Types.ObjectId,
+      //   // ref: 'Group'
+      // }],
+    }
+  ),
+  new User(
+    {
+      username: 'EthanWithTheW',
+      email: 'Ethan@unshelvd.com',
+      password: 'password',
+      // games: [{
+      //   // type: Schema.Types.ObjectId,
+      //   // ref: 'Game'
+      // }],
+      // groups: [{
+      //   // Schema.Types.ObjectId,
+      //   // ref: 'Group'
+      // }],
+    }
+  ),
+
+] 
 
 
 // LOAD LOGIC
 
 const loadCounter = () => {
   let gamesDone = 0;
-  for (let i = 0; i < gamesTest.length; i++) {
+  for (let i = 0; i < seedUsers.length; i++) {
     // debugger
-    gamesTest[i].save((err, res) => {
+    seedUsers[i].save((err, res) => {
       console.log(`errors = ${err} res = ${res} `);
-      console.log(`i = ${i} game = ${gamesTest[i]} `);
+      console.log(`i = ${i} game = ${seedUsers[i]} `);
       gamesDone++;
-      if (gamesDone === gamesTest.length) {
+      if (gamesDone === seedUsers.length) {
         // debugger
         console.log(`${i}`);
         exit();
