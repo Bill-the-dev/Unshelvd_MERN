@@ -72,9 +72,12 @@ class GameShow extends React.Component {
                         }
                     </div>
 
-                    <button id="button--add-game-to-library">
+
+                    {/* fixthis w Ethans ^ */}
+                    {/* <button id="button--add-game-to-library">
                         <Link to="/library">+Add To Library</Link>
-                    </button>
+                    </button> */}
+                    
 
                     {/* <Link to={`/game/${game.id}/edit`}><button onClick={this.props.closeModal} id="edit-game">Edit Game</button></Link>
                     <button onClick={() => this.props.deleteGame(game.id)} id="delete-game">Delete Game</button> */}
