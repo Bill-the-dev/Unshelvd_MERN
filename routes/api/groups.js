@@ -60,6 +60,16 @@ router.delete('/:id', (req,res) => {
     .then(() => res.status(200).json({msg: 'success'}))
 })
 
+// UPDATE GORUP
+router.patch('/:id', (req,res) => {
+  const groupId = req.body.group._id;
+  const updatedGroup = req.body.group;
+
+  // console.log(req.body)
+  Group.findByIdAndUpdate(groupId, {users: updatedGroup.users})
+    .then(res => console.log({res}))
+    .catch(err => console.log({err}))
+})
 
 
 module.exports = router

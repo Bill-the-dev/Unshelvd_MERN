@@ -47,17 +47,21 @@
 }
 
 #logout-button {
-  color: $dark-brown;
+  color: $light-blue;
   font-size: x-small;
   grid-column: 4/5;
   display: flex;
   justify-content: center;
+  align-items: center;
   text-decoration: none;
-  border: 1px solid $dark-brown;
+  border: 1px solid $light-blue;
   border-radius: 4px;
   padding: 3%;
+  height: 2vh;
+  width: 6vh;
   &:hover {
-    background-color: $light-tan;
+    // background-color: lightblue;
+    border: 2px solid $dark-blue;
   }
 }
 

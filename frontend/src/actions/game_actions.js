@@ -4,7 +4,8 @@ export const RECEIVE_GAMES = "RECEIVE_GAMES";
 export const RECEIVE_GAME = "RECEIVE_GAME";
 export const RECEIVE_LIBRARY = "RECEIVE_LIBRARY";
 
-export const RECEIVE_GAME_ERRORS = "RECEIVE_GAME_ERRORS"
+export const RECEIVE_GAME_ERRORS = "RECEIVE_GAME_ERRORS";
+export const REMOVE_GAME_ERRORS = 'REMOVE_GAME_ERRORS'
 // export const RECEIVE_USER_GAMES = "RECEIVE_USER_GAMES"
 // export const RECEIVE_GROUP_GAMES = "RECEIVE_GROUP_GAMES"
 
@@ -30,6 +31,10 @@ export const receiveGameErrors = errors => {
     errors: errors.response.data
   })
 }
+
+export const removeGameErrors = () => ({
+  type: REMOVE_GAME_ERRORS
+})
 
 export const fetchGames = () => dispatch => (
   GameAPIUtil.getAllGames()

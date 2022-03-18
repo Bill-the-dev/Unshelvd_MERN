@@ -127,19 +127,16 @@ router.post("/login", (req, res) => {
 });
 
 
-// UPDATE USER - INCOMPLETE
-// app.patch('/user/:id', function (req, res) {
-//   var updateObject = req.body; // {last_name : "smith", age: 44}
-//   var id = req.params.id;
-//   db.users.update({_id  : ObjectId(id)}, {$set: updateObject});
-// });
 router.patch('/:id', (req,res) => {
   const userID = req.body.user._id;
   const updatedUser = req.body.user 
 
   User.findByIdAndUpdate(userID, {games: updatedUser.games, groups: updatedUser.groups})
-  .then(res => console.log({res}))
-  .catch(err => console.log({err}))
+  // .then(res => console.log({res}))
+  // .catch(err => console.log({err}))
 })
 
 module.exports = router;
+
+
+// 290344

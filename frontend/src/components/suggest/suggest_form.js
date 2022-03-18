@@ -239,26 +239,27 @@ class SuggestForm extends React.Component{
                     </div>
 
 
+                    <div className='suggest-results'>
+                    {
+                        (this.state.filteredGames) ?
+                        <div className='results-container'>
+                            <ul className='list-head'>
+                            {this.state.filteredGames.map((game) => {
+                                return(
+                                <li>
+                                    <LibraryItem game={game}/>
+                                </li>
+                                )
+                            })}
+                            </ul>
+                        </div> 
+                        : null
+                    }
+                    </div>
+
                 </form>
 
 
-                <div className='suggest-results'>
-                {
-                    (this.state.filteredGames) ?
-                    <div>
-                        <ul>
-                        {this.state.filteredGames.map((game) => {
-                            return(
-                            <li>
-                                <LibraryItem game={game}/>
-                            </li>
-                            )
-                        })}
-                        </ul>
-                    </div> 
-                    : null
-                }
-                </div>
 
             </div>
         )
