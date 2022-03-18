@@ -68,7 +68,7 @@ class GameShow extends React.Component {
                     <div>
                         { 
                             (!this.props.currentUser.games?.includes(this.props.currentGame._id)) ?
-                            <button onClick={() => this.addGameLibrary()}>Add Game to Library</button> : null
+                                <button id="button--add-game-to-library" onClick={() => this.addGameLibrary()}>Add Game to Library</button> : null
                         }
                     </div>
 
@@ -77,7 +77,7 @@ class GameShow extends React.Component {
                     {/* <button id="button--add-game-to-library">
                         <Link to="/library">+Add To Library</Link>
                     </button> */}
-                    
+
 
                     {/* <Link to={`/game/${game.id}/edit`}><button onClick={this.props.closeModal} id="edit-game">Edit Game</button></Link>
                     <button onClick={() => this.props.deleteGame(game.id)} id="delete-game">Delete Game</button> */}
