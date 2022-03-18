@@ -72,9 +72,9 @@ class CreateGameForm extends React.Component {
                 .catch(err => console.log({err: err}))
     }
 
-    componentWillUnmount() {
-        this.props.removeGameErrors()
-    }
+    // componentWillUnmount() {
+    //     this.props.removeGameErrors()
+    // }
 
     renderErrors() {
         return(
@@ -92,7 +92,7 @@ class CreateGameForm extends React.Component {
 
     render() {  
         // let gameErrors = this.props.errors
-        debugger
+        // debugger
         return (
             <div className='new-game-form-container'>
                 <h1 className='game-form-header'>Create a New Game</h1>
