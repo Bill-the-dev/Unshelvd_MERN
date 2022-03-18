@@ -1,11 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import GroupIndexItem from "../game/game_show";
 
 class GroupIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -13,10 +11,6 @@ class GroupIndex extends React.Component {
       .then(() => console.log(this.props));
     this.props.fetchGroups()
       .then(() => console.log(this.props))
-  }
-
-  handleClick() {
-    
   }
 
   render() {
@@ -34,43 +28,29 @@ class GroupIndex extends React.Component {
         <div className="gi-content">
           <div className="gi-groups-container">
             <ul className="gi-group-list">
-
               {
                 userGroups?.map((group, index) => {
                   return ( 
                     (currentUser.id === group.userGroupCreator) 
-                      ? <li className="gi-group-item" key={group.id} onClick={this.handleClick}>
+                      ? <Link id="gi-group-link" to={`/groups/${group._id}`}><li className="gi-group-item" key={group.id} >
                           <p className="gi-group-name">{group.name}</p>
                           <p className="gi-group-total">{`${group.users.length} members`}</p>
                           <p className="gi-group-founder">Founder</p>
-                        </li>
-                      :<li className="gi-group-item" key={group.id}>
+                      </li></Link>
+                      : <Link id="gi-group-link" to={`/groups/${group._id}`}> <li className="gi-group-item" key={group.id}>
                         <p className="gi-group-name">{group.name}</p>
                         <p className="gi-group-total">{`${group.users.length} members`}</p>
                         <p className="gi-group-member">Member</p>
-                        </li>
+                      </li></Link>
                     )
                 })
               }
-              <li className="gi-group-item">Group 1</li>  
-              <li className="gi-group-item">Group 2</li>  
-              <li className="gi-group-item">Group 3</li>  
-              <li className="gi-group-item">Group 4</li>  
-              <li className="gi-group-item">Group 5</li>  
-              <li className="gi-group-item">Group 6</li>  
             </ul>
           </div>
         </div>
-        {/* <ul className="group-games-index">
-          {
-            // groups.map(group =>
-            //    <GroupIndexItem key={group.id} />)  ///this is group show???! No such GroupIndexItem?
-          }
-        </ul> */}
       </div>
     );
   }
-
 }
 
 export default GroupIndex;

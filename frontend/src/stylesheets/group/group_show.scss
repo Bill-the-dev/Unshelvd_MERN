@@ -1,7 +1,4 @@
 
-// font-family: 'Bodoni Moda', serif;
-// font-family: 'Montserrat', sans-serif;
-
 .group-show-container {
   
   display: grid;
@@ -11,32 +8,51 @@
   grid-column: 1 / 13;
   height: 100%;
   width: 100%;
+  overflow-y: auto;
   background-color: $body-lightest;
+  background: linear-gradient(171deg, rgba(245,241,231,1) 10%, rgba(255,254,252,1) 100%);
+  color: $text-blue;
   h1 {
-    font-family: 'Bodoni Moda', serif;
-    font-weight: 600;
+    font-family: $serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    border-bottom: 2px solid $text-blue;
+    cursor: default;
   }
 }
 
 .gs-sub-header {
-  border: 1px solid gray;
+  // border: 1px solid gray;
   display: flex;
   grid-row: 2 / 3;
   grid-column: 1 / 13;
   justify-content: space-between;
   align-items: flex-end;
   padding: 1rem;
+  color: $text-blue;
+    padding-left: 6.5rem;
+  padding-right: 6.5rem;
 }
-// header placeholder
-// .navbar-container {
-//   border: 1px solid gray;
-//   display: grid;
-//   background-color: rgb(232, 216, 203);
-//   grid-row: 1 / 2;
-//   grid-column: 1 / 13;
-//   align-items: center;
-//   padding-left: 20px;
-// } 
+
+.btn--share-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $dark-blue;
+  border-radius: 4px;
+  padding: 0.5rem;
+  width: 7rem;
+  &:hover {
+    transform: scale(1.05);
+    transition: all .4s ease;
+    background: radial-gradient(circle, $light-blue 40%, $light-blue 100%);
+    color: $body-lightest;
+    font-weight: 500;
+    cursor: text;
+  }
+}
+
+
 
 .gs-content {
   border: 1px solid gray;
@@ -44,10 +60,14 @@
   grid-column: 1 / 13;
   display: grid;
   // width: 100%;
+  margin-left: 6.5rem;
+  margin-right: 6.5rem;
+  border: $beige solid 2px;
+  border-radius: 6px;
 }
 
 .gs-user-list-container {
-  border: 1px solid gray;
+  // border: 1px solid gray;
   grid-row: 3 / 12;
   grid-column: 1 / 4;
   display: flex;
@@ -57,20 +77,21 @@
   h2 {
     font-family: 'Bodoni Moda', serif;
     font-weight: 700;
+    color: $text-blue;
+    border-bottom: solid 1px $text-blue;
   }
   overflow-y: auto;
 }
 
 .gs-user-li {
-  border: 1px solid gainsboro;
   display: flex;
-  // align-items: center;
   padding-top: 1rem;
+  color: $text-blue;
 }
 
 
 .gs-games-container {
-  border: 1px solid gray;
+  // border: 1px solid gray;
   grid-row: 3 / 12;
   grid-column: 4 / 13;
   display: flex;
@@ -79,7 +100,7 @@
 }
 
 .gs-games-list {
-  border: 1px solid gray;
+  // border: 1px solid gray;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -98,3 +119,16 @@
   justify-content: center;
   
 }
+
+
+// Won't select past Item CSS 
+// #group-lib-item {
+//   margin: 2rem;
+
+// }
+// #group-lib-item:hover {
+//   transform: scale(1.05);
+//   transition: all .6s ease-in-out;
+//   border-radius: 4px;
+
+// }

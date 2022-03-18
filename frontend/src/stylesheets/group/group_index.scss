@@ -17,9 +17,11 @@
   h1 {
     font-family: 'Bodoni Moda', serif;
     font-weight: 700;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     text-shadow: 2px;
-    border-bottom: 1px solid $dark-blue;
+    border-bottom: 2px solid $dark-blue;
+    color: $text-blue;
+    cursor: default;
   }
 }
 
@@ -60,7 +62,8 @@
 }
 
 .gi-group-list {
-  border: 1px solid gray;
+  border: $beige solid 2px;
+  border-radius: 6px;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -78,19 +81,21 @@
   height: 20vh;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.5rem; 
+  margin: 1.5rem; 
   border-radius: 6px;
   box-shadow: 2px 2px 12px black;
   // background-color: $dark-green; 
   background: radial-gradient(circle, $light-green 1%, $dark-green 100%);
-  font-family: 'Montserrat', sans-serif;
+  font-family: $sans-serif;
   font-weight: 500;
   color: $body-lightest;
   cursor: pointer;
 }
 
 .gi-group-item:hover {
-
+  transform: scale(1.05);
+  transition: all .6s ease-in-out;
+  border-radius: 4px;
 }
 
 .gi-group-name {
@@ -103,17 +108,66 @@
 
 .gi-group-total {
   font-size: 0.8rem;
-  padding-bottom: 0.2rem;
+  padding-bottom: 0.3rem;
   padding-top: 1rem;
+
 }
 
 .gi-group-founder {
-  font-size: 0.8rem;
-  padding: 0.25rem;
+  font-size: 0.7rem;
+  padding: 0.3rem;
   border: 1px solid $body-lightest;
+  border-radius: 3px;
+
 }
 
 .gi-group-member {
+  font-size: 0.7rem;
+
+}
+
+#gi-group-link {
+  text-decoration: none;
+}
+
+.btn--create-group {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
   font-size: 0.8rem;
+  border-radius: 4px;
+  padding: 0.5rem;
+  width: 6rem;
+  &:hover {
+    transform: scale(1.05);
+    transition: all .4s ease;
+    background: radial-gradient(circle, $light-green 40%, $dark-green 100%);
+    color: $body-lightest;
+    font-weight: 500;
+    border: 1px solid $dark-blue;
+    cursor: pointer;
+  }
+}
+.btn--join-group {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  font-size: 0.8rem;
+  border-radius: 4px;
+  padding: 0.5rem;
+  width: 6rem;
+  &:hover {
+    transform: scale(1.05);
+    transition: all .4s ease;
+    background: radial-gradient(circle, $light-green 40%, $dark-green 100%);
+    color: $body-lightest;
+    font-weight: 500;
+    border: 1px solid $dark-blue;
+    cursor: pointer;
+  }
 }
 
