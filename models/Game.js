@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const gameSchema = new Schema({
   name: {
     type: String,
-    required: true,
+    required: [true, 'Name is required'],
     // index: true
   },
   image: {
@@ -18,11 +18,14 @@ const gameSchema = new Schema({
   },
   category: {
     type: Array, // this can be multiselect stored as an array
-    required: true
+    required: true,
+    validate: [arrayMin, 'Must select at least one category']
   },
   gameType: {
     type: Array, // this can be multiselect stored as an array
-    required: true
+    required: true,
+    validate: [arrayMin, 'Must select Setting']
+
   },
   description: {
     type: String
@@ -36,6 +39,10 @@ const gameSchema = new Schema({
     // index: true
   }
 })
+
+function arrayMin(val) {
+  return val.length >= 1;
+}
 
 gameSchema.index({ name: 1, userCreator: 1 }, { unique: true })
 

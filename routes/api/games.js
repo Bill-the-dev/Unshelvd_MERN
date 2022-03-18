@@ -25,11 +25,11 @@ router.get('/:id', (req,res) => {
 
 // CREATE GAME
 router.post('/', passport.authenticate('jwt', {session: false}), (req,res) => {
-    const {errors, isValid} = validateGameInput(req.body);
+    // const {errors, isValid} = validateGameInput(req.body);
 
-    if (!isValid) {
-        return res.status(400).json(errors)
-    }
+    // if (!isValid) {
+    //     return res.status(400).json(errors)
+    // }
     
     const newGame = new Game({
         name: req.body.name,
@@ -38,17 +38,20 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req,res) => {
             min: req.body.min,
             max: req.body.max
         },
-
         category: req.body.category,
         gameType: req.body.gameType,
         description: req.body.description,
         rulesLink: req.body.rulesLink,
         userCreator: req.user.id
     })
-    const currentUser = User.findById(req.user.id);
+    // console.log(newGame)
+    // const currentUser = User.findById(req.user.id);
     newGame.save()
         .then(game => res.json(game))
-        .catch(err => res.json(err))        
+        // .catch(err => res.json(err))    
+        .catch(err => res.status(404).json({err}))    
+        // .then(game => console.log({game}))
+        // .catch(err => console.log({err}))        
 
 
 })

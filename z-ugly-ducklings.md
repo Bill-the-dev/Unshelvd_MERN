@@ -23,3 +23,7 @@ add game.status to display if the game is in a user's library
 
 <!-- `/routes/users` when you create a user automatically add a set of free/online games
   - double check update user -->
+
+
+
+`library` setState being called a number of times is slowing down the RECEIVE_USER call and 15s delay in rendering games on pg

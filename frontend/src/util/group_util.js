@@ -22,6 +22,6 @@ export const deleteGroup = groupId => (
 )
 
 // EDIT?
-export const editGroup = (groupId, data) => (
-  axios.delete(`/api/groups/${groupId}`, data)
+export const updateGroup = (group) => (
+  axios.patch(`/api/groups/${group._id}`, {group})
 )
