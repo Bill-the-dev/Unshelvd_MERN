@@ -15,22 +15,21 @@ class Library extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchGames();
-    this.props.fetchUser(this.props.sessionUser.id)
-    .then(() => console.log(this.props))
-    .then(() => this.setState({currentUserGames: this.props.userGames}))
-      .then(() => console.log(this.state))
+    this.props.fetchGames()
+      .then(() => this.props.fetchUser(this.props.sessionUser.id))
+      // .then(() => console.log(this.props))
+      .then(() => this.setState({currentUserGames: this.props.userGames}))
+      // .then(() => console.log(this.state))
       .then(() => {
         let games = []
         this.props.allGames?.map(game => {
           // debugger
           if (this.state.currentUserGames.includes(game._id)){
-            // debugger
             games.push(game)
           }
         })
       this.setState({gameObjects: games})
-      console.log(games)
+      // console.log(games)
       })
 
     // this.props.fetchUserLibrary(this.props.sessionUser.id);

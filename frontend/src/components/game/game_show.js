@@ -42,10 +42,9 @@ class GameShow extends React.Component {
         if (!currentGame) return null;
     
         return (
-            <div>
+            <div className="game-show-container">
                 {/* <div className='modal-close' onClick={this.props.closeModal}>✕</div> */}
                 <div className="game-show-item">
-                    <h1>Test Item</h1>
                     
                     {/* <h1 id="game-show-title">{this.state.entities.games.game.title}</h1> */}
 
@@ -59,7 +58,7 @@ class GameShow extends React.Component {
                     <h2 id="game-show-setting">{currentGame.setting}</h2> */}
 
                     <h1 id="game-show-title">{currentGame.name}</h1>
-                    <img src="" alt={currentGame.image} id="game-img--show" />
+                    <img src={currentGame.image} alt={currentGame.image} id="game-img--show" />
                     {/* <h2 id="game-show-status">{game.status}</h2> */}
                     <h2 id="game-show-num-players">Players: {currentGame.playerCount?.min} - {currentGame.playerCount?.max}</h2>
                     <h2 id="game-show-category">Category: {currentGame.category}</h2>
@@ -72,6 +71,13 @@ class GameShow extends React.Component {
                             <button onClick={() => this.addGameLibrary()}>Add Game to Library</button> : null
                         }
                     </div>
+
+
+                    {/* fixthis w Ethans ^ */}
+                    {/* <button id="button--add-game-to-library">
+                        <Link to="/library">+Add To Library</Link>
+                    </button> */}
+                    
 
                     {/* <Link to={`/game/${game.id}/edit`}><button onClick={this.props.closeModal} id="edit-game">Edit Game</button></Link>
                     <button onClick={() => this.props.deleteGame(game.id)} id="delete-game">Delete Game</button> */}
