@@ -222,7 +222,7 @@ Ticket to Ride is a cross-country train adventure in which players collect and p
 
 Cards Against Humanity
 (IMG SAVED)
-4-10+
+4-20+
 Board Game, Party
 Cards Against Humanity is a party game for horrible people. The game is simple. Each round, one player asks a question from a black card, and everyone else answers with their funniest white card.
 
@@ -246,7 +246,7 @@ It's a party platter of Mega Maki, Super sashimi, and endless edamame in this ex
 
 Jenga
 (IMG SAVED)
-2-10+
+2-20+
 Tile, Party
 Players take turns removing one block from within the tower and placing it back on the top. Cross your fingers and hold your breath as the tower grows taller and more unstable with every move. See how many rounds you can go before the tower comes crashing down. The last person to successfully place a block before the tower tumbles is considered the winner.
 
@@ -255,7 +255,7 @@ Players take turns removing one block from within the tower and placing it back 
 
 Uno
 (IMG SAVED)
-2-10+
+2-20+
 Playing Cards, Party, Quick
 Players take turns matching a card in their hand with the current card shown on top of the deck either by color or number. Before playing your next to last card, you must say "UNO". The first player to play all of the cards in their hand in each round scores points for the cards their opponents are left holding. The first player to score 500 points wins the game.
 

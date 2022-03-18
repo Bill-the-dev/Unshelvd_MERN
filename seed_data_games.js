@@ -70,10 +70,10 @@ const gamesTest = [
         max: 8
       },
       category: [
-
+        'Board Game', 'Party', 'Word', 'Puzzle', 'Quick', 'Team Play', 'Deduction'
       ],
       gameType: [
-        'Board Game', 'Party', 'Word', 'Puzzle', 'Quick', 'Team Play', 'Deduction'
+        'Unplugged'
       ],
       description: 'Codenames is an easy deduction party game. The game is divided into red and blue, each side has a team leader, the team leader\'s goal is to lead their team to the final victory.The two rival spymasters know the secret identities of 25 agents.Their teammates know the agents only by their CODENAMES. Connected Play: https://codenames.game/ Instructions: https://czechgames.com/en/codenames/video/',
       // userCreator: ObjectId('62311d449bd3bc8378ded480')
@@ -82,7 +82,7 @@ const gamesTest = [
   new Game(
     {
       name: 'Scrabble',
-      image: 'temp',
+      image: 'https://raw.githubusercontent.com/Bill-the-dev/Unshelvd_MERN/main/z-images/bg-scrabble.webp',
       playerCount: {
         min: 2,
         max: 4
@@ -114,6 +114,241 @@ const gamesTest = [
       description: 'Dig into this fast paced card swapping game!',
       // userCreator: ObjectId('62311d449bd3bc8378ded480')
     },
+  ),
+  // added below:
+  new Game(
+    {
+      name: 'Catan',
+      image: 'https://raw.githubusercontent.com/Bill-the-dev/Unshelvd_MERN/main/z-images/bg-catan.webp',
+      playerCount: {
+        min: 3,
+        max: 4
+      },
+      category: [
+        'Board Game', 'Party', 'Strategy', 'Dice'
+      ],
+      gameType: [
+        'Unplugged'
+      ],
+      description: 'Players take on the roles of settlers, each attempting to build and develop holdings while trading and acquiring resources. Players gain victory points as their settlements grow; the first to reach a set number of victory points, typically 10, wins.',
+      // userCreator: ObjectId('62311d449bd3bc8378ded480')
+    }
+  ),
+  new Game(
+    {
+      name: 'Bananagrams',
+      image: 'https://raw.githubusercontent.com/Bill-the-dev/Unshelvd_MERN/main/z-images/bg-bananagrams.jpeg',
+      playerCount: {
+        min: 2,
+        max: 8
+      },
+      category: [
+        'Tile', 'Word', 'Quick'
+      ],
+      gameType: [
+        'Unplugged'
+      ],
+      description: "Bananagrams is a word game wherein lettered tiles are used to spell words. Gameplay involves arranging one's tiles into a grid of connected words faster than one's opponents. The object of the game is to be the first to complete a word grid after the pool of tiles has been exhausted.",
+      // userCreator: ObjectId('62311d449bd3bc8378ded480')
+    }
+  ),
+  new Game(
+    {
+      name: 'Ticket to Ride',
+      image: 'https://raw.githubusercontent.com/Bill-the-dev/Unshelvd_MERN/main/z-images/bg-ticket-to-ride.jpeg',
+      playerCount: {
+        min: 2,
+        max: 5
+      },
+      category: [
+        'Board Game', 'Strategy'
+      ],
+      gameType: [
+        'Unplugged'
+      ],
+      description: "Ticket to Ride is a cross-country train adventure in which players collect and play matching train cards to claim railway routes connecting cities throughout North America.The longer the routes, the more points they earn. Additional points come to those who can fulfill their Destination Tickets by connecting two distant cities, and to the player who builds the longest continuous railway.",
+      // userCreator: ObjectId('62311d449bd3bc8378ded480')
+    }
+  ),
+  new Game(
+    {
+      name: 'Cards Against Humanity',
+      image: 'https://raw.githubusercontent.com/Bill-the-dev/Unshelvd_MERN/main/z-images/bg-cards-against-humanity.webp',
+      playerCount: {
+        min: 4,
+        max: 20
+      },
+      category: [
+        'Board Game', 'Party'
+      ],
+      gameType: [
+        'Unplugged'
+      ],
+      description: "Cards Against Humanity is a party game for horrible people. The game is simple. Each round, one player asks a question from a black card, and everyone else answers with their funniest white card.",
+      // userCreator: ObjectId('62311d449bd3bc8378ded480')
+    }
+  ),
+  new Game(
+    {
+      name: 'Rummikub',
+      image: 'https://raw.githubusercontent.com/Bill-the-dev/Unshelvd_MERN/main/z-images/bg-rummikub.webp',
+      playerCount: {
+        min: 2,
+        max: 4
+      },
+      category: [
+        'Tile', 'Puzzle'
+      ],
+      gameType: [
+        'Unplugged'
+      ],
+      description: "Rummikub is a tile-based game combining elements of the card game rummy and mahjong. Players take turns putting down tiles from their racks into sets (groups or runs) of at least three, drawing a tile if they cannot play. The first player to use all their tiles scores a positive score based on the total of the other players' hands, while the losers get negative scores. An important feature of the game is that players can work with the tiles that have already been played.",
+      // userCreator: ObjectId('62311d449bd3bc8378ded480')
+    }
+  ),
+  new Game(
+    {
+      name: 'Sushi Go Party!',
+      image: 'https://raw.githubusercontent.com/Bill-the-dev/Unshelvd_MERN/main/z-images/bg-sushi-go-party.png',
+      playerCount: {
+        min: 2,
+        max: 8
+      },
+      category: [
+        'Board Game', 'Party', 'Strategy'
+      ],
+      gameType: [
+        'Unplugged'
+      ],
+      description: "It's a party platter of Mega Maki, Super sashimi, and endless edamame in this expanded version of the best-selling card game. You still earn points by picking winning sushi combos, but now you can customize each game by choosing a La carte from a menu of more than 20 delectable dishes. What's more, up to 8 players can join in on the sushi-feast let the good times roll!",
+      // userCreator: ObjectId('62311d449bd3bc8378ded480')
+    }
+  ),
+  new Game(
+    {
+      name: 'Jenga',
+      image: 'https://raw.githubusercontent.com/Bill-the-dev/Unshelvd_MERN/main/z-images/bg-jenga.jpeg',
+      playerCount: {
+        min: 2,
+        max: 20
+      },
+      category: [
+        'Tile', 'Party'
+      ],
+      gameType: [
+        'Unplugged'
+      ],
+      description: "Players take turns removing one block from within the tower and placing it back on the top. Cross your fingers and hold your breath as the tower grows taller and more unstable with every move. See how many rounds you can go before the tower comes crashing down. The last person to successfully place a block before the tower tumbles is considered the winner.",
+      // userCreator: ObjectId('62311d449bd3bc8378ded480')
+    }
+  ),
+  new Game(
+    {
+      name: 'Uno',
+      image: 'https://raw.githubusercontent.com/Bill-the-dev/Unshelvd_MERN/main/z-images/bg-uno.avif',
+      playerCount: {
+        min: 2,
+        max: 20
+      },
+      category: [
+        'Playing Cards', 'Party', 'Quick'
+      ],
+      gameType: [
+        'Unplugged'
+      ],
+      description: "Players take turns matching a card in their hand with the current card shown on top of the deck either by color or number. Before playing your next to last card, you must say 'UNO'. The first player to play all of the cards in their hand in each round scores points for the cards their opponents are left holding. The first player to score 500 points wins the game.",
+      // userCreator: ObjectId('62311d449bd3bc8378ded480')
+    }
+  ),
+  new Game(
+    {
+      name: 'Clue',
+      image: 'https://raw.githubusercontent.com/Bill-the-dev/Unshelvd_MERN/main/z-images/bg-clue.jpeg',
+      playerCount: {
+        min: 3,
+        max: 6
+      },
+      category: [
+       'Board Game', 'Deduction'
+      ],
+      gameType: [
+        'Unplugged'
+      ],
+      description: "Clue is a murder mystery game where the object of the game is to determine who murdered the game's victim, where the crime took place, and which weapon was used. Each player assumes the role of one of the six suspects and attempts to deduce the correct answer by strategically moving around a game board representing the rooms of a mansion and collecting clues about the circumstances of the murder from the other players.",
+      // userCreator: ObjectId('62311d449bd3bc8378ded480')
+    }
+  ),
+  new Game(
+    {
+      name: 'Monopoly',
+      image: 'https://raw.githubusercontent.com/Bill-the-dev/Unshelvd_MERN/main/z-images/bg-monopoly.jpeg',
+      playerCount: {
+        min: 2,
+        max: 8
+      },
+      category: [
+        'Board Game', 'Strategy', 'Dice'
+      ],
+      gameType: [
+        'Unplugged'
+      ],
+      description: "Monopoly is a multi-player economics-themed board game. In the game, players roll two dice to move around the game board, buying and trading properties, and developing them with houses and hotels. Players collect rent from their opponents, with the goal being to drive them into bankruptcy.",
+      // userCreator: ObjectId('62311d449bd3bc8378ded480')
+    }
+  ),
+  new Game(
+    {
+      name: 'Sequence',
+      image: 'https://raw.githubusercontent.com/Bill-the-dev/Unshelvd_MERN/main/z-images/bg-sequence.webp',
+      playerCount: {
+        min: 2,
+        max: 12
+      },
+      category: [
+        'Board Game', 'Strategy', 'Team Play'
+      ],
+      gameType: [
+        'Unplugged'
+      ],
+      description: "Sequence is an abstract strategy board-and-card game. The object of the game is to form rows of five poker chips on the board by placing the chips on the board spaces corresponding to cards played from the player's hand.",
+      // userCreator: ObjectId('62311d449bd3bc8378ded480')
+    }
+  ),
+  new Game(
+    {
+      name: 'Pictionary',
+      image: 'https://raw.githubusercontent.com/Bill-the-dev/Unshelvd_MERN/main/z-images/bg-pictionary.jpeg',
+      playerCount: {
+        min: 2,
+        max: 20
+      },
+      category: [
+        'Pen & Paper', 'Party', 'Quick', 'Team Play'
+      ],
+      gameType: [
+        'Unplugged'
+      ],
+      description: "Pictionary is a charades-inspired word-guessing game. Teams take turns drawing and guessing as many words or phrases as possible in a timed round.",
+      // userCreator: ObjectId('62311d449bd3bc8378ded480')
+    }
+  ),
+  new Game(
+    {
+      name: 'Coup',
+      image: 'https://raw.githubusercontent.com/Bill-the-dev/Unshelvd_MERN/main/z-images/bg-coup.jpg',
+      playerCount: {
+        min: 3,
+        max: 6
+      },
+      category: [
+        'Board Game', 'Bluffing', 'Deduction'
+      ],
+      gameType: [
+        'Unplugged'
+      ],
+      description: "In the not too distant future, The government is run for profit by a new 'royal class' Of multi national CEOs. Their greed and absolute control of the economy has reduced all but a privileged few to lives of poverty and Desperation.Out of the oppressed masses rose The resistance, an underground organization focused on overthrowing these powerful rulers. The Valiant efforts of the resistance have created Discord, intrigue and weakness in the political courts of the nouveau royal, bringing the government to brink of collapse. But for you, a powerful government official, this is your opportunity to manipulate, bribe and bluff your way into absolute power. To be successful, you must destroy the influence of your rivals and drive them into Exile. In these Turbulent times there is only room for one to survive.",
+      // userCreator: ObjectId('62311d449bd3bc8378ded480')
+    }
   )
 ]
 
