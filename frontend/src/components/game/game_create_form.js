@@ -67,19 +67,18 @@ class CreateGameForm extends React.Component {
                     updatedUser.games = this.props.currentUser.games.concat(game.game.data._id)
                     this.props.updateUser(updatedUser)
                     this.props.history.push({pathname: `/library`})
+                    
                 })
                 .catch(err => console.log({err: err}))
-        // }
+    }
+
+    componentWillUnmount() {
+        this.props.removeGameErrors()
     }
 
     renderErrors() {
         return(
             <ul>
-                {/* {Object.keys(this.state.errors).map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {this.state.errors[error]}
-                    </li>
-                ))} */}
                 {
                     this.props.errors.map((err,i) => (
                         <li key={`error-${i}`}>
@@ -93,7 +92,7 @@ class CreateGameForm extends React.Component {
 
     render() {  
         // let gameErrors = this.props.errors
-        // debugger
+        debugger
         return (
             <div className='new-game-form-container'>
                 <h1 className='game-form-header'>Create a New Game</h1>

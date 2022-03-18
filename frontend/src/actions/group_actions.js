@@ -40,3 +40,11 @@ export const createGroup = group => dispatch => (
     .then(group => dispatch(receiveGroup(group)))
     .catch(err => dispatch(receiveGroupErrors(err)))
 )
+
+export const updateGroup = group => dispatch => {
+  return(
+    GroupAPIUtil.updateGroup(group)
+      .then(group => dispatch(receiveGroup(group)))
+      .catch(err => console.log(err))
+  )
+}

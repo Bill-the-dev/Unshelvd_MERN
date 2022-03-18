@@ -43,10 +43,16 @@ class CreateGroup extends React.Component {
           curGroup = group
         }
       })
-      // debugger
+      // ADD GROUP TO USER
       const updatedUser = this.props.currentUser;
       updatedUser.groups = this.props.currentUser.groups.concat(curGroup);
       this.props.updateUser(updatedUser);
+
+      // ADD USER TO GROUP
+      const updatedGroup = curGroup;
+      updatedGroup.users = curGroup.users.concat(this.props.currentUser._id);
+      this.props.updateGroup(curGroup)
+
       this.props.closeModal()
     }
   }
