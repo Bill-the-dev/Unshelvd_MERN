@@ -95,8 +95,8 @@ class CreateGameForm extends React.Component {
         // debugger
         return (
             <div className='new-game-form-container'>
-                <h1 className='game-form-header'>Create a New Game</h1>
                 <form className='new-game-form' onSubmit = {this.handleSubmit}>
+                <p className='game-form-header'>Create a New Game</p>
                     <div className='game-form-name'>
                         <label >Name: 
                             <input type='text' value={this.state.name} onChange={this.update('name')}/>

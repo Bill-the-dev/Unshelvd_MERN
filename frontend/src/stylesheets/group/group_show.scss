@@ -26,7 +26,8 @@
     font-family: $serif;
     font-weight: 700;
     font-size: 1.8rem;
-    border-bottom: 2px solid $text-blue;
+    // border-bottom: 2px solid $text-blue;
+    text-decoration: underline;
     cursor: default;
   }
 }
@@ -59,6 +60,7 @@
   display: grid;
   // border: $beige solid 2px;
   border-radius: 6px;
+    box-shadow: 2px 2px 8px black;
 }
 
 .gs-user-list-container {
@@ -74,7 +76,7 @@
     font-family: 'Bodoni Moda', serif;
     font-weight: 700;
     color: $text-blue;
-    border-bottom: solid 1px $text-blue;
+    text-decoration: underline;
   }
   overflow-y: auto;
 }

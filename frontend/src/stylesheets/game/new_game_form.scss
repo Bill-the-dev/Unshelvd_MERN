@@ -6,32 +6,35 @@
   // padding-top: 2vh;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(10, 1fr);
-  grid-row: 1 / 13;
+  grid-row: 1 / 11;
   grid-column: 1 / 13;
+  font: inherit;
 }
 
 .game-form-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  text-align: center;
   font-size: 2rem;
+  grid-column: 3/11;
   padding: 1%;
   // grid-row: 1/2;
-  // grid-column: 3/11;
 }
 
 .new-game-form {
   display: grid;
   height: 100%;
   width: 100%;
+  grid-column: 3/11;
 }
 
 .game-form-name {
   display: flex;
   grid-column: 3/11;
   // grid-row: 2/3;
-  padding-top: 3%;
+  padding-top: 2%;
   font-weight: bold;
   label{ 
     display: flex;
@@ -49,7 +52,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 3%;
+  padding-top: 2%;
   grid-column: 3/11;
   // grid-row: 3/4;
   span {
@@ -70,7 +73,7 @@
 }
 
 .game-form-category {
-  padding-top: 3%;
+  padding-top: 2%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -95,7 +98,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 3%;
+  padding-top: 2%;
   grid-column: 3/11;
   // grid-row: 5/6;
   h2 {
@@ -116,7 +119,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 3%;
+  padding-top: 2%;
   grid-column: 3/11;
   // grid-row: 6/7;
   h2 {
@@ -136,7 +139,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 3%;
+  padding-top: 2%;
   align-items: center;
   grid-column: 3/11;
   // grid-row: 7/8;
@@ -156,7 +159,7 @@
   display: flex;
   grid-column: 3/11;
   // grid-row: 8/9;
-  padding-top: 3%;
+  padding-top: 2%;
   font-weight: bold;
   label{ 
     display: flex;
@@ -173,7 +176,7 @@
   display: flex;
   // flex-direction: column;
   justify-content: center;
-  padding-top: 3%;
+  padding-top: 2%;
   align-items: center;
   grid-column: 3/11;
   // grid-row: 9/10;
