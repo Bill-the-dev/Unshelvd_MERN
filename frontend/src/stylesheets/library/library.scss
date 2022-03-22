@@ -15,74 +15,74 @@
   //   font-family: $serif;
   //   font-weight: 600;
   // }
+  
 }
 
 .welcome-msg--library {
   font-family: $serif;
   font-weight: bold;
   grid-row: 2 / 3;
-  grid-column: 4 / 7;
+  grid-column: 3 / 7;
   font-size: 1.5rem;
   color: $body-lightest;
   text-shadow: 1px 1px black;
 
 }
 
-.button--add-game {
-  grid-row: 2 / 3;
-  grid-column: 9 / 10;
+.button {
   text-decoration: none;
-    button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 66%;
-      border-radius: 4px;
-      font-family: $sans-serif;
-      font-weight: bold;
-      color: $dark-green;
-      font-size: .75rem;
-      padding: .1rem;
-      // border: 2px solid $dark-green;
-      background: linear-gradient(225deg,$lightest-tan, $body-lightest);
-      
-    }
-    button:hover {
-      background: $body-lightest;
-      box-shadow:  4px 4px 4px black;
-      color: $light-green;
-      box-shadow: inset;
-      cursor: pointer;
-    }
-    button:active{
-      transform: scale(0.98);
-      box-shadow:  4px 4px 4px black;
-    }
-
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 66%;
+    border-radius: 4px;
+    font-family: $sans-serif;
+    font-weight: bold;
+    color: $dark-green;
+    font-size: .75rem;
+    padding: .2rem;
+    // border: 2px solid $dark-green;
+    background: linear-gradient(225deg,$lightest-tan, $body-lightest);
+    
+  }
+  button:hover {
+    background: $body-lightest;
+    box-shadow:  4px 4px 4px black;
+    color: $light-green;
+    box-shadow: inset;
+    cursor: pointer;
+  }
+  button:active{
+    transform: scale(0.98);
+    box-shadow:  4px 4px 4px black;
+  }
 }
 
+.button--add-game {
+  grid-row: 2 / 3;
+  grid-column: 10 / 11;
+}
 
 .library-index-container {
   // border: 1px solid gray;
   border-radius: 4px;
   grid-row: 3 / 12;
-  grid-column: 4 / 10;
+  grid-column: 3 / 11;
   display: flex;
   flex-wrap: wrap;
-  column-gap: normal;
-  row-gap: normal;
-
 }
 
 .library-index-list {
-  margin-top: 5vh;
+  margin-top: 1rem;
+  padding-bottom: 3rem;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   // height: 100%;
-
-  
   justify-content: space-around;
+  row-gap: 2rem;
+  column-gap: 2rem;
 }
 
