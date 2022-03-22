@@ -1,8 +1,8 @@
 import React from 'react';
 
-function SuggestItem() {
+function SuggestItem(props) {
 
-  const {game} = this.props;
+  const {game} = props;
 
   return (
       <div className='suggest-item-container'>
