@@ -23,12 +23,14 @@ class GroupShow extends React.Component {
         let groupGamesArr = []
         this.props.currentGroup.users?.map((user) => {
           let userGames = this.props.allUsers[user]?.games
-          // filter here 
-          // try this now
           groupGamesArr = groupGamesArr.concat(userGames)
           console.log(groupGamesArr)
         })
-        this.setState({groupGames: groupGamesArr})
+        // prevent dups
+        let groupGamesSet = new Set(groupGamesArr);
+        let groupGamesRes = Array.from(groupGamesSet);
+        // console.log(`this is groupGameRes: ${groupGamesRes}`);
+        this.setState({groupGames: groupGamesRes})
       })
       .then(() => {
         let gameObjectsArr = []

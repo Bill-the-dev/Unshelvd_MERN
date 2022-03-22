@@ -4,20 +4,36 @@ import { Link } from "react-router-dom";
 class GroupIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      currentUserGroups: []
+    }
   }
 
   componentDidMount() {
     this.props.fetchGroup(this.props.match.params.id)
       .then(() => console.log(this.props));
     this.props.fetchGroups()
-      .then(() => console.log(this.props))
+      .then(() => this.setState({ currentUserGroups: Object.values(this.props.userGroups).filter(group => group.users.includes(this.props.currentUser.id)) }))
+  }
+
+  componentDidUpdate(prevState) {
+    if (this.state.currentUserGroups !== prevState.currentUserGroups) {
+
+    }
+
   }
 
   render() {
     const {currentUser, userGroups, openModal} = this.props;
     if (!userGroups) return null;
     if (!currentUser) return null;
+    // if (!this.state.currentUserGroups) return null;
+    // let currentUserGroups = userGroups?.map((userGroup) => {
+    //   if Object.values()
+    // })
 
+
+    debugger
     return (
       <div className="group-index-container">
         <div className="gi-sub-header">
@@ -30,22 +46,31 @@ class GroupIndex extends React.Component {
         <div className="gi-content">
           <div className="gi-groups-container">
             <ul className="gi-group-list">
-              {
-                userGroups?.map((group, index) => {
-                  return ( 
-                    (currentUser.id === group.userGroupCreator) 
-                      ? <Link id="gi-group-link" to={`/groups/${group._id}`}><li className="gi-group-item" key={group.id} >
+              { 
+
+                (this.state.currentUserGroups?.length > 0)
+                ? this.state.currentUserGroups?.map((group, index) => {
+                    return ( 
+                      (currentUser.id === group.userGroupCreator) 
+                        ? <Link id="gi-group-link" to={`/groups/${group._id}`}><li className="gi-group-item" key={group.id} >
+                            <p className="gi-group-name">{group.name}</p>
+                            <p className="gi-group-total">{`${group.users.length} members`}</p>
+                            <p className="gi-group-founder">Founder</p>
+                        </li></Link>
+                        : <Link id="gi-group-link" to={`/groups/${group._id}`}> <li className="gi-group-item" key={group.id}>
                           <p className="gi-group-name">{group.name}</p>
                           <p className="gi-group-total">{`${group.users.length} members`}</p>
-                          <p className="gi-group-founder">Founder</p>
-                      </li></Link>
-                      : <Link id="gi-group-link" to={`/groups/${group._id}`}> <li className="gi-group-item" key={group.id}>
-                        <p className="gi-group-name">{group.name}</p>
-                        <p className="gi-group-total">{`${group.users.length} members`}</p>
-                        <p className="gi-group-member">Member</p>
-                      </li></Link>
-                    )
-                })
+                          <p className="gi-group-member">Member</p>
+                        </li></Link>
+                      )
+                  })
+                : 
+                  <div className="gi-empty">
+                    <span className="gi-empty__text">Looks like you don't have any groups yet!</span>
+                    <span className="gi-empty__text">Groups you've Joined or Created will all show here.</span>
+                  </div>
+
+                
               }
             </ul>
           </div>
