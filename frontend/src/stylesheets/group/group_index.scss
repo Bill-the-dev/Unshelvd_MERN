@@ -9,53 +9,48 @@
   height: 100%;
   width: 100%;
   overflow-y: auto;
-  // padding-left: 10%;
-  // padding-right: 10%;
   background-color: $body-lightest;
   background: linear-gradient(171deg, rgba(245,241,231,1) 10%, rgba(255,254,252,1) 100%);
-
-  h1 {
-    font-family: 'Bodoni Moda', serif;
-    font-weight: 700;
-    font-size: 1.6rem;
-    text-shadow: 2px;
-    border-bottom: 2px solid $dark-blue;
-    color: $text-blue;
-    cursor: default;
-  }
 }
 
 .gi-sub-header {
   // border: 1px solid gray;
   display: flex;
   grid-row: 1 / 3;
-  grid-column: 1 / 13;
+  grid-column: 3 / 11;
   justify-content: space-between;
   align-items: flex-end;
   padding: 1rem;
-  padding-left: 6.5rem;
-  padding-right: 6.5rem;
   font-family: 'Montserrat', sans-serif;
-  // color: $text-blue;
   color: $dark-brown;
   font-weight: 500;
   font-size: 1.1rem;
+    
+  h1 {
+    font-family: 'Bodoni Moda', serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    text-shadow: 2px;
+    border-bottom: 2px solid $dark-blue;
+    color: $dark-brown;
+    cursor: default;
+    justify-self: flex-start;
+  }
+}
+
+.gi-buttons {
+  display: flex;
+  flex-direction: row;
 }
 
 .gi-content {
   // border: 1px solid gray;
   grid-row: 3 / 13;
-  grid-column: 1 / 13;
+  grid-column: 3 / 11;
   display: flex;
-  padding-left: 6rem;
-  padding-right: 6rem;
-  // width: 100%;
 }
 
 .gi-groups-container {
-  // border: 1px solid gray;
-  grid-row: 3 / 12;
-  grid-column: 4 / 13;
   display: flex;
   flex-wrap: wrap;
   overflow-y: auto;
@@ -67,8 +62,6 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  // height: 100%;
-  padding-top: 1rem;
   justify-content: space-around;
 
 }
@@ -99,7 +92,7 @@
 }
 
 .gi-group-name {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   padding-bottom: 0.25rem;
   font-family: 'Bodoni Moda', serif;
   font-weight: 700;
@@ -107,14 +100,14 @@
 }
 
 .gi-group-total {
-  font-size: 0.8rem;
+  font-size: 1rem;
   padding-bottom: 0.3rem;
   padding-top: 1rem;
 
 }
 
 .gi-group-founder {
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   padding: 0.3rem;
   border: 1px solid $body-lightest;
   border-radius: 3px;
@@ -135,11 +128,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid $dark-brown;
   
   font-size: 0.8rem;
   border-radius: 4px;
   padding: 0.5rem;
   width: 6rem;
+  margin-left: 0.5rem;
+
   &:hover {
     transform: scale(1.05);
     transition: all .4s ease;
@@ -155,11 +151,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid $dark-brown;
   
   font-size: 0.8rem;
   border-radius: 4px;
   padding: 0.5rem;
   width: 6rem;
+  margin-left: 0.5rem;
   &:hover {
     transform: scale(1.05);
     transition: all .4s ease;
