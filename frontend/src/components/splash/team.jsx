@@ -5,6 +5,7 @@ import {faLinkedin} from '@fortawesome/fontawesome-free-brands'
 import { Link } from "react-router-dom";
 
 function TeamShow() {
+  // const bill = 
   return (
     <div className="team-container">
       <h1>Meet the team behind Unshelvd</h1>
@@ -23,6 +24,7 @@ function TeamShow() {
           </button>
         </div>
         <div className="team-emily">
+          <img src="./emily.jpg"/>
           <p>Emily Lichtenberg</p>
           <button>
             <a href="https://github.com/emilylichtenberg" target='_blank'>

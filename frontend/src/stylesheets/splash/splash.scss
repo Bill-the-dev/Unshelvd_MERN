@@ -26,9 +26,10 @@
   height: 100%;
   text-align: center;
   color: $dark-brown;
+  font-size: 1.25rem;
   h1 {
     padding: 5%;
-    font-size: larger;
+    font-size: 1.5rem;
     font-weight: bold;
     transform: scaleY(1.1);
   }
@@ -41,7 +42,7 @@
   p {
     text-align: center;
     font-size: smaller;
-    padding: 0 3%;
+    padding: 1% 5% 0% 5%;
     line-height: 1.3;
   }
 }
@@ -52,8 +53,8 @@
   text-align: center;
   color: $dark-brown;
   h1 {
-    padding: 5%;
-    font-size: larger;
+    padding: 2%;
+    font-size: 1.4rem;
     font-weight: bold;
     transform: scaleY(1.1);
   }
