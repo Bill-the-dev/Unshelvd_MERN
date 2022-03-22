@@ -59,38 +59,43 @@ class SignupForm extends React.Component {
     return (
       <div className="signup-form-container">
         <div className="signup-form">
-        <h1><Link to='./'>Unshelved</Link></h1>
+        <h1><Link to='/'>Unshelved</Link></h1>
         <h2>Sign Up</h2>
         <h4><Link to='/login'>Log In</Link> instead</h4>
           <form onSubmit={this.handleSubmit}>
-  
+              {/* <div> */}
                 <input type="text"
                   value={this.state.email}
                   onChange={this.update('email')}
                   placeholder="Email"
+                  className='form-input'
                 />
   
                 <input type="text"
                   value={this.state.username}
                   onChange={this.update('username')}
                   placeholder="Username"
+                  className='form-input'
                 />
   
                 <input type="password"
                   value={this.state.password}
                   onChange={this.update('password')}
                   placeholder="Password"
+                  className='form-input'
                 />
   
                 <input type="password"
                   value={this.state.password2}
                   onChange={this.update('password2')}
                   placeholder="Confirm Password"
+                  className='form-input'
                 />
               <br/>
-              <input className='signup' type="submit" value="Sign Up" />
-              <button className="form-button" onClick={() => loginDemo()}>Demo Log In</button>
+              <input className='button button--session' type="submit" value="Sign Up" />
+              <button className="button button--session" onClick={() => loginDemo()}>Demo Log In</button>
               {this.renderErrors()}
+              {/* </div> */}
           </form>
         </div>
       </div>
