@@ -22,8 +22,10 @@ class GroupIndex extends React.Component {
       <div className="group-index-container">
         <div className="gi-sub-header">
           <h1>Your Groups</h1>
-          <div className="btn btn--create-group" onClick={() => openModal('addGroup')}>Create Group</div>          
-          <div className="btn btn--join-group" onClick={() => openModal('joinGroup')}>Join Group</div>          
+          <div className="gi-buttons">
+            <div className="btn btn--create-group" onClick={() => openModal('addGroup')}>Create Group</div>          
+            <div className="btn btn--join-group" onClick={() => openModal('joinGroup')}>Join Group</div>          
+          </div>
         </div>
         <div className="gi-content">
           <div className="gi-groups-container">
