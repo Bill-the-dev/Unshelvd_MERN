@@ -53,9 +53,9 @@ class CreateGroup extends React.Component {
           // debugger
           this.props.updateGroup(updatedGroup)
           
-          this.props.closeModal()
         }
         
+        this.props.closeModal()
         setTimeout(this.props.history.push({pathname: `/groups/${curGroup._id}`}),1000)
     }
   }
