@@ -65,23 +65,25 @@ class LoginForm extends React.Component {
           <h2>Log In</h2>
           <h4><Link to='/signup'>Sign Up</Link> instead</h4>
           <form onSubmit={this.handleSubmit}>
-            <div>
+            {/* <div> */}
                 <input type="text"
                   value={this.state.username}
                   onChange={this.update('username')}
                   placeholder="Username"
+                  className='form-input'
                 />
-              <br/>
+              {/* <br/> */}
                 <input type="password"
                   value={this.state.password}
                   onChange={this.update('password')}
                   placeholder="Password"
+                  className='form-input'
                 />
               <br/>
-              <input className='login' type="submit" value="Log In" />
-              <button className="form-button" onClick={() => loginDemo()}>Demo Log In</button>
+              <input className='button button--session' type="submit" value="Log In" />
+              <button className="button button--session" onClick={() => loginDemo()}>Demo Log In</button>
               {this.renderErrors()}
-            </div>
+            {/* </div> */}
           </form>
         </div>
       </div>

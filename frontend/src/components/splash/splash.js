@@ -22,7 +22,6 @@ class Splash extends React.Component {
           <div>
             <p>"I dunno, what do you want to do?"</p>
             <p>Unshelvd is here to solve your friend group's indecision</p>
-
           </div>
         </div>
         <div className='splash-row-4'>
