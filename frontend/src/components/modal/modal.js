@@ -36,7 +36,6 @@ const Modal = ({ modal, closeModal }) => {
             component = <TeamShow />;
             break;
         case modal:
-            debugger
              component = <GameModal modal={modal} />;
              return (
                 <div className="modal-background" onClick={closeModal}>
