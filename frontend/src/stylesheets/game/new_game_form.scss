@@ -2,6 +2,7 @@
   height: 100%;
   // border: 1px solid black;
   color: $dark-blue;
+  overflow-y: auto;
   padding-top: 8vh;
 }
 
@@ -12,19 +13,27 @@
   align-items: center;
   font-size: 2rem;
   padding: 1%;
+  // grid-row: 1/2;
+  // grid-column: 3/11;
 }
 
 .new-game-form {
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  grid-row: 1 / 13;
+  grid-column: 1 / 13;
   display: grid;
   height: 100%;
-  grid-template-columns: 0.5fr 2fr 5fr 2fr 0.5fr;
-  grid-template-rows: 0.05fr 1fr 2fr 2fr 2fr 2fr 2fr 2fr 1fr 1fr 5fr;
+  width: 100%;
+  div {
+    padding-top: 2%;
+  }
 }
 
 .game-form-name {
   display: flex;
-  grid-column: 2/5;
-  grid-row: 2/3;
+  grid-column: 3/11;
+  // grid-row: 2/3;
   font-weight: bold;
   label{ 
     display: flex;
@@ -42,8 +51,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  grid-column: 2/5;
-  grid-row: 3/4;
+  grid-column: 3/11;
+  // grid-row: 3/4;
   span {
     font-weight: bold;
   }
@@ -66,8 +75,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  grid-column: 2/5;
-  grid-row: 4/5;
+  grid-column: 3/11;
+  // grid-row: 4/5;
   h2 {
     font-weight: bold;
   }
@@ -86,8 +95,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  grid-column: 2/5;
-  grid-row: 5/6;
+  grid-column: 3/11;
+  // grid-row: 5/6;
   h2 {
     font-weight: bold;
   }
@@ -106,8 +115,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  grid-column: 2/5;
-  grid-row: 6/7;
+  grid-column: 3/11;
+  // grid-row: 6/7;
   h2 {
     font-weight: bold;
   }
@@ -126,8 +135,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  grid-column: 2/5;
-  grid-row: 7/8;
+  grid-column: 3/11;
+  // grid-row: 7/8;
   label{ 
     text-align: center;
     font-weight: bold;
@@ -142,8 +151,8 @@
 
 .game-form-rules {
   display: flex;
-  grid-column: 2/5;
-  grid-row: 8/9;
+  grid-column: 3/11;
+  // grid-row: 8/9;
   font-weight: bold;
   label{ 
     display: flex;
@@ -161,8 +170,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  grid-column: 2/5;
-  grid-row: 9/10;
+  grid-column: 3/11;
+  // grid-row: 9/10;
   input {
     border: 1px solid $dark-blue;
     background-color: white;
@@ -178,8 +187,8 @@
 }
 
 .game-errors {
-  grid-column: 2/5;
-  grid-row: 10/11;
+  grid-column: 3/11;
+  // grid-row: 10/11;
   display: flex;
   flex-direction: column;
   justify-content: center;

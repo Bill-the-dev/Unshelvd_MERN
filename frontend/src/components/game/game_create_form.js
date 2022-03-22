@@ -190,7 +190,7 @@ class CreateGameForm extends React.Component {
                         </label>
                     </div>
                     <div className='game-form-submit'>
-                        <input type='submit' value='Create Game'/>
+                        <input className='btn' type='submit' value='Create Game'/>
                     </div>
                     <div className='game-errors'>
                         {
