@@ -250,7 +250,7 @@ class SuggestForm extends React.Component{
                                 return(
                                 <li>
                                     {/* <LibraryItem game={game}/> */}
-                                    <SuggestItem game={game} onClick={() => openModal('Item')}/>
+                                    <SuggestItem game={game} openModal={this.props.openModal}/>
                                 </li>
                                 )
                             })}

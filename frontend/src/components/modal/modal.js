@@ -3,10 +3,10 @@ import { connect } from "react-redux";
 import { closeModal } from "../../actions/modal_actions";
 import LoginFormContainer from '../session/login_form_container'
 import SignupFormContainer from '../session/signup_form_container'
-// import GameShowContainer from "../game/game_show_container";
+import GameShowContainer from "../game/game_show_container";
 import AboutShow from "../splash/about";
 import TeamShow from "../splash/team";
-import GameModal from "../game/game_modal"
+import GameModal from "../game/game_modal";
 import { withRouter } from "react-router-dom";
 
 
@@ -35,18 +35,17 @@ const Modal = ({ modal, closeModal }) => {
         case 'Team':
             component = <TeamShow />;
             break;
-        case 'Item':
-             component = <GameModal />;
-             break;
-        // case modal:
-        //     component = <GameShowContainer gameId={modal} />; //e.g. modal==1
-        //     return (
-        //         <div className="modal-background" onClick={closeModal}>
-        //             <div className="modal-content-game" onClick={e => e.stopPropagation()}>
-        //                 {component}
-        //             </div>
-        //         </div>
-        //     );
+        case modal:
+            debugger
+             component = <GameModal modal={modal} />;
+             return (
+                <div className="modal-background" onClick={closeModal}>
+                    <div className="modal-child" onClick={e => e.stopPropagation()}>
+                        {component}
+                    </div>
+                </div>
+             )
+      
         default:
             return null;
     };
