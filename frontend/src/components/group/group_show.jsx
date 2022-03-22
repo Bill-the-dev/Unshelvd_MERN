@@ -23,6 +23,8 @@ class GroupShow extends React.Component {
         let groupGamesArr = []
         this.props.currentGroup.users?.map((user) => {
           let userGames = this.props.allUsers[user]?.games
+          // filter here 
+          // try this now
           groupGamesArr = groupGamesArr.concat(userGames)
           console.log(groupGamesArr)
         })
