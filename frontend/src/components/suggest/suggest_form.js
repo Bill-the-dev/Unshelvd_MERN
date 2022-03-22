@@ -1,5 +1,6 @@
 import React from 'react';
 import LibraryItem from '../library/library_item'
+import SuggestItem from './suggest_item';
 
 class SuggestForm extends React.Component{
     constructor(props) {
@@ -247,7 +248,8 @@ class SuggestForm extends React.Component{
                             {this.state.filteredGames.map((game) => {
                                 return(
                                 <li>
-                                    <LibraryItem game={game}/>
+                                    {/* <LibraryItem game={game}/> */}
+                                    <SuggestItem game={game}/>
                                 </li>
                                 )
                             })}
