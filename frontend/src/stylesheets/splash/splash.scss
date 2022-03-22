@@ -85,7 +85,7 @@
   height: 5rem;
   width: 5rem;
   border-radius: 50%;
-  margin-top: 15%;
+  margin-top: 5%;
 }
 
 .splash-container {
@@ -135,7 +135,7 @@
   align-items: center;
   :any-link {
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     color: $light-blue;
     padding: 2%;
     border: 1px solid $dark-blue;
@@ -165,7 +165,7 @@
     background-color: fade-out($color: $lightest-tan, $amount: 0.15);
     color: $dark-blue;
     border-radius: 4px;
-
+    font-size: 1.3rem;
   }
 }
 

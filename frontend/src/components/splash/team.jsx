@@ -42,7 +42,7 @@ function TeamShow() {
           </button>
         </div>
         <div className="team-ethan">
-        <img src={ethan} className='team-photo'/>
+          <img src={ethan} className='team-photo'/>
           <p>Ethan Lam</p>
           <button>
             <a href="https://github.com/EthanLam17" target='_blank'>
@@ -56,7 +56,7 @@ function TeamShow() {
           </button>
         </div>
         <div className="team-kirby">
-        <img src={kirby} className='team-photo'/>
+          <img src={kirby} className='team-photo'/>
           <p>Kirby Neaton</p>
           <button>
             <a href="https://github.com/kirbyneaton" target='_blank'>
