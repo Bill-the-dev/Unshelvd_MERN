@@ -57,17 +57,17 @@ class CreateGameForm extends React.Component {
         };
 
         let submitGame = async () => this.props.createGame(game);
-        
-            submitGame()
-                .then(game => { 
-                    // this.props.currentUser.games.concat(game.game.data._id)
+        // let asyncUpdateUser = async () => {
+        //     const updatedUser = this.props.currentUser
+        //     updatedUser.games = this.props.currentUser.games.concat(game.game.data._id)
+        // }
+        submitGame()
+        .then(game => { 
                     const updatedUser = this.props.currentUser
-                    // debugger
-
                     updatedUser.games = this.props.currentUser.games.concat(game.game.data._id)
+                    // asyncUpdateUser
                     this.props.updateUser(updatedUser)
-                    this.props.history.push({pathname: `/library`})
-                    
+                    setTimeout(this.props.history.push({pathname: `/library`}),1000)
                 })
                 .catch(err => console.log({err: err}))
     }

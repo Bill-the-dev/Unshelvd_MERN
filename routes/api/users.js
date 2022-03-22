@@ -60,8 +60,8 @@ router.post("/register", (req, res) => {
         username: req.body.username,
         email: req.body.email,
         password: req.body.password,
-        groups: ['623364d13d62d71018de43e9','6233840373e6a199a3e359e1'],
-        games: ['6230b9b032774c1b65713ac6','6230ba4132774c1b65713ac9']
+        // groups: ['623364d13d62d71018de43e9','6233840373e6a199a3e359e1'],
+        // games: ['6230b9b032774c1b65713ac6','6230ba4132774c1b65713ac9']
       });
 
       
@@ -132,8 +132,8 @@ router.patch('/:id', (req,res) => {
   const updatedUser = req.body.user 
 
   User.findByIdAndUpdate(userID, {games: updatedUser.games, groups: updatedUser.groups})
-  // .then(res => console.log({res}))
-  // .catch(err => console.log({err}))
+  .then(res => console.log({res}))
+  .catch(err => console.log({err}))
 })
 
 module.exports = router;
