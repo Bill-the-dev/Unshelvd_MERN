@@ -15,4 +15,4 @@ function AboutShow() {
   )
 }
 
-export default AboutShow
+export default AboutShow;
