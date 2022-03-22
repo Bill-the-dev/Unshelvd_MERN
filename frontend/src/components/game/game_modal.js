@@ -1,13 +1,16 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {updateUser} from '../../actions/user_actions';
+import {withRouter} from 'react-router-dom'
 
  function GameModal(props) {
 
-  const { modal, currentUser, currentGame, updateUser, history} = props;
+  const { modal, currentUser, updateUser, history} = props;
 
   const addGameLibrary = () => {
     let updatedUser = currentUser
       // debugger
-      updatedUser.games = currentUser.games.concat(currentGame._id)
+      updatedUser.games = currentUser.games.concat(modal._id)
       updateUser(updatedUser)
       // debugger
       history.push({pathname: '/library'})
@@ -42,4 +45,17 @@ import React from 'react';
    )
  }
 
- export default GameModal;
+ const mapStateToProps = (state) => {
+    return ({
+      currentUser: state.entities.users.currentUser,
+    })
+ }
+
+ const mapDispatchToProps = (dispatch) => {
+   return ({
+    updateUser: () => dispatch(updateUser())
+   })
+ }
+
+
+ export default withRouter(connect(mapStateToProps, mapDispatchToProps)(GameModal));
