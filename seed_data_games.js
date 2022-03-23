@@ -18,9 +18,9 @@ mongoose
 const gamesTest = [
   new Game(
     {
-      _id: '623b4c050222f83386e47760',  
+    _id: '623b4c050222f83386e47760',  
     name: 'Dragoon',
-      image: 'https://cf.geekdo-images.com/yXBV30yleOlJyY12tF6_ew__imagepagezoom/img/bXvKFuYxRIexKegX05UkVH9UNbw=/fit-in/1200x900/filters:no_upscale():strip_icc()/pic4200390.png',
+    image: 'https://cf.geekdo-images.com/yXBV30yleOlJyY12tF6_ew__imagepagezoom/img/bXvKFuYxRIexKegX05UkVH9UNbw=/fit-in/1200x900/filters:no_upscale():strip_icc()/pic4200390.png',
     playerCount: {
       min: 2,
       max: 4
@@ -41,7 +41,7 @@ const gamesTest = [
     {
     _id: '62346dc0e58d7eaa48659746', 
     name: 'Crazy Eights',
-    image: 'temp',
+    image: 'https://github.com/Bill-the-dev/Unshelvd_MERN/blob/main/z-images/playing-cards-3.png?raw=true',
     playerCount: {
       min: 2,
       max: 8
@@ -60,7 +60,7 @@ const gamesTest = [
     {
       _id: '62346dc0e58d7eaa48659748',
       name: 'Wingspan',
-      image: 'temp',
+      image: 'https://raw.githubusercontent.com/Bill-the-dev/Unshelvd_MERN/main/z-images/bg-wingspan.webp',
       playerCount: {
       min: 1,
       max: 5
@@ -79,7 +79,7 @@ const gamesTest = [
     {
     _id: '62346dc0e58d7eaa48659749',
     name: 'Onitama',
-    image: 'temp',
+    image: 'https://raw.githubusercontent.com/Bill-the-dev/Unshelvd_MERN/main/z-images/bg-onitama.webp',
     playerCount: {
       min: 2,
       max: 2
@@ -100,7 +100,7 @@ const gamesTest = [
     {
       _id: '62346dc0e58d7eaa4865974a',
       name: 'Codenames',
-      image: 'temp',
+      image: 'https://raw.githubusercontent.com/Bill-the-dev/Unshelvd_MERN/main/z-images/bg-codenames.webp',
       playerCount: {
         min: 2,
         max: 8
@@ -138,7 +138,7 @@ const gamesTest = [
     {
       _id: '62346dc0e58d7eaa4865974c',
       name: 'Spoons',
-      image: 'temp',
+      image: 'https://github.com/Bill-the-dev/Unshelvd_MERN/blob/main/z-images/playing-cards-3.png?raw=true',
       playerCount: {
         min: 3,
         max: 1000
@@ -405,7 +405,7 @@ const gamesTest = [
   //   {
   //     _id: '623b55450222f83386e47761',
   //   name: 'Left, Center, Right (LCR)',
-  //   image: '',
+  //   image: 'https://github.com/Bill-the-dev/Unshelvd_MERN/blob/main/z-images/playing-cards-3.png?raw=true',
   //   playerCount: {
   //     min: 3,
   //     max: 10
@@ -414,7 +414,7 @@ const gamesTest = [
   //     "Playing Cards", "Dice"
   //   ],
   //   gameType: [
-
+  //     "Unplugged"   
   //   ],
   //   description: 'Roll your way to victory in this dice game by being the last player to hold their chips! https://bicyclecards.com/how-to-play/left-center-right/',
   //   userCreator: '623b4d3143f29e517e625064'
