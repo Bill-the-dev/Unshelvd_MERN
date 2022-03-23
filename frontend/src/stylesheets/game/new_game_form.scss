@@ -1,30 +1,42 @@
 .new-game-form-container {
-  height: 100%;
+  // height: 100%;
   // border: 1px solid black;
   color: $dark-blue;
-  padding-top: 8vh;
+  overflow-y: auto;
+  // padding-top: 2vh;
+  grid-row: 1 / 11;
+  grid-column: 1 / 13;
+  font: inherit;
 }
 
 .game-form-header {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: baseline;
   align-items: center;
+  // text-align: center;
+  align-self: flex-end;
   font-size: 2rem;
+  grid-column: 3/11;
   padding: 1%;
+  font-family: $serif;
+  // grid-row: 1/2;
 }
 
 .new-game-form {
   display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(10, 1fr);
   height: 100%;
-  grid-template-columns: 0.5fr 2fr 5fr 2fr 0.5fr;
-  grid-template-rows: 0.05fr 1fr 2fr 2fr 2fr 2fr 2fr 2fr 1fr 1fr 5fr;
+  width: 100%;
+  grid-column: 3/11;
 }
 
 .game-form-name {
   display: flex;
-  grid-column: 2/5;
-  grid-row: 2/3;
+  grid-column: 3/11;
+  // grid-row: 2/3;
+  padding-top: 2%;
   font-weight: bold;
   label{ 
     display: flex;
@@ -34,6 +46,8 @@
   }
   input {
     margin-left: 1%;
+    padding: .5%;
+    width: 20%;
   }
 }
 
@@ -42,8 +56,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  grid-column: 2/5;
-  grid-row: 3/4;
+  padding-top: 2%;
+  grid-column: 3/11;
+  // grid-row: 3/4;
   span {
     font-weight: bold;
   }
@@ -62,12 +77,13 @@
 }
 
 .game-form-category {
+  padding-top: 2%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  grid-column: 2/5;
-  grid-row: 4/5;
+  grid-column: 3/11;
+  // grid-row: 4/5;
   h2 {
     font-weight: bold;
   }
@@ -86,8 +102,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  grid-column: 2/5;
-  grid-row: 5/6;
+  padding-top: 2%;
+  grid-column: 3/11;
+  // grid-row: 5/6;
   h2 {
     font-weight: bold;
   }
@@ -106,8 +123,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  grid-column: 2/5;
-  grid-row: 6/7;
+  padding-top: 2%;
+  grid-column: 3/11;
+  // grid-row: 6/7;
   h2 {
     font-weight: bold;
   }
@@ -125,9 +143,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-top: 2%;
   align-items: center;
-  grid-column: 2/5;
-  grid-row: 7/8;
+  grid-column: 3/11;
+  // grid-row: 7/8;
   label{ 
     text-align: center;
     font-weight: bold;
@@ -137,13 +156,16 @@
     width: 30%;
     height: 70%;
     align-self: center;
+    padding: .5%;
+    margin-top: .5%;
   }
 }
 
 .game-form-rules {
   display: flex;
-  grid-column: 2/5;
-  grid-row: 8/9;
+  grid-column: 3/11;
+  // grid-row: 8/9;
+  padding-top: 2%;
   font-weight: bold;
   label{ 
     display: flex;
@@ -158,28 +180,31 @@
 
 .game-form-submit {
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   justify-content: center;
+  padding-top: 2%;
   align-items: center;
-  grid-column: 2/5;
-  grid-row: 9/10;
+  grid-column: 3/11;
+  // grid-row: 9/10;
   input {
     border: 1px solid $dark-blue;
     background-color: white;
-    border-radius: 2px;
-    padding: .5%;
+    border-radius: 4px;
+    padding: .5rem;
     color: $dark-blue;
     cursor: pointer;
     &:hover {
       background-color: $light-blue;
       color: white;
+      box-shadow: 2px 2px 10px black;
     }
+    // background: linear-gradient(225deg,$lightest-tan, $body-lightest)
   }
 }
 
 .game-errors {
-  grid-column: 2/5;
-  grid-row: 10/11;
+  grid-column: 3/11;
+  // grid-row: 10/11;
   display: flex;
   flex-direction: column;
   justify-content: center;
