@@ -1,0 +1,116 @@
+// .modal-child_game {
+//   position: absolute;
+//   background-color: $lightest-tan;
+//   top: 50%;
+//   left: 50%;
+//   height: 55vh;
+//   min-height: 300px;
+//   width: 20vw;
+//   min-width: 400px;
+//   transform: translate(-50%, -50%);
+//   border-radius: 6px;
+//   box-shadow: 3px 3px 20px red;
+//   padding: 3%;
+// }
+
+.modal-child_game {
+  position: absolute;
+  background-color: $body-lightest;
+  top: 50%;
+  left: 50%;
+  height: 80vh;
+  min-height: 500px;
+  width: 30vw;
+  min-width: 400px;
+  transform: translate(-50%, -50%);
+  border-radius: 6px;
+  box-shadow: 3px 3px 20px black;
+  padding: 3%;
+}
+
+
+.game-modal-container {
+  overflow-y: auto;
+  background: linear-gradient(180deg, $dark-blue,$light-blue);
+
+}
+
+.game-modal-item {
+ height: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ // background-image: url('../../background.jpg');
+ background: linear-gradient(180deg, $light-green,$dark-green);
+ background-size: 1100px;
+
+ 
+ h1 {
+   font-family: $serif;
+   color: $lightest-tan;
+   font-size: 2rem;
+   font-weight: bold;
+   padding: 1%;
+   margin: 1rem;
+   // border: 1px solid lightblue;
+ }
+ h2 {
+   // font-family: Verdana, Geneva, Tahoma, sans-serif;
+   color: $lightest-tan;
+   font-size: 1rem;
+   // font-weight: bold;
+   padding: 1%;
+   // border: 1px solid lightblue;
+ }
+ p {
+   // font-family: Verdana, Geneva, Tahoma, sans-serif;
+   color: $lightest-tan;
+   font-size: .8rem;
+   text-align: center;
+   padding: 1%;
+   max-width: 60%;
+   // border: 1px solid lightblue;
+ }
+ img {
+   color: $lightest-tan;
+   
+   margin: 1rem;
+   // border: 1px solid lightblue;
+   max-height: 50vh;
+   width: auto;
+   box-shadow:  4px 4px 4px black;
+ }
+
+ #button--add-game-to-library {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 15vh;
+     height: 8vh;
+     border-radius: 4px;
+     font-family: $sans-serif;
+     font-weight: bold;
+     color: $dark-green;
+     font-size: .75rem;
+     padding: .1rem;
+     // border: 2px solid $dark-green;
+     background: linear-gradient(225deg,$lightest-tan, $body-lightest);
+   a {
+
+     text-decoration: none;
+   }
+     
+   }
+   #button--add-game-to-library:hover {
+     background: $body-lightest;
+     box-shadow:  4px 4px 4px black;
+     color: $light-green;
+     box-shadow: inset;
+     cursor: pointer;
+   }
+   #button--add-game-to-library:active{
+     transform: scale(0.98);
+     box-shadow:  4px 4px 4px black;
+   }
+
+} 

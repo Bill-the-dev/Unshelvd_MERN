@@ -20,17 +20,17 @@ import {withRouter} from 'react-router-dom'
 
    return (
 
-    <div className="game-show-container">
+    <div className="game-modal-container">
 
-    <div className="game-show-item">
+    <div className="game-modal-item">
 
-        <h1 id="game-show-title">{modal.name}</h1>
-        <img src={modal.image} alt={modal.image} id="game-img--show" />
+        <h1 id="game-item-title">{modal.name}</h1>
+        <img src={modal.image} alt={modal.image} id="game-img--modal" />
 
-        <h2 id="game-show-num-players">Players: {modal.playerCount?.min} - {modal.playerCount?.max}</h2>
-        <h2 id="game-show-category">Category: {modal.category}</h2>
-        <p id="game-show-description">{modal.description}</p>
-        <h2 id="game-show-setting">Setting: {modal.gameType}</h2>
+        <h2 id="game-modal-num-players">Players: {modal.playerCount?.min} - {modal.playerCount?.max}</h2>
+        <h2 id="game-modal-category">Category: {modal.category}</h2>
+        <p id="game-modal-description">{modal.description}</p>
+        <h2 id="game-modal-setting">Setting: {modal.gameType}</h2>
         
         <div>
             { 

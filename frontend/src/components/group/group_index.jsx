@@ -27,7 +27,7 @@ class GroupIndex extends React.Component {
     const {currentUser, userGroups, openModal} = this.props;
     if (!userGroups) return null;
     if (!currentUser) return null;
-    debugger
+    
     return (
       <div className="group-index-container">
         <div className="gi-sub-header">
