@@ -11,9 +11,9 @@ class GameItem extends React.Component {
 
   render(){
     // debugger
-    const { currentUser, game } = this.props;
+    const { currentUser, game, openModal } = this.props;
     return(
-      <li className="library-index-item">
+      <li className="library-index-item" onClick={() => openModal(game)}>
         <img src={game.image} alt={game.image} id="game-img--library"/>
         <h1 id="game-title--library">{game.name}</h1>
       </li>

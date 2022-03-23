@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import { fetchGames } from "../../actions/game_actions";
+import { openModal } from "../../actions/modal_actions";
 import AllGameIndex from "./all_game";
 
 
@@ -12,7 +13,8 @@ const mSTP = (state, ownProps) => {
 }
 
 const mDTP = dispatch => ({
-  fetchGames: () => dispatch(fetchGames())
+  fetchGames: () => dispatch(fetchGames()),
+  openModal: modal => dispatch(openModal(modal))
 })
 
 

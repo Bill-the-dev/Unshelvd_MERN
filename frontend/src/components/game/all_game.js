@@ -10,7 +10,7 @@ class AllGameIndex extends React.Component {
 
   render () {
     // debugger
-    const {allGames, currentUser} = this.props
+    const {allGames, currentUser, openModal} = this.props
     return(
       <div className="library-container">
         <h1 className="welcome-msg--library">All Unshelvd Games</h1>
@@ -20,7 +20,7 @@ class AllGameIndex extends React.Component {
         <div className="library-index-container">
           <ul className='library-index-list'>
             {
-              allGames.map(game => <GameItem key={game._id} game={game} currentUser={currentUser}/>)
+              allGames.map(game => <GameItem key={game._id} game={game} currentUser={currentUser} openModal={openModal}/>)
             }
           </ul>
         </div>
