@@ -14,6 +14,7 @@ import GroupIndexContainer from './group/group_index_container';
 import GameFormContainer from './game/game_create_form_container'
 import SuggestContainer from './suggest/suggest_container';
 import GroupFormContainer from './group/group_create_container'
+import AllGameIndexContainer from './game/all_game_container'
 
 const App = () => (
     <div className='app-container'>
@@ -33,6 +34,7 @@ const App = () => (
             <ProtectedRoute exact path='/newgame' component={GameFormContainer} />
             <ProtectedRoute exact path='/newgroup' component={GroupFormContainer} />
             <ProtectedRoute exact path="/suggest" component={SuggestContainer} />
+            <ProtectedRoute exact path='/browse' component={AllGameIndexContainer} />
         </Switch>
     </div>
 );
