@@ -20,33 +20,34 @@
   h1 {
     font-family: $serif;
     color: $lightest-tan;
-    font-size: 2.25rem;
+    font-size: 2.5rem;
     font-weight: bold;
     padding: .2rem;
-    margin: 1rem;
+    margin: 2rem;
     // border: 1px solid lightblue;
   }
   h2 {
-    color: $dark-blue;
+    color: $text-blue;
     padding: 1%;
     align-self: center;
     margin: 1rem;
     // border: 1px solid lightblue;
   }
   p {
-    color: $dark-blue;
+    color: $text-blue;
     text-justify: auto;
     text-align: justify;
     padding: 1%;
     align-self: center;
     margin: 1rem;
     font-style: italic;
+    overflow-wrap: break-word;
     
     // border: 1px solid lightblue;
   }
   img {
     color: $lightest-tan;
-    margin: 1rem;
+    margin-bottom: 2rem;
     // border: 1px solid lightblue;
     max-height: 50vh;
     width: auto;
@@ -58,7 +59,7 @@
 .game-details{
   border-radius: 6px;
   // background: $body-lightest;
-  background: radial-gradient(circle, tan 1%, $body-lightest 100%);
+  background: radial-gradient(circle, $body-lightest 1%, $lightest-tan 100%);
   text-align: center;
   align-content: center;
   padding: 1rem 1.5rem;
@@ -69,13 +70,14 @@
 .button--add-game-to-library {
   width: 25vh;
   height: 6vh;
-  color: $dark-green;
+  color: $lightest-tan;
+  background: $text-blue;
+  box-shadow: inset;
   // background: linear-gradient(225deg,$lightest-tan, $body-lightest);
   &:hover {
-    background: $body-lightest;
+    background: $yellow;
     box-shadow:  4px 4px 4px black;
-    color: $light-green;
-    box-shadow: inset;
+    color: $body-lightest;
     cursor: pointer;
   }
   &:active{
@@ -85,12 +87,11 @@
 } 
 
 .button--added-to-library {
-  // border: 2px solid $dark-green;
   opacity: 0.4;
   &:hover {
-    background: linear-gradient(225deg,$lightest-tan, $body-lightest);
+    background: $text-blue;
     box-shadow:  inherit;
-    color: $dark-green;
+    color: $lightest-tan;
     cursor: not-allowed;
   }
   &:active{
