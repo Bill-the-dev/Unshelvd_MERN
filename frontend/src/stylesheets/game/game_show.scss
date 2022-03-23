@@ -1,85 +1,106 @@
 .game-show-container {
-   overflow-y: auto;
-   background: linear-gradient(180deg, $dark-blue,$light-blue);
- 
+  overflow-y: auto;
+  justify-content: center;
+  display: flex;
+  background: linear-gradient(180deg, $dark-blue,$light-blue);
+  // background-image: url('../../background_white.jpg');
 }
+
 
 .game-show-item {
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  // background-image: url('../../background.jpg');
-  background: linear-gradient(180deg, $dark-blue,$light-blue);
-  background-size: 1100px;
- 
-  
+  width: 66%;
+  // background: linear-gradient(180deg, $dark-blue,$light-blue);
+  // background: tan;
+  // background-size: 1100px;
+
   h1 {
     font-family: $serif;
     color: $lightest-tan;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bold;
-    padding: 1%;
-    margin: 1rem;
+    padding: .2rem;
+    margin: 2rem;
     // border: 1px solid lightblue;
   }
   h2 {
-    // font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: $lightest-tan;
-    font-size: 1rem;
-    // font-weight: bold;
+    color: $text-blue;
     padding: 1%;
+    align-self: center;
+    margin: 1rem;
     // border: 1px solid lightblue;
   }
   p {
-    // font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: $lightest-tan;
-    font-size: .8rem;
-    text-align: center;
+    color: $text-blue;
+    text-justify: auto;
+    text-align: justify;
     padding: 1%;
-    max-width: 60%;
+    align-self: center;
+    margin: 1rem;
+    font-style: italic;
+    overflow-wrap: break-word;
+    
     // border: 1px solid lightblue;
   }
   img {
     color: $lightest-tan;
-    
-    margin: 1rem;
+    margin-bottom: 2rem;
     // border: 1px solid lightblue;
     max-height: 50vh;
     width: auto;
     box-shadow:  4px 4px 4px black;
+    border-radius: 6px;
   }
+}
 
-  #button--add-game-to-library {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 15vh;
-      height: 8vh;
-      border-radius: 4px;
-      font-family: $sans-serif;
-      font-weight: bold;
-      color: $dark-green;
-      font-size: .75rem;
-      padding: .1rem;
-      // border: 2px solid $dark-green;
-      background: linear-gradient(225deg,$lightest-tan, $body-lightest);
-    a {
+.game-details{
+  border-radius: 6px;
+  // background: $body-lightest;
+  background: radial-gradient(circle, $body-lightest 1%, $lightest-tan 100%);
+  text-align: center;
+  align-content: center;
+  padding: 1rem 1.5rem;
+  width: 66%;
+  
+}
 
-      text-decoration: none;
-    }
-      
-    }
-    #button--add-game-to-library:hover {
-      background: $body-lightest;
-      box-shadow:  4px 4px 4px black;
-      color: $light-green;
-      box-shadow: inset;
-      cursor: pointer;
-    }
-    #button--add-game-to-library:active{
-      transform: scale(0.98);
-      box-shadow:  4px 4px 4px black;
-    }
-
+.button--add-game-to-library {
+  width: 25vh;
+  height: 6vh;
+  color: $lightest-tan;
+  background: $text-blue;
+  box-shadow: inset;
+  // background: linear-gradient(225deg,$lightest-tan, $body-lightest);
+  &:hover {
+    background: $yellow;
+    box-shadow:  4px 4px 4px black;
+    color: $body-lightest;
+    cursor: pointer;
+  }
+  &:active{
+    transform: scale(0.98);
+    box-shadow:  4px 4px 4px black;
+  }
 } 
+
+.button--added-to-library {
+  opacity: 0.4;
+  &:hover {
+    background: $text-blue;
+    box-shadow:  inherit;
+    color: $lightest-tan;
+    cursor: not-allowed;
+  }
+  &:active{
+    transform: scale(1);
+    box-shadow:  none;
+  }
+}
+
+#add-game-container {
+  margin: 2rem;
+  padding-bottom: 2rem;
+}
