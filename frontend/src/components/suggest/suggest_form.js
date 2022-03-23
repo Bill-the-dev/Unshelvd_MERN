@@ -19,6 +19,7 @@ class SuggestForm extends React.Component{
         this.clearedErrors = false //DEPENDS IF ERRORS EVEN RENDER IN THIS FORM
         this.categoryUpdate = this.categoryUpdate.bind(this);
         this.typeUpdate = this.typeUpdate.bind(this);
+        this.clearForm = this.clearForm.bind(this);
     }
 
 
@@ -63,6 +64,10 @@ class SuggestForm extends React.Component{
                 gameType: stateCopy.filter(word => word !== selection.value)
             })
         }
+    }
+
+    clearForm() {
+        document.getElementById("suggest-form").reset();
     }
 
 
@@ -123,8 +128,6 @@ class SuggestForm extends React.Component{
                 typeFilter(game.gameType, preferences.gameType)
                 ) userFiltered.push(game)
         })
-
-    
         this.setState({
             filteredGames: userFiltered
         })
@@ -162,7 +165,7 @@ class SuggestForm extends React.Component{
                     Suggest a Game
                 </div>
 
-                <form className='suggest-form' onSubmit={this.handleSubmit}>
+                <form id="suggest-form" className='suggest-form' onSubmit={this.handleSubmit}>
 
                     {/* LIBRARY SELECTOR */}
 
@@ -170,7 +173,7 @@ class SuggestForm extends React.Component{
                         <h2>Find game from:
                         <div>
                             <select onChange={this.update("library")}>
-                                    <option selected disabled hidden></option>
+                                    <option value ></option>
                                 {this.state.currentUserGroups.map((group, i) => {
                                     return <option key={i} value={group._id}>{group.name}</option>
                             })}
@@ -184,7 +187,7 @@ class SuggestForm extends React.Component{
                         <h2>Number of Players
                             <div>
                                 <select onChange={this.update("numPlayers")}>
-                                    <option selected disabled hidden></option>
+                                    <option value ></option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                     <option value="4">4</option>
@@ -240,6 +243,10 @@ class SuggestForm extends React.Component{
                         {this.renderErrors()}
                     </div>
 
+                    <div className='suggest-form-clearform'>
+                         <button onClick={() => this.clearForm()}>Clear preferences</button>
+                    </div>
+
 
                     <div className='suggest-results'>
                     {
@@ -248,8 +255,7 @@ class SuggestForm extends React.Component{
                             <ul className='list-head'>
                             {this.state.filteredGames.map((game) => {
                                 return(
-                                <li>
-                                    {/* <LibraryItem game={game}/> */}
+                                <li key={ game.id}>
                                     <SuggestItem game={game} openModal={this.props.openModal}/>
                                 </li>
                                 )
