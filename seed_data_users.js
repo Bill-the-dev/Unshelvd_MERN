@@ -15,182 +15,295 @@ mongoose
 const seedUsers = [
   new User (
     {
+      _id: '623b4d3143f29e517e625064',
+      username: 'Unshelved',
+      email: 'unshelvd@unshelvd.com',
+      password: '$2a$10$j13TJl5FzPxQhRtf58sDSOmJLOPw3z/8AL5La1GLi0UR5dX.kWMM2',
+      games: [
+        '623b4c050222f83386e47760',
+        '62346dc0e58d7eaa48659746',
+        // '623b55450222f83386e47761',
+        '62346dc0e58d7eaa48659748',
+        '62346dc0e58d7eaa48659749',
+        '62346dc0e58d7eaa4865974a',
+        '62346dc0e58d7eaa4865974b',
+        '62346dc0e58d7eaa4865974c',
+        '62346dc0e58d7eaa4865974d',
+        '62346dc0e58d7eaa4865974e',
+        '62346dc0e58d7eaa4865974f',
+        '62346dc0e58d7eaa48659750',
+        '62346dc0e58d7eaa48659751',
+        '62346dc0e58d7eaa48659752',
+        '62346dc0e58d7eaa48659753',
+        '62346dc0e58d7eaa48659754',
+        '62346dc0e58d7eaa48659755',
+        '62346dc0e58d7eaa48659756',
+        '62346dc0e58d7eaa48659757',
+        '62346dc0e58d7eaa48659758',
+        '62346dc0e58d7eaa48659759',
+      ],
+      // groups: [
+      //   // don't add any, this is the full library!
+      // ],
+    }
+  ),
+  new User(
+    {
+      _id: '62311d449bd3bc8378ded480',
+      username: 'demoUser',
+      email: 'demo@demo.com',
+      password: '$2a$10$vGUlNnmg6R1RQQOfmYULO.mwhaohZRUqwWOoi039uoK.zqsbJqmz2',
+      games: [
+        '623b4c050222f83386e47760',
+        // '623b55450222f83386e47761',
+        '62346dc0e58d7eaa48659748',
+        '62346dc0e58d7eaa48659749',
+        '62346dc0e58d7eaa4865974a',
+        '62346dc0e58d7eaa4865974c',
+        '62346dc0e58d7eaa4865974d',
+        '62346dc0e58d7eaa4865974e',
+        '62346dc0e58d7eaa4865974f',
+        // randomly selected
+      ],
+      groups: [
+        '6234777f4cdf8b5e4353ebd5', // library
+        '623477a54cdf8b5e4353ebd9', // notsus
+        '623477c34cdf8b5e4353ebdf', // everybody
+      ],
+    }
+  ),    
+
+  new User (
+    {
+      _id: '6234768df40525e9d4a9b44b',
       username: 'ColonelMustard',
       email: 'defNotSus@clue.com',
       password: 'password',
-      // games: [{
-      //   // type: Schema.Types.ObjectId,
-      //   // ref: 'Game'
-      // }],
-      // groups: [{
-      //   // Schema.Types.ObjectId,
-      //   // ref: 'Group'
-      // }],
+      games: [
+        '623b4c050222f83386e47760',
+        '62346dc0e58d7eaa48659746',
+        '62346dc0e58d7eaa4865974c',
+        '62346dc0e58d7eaa48659759',
+      ],
+      groups: [
+        '6234777f4cdf8b5e4353ebd5', // library
+        '623477a54cdf8b5e4353ebd9', // notsus
+        '623477c34cdf8b5e4353ebdf', // everybody
+      ],
     }
   ),
   new User(
     {
+      _id: '6234768df40525e9d4a9b44c',
       username: 'ProfPlum',
       email: 'aLittleSus@clue.com',
       password: 'password',
-      // games: [{
-      //   // type: Schema.Types.ObjectId,
-      //   // ref: 'Game'
-      // }],
-      // groups: [{
-      //   // Schema.Types.ObjectId,
-      //   // ref: 'Group'
-      // }],
+      games: [
+        '62346dc0e58d7eaa4865974a',
+        '62346dc0e58d7eaa4865974b',
+        '62346dc0e58d7eaa4865974e',
+        '62346dc0e58d7eaa4865974f',
+        '62346dc0e58d7eaa48659750',
+      ],
+      groups: [
+        '6234777f4cdf8b5e4353ebd5', // library
+        '623477a54cdf8b5e4353ebd9', // notsus
+        '623477c34cdf8b5e4353ebdf', // everybody
+      ],
     }
   ),
   new User(
     {
+      _id: '6234768df40525e9d4a9b44d',
       username: 'misterGreen',
       email: 'withEnvy@clue.com',
       password: 'password',
-      // games: [{
-      //   // type: Schema.Types.ObjectId,
-      //   // ref: 'Game'
-      // }],
-      // groups: [{
-      //   // Schema.Types.ObjectId,
-      //   // ref: 'Group'
-      // }],
+      games: [
+        '62346dc0e58d7eaa48659748',
+        '62346dc0e58d7eaa48659749',
+        '62346dc0e58d7eaa48659759',
+      ],
+      groups: [
+        '6234777f4cdf8b5e4353ebd5', // library
+        '623477c34cdf8b5e4353ebdf', // everybody
+      ],
     }
   ),
   new User(
     {
+      _id: '6234768df40525e9d4a9b44e',
       username: 'MrsWhite',
       email: 'jaccuse@clue.com',
       password: 'password',
-      // games: [{
-      //   // type: Schema.Types.ObjectId,
-      //   // ref: 'Game'
-      // }],
-      // groups: [{
-      //   // Schema.Types.ObjectId,
-      //   // ref: 'Group'
-      // }],
+      games: [
+        '62346dc0e58d7eaa4865974f',
+        '62346dc0e58d7eaa48659755',
+        '62346dc0e58d7eaa48659757',
+        '62346dc0e58d7eaa48659758',
+      ],
+      groups: [
+        '6234777f4cdf8b5e4353ebd5', // library
+        '623477c34cdf8b5e4353ebdf', // everybody
+      ],
     }
   ),
   new User(
     {
+      _id: '6234768df40525e9d4a9b44f',
       username: 'MsScarlett',
       email: 'redWithWhat@clue.com',
       password: 'password',
-      // games: [{
-      //   // type: Schema.Types.ObjectId,
-      //   // ref: 'Game'
-      // }],
-      // groups: [{
-      //   // Schema.Types.ObjectId,
-      //   // ref: 'Group'
-      // }],
+      games: [
+        '62346dc0e58d7eaa4865974a',
+        '62346dc0e58d7eaa4865974b',
+        '62346dc0e58d7eaa4865974c',
+        '62346dc0e58d7eaa4865974d',
+        '62346dc0e58d7eaa48659758',
+        '62346dc0e58d7eaa48659759',
+      ],
+      groups: [
+        '623477a54cdf8b5e4353ebd9', // notsus
+        '623477c34cdf8b5e4353ebdf', // everybody
+      ],
     }
   ),
   new User(
     {
+      _id: '623b681f0222f83386e47763',
       username: 'MissusPeacock',
       email: 'theyWillNotice@clue.com',
-      password: '',
-      // games: [{
-      //   // type: Schema.Types.ObjectId,
-      //   // ref: 'Game'
-      // }],
-      // groups: [{
-      //   // Schema.Types.ObjectId,
-      //   // ref: 'Group'
-      // }],
+      password: 'password',
+      games: [
+        '62346dc0e58d7eaa48659756',
+        '62346dc0e58d7eaa48659757',
+        '62346dc0e58d7eaa48659758',
+        '62346dc0e58d7eaa48659759',
+      ],
+      groups: [
+        '623477a54cdf8b5e4353ebd9', // notsus
+        '623477c34cdf8b5e4353ebdf', // everybody
+      ],
     }
   ),
   new User(
     {
+      _id: '6234768df40525e9d4a9b451',
       username: 'aCandleStick',
       email: 'lumierreTheHost@clue.com',
       password: 'password',
-      // games: [{
-      //   // type: Schema.Types.ObjectId,
-      //   // ref: 'Game'
-      // }],
-      // groups: [{
-      //   // Schema.Types.ObjectId,
-      //   // ref: 'Group'
-      // }],
+      games: [
+        '62346dc0e58d7eaa48659754',
+        '62346dc0e58d7eaa48659755',
+        '62346dc0e58d7eaa48659756',
+      ],
+      groups: [
+        '6234777f4cdf8b5e4353ebd5', // library
+        '623477c34cdf8b5e4353ebdf', // everybody
+      ],
     }
   ),
   new User(
     {
+      _id: '6234768df40525e9d4a9b452',
       username: 'theLeadPipe',
       email: 'theBetterOption@clue.com',
       password: 'password',
-      // games: [{
-      //   // type: Schema.Types.ObjectId,
-      //   // ref: 'Game'
-      // }],
-      // groups: [{
-      //   // Schema.Types.ObjectId,
-      //   // ref: 'Group'
-      // }],
+      games: [
+        '62346dc0e58d7eaa4865974a',
+        '62346dc0e58d7eaa4865974b',
+        '62346dc0e58d7eaa4865974c',
+        '62346dc0e58d7eaa48659758',
+        '62346dc0e58d7eaa48659759',
+      ],
+      groups: [
+        '6234777f4cdf8b5e4353ebd5', // library
+        '623477c34cdf8b5e4353ebdf', // everybody
+      ],
     }
   ),
   new User(
     {
+      _id: '6234768df40525e9d4a9b453',
       username: 'TopsyKirby',
       email: 'Kirby@unshelvd.com',
       password: 'password',
-      // games: [{
-      //   // type: Schema.Types.ObjectId,
-      //   // ref: 'Game'
-      // }],
-      // groups: [{
-      //   // Schema.Types.ObjectId,
-      //   // ref: 'Group'
-      // }],
+      games: [
+        '62346dc0e58d7eaa48659748',
+        '62346dc0e58d7eaa4865974c',
+        '62346dc0e58d7eaa4865974d',
+        '62346dc0e58d7eaa4865974e',
+        '62346dc0e58d7eaa48659751',
+        '62346dc0e58d7eaa48659752',
+        '62346dc0e58d7eaa48659753',
+      ],
+      groups: [
+        '623477c34cdf8b5e4353ebdf', // everybody
+      ],
     }
   ),
   new User(
     {
+      _id: '623b67f30222f83386e47762',
       username: 'WinnaBill',
       email: 'Bill@unshelvd.com',
-      password: '',
-      // games: [{
-      //   // type: Schema.Types.ObjectId,
-      //   // ref: 'Game'
-      // }],
-      // groups: [{
-      //   // Schema.Types.ObjectId,
-      //   // ref: 'Group'
-      // }],
+      password: 'password',
+      games: [
+        '62346dc0e58d7eaa48659746',
+        '62346dc0e58d7eaa48659748',
+        '62346dc0e58d7eaa4865974d',
+        '62346dc0e58d7eaa4865974e',
+        '62346dc0e58d7eaa48659750',
+        '62346dc0e58d7eaa48659751',
+        '62346dc0e58d7eaa48659758',
+        '62346dc0e58d7eaa48659759',
+      ],
+      groups: [
+        '623477c34cdf8b5e4353ebdf', // everybody
+      ],
     }
   ),
   new User(
     {
+      _id: '6234768df40525e9d4a9b455',
       username: 'EmilyTheUndefeated',
       email: 'Emily@unshelvd.com',
       password: 'password',
-      // games: [{
-      //   // type: Schema.Types.ObjectId,
-      //   // ref: 'Game'
-      // }],
-      // groups: [{
-      //   // Schema.Types.ObjectId,
-      //   // ref: 'Group'
-      // }],
+      games: [
+        // '623b55450222f83386e47761',
+        '62346dc0e58d7eaa4865974b',
+        '62346dc0e58d7eaa4865974c',
+        '62346dc0e58d7eaa4865974d',
+        '62346dc0e58d7eaa48659756',
+        '62346dc0e58d7eaa48659757',
+        '62346dc0e58d7eaa48659758',
+        '62346dc0e58d7eaa48659759',
+      ],
+      groups: [
+        '623477c34cdf8b5e4353ebdf', // everybody
+      ],
     }
   ),
   new User(
     {
+      _id: '6234768df40525e9d4a9b456',
       username: 'EthanWithTheW',
       email: 'Ethan@unshelvd.com',
       password: 'password',
-      // games: [{
-      //   // type: Schema.Types.ObjectId,
-      //   // ref: 'Game'
-      // }],
-      // groups: [{
-      //   // Schema.Types.ObjectId,
-      //   // ref: 'Group'
-      // }],
+      games: [
+        '623b4c050222f83386e47760',
+        // '623b55450222f83386e47761',
+        '62346dc0e58d7eaa4865974b',
+        '62346dc0e58d7eaa4865974c',
+        '62346dc0e58d7eaa4865974d',
+        '62346dc0e58d7eaa4865974e',
+        '62346dc0e58d7eaa4865974f',
+        '62346dc0e58d7eaa48659755',
+        '62346dc0e58d7eaa48659756',
+        '62346dc0e58d7eaa48659757',
+      ],
+      groups: [
+        '623477c34cdf8b5e4353ebdf', // everybody
+      ],
     }
   ),
 
@@ -200,14 +313,14 @@ const seedUsers = [
 // LOAD LOGIC
 
 const loadCounter = () => {
-  let gamesDone = 0;
+  let usersDone = 0;
   for (let i = 0; i < seedUsers.length; i++) {
     // debugger
     seedUsers[i].save((err, res) => {
       console.log(`errors = ${err} res = ${res} `);
-      console.log(`i = ${i} game = ${seedUsers[i]} `);
-      gamesDone++;
-      if (gamesDone === seedUsers.length) {
+      console.log(`i = ${i} user = ${seedUsers[i]} `);
+      usersDone++;
+      if (usersDone === seedUsers.length) {
         // debugger
         console.log(`${i}`);
         exit();
@@ -243,3 +356,37 @@ const exit = () => {
 //     }],
 //   },
 // ] 
+
+
+
+
+// email: unshelvd@unshelvd.com
+// user: Unshelvd
+// password: Unshelvd
+// hash: '$2a$10$j13TJl5FzPxQhRtf58sDSOmJLOPw3z/8AL5La1GLi0UR5dX.kWMM2'
+// ObjectId: '623b4d3143f29e517e625064'
+
+// All Games Array: 
+// [
+//   '623b4c050222f83386e47760',
+//   '62346dc0e58d7eaa48659746',
+//   '623b55450222f83386e47761',
+//   '62346dc0e58d7eaa48659748',
+//   '62346dc0e58d7eaa48659749',
+//   '62346dc0e58d7eaa4865974a',
+//   '62346dc0e58d7eaa4865974b',
+//   '62346dc0e58d7eaa4865974c',
+//   '62346dc0e58d7eaa4865974d',
+//   '62346dc0e58d7eaa4865974e',
+//   '62346dc0e58d7eaa4865974f',
+//   '62346dc0e58d7eaa48659750',
+//   '62346dc0e58d7eaa48659751',
+//   '62346dc0e58d7eaa48659752',
+//   '62346dc0e58d7eaa48659753',
+//   '62346dc0e58d7eaa48659754',
+//   '62346dc0e58d7eaa48659755',
+//   '62346dc0e58d7eaa48659756',
+//   '62346dc0e58d7eaa48659757',
+//   '62346dc0e58d7eaa48659758',
+//   '62346dc0e58d7eaa48659759',
+// ]
