@@ -8,8 +8,8 @@ import React from 'react';
 
     return (
       <div className='suggest-item-container' onClick={() => openModal(game)} >
-        <img src={game.image} alt={game.image} id="game-img--library" />
-        <div id="game-title--library">{game.name}</div>
+        <img src={game.image} alt={game.image} id="game-img--suggest" />
+        <div id="game-title--suggest">{game.name}</div>
       </div>
     )
   }

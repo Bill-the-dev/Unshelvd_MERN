@@ -243,7 +243,7 @@ class SuggestForm extends React.Component{
 
                     <div className='suggest-results'>
                     {
-                        (this.state.filteredGames) ?
+                        (this.state.filteredGames.length > 0 ) ?
                         <div className='results-container'>
                             <ul className='list-head'>
                             {this.state.filteredGames.map((game) => {
@@ -256,7 +256,10 @@ class SuggestForm extends React.Component{
                             })}
                             </ul>
                         </div> 
-                        : null
+                        : 
+                        <div className='result-null'>
+                            Go Fish to find games!
+                        </div>
                     }
                     </div>
 

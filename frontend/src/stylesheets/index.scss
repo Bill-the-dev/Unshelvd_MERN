@@ -15,10 +15,11 @@
 @import './nav/nav.scss';
 
 @import './suggest/suggest_form.scss';
+@import './suggest//suggest_item.scss';
 
-@import './game//new_game_form.scss';
+@import './game/new_game_form.scss';
 @import './game/game_show.scss';
-@import './game//game_modal.scss';
+@import './game/game_modal.scss';
 
 
 html, body {

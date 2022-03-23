@@ -18,7 +18,7 @@
   background-color: $body-lightest;
   top: 50%;
   left: 50%;
-  height: 80vh;
+  height: 70vh;
   min-height: 500px;
   width: 30vw;
   min-width: 400px;
@@ -76,8 +76,9 @@
    
    margin: 1rem;
    // border: 1px solid lightblue;
+   min-height: 20vh;
    max-height: 50vh;
-   width: auto;
+   width: 100%;
    box-shadow:  4px 4px 4px black;
  }
 
