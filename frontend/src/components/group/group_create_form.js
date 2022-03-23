@@ -28,10 +28,12 @@ class CreateGroup extends React.Component {
     if (this.props.modal === 'addGroup') {
       submitGroup()
         .then(group => {
+          // CONTINUED ON RIGHT PAGE
           const updatedUser = this.props.currentUser;
           updatedUser.groups = this.props.currentUser.groups.concat(group.group.data._id);
           this.props.updateUser(updatedUser);
         })
+        .then(() => this.props.fetchGroups())
         .then(() => this.props.closeModal())
     } else {
       let curGroup;
@@ -52,9 +54,8 @@ class CreateGroup extends React.Component {
           updatedGroup.users = curGroup.users.concat(this.props.currentUser._id);
           // debugger
           this.props.updateGroup(updatedGroup)
-          
+          .then(() => this.props.fetchGroups())
         }
-        
         this.props.closeModal()
         setTimeout(this.props.history.push({pathname: `/groups/${curGroup._id}`}),1000)
     }

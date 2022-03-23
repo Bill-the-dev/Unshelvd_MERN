@@ -16,31 +16,29 @@ class GroupIndex extends React.Component {
       .then(() => this.setState({ currentUserGroups: Object.values(this.props.userGroups).filter(group => group.users.includes(this.props.currentUser.id)) }))
   }
 
-  componentDidUpdate(prevState) {
-    if (this.state.currentUserGroups !== prevState.currentUserGroups) {
-
-    }
-
+  componentDidUpdate(prevProps) {
+    if (this.props.userGroups?.length !== prevProps.userGroups?.length) {
+      this.setState({
+        currentUserGroups: Object.values(this.props.userGroups).filter(group => group.users.includes(this.props.currentUser.id))
+    })}
   }
 
   render() {
     const {currentUser, userGroups, openModal} = this.props;
     if (!userGroups) return null;
     if (!currentUser) return null;
-    // if (!this.state.currentUserGroups) return null;
-    // let currentUserGroups = userGroups?.map((userGroup) => {
-    //   if Object.values()
-    // })
-
-
-    // debugger
+    
     return (
       <div className="group-index-container">
         <div className="gi-sub-header">
           <h1>Your Groups</h1>
           <div className="gi-buttons">
-            <div className="btn btn--create-group" onClick={() => openModal('addGroup')}>Create Group</div>          
-            <div className="btn btn--join-group" onClick={() => openModal('joinGroup')}>Join Group</div>          
+            
+            {/* Possibly add key to the button based on current user groups length? key forces render */}
+            <div className="btn btn--create-group" onClick={() => openModal('addGroup')}>Create Group</div> 
+
+            <div className="btn btn--join-group" onClick={() => openModal('joinGroup')}>Join Group</div>
+
           </div>
         </div>
         <div className="gi-content">
