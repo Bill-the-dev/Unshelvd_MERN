@@ -22,7 +22,6 @@ const seedUsers = [
       games: [
         '623b4c050222f83386e47760',
         '62346dc0e58d7eaa48659746',
-        // '623b55450222f83386e47761',
         '62346dc0e58d7eaa48659748',
         '62346dc0e58d7eaa48659749',
         '62346dc0e58d7eaa4865974a',
@@ -41,6 +40,11 @@ const seedUsers = [
         '62346dc0e58d7eaa48659757',
         '62346dc0e58d7eaa48659758',
         '62346dc0e58d7eaa48659759',
+        '623b55450222f83386e47761',  // LCR
+        '623b8ac3a5a2e640e0c131a4',  // Hangman
+        '623b8aa5a5a2e640e0c131a3',  // Dots and Boxes
+        '623b8c35a5a2e640e0c131a5',  // Golf
+        '623b90f8a5a2e640e0c131a6',  // Rummy 500
       ],
       // groups: [
       //   // don't add any, this is the full library!

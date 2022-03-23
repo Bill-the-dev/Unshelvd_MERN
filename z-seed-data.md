@@ -37,9 +37,9 @@ Connected / Unplugged
 Golf
 2+
 Playing Cards
-Also known as Polish Polka, Polish Poker, Turtle, Hara Kiri, Poison, or Crazy Nines. The game is typically played by 2 to 6 players with 4 to 10 cards dealt to each player. There are many variations to this card game and its origins are unclear. 
+Also known as Polish Polka, Polish Poker, Turtle, Hara Kiri, Poison, or Crazy Nines. The game is typically played by 2 to 6 players with 4 to 10 cards dealt to each player. There are many variations to this card game and its origins are unclear. Instructions: https://www.pagat.com/draw/golf.html  
 Connected Play: https://www.trapapps.com/web/044/site/game/golf
-https://www.pagat.com/draw/golf.html
+
 
 ---
 
@@ -64,9 +64,8 @@ https://www.pagat.com/rummy/rummy.html
 Rummy 500
 2 - 8
 Playing Cards
-Also called 500 Rum, 500 Rummy, Pinochle Rummy, Michigan Rummy, Rummy and Gin Rummy. This can cause some confusion as to which game is actually being played. The primary difference between Rummy 500 and the other Rummy games is that each player scores for their own melds. 
-Connected Play: https://www.trapapps.com/web/044/site/game/rummyfh 
-https://www.pagat.com/rummy/500rum.html
+Also called 500 Rum, 500 Rummy, Pinochle Rummy, Michigan Rummy, Rummy and Gin Rummy. This can cause some confusion as to which game is actually being played. The primary difference between Rummy 500 and the other Rummy games is that each player scores for their own melds. Instructions: https://www.pagat.com/rummy/500rum.html Connected Play: https://www.trapapps.com/web/044/site/game/rummyfh 
+
 
 ---
 
