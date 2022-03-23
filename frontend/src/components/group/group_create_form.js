@@ -28,30 +28,36 @@ class CreateGroup extends React.Component {
     if (this.props.modal === 'addGroup') {
       submitGroup()
         .then(group => {
+          // CONTINUED ON RIGHT PAGE
           const updatedUser = this.props.currentUser;
           updatedUser.groups = this.props.currentUser.groups.concat(group.group.data._id);
           this.props.updateUser(updatedUser);
         })
+        .then(() => this.props.fetchGroups())
         .then(() => this.props.closeModal())
     } else {
       let curGroup;
-        this.props.allGroups.forEach(group => {
-          if (group.shareCode === this.state.code) {
-            curGroup = group
-          }
-        })
-        // ADD GROUP TO USER
-        const updatedUser = this.props.currentUser;
-        updatedUser.groups = this.props.currentUser.groups.concat(curGroup);
-        this.props.updateUser(updatedUser);
-
-        // ADD USER TO GROUP
-        const updatedGroup = curGroup;
-        updatedGroup.users = curGroup.users.concat(this.props.currentUser._id);
+      this.props.allGroups.forEach(group => {
+        if (group.shareCode === this.state.code) {
+          curGroup = group
+        }
+      })
+      // ADD GROUP TO USER
+      const updatedUser = this.props.currentUser;
+      if (!updatedUser.groups.includes(curGroup._id)){
         // debugger
-        this.props.updateGroup(updatedGroup)
-
+          updatedUser.groups = this.props.currentUser.groups.concat(curGroup);
+          this.props.updateUser(updatedUser);
+  
+          // ADD USER TO GROUP
+          const updatedGroup = curGroup;
+          updatedGroup.users = curGroup.users.concat(this.props.currentUser._id);
+          // debugger
+          this.props.updateGroup(updatedGroup)
+          .then(() => this.props.fetchGroups())
+        }
         this.props.closeModal()
+        setTimeout(this.props.history.push({pathname: `/groups/${curGroup._id}`}),1000)
     }
   }
 

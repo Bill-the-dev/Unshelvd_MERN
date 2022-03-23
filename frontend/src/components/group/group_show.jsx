@@ -26,7 +26,11 @@ class GroupShow extends React.Component {
           groupGamesArr = groupGamesArr.concat(userGames)
           console.log(groupGamesArr)
         })
-        this.setState({groupGames: groupGamesArr})
+        // prevent dups
+        let groupGamesSet = new Set(groupGamesArr);
+        let groupGamesRes = Array.from(groupGamesSet);
+        // console.log(`this is groupGameRes: ${groupGamesRes}`);
+        this.setState({groupGames: groupGamesRes})
       })
       .then(() => {
         let gameObjectsArr = []

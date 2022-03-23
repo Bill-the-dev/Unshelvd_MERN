@@ -5,6 +5,7 @@ import GroupIndex from "./group_index";
 import { fetchGroup, fetchGroups } from "../../actions/group_actions";
 import { openModal } from "../../actions/modal_actions";
 
+
 const mapStateToProps = (state) => ({
   userGroups: Object.values(state.entities.groups.userGroups),
   currentUser: state.session.user

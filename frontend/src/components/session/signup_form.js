@@ -59,7 +59,7 @@ class SignupForm extends React.Component {
     return (
       <div className="signup-form-container">
         <div className="signup-form">
-        <h1><Link to='/'>Unshelved</Link></h1>
+        <h1><Link to='/'>Unshelvd</Link></h1>
         <h2>Sign Up</h2>
         <h4><Link to='/login'>Log In</Link> instead</h4>
           <form onSubmit={this.handleSubmit}>

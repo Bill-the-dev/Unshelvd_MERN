@@ -61,7 +61,7 @@ class LoginForm extends React.Component {
     return (
       <div className='login-form-container'>
         <div className='login-form'>
-          <h1><Link to='./'>Unshelved</Link></h1>
+          <h1><Link to='./'>Unshelvd</Link></h1>
           <h2>Log In</h2>
           <h4><Link to='/signup'>Sign Up</Link> instead</h4>
           <form onSubmit={this.handleSubmit}>

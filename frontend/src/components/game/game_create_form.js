@@ -57,24 +57,25 @@ class CreateGameForm extends React.Component {
         };
 
         let submitGame = async () => this.props.createGame(game);
-        
-            submitGame()
-                .then(game => { 
-                    // this.props.currentUser.games.concat(game.game.data._id)
+        // let asyncUpdateUser = async () => {
+        //     const updatedUser = this.props.currentUser
+        //     updatedUser.games = this.props.currentUser.games.concat(game.game.data._id)
+        // }
+        submitGame()
+        .then(game => { 
                     const updatedUser = this.props.currentUser
-                    // debugger
-
                     updatedUser.games = this.props.currentUser.games.concat(game.game.data._id)
+                    // asyncUpdateUser
                     this.props.updateUser(updatedUser)
-                    this.props.history.push({pathname: `/library`})
-                    
+                    setTimeout(this.props.history.push({pathname: `/library`}),1000)
                 })
                 .catch(err => console.log({err: err}))
     }
 
-    // componentWillUnmount() {
-    //     this.props.removeGameErrors()
-    // }
+    componentWillUnmount() {
+        // debugger
+        this.props.removeErrors()
+    }
 
     renderErrors() {
         return(
@@ -95,10 +96,10 @@ class CreateGameForm extends React.Component {
         // debugger
         return (
             <div className='new-game-form-container'>
-                <h1 className='game-form-header'>Create a New Game</h1>
                 <form className='new-game-form' onSubmit = {this.handleSubmit}>
+                <p className='game-form-header'>Create a New Game</p>
                     <div className='game-form-name'>
-                        <label >Name: 
+                        <label >Name:<span className='asterik'>*</span> 
                             <input type='text' value={this.state.name} onChange={this.update('name')}/>
                         </label>
                     </div>
@@ -114,7 +115,7 @@ class CreateGameForm extends React.Component {
                         </div>
                     </div>
                     <div className='game-form-category'>
-                        <h2>Select all categories that apply:</h2>
+                        <h2>Select all categories that apply:<span className='asterik'>*</span></h2>
                         <div>
                             <label>Board Game
                                 <input type='checkbox' name='category' value='Board Game' onClick={this.updateSelect('category')}/>
@@ -167,7 +168,7 @@ class CreateGameForm extends React.Component {
                         </div>
                     </div>
                     <div className='game-form-type'>
-                        <h2>What setting is this best played in?</h2>
+                        <h2>What setting is this best played in?<span className='asterik'>*</span></h2>
                         <div>
                             <label>Connected (online)
                                 <input type='checkbox' name='gameType' value='Connected' onClick={this.updateSelect('gameType')}/>
@@ -190,7 +191,7 @@ class CreateGameForm extends React.Component {
                         </label>
                     </div>
                     <div className='game-form-submit'>
-                        <input type='submit' value='Create Game'/>
+                        <input className='button' type='submit' value='Create Game'/>
                     </div>
                     <div className='game-errors'>
                         {

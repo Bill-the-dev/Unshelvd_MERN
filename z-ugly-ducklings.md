@@ -31,3 +31,41 @@ add game.status to display if the game is in a user's library
 & create game button doesn't work any more
 
 
+
+
+[UNRESOLVED]
+
+Background: 
+- `Create Group` button renders a modal to `Create New Group` without leaving the page. (pics 1 & 2)
+- `onSubmit` group successfully created, added to the backend as a new group with the user as a member, and added to the user as a group they belong to.  All works as intended.
+
+Problem:
+- On submit, the modal is closed and the user is shown the same group index page.  **The group does not display until refresh.** (pics 3 & 4)
+
+What is the "right" way to force the original group index component to update if we use a modal and never leave the page?
+
+I have only been able to do this with `this.forceUpdate()`, but this is highly discouraged in everything I've read.
+
+Thank you!
+
+---
+
+[RESOVLED]
+
+Solution required changes in (3) files.
+1. `group_create_container` added `fetchGroups` to the `mDTP`
+2. `group_create_form` added `.then(() => this.props.fetchGroups())` to the `handleSubmit` for both creating a group and joining a group.
+3. `group_index` added a `componentDidUpdate()` method to compare the length of the all groups array between prev props and current props.
+```JS
+  componentDidUpdate(prevProps) {
+    if (this.props.userGroups?.length !== prevProps.userGroups?.length) {
+      this.setState({
+        currentUserGroups: Object.values(this.props.userGroups).filter(group => group.users.includes(this.props.currentUser.id))
+    })}
+  }
+```
+
+
+
+
+
