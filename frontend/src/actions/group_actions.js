@@ -38,6 +38,7 @@ export const fetchGroup = groupId => dispatch => (
 export const createGroup = group => dispatch => (
   GroupAPIUtil.createGroup(group)
     .then(group => dispatch(receiveGroup(group)))
+    // .then(groups => dispatch(receiveGroups(groups)))
     .catch(err => dispatch(receiveGroupErrors(err)))
 )
 

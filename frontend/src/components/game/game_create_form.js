@@ -57,17 +57,17 @@ class CreateGameForm extends React.Component {
         };
 
         let submitGame = async () => this.props.createGame(game);
-        
-            submitGame()
-                .then(game => { 
-                    // this.props.currentUser.games.concat(game.game.data._id)
+        // let asyncUpdateUser = async () => {
+        //     const updatedUser = this.props.currentUser
+        //     updatedUser.games = this.props.currentUser.games.concat(game.game.data._id)
+        // }
+        submitGame()
+        .then(game => { 
                     const updatedUser = this.props.currentUser
-                    // debugger
-
                     updatedUser.games = this.props.currentUser.games.concat(game.game.data._id)
+                    // asyncUpdateUser
                     this.props.updateUser(updatedUser)
-                    this.props.history.push({pathname: `/library`})
-                    
+                    setTimeout(this.props.history.push({pathname: `/library`}),1000)
                 })
                 .catch(err => console.log({err: err}))
     }
@@ -95,8 +95,8 @@ class CreateGameForm extends React.Component {
         // debugger
         return (
             <div className='new-game-form-container'>
-                <h1 className='game-form-header'>Create a New Game</h1>
                 <form className='new-game-form' onSubmit = {this.handleSubmit}>
+                <p className='game-form-header'>Create a New Game</p>
                     <div className='game-form-name'>
                         <label >Name: 
                             <input type='text' value={this.state.name} onChange={this.update('name')}/>
@@ -190,7 +190,7 @@ class CreateGameForm extends React.Component {
                         </label>
                     </div>
                     <div className='game-form-submit'>
-                        <input type='submit' value='Create Game'/>
+                        <input className='button' type='submit' value='Create Game'/>
                     </div>
                     <div className='game-errors'>
                         {

@@ -5,10 +5,10 @@ import {faLinkedin} from '@fortawesome/fontawesome-free-brands'
 import { Link } from "react-router-dom";
 
 function TeamShow() {
-  const emily = 'https://raw.githubusercontent.com/Bill-the-dev/Unshelvd_MERN/splash-format/frontend/src/components/splash/emily.jpg'
-  const bill = 'https://raw.githubusercontent.com/Bill-the-dev/Unshelvd_MERN/splash-format/frontend/src/components/splash/bill.jpg'
-  const ethan = 'https://raw.githubusercontent.com/Bill-the-dev/Unshelvd_MERN/splash-format/frontend/src/components/splash/ethan.jpg'
-  const kirby = 'https://raw.githubusercontent.com/Bill-the-dev/Unshelvd_MERN/splash-format/frontend/src/components/splash/kirby.jpg'
+  const emily = 'https://raw.githubusercontent.com/Bill-the-dev/Unshelvd_MERN/main/frontend/src/components/splash/emily.jpg'
+  const bill = 'https://raw.githubusercontent.com/Bill-the-dev/Unshelvd_MERN/main/frontend/src/components/splash/bill.jpg'
+  const ethan = 'https://raw.githubusercontent.com/Bill-the-dev/Unshelvd_MERN/main/frontend/src/components/splash/ethan.jpg'
+  const kirby = 'https://raw.githubusercontent.com/Bill-the-dev/Unshelvd_MERN/main/frontend/src/components/splash/kirby.jpg'
   return (
     <div className="team-container">
       <h1>Meet the team behind Unshelvd</h1>
