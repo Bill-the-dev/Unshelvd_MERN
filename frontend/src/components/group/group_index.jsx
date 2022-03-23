@@ -33,7 +33,7 @@ class GroupIndex extends React.Component {
     // })
 
 
-    debugger
+    // debugger
     return (
       <div className="group-index-container">
         <div className="gi-sub-header">

@@ -72,9 +72,10 @@ class CreateGameForm extends React.Component {
                 .catch(err => console.log({err: err}))
     }
 
-    // componentWillUnmount() {
-    //     this.props.removeGameErrors()
-    // }
+    componentWillUnmount() {
+        // debugger
+        this.props.removeErrors()
+    }
 
     renderErrors() {
         return(
@@ -98,7 +99,7 @@ class CreateGameForm extends React.Component {
                 <form className='new-game-form' onSubmit = {this.handleSubmit}>
                 <p className='game-form-header'>Create a New Game</p>
                     <div className='game-form-name'>
-                        <label >Name: 
+                        <label >Name:<span className='asterik'>*</span> 
                             <input type='text' value={this.state.name} onChange={this.update('name')}/>
                         </label>
                     </div>
@@ -114,7 +115,7 @@ class CreateGameForm extends React.Component {
                         </div>
                     </div>
                     <div className='game-form-category'>
-                        <h2>Select all categories that apply:</h2>
+                        <h2>Select all categories that apply:<span className='asterik'>*</span></h2>
                         <div>
                             <label>Board Game
                                 <input type='checkbox' name='category' value='Board Game' onClick={this.updateSelect('category')}/>
@@ -167,7 +168,7 @@ class CreateGameForm extends React.Component {
                         </div>
                     </div>
                     <div className='game-form-type'>
-                        <h2>What setting is this best played in?</h2>
+                        <h2>What setting is this best played in?<span className='asterik'>*</span></h2>
                         <div>
                             <label>Connected (online)
                                 <input type='checkbox' name='gameType' value='Connected' onClick={this.updateSelect('gameType')}/>
