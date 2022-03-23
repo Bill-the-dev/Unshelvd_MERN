@@ -60,8 +60,8 @@ router.post("/register", (req, res) => {
         username: req.body.username,
         email: req.body.email,
         password: req.body.password,
-        // groups: ['623364d13d62d71018de43e9','6233840373e6a199a3e359e1'],
-        // games: ['6230b9b032774c1b65713ac6','6230ba4132774c1b65713ac9']
+        // groups: ['623477c34cdf8b5e4353ebdf'],
+        games: ['62346dc0e58d7eaa4865974a','62346dc0e58d7eaa48659758','62346dc0e58d7eaa48659746','623b8ac3a5a2e640e0c131a4','623b8aa5a5a2e640e0c131a3','623b8c35a5a2e640e0c131a5','623b90f8a5a2e640e0c131a6']
       });
 
       
@@ -72,6 +72,9 @@ router.post("/register", (req, res) => {
           newUser
             .save()
             .then(user => {
+              // const defaultGroup = Group.findById('623477c34cdf8b5e4353ebdf')
+              // defaultGroup.users.concat(user._id)
+              // defaultGroup.save()
           
               const payload = { id: user.id, username: user.username };
 
@@ -81,11 +84,13 @@ router.post("/register", (req, res) => {
                   token: "Bearer " + token
                 });
               });
+
             })
             // .catch(err => console.log(err));
             .catch(err => res.json(err))
         });
       });
+
     }
   });
 });
