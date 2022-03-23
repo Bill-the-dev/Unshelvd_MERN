@@ -45,10 +45,14 @@ class Library extends React.Component {
           
           <div className='library-container'>
             <h1 className="welcome-msg--library">{currentUser.username}'s Library</h1>
-            
-            <Link to="/newgame" className='button button--add-game'>
-              <button>Create Game</button>
-            </Link>
+            <div className='button-container'>
+              <Link to="/browse" className='button--all-games'>
+                <button className='button'>Browse All Games</button>
+              </Link>
+              <Link to="/newgame" className='button--add-game'>
+                <button className='button'>Create Game</button>
+              </Link>
+            </div>
             <div className='library-index-container'>
               <ul className='library-index-list'>
                 {

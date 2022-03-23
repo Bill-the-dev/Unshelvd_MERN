@@ -60,17 +60,23 @@ class GameShow extends React.Component {
                     <h1 id="game-show-title">{currentGame.name}</h1>
                     <img src={currentGame.image} alt={currentGame.image} id="game-img--show" />
                     {/* <h2 id="game-show-status">{game.status}</h2> */}
-                    <h2 id="game-show-num-players">Players: {currentGame.playerCount?.min} - {currentGame.playerCount?.max}</h2>
-                    <h2 id="game-show-category">Category: {currentGame.category}</h2>
-                    <p id="game-show-description">{currentGame.description}</p>
-                    <h2 id="game-show-setting">Setting: {currentGame.gameType}</h2>
-                    
-                    <div>
+                    <div className="game-details">
+                        <p id="game-show-description">{currentGame.description}</p>
+                        <h2 id="game-show-num-players">Players: {currentGame.playerCount?.min} - {currentGame.playerCount?.max}</h2>
+                        <h2 id="game-show-category">Category: {currentGame.category?.map((cat, i) => {
+                            return (i === currentGame.category.length - 1) ? cat : cat + ", "
+                        })}</h2>
+                        <h2 id="game-show-setting">Setting: {currentGame.gameType}</h2>
+                    </div>
+                    <div id="add-game-container">
                         { 
                             (!this.props.currentUser.games?.includes(this.props.currentGame._id)) ?
-                                <button id="button--add-game-to-library" onClick={() => this.addGameLibrary()}>Add Game to Library</button> : null
+                                <button className="button button--add-game-to-library" onClick={() => this.addGameLibrary()}>Add Game to Library</button> 
+                                : 
+                                <button className="button button--add-game-to-library button--added-to-library">Added to Library</button>
                         }
                     </div>
+                    
 
 
                     {/* fixthis w Ethans ^ */}
