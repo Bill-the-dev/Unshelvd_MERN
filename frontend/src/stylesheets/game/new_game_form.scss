@@ -4,27 +4,29 @@
   color: $dark-blue;
   overflow-y: auto;
   // padding-top: 2vh;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(10, 1fr);
   grid-row: 1 / 11;
   grid-column: 1 / 13;
   font: inherit;
 }
 
 .game-form-header {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: center;
+  // text-align: center;
+  align-self: flex-end;
   font-size: 2rem;
   grid-column: 3/11;
   padding: 1%;
+  font-family: $serif;
   // grid-row: 1/2;
 }
 
 .new-game-form {
   display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(10, 1fr);
   height: 100%;
   width: 100%;
   grid-column: 3/11;
@@ -44,6 +46,8 @@
   }
   input {
     margin-left: 1%;
+    padding: .5%;
+    width: 20%;
   }
 }
 
@@ -152,6 +156,8 @@
     width: 30%;
     height: 70%;
     align-self: center;
+    padding: .5%;
+    margin-top: .5%;
   }
 }
 
@@ -184,14 +190,15 @@
     border: 1px solid $dark-blue;
     background-color: white;
     border-radius: 4px;
-    padding: .2rem;
+    padding: .5rem;
     color: $dark-blue;
     cursor: pointer;
     &:hover {
       background-color: $light-blue;
       color: white;
+      box-shadow: 2px 2px 10px black;
     }
-    background: linear-gradient(225deg,$lightest-tan, $body-lightest)
+    // background: linear-gradient(225deg,$lightest-tan, $body-lightest)
   }
 }
 
