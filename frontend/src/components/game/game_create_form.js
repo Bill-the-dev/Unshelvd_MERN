@@ -7,7 +7,7 @@ class CreateGameForm extends React.Component {
         super(props);
         this.state = {
             name: '',
-            image: 'xx',
+            image: 'https://github.com/Bill-the-dev/Unshelvd_MERN/blob/main/z-images/game-piece-1.png?raw=true',
             min: 1, //playerCount.min: '' (?)
             max: 1000, //playerCount.max: '' (?)
             category: [],
