@@ -35,14 +35,17 @@
   color: $dark-brown;
   font-weight: 500;
   font-size: 4rem;
+  grid-column: 3/11;
+
 }
 
 .suggest-form {
   display: grid;
   height: 100%;
-  grid-template-columns: 0.5fr 2fr 5fr 2fr 0.5fr;
-  grid-template-rows: 0.05fr 1fr 2fr 2fr 2fr 2fr 2fr 2fr 1fr 1fr 5fr;
+  grid-template-columns:  repeat(12, 1fr);
+  grid-template-rows: repeat(10, 1fr);
   grid-row-gap: 20px;
+  grid-column: 3/11;
     select {
       width: 100%;
     }
@@ -50,7 +53,7 @@
 
 .suggest-form-library {
   display: flex;
-  grid-column: 2/5;
+  grid-column: 3/11;
   grid-row: 2/3;
   align-items: center;
   justify-content: center;
@@ -71,7 +74,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  grid-column: 2/5;
+  grid-column: 3/11;
   grid-row: 3/4;
   font-family: 'Montserrat', sans-serif;
   color: $dark-brown;
@@ -88,7 +91,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  grid-column: 2/5;
+  grid-column: 3/11;
   grid-row: 4/5;
   font-family: 'Montserrat', sans-serif;
   color: $dark-brown;
@@ -107,7 +110,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  grid-column: 2/5;
+  grid-column: 3/11;
   grid-row: 5/6;
   font-family: 'Montserrat', sans-serif;
   color: $dark-brown;
@@ -131,7 +134,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  grid-column: 2/5;
+  grid-column: 3/11;
   grid-row: 6/7;
     input {
       border: 2px solid $dark-blue;
@@ -155,7 +158,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  grid-column: 2/5;
+  grid-column: 3/11;
   grid-row: 7/8;
     button {
       border: 1px solid $dark-blue;
@@ -201,11 +204,10 @@
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   color: $body-lightest;
-  cursor: pointer;
 }
 
 .suggest-results {
-  grid-column: 2/5;
+  grid-column: 3/11;
   grid-row: 9/10;
     .result-null {
     display: flex;

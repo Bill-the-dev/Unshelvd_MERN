@@ -1,6 +1,4 @@
 import React from 'react';
-import { openModal } from '../../actions/modal_actions';
-import LibraryItem from '../library/library_item'
 import SuggestItem from './suggest_item';
 
 class SuggestForm extends React.Component{
@@ -21,7 +19,6 @@ class SuggestForm extends React.Component{
         this.typeUpdate = this.typeUpdate.bind(this);
         this.clearForm = this.clearForm.bind(this);
     }
-
 
     componentDidMount(){
         this.props.fetchUser(this.props.sessionUser.id)
@@ -85,24 +82,19 @@ class SuggestForm extends React.Component{
         
         const userPoolId = currentGroups[this.state.library]?.users //FINDS USERS IN SELECTED GROUP
         let gamePool = []
-        // debugger
+
         for (let i = 0; i < userPoolId.length; i++) {
-            // const allUsers = this.props.allUsers
-            // gamePool.push(...this.props.allUsers[userPoolId[i]].games);
-            // gamePool.push(allUsers[userPoolId[i]]?.games);
             gamePool = gamePool.concat(allUsers[userPoolId[i]]?.games)
         }
         const realGamePool = gamePool.filter(item => {
             if (item) return item
         })
-        // debugger
 
         for (let i = 0; i < realGamePool.length; i++) {
             if (!filteredGames.includes(allGames[realGamePool[i]])) {
                 filteredGames.push(allGames[realGamePool[i]])
             }
         }
-        // debugger
 
         const categoryFilter = (game, player) => {
             for (const ele of player) {
@@ -132,15 +124,6 @@ class SuggestForm extends React.Component{
             filteredGames: userFiltered
         })
     }
-
-    componentDidUpdate(prevState) {
-        if (this.state.filteredGames !== prevState.filteredGames) {
-
-        }
-
-    }
-
-
 
     renderErrors() {
         return(
@@ -217,11 +200,9 @@ class SuggestForm extends React.Component{
                                     </label>
                                 ))}
                             </div>
-
-                            {/* </select> */}
                     </div>
 
-
+                    {/* TYPE SELECTOR */}
                     <div className='suggest-form-type'>
                         <h2>What setting are you playing in?</h2>
                         <div>
@@ -247,7 +228,7 @@ class SuggestForm extends React.Component{
                          <button onClick={() => this.clearForm()}>Clear preferences</button>
                     </div>
 
-
+                    {/* RESULTS OUTPUT */}
                     <div className='suggest-results'>
                     {
                         (this.state.filteredGames.length > 0 ) ?
