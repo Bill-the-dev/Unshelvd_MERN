@@ -23,6 +23,7 @@ class NavBar extends React.Component {
                     <NavLink to={'/library'}>Library</NavLink>
                     <NavLink to={'/groups'}>Groups</NavLink>
                     <NavLink to={'/suggest'}>Suggest</NavLink>
+                    <NavLink to={'/browse'}>Browse</NavLink>
                 </div>
                 <Link id='logout-button' to={'/'} onClick={this.logoutUser}>Logout</Link>
             </div>
