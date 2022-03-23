@@ -7,6 +7,7 @@
   border: 1px solid $body-lightest;
   border-radius: 4px;
   background-color: $body-lightest;
+  cursor: pointer;
     box-shadow:  4px 4px 4px black;
       &:hover {
         transform: scale(1.5);

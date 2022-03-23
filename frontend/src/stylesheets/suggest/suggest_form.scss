@@ -4,6 +4,18 @@
   color: $dark-blue;
   padding-top: 8vh;
   overflow-y: auto;
+    select {
+      padding: 1rem;
+      font-size: 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    option {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: $dark-brown;
+    }
 }
 
 .suggest-form-header {
@@ -16,7 +28,7 @@
   font-family: 'Montserrat', sans-serif;
   color: $dark-brown;
   font-weight: 500;
-  font-size: 2.5rem;
+  font-size: 4rem;
 }
 
 .suggest-form {
@@ -25,35 +37,31 @@
   grid-template-columns: 0.5fr 2fr 5fr 2fr 0.5fr;
   grid-template-rows: 0.05fr 1fr 2fr 2fr 2fr 2fr 2fr 2fr 1fr 1fr 5fr;
   grid-row-gap: 20px;
-  select {
-    width: 100%;
-  }
+    select {
+      width: 100%;
+    }
 }
 
 .suggest-form-library {
   display: flex;
   grid-column: 2/5;
   grid-row: 2/3;
-  font-weight: bold;
   align-items: center;
   justify-content: center;
   font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
   color: $dark-brown;
-  h2 {
-    font-weight: bold;
-  }
-  label{ 
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-  }
-  div {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-  }
+    h2 {
+      font-weight: bold;
+    }
+    div {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    }
 }
+
+
 
 .suggest-form-numplayers {
   display: flex;
@@ -64,17 +72,16 @@
   grid-row: 3/4;
   font-family: 'Montserrat', sans-serif;
   color: $dark-brown;
-  h2 {
-    font-weight: bold;
-  }
-  div {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-  }
-  label {
-    padding: 1%;
-  }
+  font-size: 1.5rem;
+
+    h2 {
+      font-weight: bold;
+    }
+    div {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    }
 }
 
 .suggest-form-category {
@@ -86,17 +93,19 @@
   grid-row: 4/5;
   font-family: 'Montserrat', sans-serif;
   color: $dark-brown;
-  h2 {
-    font-weight: bold;
-    padding: 1%;
-  }
-  label {
-    width: 100%;
-    padding: 20%;
-  }
-  input:checked {
-    background-color: red;
-  }
+  font-size: 1rem;
+    h2 {
+      font-weight: bold;
+      padding: 1%;
+      font-size: 1.5rem;
+    }
+    label {
+      width: 100%;
+      padding: 20%;
+    }
+    input:checked {
+      background-color: red;
+    }
 }
 
 .suggest-form-type {
@@ -108,17 +117,22 @@
   grid-row: 5/6;
   font-family: 'Montserrat', sans-serif;
   color: $dark-brown;
-  h2 {
-    font-weight: bold;
-  }
-  div {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-  }
-  label {
-    padding: 1%;
-  }
+  font-size: 1.5rem;
+    h2 {
+      font-weight: bold;
+    }
+    div {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    }
+    label {
+      padding: 1%;
+      cursor: pointer;
+        input {
+          cursor: pointer;
+        }
+    }
 }
 
 .suggest-form-submit {
@@ -128,18 +142,20 @@
   align-items: center;
   grid-column: 2/5;
   grid-row: 6/7;
-  input {
-    border: 1px solid $dark-blue;
-    background-color: white;
-    border-radius: 2px;
-    padding: .5%;
-    color: $dark-blue;
-    cursor: pointer;
-    &:hover {
-      background-color: $dark-brown;
-      color: white;
+    input {
+      border: 2px solid $dark-blue;
+      
+      font-size: 1.5rem;
+      background-color: white;
+      border-radius: 10px;
+      padding: .5%;
+      color: $dark-blue;
+      cursor: pointer;
+        &:hover {
+          background-color: $dark-brown;
+          color: white;
+        }
     }
-  }
 }
 
 
@@ -174,27 +190,35 @@
 
 .suggest-results {
   grid-column: 2/5;
-  grid-row: 10/11;
+  grid-row: 9/10;
+    .result-null {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    }
 }
 
 .results-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 3%;
-  border: 1px solid red;
-  ul {
-    display: flex;
-    li {
-      margin: 3%;
+  padding: 3%; 
+  margin: 0 5%;
+  border-radius: 6px;
+  background: linear-gradient(0deg, rgba(63,38,29,1) 0%, rgba(148,117,117,1) 100%);
+  box-shadow: 2px 2px 8px $dark-blue;
+    ul {
+      display: flex;
+        li {
+          margin: 3%;
+        }
     }
-    .results-container {
-      border: 1px solid $dark-brown;
-    }
-  }
 }
 
 .list-head {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
+
