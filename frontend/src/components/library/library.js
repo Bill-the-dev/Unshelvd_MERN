@@ -34,32 +34,43 @@ class Library extends React.Component {
 
     // this.props.fetchUserLibrary(this.props.sessionUser.id);
 
-  }  
-    
-    render() {
-        const {currentUser, userGames, fetchGames, fetchGame, createGame, fetchUserGames, openModal} = this.props
-        // if (!userGames) return null;
-        if (!currentUser) return null;
-        
-        return(
-          
-          <div className='library-container'>
-            <h1 className="welcome-msg--library">{currentUser.username}'s Library</h1>
-
-              <Link to="/newgame" className='button--add-game'>
-                <button className='button'>Create Game</button>
-              </Link>
-
-            <div className='library-index-container'>
-              <ul className='library-index-list'>
-                {
-                  this.state.gameObjects.map(game =>  <LibraryItem currentUser={currentUser} openModal={ openModal } game={ game }  key={ game._id } />)
-                }
-              </ul>
-            </div>
-          </div>
-        )
+  }
+  
+  componentDidUpdate(prevProps) {
+    debugger
+    if (this.props.userGames?.length !== prevProps.userGames?.length) {
+      debugger
+      this.setState({
+        currentUserGames: this.props.userGames
+      })
+      console.log(this.props.userGames)
     }
+  }
+    
+  render() {
+    const {currentUser, userGames, fetchGames, fetchGame, createGame, fetchUserGames, openModal} = this.props
+    // if (!userGames) return null;
+    if (!currentUser) return null;
+    
+    return(
+      
+      <div className='library-container'>
+        <h1 className="welcome-msg--library">{currentUser.username}'s Library</h1>
+
+          <Link to="/newgame" className='button--add-game'>
+            <button className='button'>Create Game</button>
+          </Link>
+
+        <div className='library-index-container'>
+          <ul className='library-index-list'>
+            {
+              this.state.gameObjects.map(game =>  <LibraryItem currentUser={currentUser} openModal={ openModal } game={ game }  key={ game._id } />)
+            }
+          </ul>
+        </div>
+      </div>
+    )
+  }
 }
 
 export default Library;

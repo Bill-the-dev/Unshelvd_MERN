@@ -56,20 +56,32 @@ class CreateGameForm extends React.Component {
             userCreator: this.state.userCreator
         };
 
-        let submitGame = async () => this.props.createGame(game);
+        let submitGame = async() => this.props.createGame(game);
         // let asyncUpdateUser = async () => {
         //     const updatedUser = this.props.currentUser
         //     updatedUser.games = this.props.currentUser.games.concat(game.game.data._id)
         // }
+        // Original before Bill changes:
+        // submitGame()
+        // .then(game => { 
+        //             const updatedUser = this.props.currentUser
+        //             updatedUser.games = this.props.currentUser.games.concat(game.game.data._id)
+        //             // asyncUpdateUser
+        //             this.props.updateUser(updatedUser)
+        //             setTimeout(this.props.history.push({pathname: `/library`}),1000)
+        //         })
+        //         .catch(err => console.log({err: err}))
         submitGame()
         .then(game => { 
-                    const updatedUser = this.props.currentUser
-                    updatedUser.games = this.props.currentUser.games.concat(game.game.data._id)
-                    // asyncUpdateUser
-                    this.props.updateUser(updatedUser)
-                    setTimeout(this.props.history.push({pathname: `/library`}),1000)
-                })
-                .catch(err => console.log({err: err}))
+            debugger
+            const updatedUser = this.props.currentUser
+            updatedUser.games = this.props.currentUser.games.concat(game.game.data._id)
+            // asyncUpdateUser
+            this.props.updateUser(updatedUser)
+        })
+        .then(() => this.props.fetchGames())
+        .then(() => setTimeout(this.props.history.push({pathname: `/library`}),1000))
+        .catch(err => console.log({err: err}))
     }
 
     componentWillUnmount() {
@@ -107,10 +119,10 @@ class CreateGameForm extends React.Component {
                         <p><span>Number of Players</span> (leave blank if no restriction):</p>
                         <div>
                             <label>Min 
-                                <input type='number' onChange={this.update('min')}/>
+                                <input type='number' onChange={this.update('min')} min="1"/>
                             </label>
                             <label>Max 
-                                <input type='number' onChange={this.update('max')}/>
+                                <input type='number' onChange={this.update('max')} min="1"/>
                             </label>
                         </div>
                     </div>
