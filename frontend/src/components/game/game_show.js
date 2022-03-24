@@ -68,14 +68,14 @@ class GameShow extends React.Component {
                         })}</h2>
                         <h2 id="game-show-setting">Setting: {currentGame.gameType}</h2>
                     </div>
-                    {/* <div id="add-game-container">
+                    <div id="add-game-container">
                         { 
                             (!this.props.currentUser.games?.includes(this.props.currentGame._id)) ?
                                 <button className="button button--add-game-to-library" onClick={() => this.addGameLibrary()}>Add Game to Library</button> 
                                 : 
                                 <button className="button button--add-game-to-library button--added-to-library">Added to Library</button>
                         }
-                    </div> */}
+                    </div>
                     
 
 
