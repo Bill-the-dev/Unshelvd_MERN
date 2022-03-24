@@ -79,8 +79,8 @@ class CreateGameForm extends React.Component {
             // asyncUpdateUser
             this.props.updateUser(updatedUser)
         })
-        .then(() => this.props.fetchGames())
-        .then(() => setTimeout(this.props.history.push({pathname: `/library`}),1000))
+        // .then(() => this.props.fetchGames())
+        .then(() => setTimeout(this.props.history.push({pathname: `/library`}),3000))
         .catch(err => console.log({err: err}))
     }
 
