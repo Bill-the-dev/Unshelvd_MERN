@@ -49,15 +49,15 @@
  h1 {
    font-family: $serif;
    color: $lightest-tan;
-   font-size: 2rem;
+   font-size: 2.5rem;
    font-weight: bold;
-   padding: 1%;
-   margin: 1rem;
+   padding: .2rem;
+   margin: 2rem;
    // border: 1px solid lightblue;
  }
  h2 {
    // font-family: Verdana, Geneva, Tahoma, sans-serif;
-   color: $lightest-tan;
+   color: $text-blue;
    font-size: 1rem;
    // font-weight: bold;
    padding: 1%;
@@ -65,11 +65,13 @@
  }
  p {
    // font-family: Verdana, Geneva, Tahoma, sans-serif;
-   color: $lightest-tan;
-   font-size: .8rem;
-   text-align: center;
-   padding: 1%;
-   max-width: 60%;
+  color: $text-blue;
+  font-size: .8rem;
+  text-justify: auto;
+  // text-align: justify;
+  align-self: center;
+  padding: 1%;
+  overflow-wrap: break-word;
    // border: 1px solid lightblue;
  }
  img {
@@ -79,7 +81,7 @@
    // border: 1px solid lightblue;
    min-height: 20vh;
    max-height: 50vh;
-   width: 100%;
+   width: auto;
    box-shadow:  4px 4px 4px black;
  }
 
