@@ -400,26 +400,102 @@ const gamesTest = [
       userCreator: '623b4d3143f29e517e625064'
     }
   ),
-  // // removed, not in master list yet caused undefined
-  // new Game(
-  //   {
-  //     _id: '623b55450222f83386e47761',
-  //   name: 'Left, Center, Right (LCR)',
-  //   image: 'https://github.com/Bill-the-dev/Unshelvd_MERN/blob/main/z-images/playing-cards-3.png?raw=true',
-  //   playerCount: {
-  //     min: 3,
-  //     max: 10
-  //   },
-  //   category: [
-  //     "Playing Cards", "Dice"
-  //   ],
-  //   gameType: [
-  //     "Unplugged"   
-  //   ],
-  //   description: 'Roll your way to victory in this dice game by being the last player to hold their chips! https://bicyclecards.com/how-to-play/left-center-right/',
-  //   userCreator: '623b4d3143f29e517e625064'
-  //   }
-  // ),
+  // added recent, only to unshelved 
+  new Game(
+    {
+      _id: '623b55450222f83386e47761',
+    name: 'Left, Center, Right (LCR)',
+      image: 'https://github.com/Bill-the-dev/Unshelvd_MERN/blob/main/z-images/dice-1.png?raw=true',
+    playerCount: {
+      min: 3,
+      max: 10
+    },
+    category: [
+      "Playing Cards", "Dice"
+    ],
+    gameType: [
+      "Unplugged"
+    ],
+    description: 'Roll your way to victory in this dice game by being the last player to hold their chips! https://bicyclecards.com/how-to-play/left-center-right/',
+    userCreator: '623b4d3143f29e517e625064'
+    }
+  ),
+  new Game(
+    {
+    _id: '623b8ac3a5a2e640e0c131a4',
+    name: 'Hangman',
+    image: 'https://github.com/Bill-the-dev/Unshelvd_MERN/blob/main/z-images/pen-and-paper-1.png?raw=true',
+    playerCount: {
+      min: 2,
+      max: 6
+    },
+    category: [
+      "Pen & Paper"
+    ],
+    gameType: [
+      "Unplugged"
+    ],
+    description: "A pen & paper classic, guess the mystery word one letter at a time before it's too late!  Instructions: https://printerfriend.ly/games/hangman/how-to-play-hangman-rules/",
+    userCreator: '623b4d3143f29e517e625064'
+    }
+  ),
+  new Game(
+    {
+    _id: '623b8aa5a5a2e640e0c131a3',
+    name: 'Dots and Boxes',
+    image: 'https://github.com/Bill-the-dev/Unshelvd_MERN/blob/main/z-images/pen-and-paper-1.png?raw=true',
+    playerCount: {
+      min: 2,
+      max: 6
+    },
+    category: [
+      "Pen & Paper"
+    ],
+    gameType: [
+      "Unplugged"
+    ],
+    description: "To play Dots, you need a square of dots on the page (start with 6×6 or challenge yourself and go up to 30×30 or more). Once the square is created, players (2 or more) take turns with a different color pen creating line segments between dots. When a player forms a square with their line, they may put their initial in that square and play again. The game continues until all the lines between the dots have been drawn.",
+    userCreator: '623b4d3143f29e517e625064'
+    }
+  ),
+  new Game(
+    {
+    _id: '623b8c35a5a2e640e0c131a5',
+    name: 'Golf',
+    image: 'https://github.com/Bill-the-dev/Unshelvd_MERN/blob/main/z-images/playing-cards-3.png?raw=true',
+    playerCount: {
+      min: 2,
+      max: 8
+    },
+    category: [
+      "Playing Cards"
+    ],
+    gameType: [
+      "Unplugged", "Connected"
+    ],
+    description: "Also known as Polish Polka, Polish Poker, Turtle, Hara Kiri, Poison, or Crazy Nines. The game is typically played by 2 to 6 players with 4 to 10 cards dealt to each player. There are many variations to this card game and its origins are unclear. Instructions: https://www.pagat.com/draw/golf.html Connected Play: https://www.trapapps.com/web/044/site/game/golf ",
+    userCreator: '623b4d3143f29e517e625064'
+    }
+  ),
+  new Game(
+    {
+      _id: '623b90f8a5a2e640e0c131a6',
+    name: 'Rummy 500',
+    image: 'https://github.com/Bill-the-dev/Unshelvd_MERN/blob/main/z-images/playing-cards-3.png?raw=true',
+    playerCount: {
+      min: 2,
+      max: 8
+    },
+    category: [
+      "Playing Cards"
+    ],
+    gameType: [
+      "Unplugged", "Connected"
+    ],
+    description: "Also called 500 Rum, 500 Rummy, Pinochle Rummy, Michigan Rummy, Rummy and Gin Rummy. This can cause some confusion as to which game is actually being played. The primary difference between Rummy 500 and the other Rummy games is that each player scores for their own melds. Instructions: https://www.pagat.com/rummy/500rum.html Connected Play: https://www.trapapps.com/web/044/site/game/rummyfh ",
+    userCreator: '623b4d3143f29e517e625064'
+    }
+  ),
 ]
 
 const loadCounter = () => {

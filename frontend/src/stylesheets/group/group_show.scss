@@ -26,7 +26,6 @@
     font-family: $serif;
     font-weight: 700;
     font-size: 1.8rem;
-    // border-bottom: 2px solid $text-blue;
     text-decoration: underline;
     cursor: default;
   }
@@ -54,23 +53,24 @@
 
 
 .gs-content {
-  // border: 1px solid gray;
   grid-row: 3 / 13;
   grid-column: 3 / 11;
   display: grid;
-  // border: $beige solid 2px;
   border-radius: 6px;
-    box-shadow: 2px 2px 8px black;
+  overflow: visible;
+  margin-bottom: 3rem;
 }
 
 .gs-user-list-container {
   border: $beige solid 2px;
   border-radius: 6px;
-  grid-row: 3 / 12;
+  grid-row: 3 / 11;
   grid-column: 1 / 4;
   display: flex;
   flex-direction: column;
   padding: 1rem;
+  // box-shadow: 2px 2px 8px black;
+
   
   h2 {
     font-family: 'Bodoni Moda', serif;
@@ -78,7 +78,6 @@
     color: $text-blue;
     text-decoration: underline;
   }
-  overflow-y: auto;
 }
 
 .gs-user-li {
@@ -91,42 +90,30 @@
 .gs-games-container {
   border: $beige solid 2px;
   border-radius: 6px;
-  grid-row: 3 / 12;
+  grid-row: 3 / 11;
   grid-column: 4 / 13;
   display: flex;
   flex-wrap: wrap;
-  // overflow-y: auto;
+  padding-bottom: 2rem;
+  // box-shadow: 2px 2px 8px black;
+
 }
 
 .gs-games-list {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  // height: 100%;
   padding-top: 1rem;
   justify-content: space-around;
-  
-
+  z-index: 1;
 }
 
 .gs-game-item {
+  display: flex;
   border: 1px solid gray;
   width: 20vh;
   height: 20vh;
   align-items: center;
   justify-content: center;
-  
+  z-index: 2;
 }
-
-
-// Won't select past Item CSS 
-// #group-lib-item {
-//   margin: 2rem;
-
-// }
-// #group-lib-item:hover {
-//   transform: scale(1.05);
-//   transition: all .6s ease-in-out;
-//   border-radius: 4px;
-
-// }
