@@ -28,7 +28,7 @@ router.get('/', (req, res) => {
 })
 
 // USER SHOW PAGE
-router.get('/:id', (req,res) => {
+router.get('/:id', (req, res) => {
   User.findById(req.params.id)
       .then(user => res.json(user))
       .catch(err => res.status(404).json({nouserfound: 'no user found with id'}))

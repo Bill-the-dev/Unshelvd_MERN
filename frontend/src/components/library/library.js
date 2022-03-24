@@ -3,58 +3,44 @@ import LibraryItem from './library_item';
 import { Link} from 'react-router-dom'
 
 
-
 class Library extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       currentUserGames: [],
-      gameObjects: []
+      gameObjects: [],
+      currentUserId: this.props.sessionUser.id
     }
   }
 
   componentDidMount() {
+    // debugger
     this.props.fetchGames()
-    this.props.fetchUser(this.props.sessionUser.id)
-      // .then(() => this.props.fetchUser(this.props.sessionUser.id))
-      // .then(() => console.log(this.props))
+    // this.props.fetchUser(this.state.currentUserId)
+    //   // .then(() => this.props.fetchUser(this.props.sessionUser.id))
       .then(() => this.setState({currentUserGames: this.props.userGames}))
-      // .then(() => console.log(this.state))
       .then(() => {
         let games = []
+        console.log('mapping games')
         this.props.allGames?.map(game => {
-          // debugger
           if (this.state.currentUserGames.includes(game._id)){
             games.push(game)
           }
         })
       this.setState({gameObjects: games})
-      // console.log(games)
-      })
-
-    // this.props.fetchUserLibrary(this.props.sessionUser.id);
-
-  }
-  
-  componentDidUpdate(prevProps) {
-    debugger
-    if (this.props.userGames?.length !== prevProps.userGames?.length) {
-      debugger
-      this.setState({
-        currentUserGames: this.props.userGames
-      })
-      console.log(this.props.userGames)
-    }
+    })
   }
     
   render() {
     const {currentUser, userGames, fetchGames, fetchGame, createGame, fetchUserGames, openModal} = this.props
-    // if (!userGames) return null;
-    if (!currentUser) return null;
+    if (!currentUser) {
+      console.log("no current user in render")
+      return null
+    } else {
+      console.log("got past current user")
+    }
     
-    return(
-      
+    return(    
       <div className='library-container'>
         <h1 className="welcome-msg--library">{currentUser.username}'s Library</h1>
 
