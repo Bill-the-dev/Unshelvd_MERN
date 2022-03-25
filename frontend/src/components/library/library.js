@@ -14,7 +14,7 @@ class Library extends React.Component {
   }
 
   componentDidMount() {
-    debugger
+    // debugger
     if (!this.props.currentUser._id){
       this.props.fetchUser(this.props.sessionUser.id)
     }

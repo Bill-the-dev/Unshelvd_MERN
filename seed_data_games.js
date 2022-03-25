@@ -503,12 +503,12 @@ const loadCounter = () => {
   for (let i = 0; i < gamesTest.length; i++) {
     // debugger
     gamesTest[i].save((err, res) => {
-      console.log(`errors = ${err} res = ${res} `)
-      console.log(`i = ${i} game = ${gamesTest[i]} `)
+      // console.log(`errors = ${err} res = ${res} `)
+      // console.log(`i = ${i} game = ${gamesTest[i]} `)
       gamesDone++
       if (gamesDone === gamesTest.length) {
         // debugger
-        console.log(`${i}`)
+        // console.log(`${i}`)
         exit() 
       }
       // debugger

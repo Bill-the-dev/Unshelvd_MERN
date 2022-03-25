@@ -321,12 +321,12 @@ const loadCounter = () => {
   for (let i = 0; i < seedUsers.length; i++) {
     // debugger
     seedUsers[i].save((err, res) => {
-      console.log(`errors = ${err} res = ${res} `);
-      console.log(`i = ${i} user = ${seedUsers[i]} `);
+      // console.log(`errors = ${err} res = ${res} `);
+      // console.log(`i = ${i} user = ${seedUsers[i]} `);
       usersDone++;
       if (usersDone === seedUsers.length) {
         // debugger
-        console.log(`${i}`);
+        // console.log(`${i}`);
         exit();
       }
       // debugger
