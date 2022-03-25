@@ -220,12 +220,12 @@ class SuggestForm extends React.Component{
 
                     {/* FORM SUBMIT */}
                     <div className='suggest-form-submit'>
-                        <input type="submit" value="Go Fish"/>
+                        <input className="button" type="submit" value="Go Fish"/>
                         {this.renderErrors()}
                     </div>
 
                     <div className='suggest-form-clearform'>
-                         <button onClick={() => this.clearForm()}>Clear preferences</button>
+                         <button className="button" onClick={() => this.clearForm()}>Clear preferences</button>
                     </div>
 
                     {/* RESULTS OUTPUT */}

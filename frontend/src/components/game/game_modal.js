@@ -1,61 +1,67 @@
-import React from 'react';
+ import React from 'react';
 import {connect} from 'react-redux';
-import {updateUser} from '../../actions/user_actions';
+import {fetchUser, updateUser} from '../../actions/user_actions';
 import {withRouter} from 'react-router-dom'
 
- function GameModal(props) {
 
-  const { modal, currentUser, updateUser, history} = props;
+ class GameModal extends React.Component {
 
-  const addGameLibrary = () => {
-    let updatedUser = currentUser
-      // debugger
-      updatedUser.games = currentUser.games.concat(modal._id)
-      updateUser(updatedUser)
-      // debugger
-      history.push({pathname: '/library'})
+  constructor(props) {
+    super(props)
+    this.addGameLibrary = this.addGameLibrary.bind(this)
+    this.state = {
+      inLibrary: false
+    }
   }
 
-  
+  componentDidMount() {
+    this.props.fetchUser(this.props.currentUserId)
+  }
 
-   return (
-
-    <div className="game-modal-container">
-
-    <div className="game-modal-item">
-
-        <h1 id="game-item-title">{modal.name}</h1>
-        <img src={modal.image} alt={modal.image} id="game-img--modal" />
-
-        <h2 id="game-modal-num-players">Players: {modal.playerCount?.min} - {modal.playerCount?.max}</h2>
-        <h2 id="game-modal-category">Category: {modal.category}</h2>
-        <p id="game-modal-description">{modal.description}</p>
-        <h2 id="game-modal-setting">Setting: {modal.gameType}</h2>
-        
-        <div>
-            { 
-                (!currentUser.games?.includes(modal._id)) ?
-                    <button id="button--add-game-to-library" onClick={() => addGameLibrary()}>Add Game to Library</button> : null
-            }
-        </div>
-
-    </div>
-</div>
-
-   )
- }
-
- const mapStateToProps = (state) => {
-    return ({
-      currentUser: state.entities.users.currentUser,
+  addGameLibrary() {
+    let updatedUser = this.props.currentUser
+    debugger
+    updatedUser.games = this.props.currentUser.games.concat(this.props.modal._id)
+    this.props.updateUser(updatedUser)
+    this.setState({
+      inLibrary: true
     })
+  }
+
+  render() {
+    const {modal, currentUser, } = this.props
+
+    return (
+
+      <div className="game-modal-container">
+        <div className="game-modal-item">
+
+            <h1 id="game-item-title">{modal.name}</h1>
+            <img src={modal.image} alt={modal.image} id="game-img--modal" />
+
+            <div className='game-details'>
+              <h2 id="game-modal-num-players">Players: {modal.playerCount?.min} - {modal.playerCount?.max}</h2>
+              <h2 id="game-modal-category">Category: {modal.category?.map((cat, i) => {
+                            return (i === modal.category.length - 1) ? cat : cat + ", "
+              })}</h2>
+              <p id="game-modal-description">{modal.description}</p>
+              <h2 id="game-modal-setting">Setting: {modal.gameType}</h2>
+            </div>
+            
+            <div>
+                { 
+                (!currentUser.games?.includes(modal._id)) ?
+                    <button id="button--add-game-to-library" onClick={() => this.addGameLibrary()}>Add Game to Library</button> : 
+                    <button className="button button--add-game-to-library button--added-to-library">Added to Library</button>
+                }
+            </div>
+
+        </div>
+      </div>
+    )
+  }
  }
 
- const mapDispatchToProps = (dispatch) => {
-   return ({
-    updateUser: () => dispatch(updateUser())
-   })
- }
 
 
- export default withRouter(connect(mapStateToProps, mapDispatchToProps)(GameModal));
+ export default GameModal;

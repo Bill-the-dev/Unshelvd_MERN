@@ -9,10 +9,11 @@ import TeamShow from "../splash/team";
 import GameModal from "../game/game_modal";
 import { withRouter } from "react-router-dom";
 import GroupFormContainer from '../group/group_create_container';
+import {fetchUser, updateUser} from '../../actions/user_actions';
 
 
 
-const Modal = ({ modal, closeModal }) => {
+const Modal = ({ modal, closeModal, fetchUser, updateUser, currentUser, currentUserId }) => {
     if (!modal) {
         return (null);
     };
@@ -46,7 +47,7 @@ const Modal = ({ modal, closeModal }) => {
                 </div>
             );
         case modal:
-             component = <GameModal modal={modal} />;
+             component = <GameModal modal={modal} currentUser={currentUser} currentUserId={currentUserId} updateUser={updateUser} fetchUser={fetchUser} />;
              return (
                 <div className="modal-background" onClick={closeModal}>
                     <div className="modal-child_game" onClick={e => e.stopPropagation()}>
@@ -72,12 +73,16 @@ const Modal = ({ modal, closeModal }) => {
 const mapStateToProps = (state) => {
     return ({
         modal: state.modal,
+        currentUser: state.entities.users.currentUser,
+        currentUserId: state.session.user.id
     });
 
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    updateUser: (user) => dispatch(updateUser(user)),
+    fetchUser: userId =>  dispatch(fetchUser(userId))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Modal));
