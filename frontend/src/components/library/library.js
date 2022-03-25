@@ -14,10 +14,11 @@ class Library extends React.Component {
   }
 
   componentDidMount() {
-    // debugger
+    debugger
+    if (!this.props.currentUser._id){
+      this.props.fetchUser(this.props.sessionUser.id)
+    }
     this.props.fetchGames()
-    // this.props.fetchUser(this.state.currentUserId)
-    //   // .then(() => this.props.fetchUser(this.props.sessionUser.id))
       .then(() => this.setState({currentUserGames: this.props.userGames}))
       .then(() => {
         let games = []
