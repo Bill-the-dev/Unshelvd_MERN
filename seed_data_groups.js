@@ -39,7 +39,7 @@ const seedGroups = [
         '6234768df40525e9d4a9b44b', // colmustard
         '6234768df40525e9d4a9b44c', // profplum
         '6234768df40525e9d4a9b44f', // scarlet
-        '623477a54cdf8b5e4353ebd9', // peacock
+        '623b681f0222f83386e47763', // peacock
         '62311d449bd3bc8378ded480', // demouser
       ],
       userGroupCreator: '6234768df40525e9d4a9b44b' // colmustard

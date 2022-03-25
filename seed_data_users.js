@@ -158,12 +158,12 @@ const seedUsers = [
       email: 'redWithWhat@clue.com',
       password: 'password',
       games: [
-        '62346dc0e58d7eaa4865974a',
-        '62346dc0e58d7eaa4865974b',
-        '62346dc0e58d7eaa4865974c',
-        '62346dc0e58d7eaa4865974d',
-        '62346dc0e58d7eaa48659758',
-        '62346dc0e58d7eaa48659759',
+        '62346dc0e58d7eaa4865974a', // Codenames
+        '62346dc0e58d7eaa4865974b', // Scrabble
+        '62346dc0e58d7eaa4865974c', // Spoons
+        '62346dc0e58d7eaa4865974d', // Catan
+        '62346dc0e58d7eaa48659758', // Pictionary
+        '62346dc0e58d7eaa48659759', // Coup
       ],
       groups: [
         '623477a54cdf8b5e4353ebd9', // notsus
@@ -178,10 +178,10 @@ const seedUsers = [
       email: 'theyWillNotice@clue.com',
       password: 'password',
       games: [
-        '62346dc0e58d7eaa48659756',
-        '62346dc0e58d7eaa48659757',
-        '62346dc0e58d7eaa48659758',
-        '62346dc0e58d7eaa48659759',
+        '62346dc0e58d7eaa48659756', // ? Monopoly
+        '62346dc0e58d7eaa48659757', // ? Sequence
+        '62346dc0e58d7eaa48659758', // Pictionary
+        '62346dc0e58d7eaa48659759', // Coup
       ],
       groups: [
         '623477a54cdf8b5e4353ebd9', // notsus

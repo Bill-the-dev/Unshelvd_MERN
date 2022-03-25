@@ -21,10 +21,12 @@ class GroupShow extends React.Component {
     .then(() => this.props.fetchGames()))
       .then(() => {
         let groupGamesArr = []
+        debugger
         this.props.currentGroup.users?.map((user) => {
           let userGames = this.props.allUsers[user]?.games
           groupGamesArr = groupGamesArr.concat(userGames)
           console.log(groupGamesArr)
+          debugger
         })
         // prevent dups
         let groupGamesSet = new Set(groupGamesArr);
