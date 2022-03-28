@@ -8,7 +8,8 @@ import {withRouter} from 'react-router-dom'
 
   constructor(props) {
     super(props)
-    this.addGameLibrary = this.addGameLibrary.bind(this)
+    this.addGameLibrary = this.addGameLibrary.bind(this);
+    this.removeGameLibrary = this.removeGameLibrary.bind(this);
     this.state = {
       inLibrary: false
     }
@@ -27,6 +28,17 @@ import {withRouter} from 'react-router-dom'
     this.setState({
       inLibrary: true
     })
+  }
+
+  removeGameLibrary() {
+    let updatedUser = this.props.currentUser
+    // debugger
+    updatedUser.games = this.props.currentUser.games.filter(game => game !== this.props.modal._id)
+    this.props.updateUser(updatedUser);
+    this.setState({
+      inLibrary: false
+    })
+    // this.props.history.push({pathname: '/library'})
   }
 
   render() {
@@ -53,7 +65,8 @@ import {withRouter} from 'react-router-dom'
                 { 
                 (!currentUser.games?.includes(modal._id)) ?
                     <button id="button--add-game-to-library" onClick={() => this.addGameLibrary()}>Add Game to Library</button> : 
-                    <button className="button button--add-game-to-library button--added-to-library">Added to Library</button>
+                    <button className="button button--add-game-to-library" onClick={() => this.removeGameLibrary()}>Remove Game from Library</button>
+                    // <button className="button button--add-game-to-library button--added-to-library">Added to Library</button>
                 }
             </div>
 
