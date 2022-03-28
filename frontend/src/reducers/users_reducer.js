@@ -1,3 +1,4 @@
+import { RECEIVE_USER_LOGOUT } from '../actions/session_actions';
 import {
   RECEIVE_USER,
   RECEIVE_USERS
@@ -26,6 +27,12 @@ const UsersReducer = (state = { currentUser: {}, allUsers: {} }, action) => {
 
       // nextState.groupUsers = mutualUsers;
       return nextState;
+
+      case RECEIVE_USER_LOGOUT: 
+        return {
+          allUsers: {},
+          currentUser: {}
+        }
     default:
       return state;
   }
