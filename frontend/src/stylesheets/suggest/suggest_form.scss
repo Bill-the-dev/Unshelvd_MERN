@@ -30,7 +30,7 @@
   align-items: center;
   font-size: 3rem;
   padding: 1%;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $serif;
   color: $dark-brown;
   font-weight: 500;
   grid-column: 3/11;
@@ -55,16 +55,18 @@
   align-items: center;
   justify-content: center;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
+  font-size: 1.3rem;
+  font-weight: bold;
   color: $dark-brown;
     div {
       display: flex;
       width: 100%;
+      height: 10px;
       justify-content: center;
+      padding-bottom: 15%;
     }
+
 }
-
-
 
 .suggest-form-numplayers {
   display: flex;
@@ -75,10 +77,13 @@
   grid-row: 3/4;
   font-family: 'Montserrat', sans-serif;
   color: $dark-brown;
-  font-size: 1rem;
+  font-size: 1.3rem;
+  font-weight: bold;
     div {
       display: flex;
       width: 100%;
+      padding-bottom: 15%;
+      height: 10px;
       justify-content: center;
     }
 }
@@ -88,14 +93,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  grid-column: 3/11;
+  grid-column: 3/11; 
   grid-row: 4/5;
   font-family: 'Montserrat', sans-serif;
   color: $dark-brown;
   font-size: 1rem;
     label {
-      width: 120%;
-      padding: 20%;
+      // width: 120%;
+      // padding: 10%;
     }
     input:checked {
       background-color: red;
@@ -175,12 +180,14 @@
 
 
 .category-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 2fr 2fr;
-  grid-row-gap: 100px;
-  grid-column-gap: 100px;
-
+  // display: grid;
+  // grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  // grid-template-rows: 2fr 2fr;
+  // grid-row-gap: 50px;
+  // // grid-column-gap: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 
@@ -192,6 +199,7 @@
   display: flex;
   flex-direction: column;
   width: 30vh;
+  max-width: 7rem;
   align-items: center;
   justify-content: center;
   border-radius: 6px;
@@ -199,6 +207,9 @@
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   color: $body-lightest;
+  padding: 2%;
+  margin: 1%;
+  cursor: pointer;
 }
 
 .suggest-results {

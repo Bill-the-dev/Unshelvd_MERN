@@ -153,7 +153,7 @@ class SuggestForm extends React.Component{
                     {/* LIBRARY SELECTOR */}
 
                     <div className='suggest-form-library'>
-                        <h2>Find game from:
+                        <h3>Find game from:
                         <div>
                             <select onChange={this.update("library")}>
                                     <option value ></option>
@@ -162,12 +162,12 @@ class SuggestForm extends React.Component{
                             })}
                             </select>
                         </div>
-                        </h2>
+                        </h3>
                     </div>
 
                     {/* NUMBER OF PLAYERS SELECTOR */}
                     <div className='suggest-form-numplayers'>
-                        <h2>Number of Players
+                        <h3>Number of Players
                             <div>
                                 <select onChange={this.update("numPlayers")}>
                                     <option value ></option>
@@ -184,7 +184,7 @@ class SuggestForm extends React.Component{
                                     <option value="12">12+</option>
                                 </select>
                             </div>
-                        </h2>
+                        </h3>
                     </div>
 
 
