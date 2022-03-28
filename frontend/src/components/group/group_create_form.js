@@ -24,24 +24,30 @@ class CreateGroup extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
+    
     let submitGroup = async() => this.props.createGroup(this.state)
     if (this.props.modal === 'addGroup') {
+      // CREATE NEW GROUP
       submitGroup()
-        .then(group => {
-          // CONTINUED ON RIGHT PAGE
-          const updatedUser = this.props.currentUser;
-          updatedUser.groups = this.props.currentUser.groups.concat(group.group.data._id);
-          this.props.updateUser(updatedUser);
-        })
-        .then(() => this.props.fetchGroups())
-        .then(() => this.props.closeModal())
-    } else {
-      let curGroup;
-      this.props.allGroups.forEach(group => {
-        if (group.shareCode === this.state.code) {
-          curGroup = group
-        }
+      .then(group => {
+        const updatedUser = this.props.currentUser;
+        updatedUser.groups = this.props.currentUser.groups.concat(group.group.data._id);
+        this.props.updateUser(updatedUser);
       })
+      .then(() => this.props.fetchGroups())
+      .then(() => this.props.closeModal())
+    } else {
+      // JOIN GROUP
+        let curGroup;
+        this.props.allGroups.forEach(group => {
+          if (group.shareCode === this.state.code) {
+            curGroup = group
+          }
+        })
+        // if (!curGroup) {
+        //   this.renderErrors()
+        //   return
+        // }
       // ADD GROUP TO USER
       const updatedUser = this.props.currentUser;
       if (!updatedUser.groups.includes(curGroup._id)){
@@ -83,6 +89,7 @@ class CreateGroup extends React.Component {
             <label>Enter Code:
                 <input type='text' value={this.state.code} onChange={this.update('code')}/>
             </label>
+            {/* {groupErrors} */}
             <input className="group-form-submit" type='submit' value='Join Group'/>
         </form>
       </div>

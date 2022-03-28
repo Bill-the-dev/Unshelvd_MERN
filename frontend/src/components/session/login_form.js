@@ -15,13 +15,28 @@ class LoginForm extends React.Component {
   }
 
   // Once the user has been authenticated, redirect to the Tweets page
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.currentUser === true) {
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.currentUser === true) {
+  //     this.props.history.push('/library');
+  //   }
+
+  //   // Set or clear errors
+  //   this.setState({errors: nextProps.errors})
+  // }
+
+  componentDidUpdate(prevProps) {
+    // debugger
+    if (this.props.currentUser === true) {
       this.props.history.push('/library');
+      // this.setState({errors: this.props.errors})
+    }
+
+    if (prevProps.errors !== this.props.errors) {
+      this.setState({ errors: this.props.errors });
     }
 
     // Set or clear errors
-    this.setState({errors: nextProps.errors})
+    // this.setState({ errors: this.props.errors })
   }
 
   // Handle field updates (called in the render method)
@@ -81,8 +96,8 @@ class LoginForm extends React.Component {
                 />
               <br/>
               <input className='button button--session' type="submit" value="Log In" />
-              <button className="button button--session" onClick={() => loginDemo()}>Demo Log In</button>
               {this.renderErrors()}
+              <div className="button button--session" onClick={() => loginDemo()}>Demo Log In</div>
             {/* </div> */}
           </form>
         </div>

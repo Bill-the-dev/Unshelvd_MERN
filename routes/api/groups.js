@@ -58,6 +58,7 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req,res) => {
 router.delete('/:id', (req,res) => {
   Group.deleteOne( { _id : req.params.id } )
     .then(() => res.status(200).json({msg: 'success'}))
+    .catch(err => res.json(err))
 })
 
 // UPDATE GORUP
@@ -65,6 +66,8 @@ router.patch('/:id', (req,res) => {
   const groupId = req.body.group._id;
   const updatedGroup = req.body.group;
 
+  Group.findById(groupId)
+    .catch(err => res.json(err))
   // console.log(req.body)
   Group.findByIdAndUpdate(groupId, {users: updatedGroup.users})
     .then(res => console.log({res}))

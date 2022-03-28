@@ -60,7 +60,8 @@ export const login = user => dispatch => (
         dispatch(receiveCurrentUser(decoded));
     })
         .catch(err => {
-            dispatch(receiveErrors(err.response.data));
+        //   debugger
+          dispatch(receiveErrors(err.response.data));
         })
 );
 
@@ -81,7 +82,8 @@ export const loginDemo = () => dispatch => {
             dispatch(receiveCurrentUser(decoded));
         })
             .catch(err => {
-                dispatch(receiveErrors(err.response.data));
+            //   debugger
+              dispatch(receiveErrors(err.response.data));
             })
 //  )
- }
+}
