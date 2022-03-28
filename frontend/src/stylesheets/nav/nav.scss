@@ -57,12 +57,15 @@
   text-decoration: none;
   border: 1px solid $light-blue;
   border-radius: 4px;
-  padding: 3%;
-  height: 2vh;
-  width: 6vh;
+  padding: 0.4rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  transition: ease 500ms;
+  width: fit-content;
   &:hover {
-    // background-color: lightblue;
-    border: 2px solid $dark-blue;
+    background-color: $light-blue;
+    color: white;
+    transition: ease 500ms; 
   }
 }
 
