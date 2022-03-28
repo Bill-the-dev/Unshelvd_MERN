@@ -30,6 +30,17 @@ class GameShow extends React.Component {
         this.props.history.push({pathname: '/library'})
     }
 
+    removeGameLibrary() {
+        // debugger
+        let updatedUser = this.props.currentUser
+        // debugger
+        updatedUser.games = this.props.currentUser.games.filter(game => game !== this.props.currentGame._id)
+        // debugger
+        this.props.updateUser(updatedUser)
+        // debugger
+        this.props.history.push({pathname: '/library'})
+    }
+
     render() {
         // let currentGame;
         // for (let game of this.props.games) {
@@ -73,7 +84,8 @@ class GameShow extends React.Component {
                             (!this.props.currentUser.games?.includes(this.props.currentGame._id)) ?
                                 <button className="button button--add-game-to-library" onClick={() => this.addGameLibrary()}>Add Game to Library</button> 
                                 : 
-                                <button className="button button--add-game-to-library button--added-to-library">Added to Library</button>
+                                // <button className="button button--add-game-to-library button--added-to-library">Added to Library</button>
+                                <button className="button button--add-game-to-library" onClick={() => this.removeGameLibrary()}>Remove Game from Library</button>
                         }
                     </div>
                     
