@@ -11,7 +11,7 @@ class GroupIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchGroup(this.props.match.params.id)
-      .then(() => console.log(this.props));
+      // .then(() => console.log(this.props));
     this.props.fetchGroups()
       .then(() => this.setState({ currentUserGroups: Object.values(this.props.userGroups).filter(group => group.users.includes(this.props.currentUser.id)) }))
   }

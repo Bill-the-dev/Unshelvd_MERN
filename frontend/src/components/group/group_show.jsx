@@ -21,12 +21,12 @@ class GroupShow extends React.Component {
     .then(() => this.props.fetchGames()))
       .then(() => {
         let groupGamesArr = []
-        debugger
+        // debugger
         this.props.currentGroup.users?.map((user) => {
           let userGames = this.props.allUsers[user]?.games
           groupGamesArr = groupGamesArr.concat(userGames)
-          console.log(groupGamesArr)
-          debugger
+          // console.log(groupGamesArr)
+          // debugger
         })
         // prevent dups
         let groupGamesSet = new Set(groupGamesArr);
@@ -39,10 +39,10 @@ class GroupShow extends React.Component {
         this.state.groupGames?.map((gameId) =>{
           let gameObject = this.props?.allGames[gameId]
           gameObjectsArr.push(gameObject)
-          console.log(gameObjectsArr)
+          // console.log(gameObjectsArr)
         })
         this.setState({groupGameObjects: gameObjectsArr})
-        console.log(this.state)
+        // console.log(this.state)
       })
     }
 

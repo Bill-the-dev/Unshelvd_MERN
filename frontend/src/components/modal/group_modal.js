@@ -13,7 +13,7 @@ const GroupModal = ({ modal, closeModal }) => {
     let component;
     switch (modal) {
         case 'addGroup':
-          debugger
+        //   debugger
             component = <GroupFormContainer />;
             break;
         case 'joinGroup':

@@ -15,12 +15,13 @@ import {withRouter} from 'react-router-dom'
   }
 
   componentDidMount() {
-    this.props.fetchUser(this.props.currentUserId)
+    // debugger
+    this.props.fetchUser(this.props.currentUser._id)
   }
 
   addGameLibrary() {
     let updatedUser = this.props.currentUser
-    debugger
+    // debugger
     updatedUser.games = this.props.currentUser.games.concat(this.props.modal._id)
     this.props.updateUser(updatedUser)
     this.setState({

@@ -61,7 +61,7 @@ class CreateGameForm extends React.Component {
       
       submitGame()
       .then(game => { 
-        debugger
+        // debugger
         const updatedUser = this.props.currentUser
         updatedUser.games = this.props.currentUser.games.concat(game.game.data._id)
         this.props.updateUser(updatedUser)

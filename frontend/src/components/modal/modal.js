@@ -71,18 +71,22 @@ const Modal = ({ modal, closeModal, fetchUser, updateUser, currentUser, currentU
 
 
 const mapStateToProps = (state) => {
+    // debugger
     return ({
         modal: state.modal,
         currentUser: state.entities.users.currentUser,
-        currentUserId: state.session.user.id
+        // currentUserId: state.session.user.id
     });
 
 };
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch) => {
+    // debugger
+    return({
     closeModal: () => dispatch(closeModal()),
     updateUser: (user) => dispatch(updateUser(user)),
     fetchUser: userId =>  dispatch(fetchUser(userId))
-});
+})
+};
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Modal));
