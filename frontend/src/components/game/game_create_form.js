@@ -115,25 +115,25 @@ class CreateGameForm extends React.Component {
           <div className='game-form-category'>
             <h2>Select all categories that apply:<span className='asterik'>*</span></h2>
             <div>
-              <label>Board Game
-                <input type='checkbox' name='category' value='Board Game' onClick={this.updateSelect('category')}/>
+              <label className='category-grid-item add-game-input'>Board Game
+                <input type='checkbox' className='type-checkbox' name='category' value='Board Game' onClick={this.updateSelect('category')}/>
               </label>
 
-              <label>Playing Cards
-                <input type='checkbox' name='category' value='Playing Cards' onClick={this.updateSelect('category')}/>
+              <label className='category-grid-item add-game-input'>Playing Cards
+                <input type='checkbox' className='type-checkbox' name='category' value='Playing Cards' onClick={this.updateSelect('category')}/>
               </label>
               {/* <button  onClick={this.updateSelect('category')} value='Board Game'>Board Game</button> */}
 
-              <label>Dice
-                <input type='checkbox' name='category' value='Dice' onClick={this.updateSelect('category')}/>
+              <label className='category-grid-item add-game-input'>Dice
+                <input type='checkbox' className='type-checkbox' name='category' value='Dice' onClick={this.updateSelect('category')}/>
               </label>
 
-              <label>Pen and Paper
-                <input type='checkbox' name='category' value='Pen and Paper' onClick={this.updateSelect('category')}/>
+              <label className='category-grid-item add-game-input'>Pen and Paper
+                <input type='checkbox' className='type-checkbox' name='category' value='Pen and Paper' onClick={this.updateSelect('category')}/>
               </label>
 
-              <label>App
-                <input type='checkbox' name='category' value='App' onClick={this.updateSelect('category')}/>
+              <label className='category-grid-item add-game-input'>App
+                <input type='checkbox' className='type-checkbox' name='category' value='App' onClick={this.updateSelect('category')}/>
               </label>
 
             </div>
@@ -142,25 +142,25 @@ class CreateGameForm extends React.Component {
             <h2>Select additional descriptors:</h2>
             <div>
 
-              <label>Party
+              <label className='category-grid-item add-game-input'>Party
                 <input type='checkbox' name='descriptors' value='Party' onClick={this.updateSelect('descriptors')}/>
               </label>
-              <label>Word
+              <label className='category-grid-item add-game-input'>Word
                 <input type='checkbox' name='descriptors' value='Word' onClick={this.updateSelect('descriptors')}/>
               </label>
-              <label>Puzzle
+              <label className='category-grid-item add-game-input'>Puzzle
                 <input type='checkbox' name='descriptors' value='Puzzle' onClick={this.updateSelect('descriptors')}/>
               </label>
-              <label>Quick
+              <label className='category-grid-item add-game-input'>Quick
                 <input type='checkbox' name='descriptors' value='Quick' onClick={this.updateSelect('descriptors')}/>
               </label>
-              <label>Team Play
+              <label className='category-grid-item add-game-input'>Team Play
                 <input type='checkbox' name='descriptors' value='Team Play' onClick={this.updateSelect('descriptors')}/>
               </label>
-              <label>Bluffing
+              <label className='category-grid-item add-game-input'>Bluffing
                 <input type='checkbox' name='descriptors' value='Bluffing' onClick={this.updateSelect('descriptors')}/>
               </label>
-              <label>Deduction
+              <label className='category-grid-item add-game-input'>Deduction
                 <input type='checkbox' name='descriptors' value='Deduction' onClick={this.updateSelect('descriptors')}/>
               </label>
             </div>

@@ -26,9 +26,9 @@ class CreateGroup extends React.Component {
 
     let submitGroup = async() => this.props.createGroup(this.state)
     if (this.props.modal === 'addGroup') {
+      // CREATE NEW GROUP
       submitGroup()
         .then(group => {
-          // CONTINUED ON RIGHT PAGE
           const updatedUser = this.props.currentUser;
           updatedUser.groups = this.props.currentUser.groups.concat(group.group.data._id);
           this.props.updateUser(updatedUser);
@@ -36,12 +36,18 @@ class CreateGroup extends React.Component {
         .then(() => this.props.fetchGroups())
         .then(() => this.props.closeModal())
     } else {
+      // JOIN GROUP
       let curGroup;
       this.props.allGroups.forEach(group => {
         if (group.shareCode === this.state.code) {
           curGroup = group
         }
       })
+      // debugger
+      let joinGroupErrors
+      if (!curGroup) {
+         joinGroupErrors = 'Group does not exist'
+      }
       // ADD GROUP TO USER
       const updatedUser = this.props.currentUser;
       if (!updatedUser.groups.includes(curGroup._id)){

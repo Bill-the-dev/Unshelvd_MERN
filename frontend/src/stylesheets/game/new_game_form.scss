@@ -23,6 +23,7 @@
   grid-column: 3/11;
   padding: 1%;
   font-family: $serif;
+  color: $dark-brown;
   // grid-row: 1/2;
 }
 
@@ -83,6 +84,18 @@
   }
 }
 
+.add-game-input {
+  margin: 1%;
+  text-align: center;
+  max-width: 7rem;
+}
+input.add-game-input {
+  height: 50px;
+  width: 50px;
+  transform: scale(2);
+  padding: 10px;
+}
+
 .game-form-category {
   padding-top: 2%;
   display: flex;
@@ -98,9 +111,11 @@
     display: flex;
     width: 100%;
     justify-content: center;
+    flex-wrap: wrap;
   }
   label {
     padding: 1%;
+
   }
 }
 
