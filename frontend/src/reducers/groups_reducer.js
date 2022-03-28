@@ -1,6 +1,7 @@
 import {
   RECEIVE_GROUP,
-  RECEIVE_GROUPS
+  RECEIVE_GROUPS,
+  DELETE_GROUP
 } from '../actions/group_actions';
 
 const GroupsReducer = (state = { userGroups: {}, currentGroup: {} }, 
@@ -10,12 +11,15 @@ const GroupsReducer = (state = { userGroups: {}, currentGroup: {} },
   // debugger
   switch (action.type) {
     case RECEIVE_GROUPS:
-    action.groups.data.forEach(group => nextState.userGroups[group._id] = group);
-    return nextState;
+      action.groups.data.forEach(group => nextState.userGroups[group._id] = group);
+      return nextState;
 
     case RECEIVE_GROUP:
-    nextState.currentGroup = action.group.data
-    return nextState;
+      nextState.currentGroup = action.group.data
+      return nextState;
+
+    case DELETE_GROUP:
+      
   
     default:
     return state;
