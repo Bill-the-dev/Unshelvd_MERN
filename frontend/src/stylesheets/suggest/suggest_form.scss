@@ -28,14 +28,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
+  font-size: 3rem;
   padding: 1%;
   font-family: 'Montserrat', sans-serif;
   color: $dark-brown;
   font-weight: 500;
-  font-size: 4rem;
   grid-column: 3/11;
-
 }
 
 .suggest-form {
@@ -57,7 +55,7 @@
   align-items: center;
   justify-content: center;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: $dark-brown;
     div {
       display: flex;
@@ -77,7 +75,7 @@
   grid-row: 3/4;
   font-family: 'Montserrat', sans-serif;
   color: $dark-brown;
-  font-size: 1.5rem;
+  font-size: 1rem;
     div {
       display: flex;
       width: 100%;
@@ -96,7 +94,7 @@
   color: $dark-brown;
   font-size: 1rem;
     label {
-      width: 100%;
+      width: 120%;
       padding: 20%;
     }
     input:checked {
