@@ -58,6 +58,7 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req,res) => {
 router.delete('/:id', (req,res) => {
   Group.deleteOne( { _id : req.params.id } )
     .then(() => res.status(200).json({msg: 'success'}))
+    .catch(err => res.json(err))
 })
 
 // UPDATE GORUP
