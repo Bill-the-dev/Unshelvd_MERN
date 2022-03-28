@@ -2,8 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 // import { openModal } from "../../actions/modal_actions";
 import GroupShow from "./group_show";
-import { fetchGroup, fetchGroups } from "../../actions/group_actions";
-import { fetchUsers } from "../../actions/user_actions";
+import { fetchGroup, fetchGroups, updateGroup } from "../../actions/group_actions";
+import { fetchUsers, updateUser } from "../../actions/user_actions";
 import { fetchGames, fetchUserLibrary } from "../../actions/game_actions";
 
 // Original:
@@ -16,6 +16,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     userGroups: Object.values(state.entities.groups.userGroups),
     currentUser: state.session.user,
+    currentUserObj: state.entities.users.allUsers[state.session.user.id],
     currentGroup: state.entities.groups.currentGroup,
     allUsers: state.entities.users.allUsers,
     allGames: state.entities.games.userGames
@@ -29,8 +30,9 @@ const mapDispatchToProps = (dispatch) => ({
   fetchUsers: () => (dispatch(fetchUsers())),
   // fetchCurrentUser: () => (dispatch(fetchCurrentUser())),
   fetchGames: () => (dispatch(fetchGames())),
-  fetchUserLibrary: (userId) => (dispatch(fetchUserLibrary(userId)))
-
+  fetchUserLibrary: (userId) => (dispatch(fetchUserLibrary(userId))),
+  updateUser: (user) => (dispatch(updateUser(user))),
+  updateGroup: (group) => (dispatch(updateGroup(group)))
   // openModal: (modal) => (dispatch(openModal(modal)))
 });
 

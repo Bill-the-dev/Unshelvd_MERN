@@ -8,10 +8,12 @@ class GroupShow extends React.Component {
     super(props);
     this.state = {
       groupGames: [],
-      groupGameObjects: []
+      groupGameObjects: [],
+      currentGroupUsers: []
     }
     this.handleMouseEnter = this.handleMouseEnter.bind(this)
     this.handleMouseLeave = this.handleMouseLeave.bind(this)
+    this.handleLeave = this.handleLeave.bind(this)
   }
   
   componentDidMount() {
@@ -46,12 +48,36 @@ class GroupShow extends React.Component {
       })
     }
 
+  componentDidUpdate(prevProps) {
+    debugger;
+    if (this.props.currentGroup.users !== prevProps.currentGroup.users) {
+      this.setState({
+        currentGroupUsers: this.props.currentGroup.users
+      });
+    }
+  }
+
   handleMouseEnter(e) {
     e.target.innerHTML = `${this.props.currentGroup.shareCode}`
   }
   
   handleMouseLeave(e) {
     e.target.innerHTML = "Share Code"
+  }
+
+  handleLeave(e){
+    e.preventDefault();
+
+    const updatedUser = this.props.currentUserObj;
+    debugger
+    updatedUser.groups = this.props.currentUserObj.groups.filter(group => group !== this.props.currentGroup._id);
+    this.props.updateUser(updatedUser);
+
+    const updatedGroup = this.props.currentGroup;
+    updatedGroup.users = this.props.currentGroup.users.filter(user => user !== this.props.currentUserObj._id);
+    this.props.updateGroup(updatedGroup)
+      .then(() => this.props.fetchGroups());
+    setTimeout(this.props.history.push({pathname:"/groups"}), 1000);
   }
   
   render () {
@@ -65,6 +91,7 @@ class GroupShow extends React.Component {
       <div className="group-show-container">
         <div className="gs-sub-header">
           <h1>{currentGroup.name}</h1>
+          <div className="btn--leave-group" onClick={this.handleLeave}>Leave Group</div>
           <div 
             className="btn--share-group" 
             onMouseEnter={this.handleMouseEnter} 
