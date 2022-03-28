@@ -10,21 +10,69 @@
     // background: linear-gradient(135deg, $beige,$dark-brown);
     background-color: $body-lightest;
     box-shadow:  4px 4px 4px black;
-      &:hover {
+      #game-title--user-created {
+        visibility: visible;
+      }
+
+        &:hover {
         transform: scale(1.5);
         transition: all .4s ease;
         border-radius: 4px;
         background-color: black;
-        #game-img--library {
-          opacity: 50%;
-        }
-        #game-title--library {
-          visibility: visible;
-          opacity: 100%;
-        }
+          #game-img--library {
+            opacity: 50%;
+          }
+          #game-title--library {
+            visibility: visible;
+            opacity: 100%;
+          }
+          
       }
-    
   }
+
+  //   .library-user-created {
+  //   // border: 1px solid rgb(80, 238, 49);
+  //   width: 20vh;
+  //   height: 20vh;
+  //   // border-radius: 4px;
+  //   justify-content: center;
+  //   display: flex;
+  //   border: 1px solid $body-lightest;
+  //   border-radius: 4px;
+  //   // background: linear-gradient(135deg, $beige,$dark-brown);
+  //   background-color: $body-lightest;
+  //   box-shadow:  4px 4px 4px black;
+    
+  //   font-family: $sans-serif;
+  //   padding: .25rem;
+  //   color: $lightest-tan;
+  //   text-shadow: 1px 1px black;
+  //   text-decoration: none;
+  //   text-align: center;
+  //   // visibility: visible;
+  //   position: absolute;
+  //   background: linear-gradient(75deg, $light-blue,$dark-blue);
+  //   // border: .2rem solid $dark-green;
+  //   width: 94.75%;
+  //   font-size: 1rem;
+  //   box-shadow:  4px 4px 4px black;
+  //   top: 40%;
+  //   left: 0%;
+  //     // &:hover {
+  //     //   transform: scale(1.5);
+  //     //   transition: all .4s ease;
+  //     //   border-radius: 4px;
+  //     //   background-color: black;
+  //     //   #game-img--library {
+  //     //     opacity: 50%;
+  //     //   }
+  //     //   #game-title--user-created {
+  //     //     visibility: visible;
+  //     //     opacity: 100%;
+  //     //   }
+  //     // }
+  // }
+
 
   #game-img--library {
     max-height: 20vh;
@@ -48,6 +96,23 @@
     box-shadow:  4px 4px 4px black;
     top: 40%;
     left: 0%;
-    
-    
   }
+
+  #game-title--user-created {
+    font-family: $sans-serif;
+    padding: .25rem;
+    color: $lightest-tan;
+    text-shadow: 1px 1px black;
+    text-decoration: none;
+    text-align: center;
+    visibility: visible;
+    position: absolute;
+    background: linear-gradient(75deg, $light-blue,$dark-blue);
+    // border: .2rem solid $dark-green;
+    width: 94.75%;
+    font-size: 1rem;
+    box-shadow:  4px 4px 4px black;
+    top: 40%;
+    left: 0%;
+  }
+
