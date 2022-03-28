@@ -44,10 +44,10 @@ class CreateGroup extends React.Component {
             curGroup = group
           }
         })
-        if (!curGroup) {
-          this.renderErrors()
-          return
-        }
+        // if (!curGroup) {
+        //   this.renderErrors()
+        //   return
+        // }
       // ADD GROUP TO USER
       const updatedUser = this.props.currentUser;
       if (!updatedUser.groups.includes(curGroup._id)){
@@ -65,11 +65,6 @@ class CreateGroup extends React.Component {
         this.props.closeModal()
         setTimeout(this.props.history.push({pathname: `/groups/${curGroup._id}`}),1000)
     }
-  }
-
-  renderErrors() {
-    debugger
-    const groupErrors = 'Group Does Not Exist'
   }
 
   render() {
@@ -94,7 +89,7 @@ class CreateGroup extends React.Component {
             <label>Enter Code:
                 <input type='text' value={this.state.code} onChange={this.update('code')}/>
             </label>
-            {groupErrors}
+            {/* {groupErrors} */}
             <input className="group-form-submit" type='submit' value='Join Group'/>
         </form>
       </div>

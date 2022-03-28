@@ -1,4 +1,5 @@
 # Unshelvd
+[Link to Live Site](https://unshelvd-1.herokuapp.com/#/)
 
 ## Background and Overview
 “I dunno, what do you want to do?”  Friends are no fun with open-ended questions. Unshelvd is here to fix that.
@@ -9,9 +10,36 @@ It will give you suggestions for Connected (online) or Unplugged (in-person) gam
 
 ## Features
 ### Game Suggestion Form
+The game suggestion feature is the core of this application.  On this form, users enter minimal information (how many people are playing, any category preferences etc) and the app generates a list of game suggestions based on the criteria.  
 
+### Create Group Modal
+The ability for a user to create a new group exists within a modal.  Because of this, after a group was created, the "All Groups" index page was not rerendering with the newly added group.  To solve this, we added a request to the backend upon creation that updated state and triggered a rerender.
+```js
+  // group_create_form.js
+  handleSubmit(e) {
+    e.preventDefault();
 
-### CRUD cycle
+    let submitGroup = async() => this.props.createGroup(this.state)
+    if (this.props.modal === 'addGroup') {
+      submitGroup()
+      .then(group => {
+        // update current user's groups to include newly created group
+        const updatedUser = this.props.currentUser;
+        updatedUser.groups = this.props.currentUser.groups.concat(group.group.data._id);
+        this.props.updateUser(updatedUser);
+      })
+      // fetchGroups updates state to trigger rerender
+      .then(() => this.props.fetchGroups())
+      // close modal
+      .then(() => this.props.closeModal())
+    } else {
+      // Code here handles a user joining an already existing group.  
+      // User is redirected to Group Show page so rerender was not an issue
+    }
+  }
+```
 
 
 ## Next Steps
+* Add ability for user to have a "favorites" section in library
+* Incorporate AWS to allow user to upload their own photo when creating a game
