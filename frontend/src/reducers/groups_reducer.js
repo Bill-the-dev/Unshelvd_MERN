@@ -17,10 +17,12 @@ const GroupsReducer = (state = { userGroups: {}, currentGroup: {} },
     case RECEIVE_GROUP:
       nextState.currentGroup = action.group.data
       return nextState;
-
+    
+    // new
     case DELETE_GROUP:
-      
-  
+      delete nextState[action.group.id];
+      return nextState;
+
     default:
     return state;
   }

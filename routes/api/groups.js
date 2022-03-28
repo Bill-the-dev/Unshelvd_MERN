@@ -54,7 +54,7 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req,res) => {
       .catch(err => res.json(err))
 })
 
-// DELETE GROUP
+// DELETE GROUP (MEMBER)
 router.delete('/:id', (req,res) => {
   Group.deleteOne( { _id : req.params.id } )
     .then(() => res.status(200).json({msg: 'success'}))
