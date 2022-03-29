@@ -31,61 +31,44 @@ class CreateGroup extends React.Component {
       submitGroup()
       .then(group => {
         const updatedUser = this.props.currentUser;
-        updatedUser.groups = updatedUser.groups.concat(group.group.data._id);
+        updatedUser.groups = this.props.currentUser.groups.concat(group.group.data._id);
         this.props.updateUser(updatedUser);
-        this.props.closeModal()
-        this.props.history.push({pathname: `/groups/${group.group.data._id}`})
       })
-      // .then(() => this.props.fetchGroups())
-      // .then(() => {
-      //   debugger
-      // })
-      // .then(() => this.props.closeModal())
+      .then(() => this.props.fetchGroups())
+      .then(() => this.props.closeModal())
     } else {
       // JOIN GROUP
         let curGroup;
         this.props.allGroups.forEach(group => {
           if (group.shareCode === this.state.code) {
-            // debugger
             curGroup = group
           }
         })
-        if (curGroup === undefined) {
-          // this.renderErrors()
-          return "Group does not exist"
-        }
+        // if (!curGroup) {
+        //   this.renderErrors()
+        //   return
+        // }
       // ADD GROUP TO USER
-      const updatedUser = {...this.props.currentUser};
-      // debugger
+      const updatedUser = this.props.currentUser;
       if (!updatedUser.groups.includes(curGroup._id)){
         // debugger
-          updatedUser.groups = updatedUser.groups.concat(curGroup._id);
-          // debugger
-          
+          updatedUser.groups = this.props.currentUser.groups.concat(curGroup);
+          this.props.updateUser(updatedUser);
+  
           // ADD USER TO GROUP
-          const updatedGroup = {...curGroup};
-          // debugger
+          const updatedGroup = curGroup;
           updatedGroup.users = curGroup.users.concat(this.props.currentUser._id);
           // debugger
-          this.props.updateUser(updatedUser);
           this.props.updateGroup(updatedGroup)
-            .then(() => {
-              // debugger
-              this.props.closeModal()
-              this.props.history.push({pathname: `/groups/${curGroup._id}`})
-            })
-          // .then(group => this.props.fetchGroup(group._id))
-          // .then(() => this.props.fetchGroups())
-        } else {
-          this.props.closeModal()
-          this.props.history.push({pathname: `/groups/${curGroup._id}`})
+          .then(() => this.props.fetchGroups())
         }
-        // setTimeout(this.props.history.push({pathname: `/groups/${curGroup._id}`}),1000)
+        this.props.closeModal()
+        setTimeout(this.props.history.push({pathname: `/groups/${curGroup._id}`}),1000)
     }
   }
 
   render() {
-    // let groupErrors = this.props.errors
+    let groupErrors = this.props.errors
     const {modal} = this.props
     return (
       <div className="group-form-container">
