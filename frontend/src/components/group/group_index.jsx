@@ -21,7 +21,14 @@ class GroupIndex extends React.Component {
       this.setState({
         currentUserGroups: Object.values(this.props.userGroups).filter(group => group.users.includes(this.props.currentUser.id))
     })}
+
+    if (this.props.userGroups !== prevProps.userGroups) {
+      this.setState({
+        currentUserGroups: Object.values(this.props.userGroups).filter(group => group.users.includes(this.props.currentUser.id))
+      })
+    }
   }
+  
 
   render() {
     const {currentUser, userGroups, openModal} = this.props;

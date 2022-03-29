@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {withRouter} from "react-router";
 import NavBar from "../nav/navbar";
 import LibraryItem from "../library/library_item"
 
@@ -8,43 +9,72 @@ class GroupShow extends React.Component {
     super(props);
     this.state = {
       groupGames: [],
-      groupGameObjects: []
+      groupGameObjects: [],
+      currentGroupUsers: [],
+      userInGroup: null,
+      groupInUser: null
     }
     this.handleMouseEnter = this.handleMouseEnter.bind(this)
     this.handleMouseLeave = this.handleMouseLeave.bind(this)
+    this.handleLeave = this.handleLeave.bind(this)
   }
   
   componentDidMount() {
+    // debugger
+
     this.props.fetchGroup(this.props.match.params.id)
     .then(() => this.props.fetchGroups()
     .then(() => this.props.fetchUsers())
     .then(() => this.props.fetchGames()))
-      .then(() => {
-        let groupGamesArr = []
-        // debugger
-        this.props.currentGroup.users?.map((user) => {
-          let userGames = this.props.allUsers[user]?.games
-          groupGamesArr = groupGamesArr.concat(userGames)
-          // console.log(groupGamesArr)
-          // debugger
-        })
-        // prevent dups
-        let groupGamesSet = new Set(groupGamesArr);
-        let groupGamesRes = Array.from(groupGamesSet);
-        // console.log(`this is groupGameRes: ${groupGamesRes}`);
-        this.setState({groupGames: groupGamesRes})
+
+    .then(() => {
+      let groupGamesArray = [];
+      this.props.currentGroup.users?.map(user => {
+        let userGames = this.props.allUsers[user]?.games;
+        groupGamesArray = groupGamesArray.concat(userGames)
+        // console.log(groupGamesArray)
       })
-      .then(() => {
-        let gameObjectsArr = []
-        this.state.groupGames?.map((gameId) =>{
-          let gameObject = this.props?.allGames[gameId]
-          gameObjectsArr.push(gameObject)
-          // console.log(gameObjectsArr)
-        })
-        this.setState({groupGameObjects: gameObjectsArr})
-        // console.log(this.state)
+  
+      let groupGamesSet = new Set(groupGamesArray);
+      let groupGamesFinal = Array.from(groupGamesSet);
+      // console.log(groupGamesFinal);
+  
+      let groupGameObjects = [];
+      groupGamesFinal.map(gameId => {
+        let gameObject = this.props.allGames[gameId]
+        groupGameObjects = groupGameObjects.concat(gameObject)
       })
+      // console.log(groupGameObjects)
+      this.setState({groupGameObjects: groupGameObjects})
+
+    })
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    // debugger;
+    if (prevProps.currentGroup?.users?.length !== this.props.currentGroup?.users?.length) {
+      // this.props.fetchUser(this.props.currentUser.id)
+      this.props.fetchUsers()
     }
+    // if (!prevProps.currentGroup.users.includes(this.props.currentUser.id)) {
+    //   this.props.fetchUser(this.props.currentUser.id)
+    // }
+    // if(!this.props.currentGroup.users?.includes(this.props.currentUser.id) && 
+    //   !this.props.allUsers[this.props.currentUser.id]?.groups.includes(this.props.currentGroup._id)) {
+    //   () => this.props.history.push({ pathname: "/groups" })
+    //   }
+
+    // if (this.state.userInGroup === false && this.state.groupInUser === false){
+    //   this.props.history.push({ pathname: "/groups" })
+    // }
+
+    // causes loop
+    // if (prevProps.currentGroup.users !== this.props.currentGroup.user) {
+    //   this.setState({
+    //     currentGroupUsers: this.props.currentGroup.users
+    //   });
+    // }
+  }
 
   handleMouseEnter(e) {
     e.target.innerHTML = `${this.props.currentGroup.shareCode}`
@@ -53,6 +83,33 @@ class GroupShow extends React.Component {
   handleMouseLeave(e) {
     e.target.innerHTML = "Share Code"
   }
+
+  handleLeave(e){
+    e.preventDefault();
+    // debugger
+    const updatedUser = {...this.props.currentUserObj};
+    updatedUser.groups = updatedUser.groups.filter(group => group !== this.props.currentGroup._id);
+    // debugger
+
+    
+    const updatedGroup = {...this.props.currentGroup};
+    updatedGroup.users = updatedGroup.users.filter(user => user !== this.props.currentUserObj._id);
+    // debugger
+    this.props.updateUser(updatedUser)
+      .then(() => this.setState({
+        userInGroup: false
+      }))
+    this.props.updateGroup(updatedGroup)
+      .then(() => this.setState({
+        groupInUser: false
+      }))
+      // .then(() => this.props.fetchGroups())
+      .then(() => {
+        // debugger
+        this.props.history.push({pathname: '/groups'})
+      })
+    // setTimeout(() => this.props.history.push({pathname:"/groups"}), 1000);
+  }
   
   render () {
     const { currentGroup, allUsers, allGames, userGroups } = this.props;
@@ -60,11 +117,13 @@ class GroupShow extends React.Component {
     if (!allUsers) return null
     if (!allGames) return null
 
+    // debugger
 
     return(
       <div className="group-show-container">
         <div className="gs-sub-header">
           <h1>{currentGroup.name}</h1>
+          <div className="btn--leave-group" onClick={this.handleLeave}>Leave Group</div>
           <div 
             className="btn--share-group" 
             onMouseEnter={this.handleMouseEnter} 
@@ -89,7 +148,9 @@ class GroupShow extends React.Component {
               ? this.state.groupGameObjects?.map((game) => {
                   return (
                   <li>
-                    <LibraryItem id="group-lib-item" game={game} key={game._id} />
+                    <LibraryItem id="group-lib-item" game={game} 
+                                  // key={game._id} 
+                                  />
                   </li>
                   )
                 })
@@ -97,6 +158,7 @@ class GroupShow extends React.Component {
                   <p>Loading Tile</p>
                 </li>
               }
+              
 
             </ul> 
           </div>            
@@ -106,5 +168,5 @@ class GroupShow extends React.Component {
   }
 }
 
-export default GroupShow;
+export default withRouter(GroupShow);
 

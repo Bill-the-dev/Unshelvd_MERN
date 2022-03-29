@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import CreateGroup from "./group_create_form";
-import { createGroup, updateGroup } from "../../actions/group_actions";
+import { createGroup, fetchGroup, updateGroup } from "../../actions/group_actions";
 import { fetchUser, updateUser } from "../../actions/user_actions";
 import { fetchGroups } from "../../actions/group_actions"
 import { withRouter } from "react-router-dom";
@@ -24,7 +24,8 @@ const mDTP = dispatch => ({
   fetchGroups: () => dispatch(fetchGroups()),
   updateUser: user => dispatch(updateUser(user)),
   updateGroup: group => dispatch(updateGroup(group)),
-  closeModal: () => dispatch(closeModal())
+  closeModal: () => dispatch(closeModal()),
+  fetchGroup: groupId => dispatch(fetchGroup(groupId))
 })
 
 export default withRouter(connect(mSTP,mDTP)(CreateGroup))

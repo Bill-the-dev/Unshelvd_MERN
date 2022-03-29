@@ -23,21 +23,15 @@ class GameShow extends React.Component {
 
     addGameLibrary() {
         let updatedUser = this.props.currentUser
-        // debugger
         updatedUser.games = this.props.currentUser.games.concat(this.props.currentGame._id)
         this.props.updateUser(updatedUser)
-        // debugger
         this.props.history.push({pathname: '/library'})
     }
 
     removeGameLibrary() {
-        // debugger
         let updatedUser = this.props.currentUser
-        // debugger
         updatedUser.games = this.props.currentUser.games.filter(game => game !== this.props.currentGame._id)
-        // debugger
         this.props.updateUser(updatedUser)
-        // debugger
         this.props.history.push({pathname: '/library'})
     }
 

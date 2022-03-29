@@ -135,10 +135,13 @@ router.post("/login", (req, res) => {
 router.patch('/:id', (req,res) => {
   const userID = req.body.user._id;
   const updatedUser = req.body.user 
+  console.log({user: req.body.user.groups})
 
   User.findByIdAndUpdate(userID, {games: updatedUser.games, groups: updatedUser.groups})
-  .then(res => console.log({res}))
-  .catch(err => console.log({err}))
+    .then(user => res.json(user))
+    .catch(err => console.log({err}))
+  // .then(res => console.log({res}))
+  // .catch(err => console.log({err}))
 })
 
 module.exports = router;
