@@ -70,8 +70,8 @@ router.patch('/:id', (req,res) => {
     .catch(err => res.json(err))
   // console.log(req.body)
   Group.findByIdAndUpdate(groupId, {users: updatedGroup.users})
-    .then(res => console.log({res}))
-    .catch(err => console.log({err}))
+    // .then(res => console.log({res}))
+    // .catch(err => console.log({err}))
 })
 
 

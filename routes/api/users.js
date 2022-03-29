@@ -137,8 +137,8 @@ router.patch('/:id', (req,res) => {
   const updatedUser = req.body.user 
 
   User.findByIdAndUpdate(userID, {games: updatedUser.games, groups: updatedUser.groups})
-  .then(res => console.log({res}))
-  .catch(err => console.log({err}))
+  // .then(res => console.log({res}))
+  // .catch(err => console.log({err}))
 })
 
 module.exports = router;

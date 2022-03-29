@@ -11,7 +11,7 @@ class LibraryItem extends React.Component {
 
 
   render(){
-    debugger
+    // debugger
     const { currentUser, game } = this.props;
     return(
       <div>
