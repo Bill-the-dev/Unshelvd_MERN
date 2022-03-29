@@ -17,6 +17,7 @@ class GroupShow extends React.Component {
   }
   
   componentDidMount() {
+    // debugger
     this.props.fetchGroup(this.props.match.params.id)
     .then(() => this.props.fetchGroups()
     .then(() => this.props.fetchUsers())
@@ -49,8 +50,8 @@ class GroupShow extends React.Component {
     }
 
   componentDidUpdate(prevProps) {
-    debugger;
-    if (this.props.currentGroup.users !== prevProps.currentGroup.users) {
+    // debugger;
+    if (prevProps.currentGroup.users !== this.props.currentGroup.user) {
       this.setState({
         currentGroupUsers: this.props.currentGroup.users
       });
@@ -67,17 +68,23 @@ class GroupShow extends React.Component {
 
   handleLeave(e){
     e.preventDefault();
-
-    const updatedUser = this.props.currentUserObj;
     debugger
-    updatedUser.groups = this.props.currentUserObj.groups.filter(group => group !== this.props.currentGroup._id);
-    this.props.updateUser(updatedUser);
+    const updatedUser = {...this.props.currentUserObj};
+    updatedUser.groups = updatedUser.groups.filter(group => group !== this.props.currentGroup._id);
+    // debugger
 
-    const updatedGroup = this.props.currentGroup;
-    updatedGroup.users = this.props.currentGroup.users.filter(user => user !== this.props.currentUserObj._id);
+    
+    const updatedGroup = {...this.props.currentGroup};
+    updatedGroup.users = updatedGroup.users.filter(user => user !== this.props.currentUserObj._id);
+    // debugger
+    this.props.updateUser(updatedUser)
     this.props.updateGroup(updatedGroup)
-      .then(() => this.props.fetchGroups());
-    setTimeout(this.props.history.push({pathname:"/groups"}), 1000);
+      // .then(() => this.props.fetchGroups())
+      // .then(() => {
+      //   debugger
+      //   this.props.history.push({pathname: '/groups'})
+      // })
+    // setTimeout(() => this.props.history.push({pathname:"/groups"}), 5000);
   }
   
   render () {
@@ -86,7 +93,7 @@ class GroupShow extends React.Component {
     if (!allUsers) return null
     if (!allGames) return null
 
-
+    // debugger
     return(
       <div className="group-show-container">
         <div className="gs-sub-header">

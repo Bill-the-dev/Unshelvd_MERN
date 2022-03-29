@@ -31,7 +31,7 @@ class CreateGroup extends React.Component {
       submitGroup()
       .then(group => {
         const updatedUser = this.props.currentUser;
-        updatedUser.groups = this.props.currentUser.groups.concat(group.group.data._id);
+        updatedUser.groups = updatedUser.groups.concat(group.group.data._id);
         this.props.updateUser(updatedUser);
       })
       .then(() => this.props.fetchGroups())
@@ -41,6 +41,7 @@ class CreateGroup extends React.Component {
         let curGroup;
         this.props.allGroups.forEach(group => {
           if (group.shareCode === this.state.code) {
+            // debugger
             curGroup = group
           }
         })
@@ -49,17 +50,21 @@ class CreateGroup extends React.Component {
         //   return
         // }
       // ADD GROUP TO USER
-      const updatedUser = this.props.currentUser;
+      const updatedUser = {...this.props.currentUser};
+      // debugger
       if (!updatedUser.groups.includes(curGroup._id)){
         // debugger
-          updatedUser.groups = this.props.currentUser.groups.concat(curGroup);
+          updatedUser.groups = updatedUser.groups.concat(curGroup);
+          // debugger
           this.props.updateUser(updatedUser);
   
           // ADD USER TO GROUP
-          const updatedGroup = curGroup;
+          const updatedGroup = {...curGroup};
+          // debugger
           updatedGroup.users = curGroup.users.concat(this.props.currentUser._id);
           // debugger
           this.props.updateGroup(updatedGroup)
+          .then(group => this.props.fetchGroup(group._id))
           .then(() => this.props.fetchGroups())
         }
         this.props.closeModal()
