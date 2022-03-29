@@ -68,9 +68,10 @@ router.patch('/:id', (req,res) => {
 
   Group.findById(groupId)
     .catch(err => res.json(err))
-  // console.log(req.body)
+  console.log({group: req.body.group.users})
   Group.findByIdAndUpdate(groupId, {users: updatedGroup.users})
-    .then(res => console.log({res}))
+    .then(group => res.json(group))
+    // .then(res => console.log({res}))
     .catch(err => console.log({err}))
 })
 
