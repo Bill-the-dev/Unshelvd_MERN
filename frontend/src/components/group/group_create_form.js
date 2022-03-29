@@ -33,9 +33,14 @@ class CreateGroup extends React.Component {
         const updatedUser = this.props.currentUser;
         updatedUser.groups = updatedUser.groups.concat(group.group.data._id);
         this.props.updateUser(updatedUser);
+        this.props.closeModal()
+        this.props.history.push({pathname: `/groups/${group.group.data._id}`})
       })
-      .then(() => this.props.fetchGroups())
-      .then(() => this.props.closeModal())
+      // .then(() => this.props.fetchGroups())
+      // .then(() => {
+      //   debugger
+      // })
+      // .then(() => this.props.closeModal())
     } else {
       // JOIN GROUP
         let curGroup;
@@ -71,13 +76,16 @@ class CreateGroup extends React.Component {
             })
           // .then(group => this.props.fetchGroup(group._id))
           // .then(() => this.props.fetchGroups())
+        } else {
+          this.props.closeModal()
+          this.props.history.push({pathname: `/groups/${curGroup._id}`})
         }
         // setTimeout(this.props.history.push({pathname: `/groups/${curGroup._id}`}),1000)
     }
   }
 
   render() {
-    let groupErrors = this.props.errors
+    // let groupErrors = this.props.errors
     const {modal} = this.props
     return (
       <div className="group-form-container">
