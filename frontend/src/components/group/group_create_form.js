@@ -44,10 +44,10 @@ class CreateGroup extends React.Component {
             curGroup = group
           }
         })
-        // if (!curGroup) {
-        //   this.renderErrors()
-        //   return
-        // }
+        if (curGroup === undefined) {
+          // this.renderErrors()
+          return "Group does not exist"
+        }
       // ADD GROUP TO USER
       const updatedUser = this.props.currentUser;
       if (!updatedUser.groups.includes(curGroup._id)){
@@ -68,7 +68,7 @@ class CreateGroup extends React.Component {
   }
 
   render() {
-    let groupErrors = this.props.errors
+    // let groupErrors = this.props.errors
     const {modal} = this.props
     return (
       <div className="group-form-container">
