@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {withRouter} from "react-router";
 import NavBar from "../nav/navbar";
 import LibraryItem from "../library/library_item"
 
@@ -9,7 +10,9 @@ class GroupShow extends React.Component {
     this.state = {
       groupGames: [],
       groupGameObjects: [],
-      currentGroupUsers: []
+      currentGroupUsers: [],
+      userInGroup: null,
+      groupInUser: null
     }
     this.handleMouseEnter = this.handleMouseEnter.bind(this)
     this.handleMouseLeave = this.handleMouseLeave.bind(this)
@@ -47,8 +50,18 @@ class GroupShow extends React.Component {
     })
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps, prevState) {
     // debugger;
+    // if(!this.props.currentGroup.users?.includes(this.props.currentUser.id) && 
+    //   !this.props.allUsers[this.props.currentUser.id]?.groups.includes(this.props.currentGroup._id)) {
+    //   () => this.props.history.push({ pathname: "/groups" })
+    //   }
+
+    // if (this.state.userInGroup === false && this.state.groupInUser === false){
+    //   this.props.history.push({ pathname: "/groups" })
+    // }
+
+    // causes loop
     // if (prevProps.currentGroup.users !== this.props.currentGroup.user) {
     //   this.setState({
     //     currentGroupUsers: this.props.currentGroup.users
@@ -65,7 +78,7 @@ class GroupShow extends React.Component {
   }
 
   handleLeave(e){
-    // e.preventDefault();
+    e.preventDefault();
     // debugger
     const updatedUser = {...this.props.currentUserObj};
     updatedUser.groups = updatedUser.groups.filter(group => group !== this.props.currentGroup._id);
@@ -76,13 +89,19 @@ class GroupShow extends React.Component {
     updatedGroup.users = updatedGroup.users.filter(user => user !== this.props.currentUserObj._id);
     // debugger
     this.props.updateUser(updatedUser)
+      // .then(() => this.setState({
+      //   userInGroup: false
+      // }))
     this.props.updateGroup(updatedGroup)
+      // .then(() => this.setState({
+      //   groupInUser: false
+      // }))
       // .then(() => this.props.fetchGroups())
-      // .then(() => {
-      //   debugger
-      //   this.props.history.push({pathname: '/groups'})
-      // })
-    setTimeout(this.props.history.push({pathname:"/groups"}), 5000);
+      .then(() => {
+        debugger
+        this.props.history.push({pathname: '/groups'})
+      })
+    // setTimeout(() => this.props.history.push({pathname:"/groups"}), 5000);
   }
   
   render () {
@@ -142,5 +161,5 @@ class GroupShow extends React.Component {
   }
 }
 
-export default GroupShow;
+export default withRouter(GroupShow);
 

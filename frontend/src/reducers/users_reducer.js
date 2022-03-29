@@ -16,6 +16,7 @@ const UsersReducer = (state = { currentUser: {}, allUsers: {} }, action) => {
       return nextState;
 
     case RECEIVE_USER:
+      debugger
       nextState.currentUser = action.user.data;
 
       // let mutualUsers = [];
