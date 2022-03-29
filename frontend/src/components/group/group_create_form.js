@@ -56,19 +56,19 @@ class CreateGroup extends React.Component {
         // debugger
           updatedUser.groups = updatedUser.groups.concat(curGroup);
           // debugger
-          this.props.updateUser(updatedUser);
-  
+          
           // ADD USER TO GROUP
           const updatedGroup = {...curGroup};
           // debugger
           updatedGroup.users = curGroup.users.concat(this.props.currentUser._id);
-          // debugger
+          debugger
+          this.props.updateUser(updatedUser);
           this.props.updateGroup(updatedGroup)
-          .then(group => this.props.fetchGroup(group._id))
-          .then(() => this.props.fetchGroups())
+          // .then(group => this.props.fetchGroup(group._id))
+          // .then(() => this.props.fetchGroups())
         }
         this.props.closeModal()
-        setTimeout(this.props.history.push({pathname: `/groups/${curGroup._id}`}),1000)
+        setTimeout(this.props.history.push({pathname: `/groups/${curGroup._id}`}),5000)
     }
   }
 

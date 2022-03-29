@@ -12,7 +12,7 @@ import { fetchGames, fetchUserLibrary } from "../../actions/game_actions";
 // });
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger
+  debugger
   return {
     userGroups: Object.values(state.entities.groups.userGroups),
     currentUser: state.session.user,
