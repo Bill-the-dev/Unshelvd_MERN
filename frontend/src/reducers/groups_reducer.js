@@ -14,6 +14,7 @@ const GroupsReducer = (state = { userGroups: {}, currentGroup: {} },
     return nextState;
 
     case RECEIVE_GROUP:
+    debugger
     nextState.currentGroup = action.group.data
     return nextState;
   

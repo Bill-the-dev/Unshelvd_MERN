@@ -54,8 +54,8 @@ class CreateGroup extends React.Component {
       // debugger
       if (!updatedUser.groups.includes(curGroup._id)){
         // debugger
-          updatedUser.groups = updatedUser.groups.concat(curGroup);
-          // debugger
+          updatedUser.groups = updatedUser.groups.concat(curGroup._id); 
+          debugger
           this.props.updateUser(updatedUser);
   
           // ADD USER TO GROUP

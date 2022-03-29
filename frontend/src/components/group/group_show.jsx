@@ -10,7 +10,9 @@ class GroupShow extends React.Component {
     this.state = {
       groupGames: [],
       groupGameObjects: [],
-      currentGroupUsers: []
+      currentGroupUsers: [],
+      userInGroup: null,
+      groupInUser: null
     }
     this.handleMouseEnter = this.handleMouseEnter.bind(this)
     this.handleMouseLeave = this.handleMouseLeave.bind(this)
@@ -50,13 +52,23 @@ class GroupShow extends React.Component {
       })
     }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps, prevState) {
     // debugger;
-    if (prevProps.currentGroup.users !== this.props.currentGroup.user) {
-      this.setState({
-        currentGroupUsers: this.props.currentGroup.users
-      });
-    }
+    // if(!this.props.currentGroup.users?.includes(this.props.currentUser.id) && 
+    //   !this.props.allUsers[this.props.currentUser.id]?.groups.includes(this.props.currentGroup._id)) {
+    //   () => this.props.history.push({ pathname: "/groups" })
+    //   }
+
+    // if (this.state.userInGroup === false && this.state.groupInUser === false){
+    //   this.props.history.push({ pathname: "/groups" })
+    // }
+
+    // causes loop
+    // if (prevProps.currentGroup.users !== this.props.currentGroup.user) {
+    //   this.setState({
+    //     currentGroupUsers: this.props.currentGroup.users
+    //   });
+    // }
   }
 
   handleMouseEnter(e) {
@@ -69,7 +81,7 @@ class GroupShow extends React.Component {
 
   handleLeave(e){
     e.preventDefault();
-    debugger
+    // debugger
     const updatedUser = {...this.props.currentUserObj};
     updatedUser.groups = updatedUser.groups.filter(group => group !== this.props.currentGroup._id);
     // debugger
@@ -79,12 +91,18 @@ class GroupShow extends React.Component {
     updatedGroup.users = updatedGroup.users.filter(user => user !== this.props.currentUserObj._id);
     // debugger
     this.props.updateUser(updatedUser)
+      // .then(() => this.setState({
+      //   userInGroup: false
+      // }))
     this.props.updateGroup(updatedGroup)
+      // .then(() => this.setState({
+      //   groupInUser: false
+      // }))
       // .then(() => this.props.fetchGroups())
-      // .then(() => {
-      //   debugger
-      //   this.props.history.push({pathname: '/groups'})
-      // })
+      .then(() => {
+        debugger
+        this.props.history.push({pathname: '/groups'})
+      })
     // setTimeout(() => this.props.history.push({pathname:"/groups"}), 5000);
   }
   
