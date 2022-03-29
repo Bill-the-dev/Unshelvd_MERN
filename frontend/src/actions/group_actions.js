@@ -46,12 +46,12 @@ export const updateGroup = group => dispatch => {
   return(
     GroupAPIUtil.updateGroup(group)
       .then((group) => {
-        debugger
+        // debugger
         dispatch(receiveGroup(group))
         // },() => {console.log(`nope`)
       })
       .catch(err => {
-        debugger
+        // debugger
         console.log(err)
       })
   )

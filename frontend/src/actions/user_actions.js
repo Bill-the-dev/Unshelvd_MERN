@@ -29,15 +29,15 @@ export const fetchUsers = () => dispatch => (
 );
 
 export const updateUser = user => dispatch => {
-  debugger
+  // debugger
   return(
     UserAPIUtil.updateUser(user)
       .then(user => {
-        debugger
+        // debugger
         dispatch(receiveUser(user))
       }) 
       .catch(err => {
-        debugger 
+        // debugger 
         console.log(err) 
       }
   ))

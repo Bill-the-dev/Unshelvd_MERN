@@ -52,6 +52,13 @@ class GroupShow extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     // debugger;
+    if (prevProps.currentGroup?.users?.length !== this.props.currentGroup?.users?.length) {
+      // this.props.fetchUser(this.props.currentUser.id)
+      this.props.fetchUsers()
+    }
+    // if (!prevProps.currentGroup.users.includes(this.props.currentUser.id)) {
+    //   this.props.fetchUser(this.props.currentUser.id)
+    // }
     // if(!this.props.currentGroup.users?.includes(this.props.currentUser.id) && 
     //   !this.props.allUsers[this.props.currentUser.id]?.groups.includes(this.props.currentGroup._id)) {
     //   () => this.props.history.push({ pathname: "/groups" })
@@ -89,19 +96,19 @@ class GroupShow extends React.Component {
     updatedGroup.users = updatedGroup.users.filter(user => user !== this.props.currentUserObj._id);
     // debugger
     this.props.updateUser(updatedUser)
-      // .then(() => this.setState({
-      //   userInGroup: false
-      // }))
+      .then(() => this.setState({
+        userInGroup: false
+      }))
     this.props.updateGroup(updatedGroup)
-      // .then(() => this.setState({
-      //   groupInUser: false
-      // }))
+      .then(() => this.setState({
+        groupInUser: false
+      }))
       // .then(() => this.props.fetchGroups())
       .then(() => {
-        debugger
+        // debugger
         this.props.history.push({pathname: '/groups'})
       })
-    // setTimeout(() => this.props.history.push({pathname:"/groups"}), 5000);
+    // setTimeout(() => this.props.history.push({pathname:"/groups"}), 1000);
   }
   
   render () {
@@ -110,7 +117,7 @@ class GroupShow extends React.Component {
     if (!allUsers) return null
     if (!allGames) return null
 
-    debugger
+    // debugger
 
     return(
       <div className="group-show-container">

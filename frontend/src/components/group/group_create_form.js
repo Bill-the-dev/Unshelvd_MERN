@@ -68,7 +68,11 @@ class CreateGroup extends React.Component {
           // .then(() => this.props.fetchGroups())
         }
         this.props.closeModal()
-        setTimeout(this.props.history.push({pathname: `/groups/${curGroup._id}`}),5000)
+          // .then(() => {
+          //   debugger
+          //   this.props.history.push({pathname: `/groups/${curGroup._id}`})
+          // })
+        setTimeout(this.props.history.push({pathname: `/groups/${curGroup._id}`}),1000)
     }
   }
 
