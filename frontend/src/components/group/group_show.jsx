@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {withRouter} from "react-router";
 import NavBar from "../nav/navbar";
 import LibraryItem from "../library/library_item"
 
@@ -76,7 +77,8 @@ class GroupShow extends React.Component {
     const updatedGroup = this.props.currentGroup;
     updatedGroup.users = this.props.currentGroup.users.filter(user => user !== this.props.currentUserObj._id);
     this.props.updateGroup(updatedGroup)
-      .then(() => this.props.fetchGroups());
+      .then(() => this.props.fetchGroups())
+      // .then(() => this.props.history.push({pathname:"/groups"}))
     setTimeout(this.props.history.push({pathname:"/groups"}), 1000);
   }
   
@@ -133,5 +135,5 @@ class GroupShow extends React.Component {
   }
 }
 
-export default GroupShow;
+export default withRouter(GroupShow);
 

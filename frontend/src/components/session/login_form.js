@@ -24,20 +24,20 @@ class LoginForm extends React.Component {
   //   this.setState({errors: nextProps.errors})
   // }
 
-  componentDidUpdate(prevProps) {
-    // debugger
-    if (this.props.currentUser === true) {
-      this.props.history.push('/library');
-      // this.setState({errors: this.props.errors})
-    }
+  // componentDidUpdate(prevProps) {
+  //   // debugger
+  //   if (this.props.currentUser === true) {
+  //     this.props.history.push('/library');
+  //     // this.setState({errors: this.props.errors})
+  //   }
 
-    if (prevProps.errors !== this.props.errors) {
-      this.setState({ errors: this.props.errors });
-    }
+  //   if (prevProps.errors !== this.props.errors) {
+  //     this.setState({ errors: this.props.errors });
+  //   }
 
-    // Set or clear errors
-    // this.setState({ errors: this.props.errors })
-  }
+  //   // Set or clear errors
+  //   // this.setState({ errors: this.props.errors })
+  // }
 
   // Handle field updates (called in the render method)
   update(field) {
