@@ -64,15 +64,15 @@ class CreateGroup extends React.Component {
           // debugger
           this.props.updateUser(updatedUser);
           this.props.updateGroup(updatedGroup)
+            .then(() => {
+              // debugger
+              this.props.closeModal()
+              this.props.history.push({pathname: `/groups/${curGroup._id}`})
+            })
           // .then(group => this.props.fetchGroup(group._id))
           // .then(() => this.props.fetchGroups())
         }
-        this.props.closeModal()
-          // .then(() => {
-          //   debugger
-          //   this.props.history.push({pathname: `/groups/${curGroup._id}`})
-          // })
-        setTimeout(this.props.history.push({pathname: `/groups/${curGroup._id}`}),1000)
+        // setTimeout(this.props.history.push({pathname: `/groups/${curGroup._id}`}),1000)
     }
   }
 
