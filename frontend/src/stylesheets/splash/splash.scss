@@ -48,7 +48,6 @@
 }
 
 .team-container {
-  // border: 1px solid black;
   height: 100%;
   text-align: center;
   color: $dark-brown;
@@ -96,38 +95,28 @@
   height: 100vh;
   position: relative;
   background-image: url('../../background.jpg');
-  // background-size: 1100px;
   background-size: cover;
 }
-// .splash-container::after {
-  //   content: '';
-  //   position: absolute;
-  //   background-color: rgba(179, 179, 179, 0.25);
-  //   top: 0px;
-  //   right: 0px;
-  //   bottom: 0px;
-  //   left: 0px;
-  // }
   
-  .splash-row-1 {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+.splash-row-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-weight: bold;
+  font-size: 2rem;
+  h1 {
+    font-size: 3rem;
+    font-family: $unshelvd;
+    transform: scaleX(1.2);
     font-weight: bold;
-    font-size: 2rem;
-    h1 {
-      font-size: 3rem;
-      font-family: $unshelvd;
-      transform: scaleX(1.2);
-      font-weight: bold;
-    }
-    p:hover {
-      text-decoration: underline;
-      cursor: pointer;
-    }
-    grid-row: 2 / 3;
-    grid-column: 2 / 5;
   }
+  p:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  grid-row: 2 / 3;
+  grid-column: 2 / 5;
+}
   
 .splash-row-2 {
   display: flex;
@@ -139,7 +128,6 @@
     color: $light-blue;
     padding: 2%;
     border: 1px solid $dark-blue;
-    // background-color: $lightest-tan;
     background-color: fade-out($color: $lightest-tan, $amount: 0.15);
 
     border-radius: 4px;

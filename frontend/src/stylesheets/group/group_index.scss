@@ -14,7 +14,6 @@
 }
 
 .gi-sub-header {
-  // border: 1px solid gray;
   display: flex;
   grid-row: 1 / 3;
   grid-column: 3 / 11;
@@ -31,7 +30,6 @@
     font-weight: 700;
     font-size: 1.8rem;
     text-shadow: 2px;
-    // border-bottom: 2px solid $dark-blue;
     text-decoration: underline;
     color: $dark-brown;
     cursor: default;
@@ -50,7 +48,6 @@
   grid-row: 3 / 13;
   grid-column: 3 / 11;
   display: flex;
-  //new
   justify-content: center;
   overflow-y: auto;
   box-shadow: 2px 2px 8px black;
@@ -59,8 +56,6 @@
 .gi-groups-container {
   display: flex;
   flex-wrap: wrap;
-  // overflow-y: auto;
-
 }
 
 .gi-group-list {
@@ -75,11 +70,9 @@
   align-items: center;
   justify-content: center;
   align-self: center;
-  // border: $beige solid 2px;
   margin: 1.5rem; 
   border-radius: 6px;
   box-shadow: 2px 2px 12px black;
-  // background-color: $dark-green; 
   background: radial-gradient(circle, $light-green 1%, $dark-green 100%);
   font-family: $sans-serif;
   font-weight: 500;
@@ -96,7 +89,6 @@
 .gi-group-item {
   display: flex;
   flex-direction: column;
-  // border: 1px solid gray;
   width: 30vh;
   height: 20vh;
   align-items: center;
@@ -104,7 +96,6 @@
   margin: 1.5rem; 
   border-radius: 6px;
   box-shadow: 2px 2px 12px black;
-  // background-color: $dark-green; 
   background: radial-gradient(circle, $light-green 1%, $dark-green 100%);
   font-family: $sans-serif;
   font-weight: 500;
@@ -124,7 +115,6 @@
   padding-bottom: 0.25rem;
   font-family: 'Bodoni Moda', serif;
   font-weight: 700;
-  // border-bottom: 1px solid $body-lightest;
   text-decoration: underline;
 }
 
