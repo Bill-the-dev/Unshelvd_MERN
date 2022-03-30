@@ -1,5 +1,3 @@
-// create game component
-
 import React from 'react';
 
 class CreateGameForm extends React.Component {
@@ -21,7 +19,6 @@ class CreateGameForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this)
-    // this.clearedErrors = false;
   }
 
   componentDidMount() {
@@ -50,7 +47,6 @@ class CreateGameForm extends React.Component {
         min: parseInt(this.state.min),
         max: parseInt(this.state.max),
         category: this.state.category.concat(this.state.descriptors), 
-        //require select one overall then optional multi select categories
         gameType: this.state.gameType,
         description: this.state.description,
         rulesLink: this.state.rulesLink,
@@ -61,7 +57,6 @@ class CreateGameForm extends React.Component {
       
       submitGame()
       .then(game => { 
-        // debugger
         const updatedUser = this.props.currentUser
         updatedUser.games = this.props.currentUser.games.concat(game.game.data._id)
         this.props.updateUser(updatedUser)
@@ -71,7 +66,6 @@ class CreateGameForm extends React.Component {
     }
 
     componentWillUnmount() {
-      // debugger
       this.props.removeErrors()
     }
 
@@ -90,8 +84,6 @@ class CreateGameForm extends React.Component {
     }
 
     render() {  
-      // let gameErrors = this.props.errors
-    // debugger
     return (
       <div className='new-game-form-container'>
         <form className='new-game-form' onSubmit = {this.handleSubmit}>
@@ -122,7 +114,6 @@ class CreateGameForm extends React.Component {
               <label className='category-grid-item add-game-input'>Playing Cards
                 <input type='checkbox' className='type-checkbox' name='category' value='Playing Cards' onClick={this.updateSelect('category')}/>
               </label>
-              {/* <button  onClick={this.updateSelect('category')} value='Board Game'>Board Game</button> */}
 
               <label className='category-grid-item add-game-input'>Dice
                 <input type='checkbox' className='type-checkbox' name='category' value='Dice' onClick={this.updateSelect('category')}/>

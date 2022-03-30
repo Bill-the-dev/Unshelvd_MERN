@@ -14,31 +14,6 @@ class LoginForm extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
   }
 
-  // Once the user has been authenticated, redirect to the Tweets page
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps.currentUser === true) {
-  //     this.props.history.push('/library');
-  //   }
-
-  //   // Set or clear errors
-  //   this.setState({errors: nextProps.errors})
-  // }
-
-  // componentDidUpdate(prevProps) {
-  //   // debugger
-  //   if (this.props.currentUser === true) {
-  //     this.props.history.push('/library');
-  //     // this.setState({errors: this.props.errors})
-  //   }
-
-  //   if (prevProps.errors !== this.props.errors) {
-  //     this.setState({ errors: this.props.errors });
-  //   }
-
-  //   // Set or clear errors
-  //   // this.setState({ errors: this.props.errors })
-  // }
-
   // Handle field updates (called in the render method)
   update(field) {
     return e => this.setState({
@@ -80,14 +55,12 @@ class LoginForm extends React.Component {
           <h2>Log In</h2>
           <h4><Link to='/signup'>Sign Up</Link> instead</h4>
           <form onSubmit={this.handleSubmit}>
-            {/* <div> */}
                 <input type="text"
                   value={this.state.username}
                   onChange={this.update('username')}
                   placeholder="Username"
                   className='form-input'
                 />
-              {/* <br/> */}
                 <input type="password"
                   value={this.state.password}
                   onChange={this.update('password')}
@@ -98,7 +71,6 @@ class LoginForm extends React.Component {
               <input className='button button--session' type="submit" value="Log In" />
               {this.renderErrors()}
               <div className="button button--session" onClick={() => loginDemo()}>Demo Log In</div>
-            {/* </div> */}
           </form>
         </div>
       </div>

@@ -29,8 +29,6 @@ const App = () => (
             <ProtectedRoute exact path="/library/games/:id" component={GameShowContainer} />  
             <ProtectedRoute exact path="/library" component={LibraryContainer} />
             <ProtectedRoute exact path="/groups" component={GroupIndexContainer} />
-            {/* <ProtectedRoute exact path="/library" component={LibraryContainer} /> */} 
-            {/* <ProtectedRoute exact path="/library/games/:id" component={GameShowContainer} /> */}
             <ProtectedRoute exact path='/newgame' component={GameFormContainer} />
             <ProtectedRoute exact path='/newgroup' component={GroupFormContainer} />
             <ProtectedRoute exact path="/suggest" component={SuggestContainer} />

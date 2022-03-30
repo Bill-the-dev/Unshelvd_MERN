@@ -1,9 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import { closeModal } from "../../actions/modal_actions";
-import LoginFormContainer from '../session/login_form_container'
-import SignupFormContainer from '../session/signup_form_container'
-// import GameShowContainer from "../game/game_show_container";
 import AboutShow from "../splash/about";
 import TeamShow from "../splash/team";
 import GameModal from "../game/game_modal";
@@ -19,9 +16,6 @@ const Modal = ({ modal, closeModal, fetchUser, updateUser, currentUser, currentU
     };
     let component;
     switch (modal) {
-        case 'Signup':
-            component = <SignupFormContainer />;
-            break;
         case 'About':
             component = <AboutShow />;
             break;
@@ -71,17 +65,14 @@ const Modal = ({ modal, closeModal, fetchUser, updateUser, currentUser, currentU
 
 
 const mapStateToProps = (state) => {
-    // debugger
     return ({
         modal: state.modal,
         currentUser: state.entities.users.currentUser,
-        // currentUserId: state.session.user.id
     });
 
 };
 
 const mapDispatchToProps = (dispatch) => {
-    // debugger
     return({
     closeModal: () => dispatch(closeModal()),
     updateUser: (user) => dispatch(updateUser(user)),
