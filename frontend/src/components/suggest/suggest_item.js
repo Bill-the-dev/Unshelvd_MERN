@@ -3,7 +3,6 @@ import React from 'react';
  class SuggestItem extends React.Component {
 
   render() {
-
     const {game, openModal} = this.props
 
     return (

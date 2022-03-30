@@ -1,8 +1,3 @@
-// post / new group
-// get /:id show group
-// delete /:id
-// patch /:id
-
 const express = require("express");
 const router = express.Router();
 const Group = require('../../models/Group')
@@ -71,7 +66,6 @@ router.patch('/:id', (req,res) => {
   console.log({group: req.body.group.users})
   Group.findByIdAndUpdate(groupId, {users: updatedGroup.users})
     .then(group => res.json(group))
-    // .then(res => console.log({res}))
     .catch(err => console.log({err}))
 })
 

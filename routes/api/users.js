@@ -41,7 +41,6 @@ router.get('/:id/games', (req, res) => {
 router.post("/register", (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
   if (!isValid) {
-
     return res.status(400).json(errors);
   }
 
@@ -66,7 +65,7 @@ router.post("/register", (req, res) => {
           newUser
             .save()
             .then(user => {
-          
+
               const payload = { id: user.id, username: user.username };
 
               jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
@@ -77,6 +76,7 @@ router.post("/register", (req, res) => {
               });
 
             })
+
             .catch(err => res.json(err))
         });
       });

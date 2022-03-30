@@ -1,16 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
 
 class GameItem extends React.Component {
   constructor(props) {
     super(props);
-
   }
 
-
   render(){
-    // debugger
     const { currentUser, game, openModal } = this.props;
     return(
       <li className="library-index-item" onClick={() => openModal(game)}>
