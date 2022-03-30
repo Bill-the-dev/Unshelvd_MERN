@@ -50,37 +50,40 @@ class CreateGroup extends React.Component {
             curGroup = group
           }
         })
-        // if (!curGroup) {
-        //   this.renderErrors()
-        //   return
-        // }
-      // ADD GROUP TO USER
-      const updatedUser = {...this.props.currentUser};
-      // debugger
-      if (!updatedUser.groups.includes(curGroup._id)){
-        // debugger
-          updatedUser.groups = updatedUser.groups.concat(curGroup._id);
+        if (!curGroup) {
+          this.setState({
+            errors: "Group does not exist"
+          })
+        } else {
+          // ADD GROUP TO USER
+          const updatedUser = {...this.props.currentUser};
           // debugger
-          
-          // ADD USER TO GROUP
-          const updatedGroup = {...curGroup};
-          // debugger
-          updatedGroup.users = curGroup.users.concat(this.props.currentUser._id);
-          // debugger
-          this.props.updateUser(updatedUser);
-          this.props.updateGroup(updatedGroup)
-            .then(() => {
+          if (!updatedUser.groups.includes(curGroup._id)){
+            // debugger
+              updatedUser.groups = updatedUser.groups.concat(curGroup._id);
               // debugger
+              
+              // ADD USER TO GROUP
+              const updatedGroup = {...curGroup};
+              // debugger
+              updatedGroup.users = curGroup.users.concat(this.props.currentUser._id);
+              // debugger
+              this.props.updateUser(updatedUser);
+              this.props.updateGroup(updatedGroup)
+                .then(() => {
+                  // debugger
+                  this.props.closeModal()
+                  this.props.history.push({pathname: `/groups/${curGroup._id}`})
+                })
+              // .then(group => this.props.fetchGroup(group._id))
+              // .then(() => this.props.fetchGroups())
+            } else {
               this.props.closeModal()
               this.props.history.push({pathname: `/groups/${curGroup._id}`})
-            })
-          // .then(group => this.props.fetchGroup(group._id))
-          // .then(() => this.props.fetchGroups())
-        } else {
-          this.props.closeModal()
-          this.props.history.push({pathname: `/groups/${curGroup._id}`})
+            }
+            // setTimeout(this.props.history.push({pathname: `/groups/${curGroup._id}`}),1000)
         }
-        // setTimeout(this.props.history.push({pathname: `/groups/${curGroup._id}`}),1000)
+
     }
   }
 
