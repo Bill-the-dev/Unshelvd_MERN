@@ -11,7 +11,6 @@ class GroupIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchGroup(this.props.match.params.id)
-      // .then(() => console.log(this.props));
     this.props.fetchGroups()
       .then(() => this.setState({ currentUserGroups: Object.values(this.props.userGroups).filter(group => group.users.includes(this.props.currentUser.id)) }))
   }
@@ -40,19 +39,14 @@ class GroupIndex extends React.Component {
         <div className="gi-sub-header">
           <h1>Your Groups</h1>
           <div className="gi-buttons">
-            
-            {/* Possibly add key to the button based on current user groups length? key forces render */}
-            <div className="btn btn--create-group" onClick={() => openModal('addGroup')}>Create Group</div> 
-
+            <div className="btn btn--create-group" onClick={() => openModal('addGroup')}>Create Group</div>
             <div className="btn btn--join-group" onClick={() => openModal('joinGroup')}>Join Group</div>
-
           </div>
         </div>
         <div className="gi-content">
           <div className="gi-groups-container">
             <ul className="gi-group-list">
               { 
-
                 (this.state.currentUserGroups?.length > 0)
                 ? this.state.currentUserGroups?.map((group, index) => {
                     return ( 
@@ -73,9 +67,7 @@ class GroupIndex extends React.Component {
                   <div className="gi-empty">
                     <span className="gi-empty__text">Looks like you don't have any groups yet!</span>
                     <span className="gi-empty__text">Groups you've Joined or Created will all show here.</span>
-                  </div>
-
-                
+                  </div>             
               }
             </ul>
           </div>

@@ -73,21 +73,14 @@ const seedGroups = [
 const loadCounter = () => {
   let groupsDone = 0;
   for (let i = 0; i < seedGroups.length; i++) {
-    // debugger
     seedGroups[i].save((err, res) => {
-      // console.log(`errors = ${err} res = ${res} `);
-      // console.log(`i = ${i} group = ${seedGroups[i]} `);
       groupsDone++;
       if (groupsDone === seedGroups.length) {
-        // debugger
-        // console.log(`${i}`);
         exit();
       }
-      // debugger
     });
   }
-
-  // should add documents, then disconnect once finished (callback below)
+  // add documents, then disconnect once finished (callback below)
 
 };
 const exit = () => {
