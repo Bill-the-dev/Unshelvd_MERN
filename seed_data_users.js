@@ -59,7 +59,6 @@ const seedUsers = [
       password: '$2a$10$vGUlNnmg6R1RQQOfmYULO.mwhaohZRUqwWOoi039uoK.zqsbJqmz2',
       games: [
         '623b4c050222f83386e47760',
-        // '623b55450222f83386e47761',
         '62346dc0e58d7eaa48659748',
         '62346dc0e58d7eaa48659749',
         '62346dc0e58d7eaa4865974a',
@@ -273,7 +272,6 @@ const seedUsers = [
       email: 'Emily@unshelvd.com',
       password: 'password',
       games: [
-        // '623b55450222f83386e47761',
         '62346dc0e58d7eaa4865974b',
         '62346dc0e58d7eaa4865974c',
         '62346dc0e58d7eaa4865974d',
@@ -295,7 +293,6 @@ const seedUsers = [
       password: 'password',
       games: [
         '623b4c050222f83386e47760',
-        // '623b55450222f83386e47761',
         '62346dc0e58d7eaa4865974b',
         '62346dc0e58d7eaa4865974c',
         '62346dc0e58d7eaa4865974d',
@@ -319,17 +316,11 @@ const seedUsers = [
 const loadCounter = () => {
   let usersDone = 0;
   for (let i = 0; i < seedUsers.length; i++) {
-    // debugger
     seedUsers[i].save((err, res) => {
-      // console.log(`errors = ${err} res = ${res} `);
-      // console.log(`i = ${i} user = ${seedUsers[i]} `);
       usersDone++;
       if (usersDone === seedUsers.length) {
-        // debugger
-        // console.log(`${i}`);
         exit();
       }
-      // debugger
     });
   }
 
@@ -374,7 +365,6 @@ const exit = () => {
 // [
 //   '623b4c050222f83386e47760',
 //   '62346dc0e58d7eaa48659746',
-//   '623b55450222f83386e47761',  // removed
 //   '62346dc0e58d7eaa48659748',
 //   '62346dc0e58d7eaa48659749',
 //   '62346dc0e58d7eaa4865974a',

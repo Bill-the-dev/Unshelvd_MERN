@@ -5,7 +5,6 @@ class NavBar extends React.Component {
     constructor(props) {
         super(props);
         this.logoutUser = this.logoutUser.bind(this);
-        // this.getLinks = this.getLinks.bind(this);
     }
 
     logoutUser(e) {
@@ -17,7 +16,6 @@ class NavBar extends React.Component {
 
         return (
             <div className='nav-container'>
-                {/* <p id='logo'>LOGO</p> */}
                 <NavLink to={'/'} id='logo'>Unshelvd</NavLink>
                 <div className='nav-main-links'>
                     <NavLink to={'/library'}>Library</NavLink>

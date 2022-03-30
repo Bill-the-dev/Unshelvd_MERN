@@ -11,11 +11,6 @@ const { db } = require("../../models/User");
 
 // GET CURRENT USER
 router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
-  // res.json({
-  //   id: req.user.id,
-  //   username: req.user.username,
-  //   email: req.user.email
-  // });
   res.send(req.user)
 })
 
@@ -46,7 +41,6 @@ router.get('/:id/games', (req, res) => {
 router.post("/register", (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
   if (!isValid) {
-
     return res.status(400).json(errors);
   }
 
@@ -60,7 +54,6 @@ router.post("/register", (req, res) => {
         username: req.body.username,
         email: req.body.email,
         password: req.body.password,
-        // groups: ['623477c34cdf8b5e4353ebdf'],
         games: ['62346dc0e58d7eaa4865974a','62346dc0e58d7eaa48659758','62346dc0e58d7eaa48659746','623b8ac3a5a2e640e0c131a4','623b8aa5a5a2e640e0c131a3','623b8c35a5a2e640e0c131a5','623b90f8a5a2e640e0c131a6']
       });
 
@@ -72,10 +65,7 @@ router.post("/register", (req, res) => {
           newUser
             .save()
             .then(user => {
-              // const defaultGroup = Group.findById('623477c34cdf8b5e4353ebdf')
-              // defaultGroup.users.concat(user._id)
-              // defaultGroup.save()
-          
+
               const payload = { id: user.id, username: user.username };
 
               jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
@@ -86,7 +76,7 @@ router.post("/register", (req, res) => {
               });
 
             })
-            // .catch(err => console.log(err));
+
             .catch(err => res.json(err))
         });
       });
@@ -135,16 +125,11 @@ router.post("/login", (req, res) => {
 router.patch('/:id', (req,res) => {
   const userID = req.body.user._id;
   const updatedUser = req.body.user 
-  console.log({user: req.body.user.groups})
 
   User.findByIdAndUpdate(userID, {games: updatedUser.games, groups: updatedUser.groups})
     .then(user => res.json(user))
     .catch(err => console.log({err}))
-  // .then(res => console.log({res}))
-  // .catch(err => console.log({err}))
 })
 
 module.exports = router;
 
-
-// 290344

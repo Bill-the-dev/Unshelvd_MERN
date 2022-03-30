@@ -6,7 +6,6 @@ import {
 
 
 const UsersReducer = (state = { currentUser: {}, allUsers: {} }, action) => {
-  // debugger
   Object.freeze(state);
   let nextState = Object.assign({}, state);
   switch (action.type) {
@@ -16,17 +15,7 @@ const UsersReducer = (state = { currentUser: {}, allUsers: {} }, action) => {
       return nextState;
 
     case RECEIVE_USER:
-      // debugger
       nextState.currentUser = action.user.data;
-
-      // let mutualUsers = [];
-      // action.user.data.groups.map(group => {
-      //   group.users.map(user => {
-      //     if (!mutualUsers.includes(user.id)) mutualUsers.concat(user.id);
-      //   });
-      // });
-
-      // nextState.groupUsers = mutualUsers;
       return nextState;
 
       case RECEIVE_USER_LOGOUT: 
@@ -40,10 +29,3 @@ const UsersReducer = (state = { currentUser: {}, allUsers: {} }, action) => {
 };
 
 export default UsersReducer;
-
-
-
-// To fill groupUsers
-
-// one user's groups => map over groups map over group's users => 
-// add those users to groupUsers slice of state

@@ -12,13 +12,9 @@ export const createGame = data => (
     axios.post('/api/games/', data)
 )
 
-
-
-// are we using these??
 export const getUserGames = userId => (
     axios.get(`/api/users/${userId}/games`)
 )
-// '/api/user/games' Nested under users instead of games util
 
 export const getGroupGames = groupId => (
     axios.get(`/api/groups/${groupId}/games`)

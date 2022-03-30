@@ -1,5 +1,4 @@
 import React from "react";
-import { closeModal } from "../../actions/modal_actions";
 
 class CreateGroup extends React.Component {
   constructor(props) {
@@ -36,56 +35,42 @@ class CreateGroup extends React.Component {
         this.props.closeModal()
         this.props.history.push({pathname: `/groups/${group.group.data._id}`})
       })
-      // .then(() => this.props.fetchGroups())
-      // .then(() => {
-      //   debugger
-      // })
-      // .then(() => this.props.closeModal())
     } else {
       // JOIN GROUP
         let curGroup;
         this.props.allGroups.forEach(group => {
           if (group.shareCode === this.state.code) {
-            // debugger
             curGroup = group
           }
         })
-        // if (!curGroup) {
-        //   this.renderErrors()
-        //   return
-        // }
-      // ADD GROUP TO USER
-      const updatedUser = {...this.props.currentUser};
-      // debugger
-      if (!updatedUser.groups.includes(curGroup._id)){
-        // debugger
-          updatedUser.groups = updatedUser.groups.concat(curGroup._id);
-          // debugger
-          
-          // ADD USER TO GROUP
-          const updatedGroup = {...curGroup};
-          // debugger
-          updatedGroup.users = curGroup.users.concat(this.props.currentUser._id);
-          // debugger
-          this.props.updateUser(updatedUser);
-          this.props.updateGroup(updatedGroup)
-            .then(() => {
-              // debugger
+        if (!curGroup) {
+          this.setState({
+            errors: "Group does not exist"
+          })
+        } else {
+          // ADD GROUP TO USER
+          const updatedUser = {...this.props.currentUser};
+          if (!updatedUser.groups.includes(curGroup._id)){
+              updatedUser.groups = updatedUser.groups.concat(curGroup._id);
+              
+              // ADD USER TO GROUP
+              const updatedGroup = {...curGroup};
+              updatedGroup.users = curGroup.users.concat(this.props.currentUser._id);
+              this.props.updateUser(updatedUser);
+              this.props.updateGroup(updatedGroup)
+                .then(() => {
+                  this.props.closeModal()
+                  this.props.history.push({pathname: `/groups/${curGroup._id}`})
+                })
+            } else {
               this.props.closeModal()
               this.props.history.push({pathname: `/groups/${curGroup._id}`})
-            })
-          // .then(group => this.props.fetchGroup(group._id))
-          // .then(() => this.props.fetchGroups())
-        } else {
-          this.props.closeModal()
-          this.props.history.push({pathname: `/groups/${curGroup._id}`})
+            }
         }
-        // setTimeout(this.props.history.push({pathname: `/groups/${curGroup._id}`}),1000)
     }
   }
 
   render() {
-    // let groupErrors = this.props.errors
     const {modal} = this.props
     return (
       <div className="group-form-container">
@@ -106,8 +91,12 @@ class CreateGroup extends React.Component {
             <label>Enter Code:
                 <input type='text' value={this.state.code} onChange={this.update('code')}/>
             </label>
-            {/* {groupErrors} */}
             <input className="group-form-submit" type='submit' value='Join Group'/>
+            {
+            this.state.errors ? 
+            <div className="join-group-errors">{this.state.errors}</div> :
+            null
+            }
         </form>
       </div>
         }

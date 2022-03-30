@@ -8,20 +8,20 @@
   border-radius: 4px;
   background-color: $body-lightest;
   cursor: pointer;
-    box-shadow:  4px 4px 4px black;
-      &:hover {
-        transform: scale(1.5);
-        transition: all .4s ease;
-        border-radius: 4px;
-        background-color: black;
-        #game-img--suggest {
-          opacity: 50%;
-        }
-        #game-title--suggest {
-          visibility: visible;
-          opacity: 100%;
-        }
+  box-shadow:  4px 4px 4px black;
+    &:hover {
+      transform: scale(1.5);
+      transition: all .4s ease;
+      border-radius: 4px;
+      background-color: black;
+      #game-img--suggest {
+        opacity: 50%;
       }
+      #game-title--suggest {
+        visibility: visible;
+        opacity: 100%;
+      }
+    }
 }
 
 #game-img--suggest {
@@ -40,12 +40,9 @@
   visibility: hidden;
   position: absolute;
   background: linear-gradient(75deg, $light-blue,$dark-blue);
-  // border: .2rem solid $dark-green;
   width: 94.75%;
   font-size: 1rem;
   box-shadow:  4px 4px 4px black;
   top: 40%;
   left: 0%;
-  
-  
 }

@@ -1,17 +1,4 @@
-// .modal-child_game {
-//   position: absolute;
-//   background-color: $lightest-tan;
-//   top: 50%;
-//   left: 50%;
-//   height: 55vh;
-//   min-height: 300px;
-//   width: 20vw;
-//   min-width: 400px;
-//   transform: translate(-50%, -50%);
-//   border-radius: 6px;
-//   box-shadow: 3px 3px 20px red;
-//   padding: 3%;
-// }
+
 
 .modal-child_game {
   position: absolute;
@@ -41,7 +28,7 @@
  display: flex;
  flex-direction: column;
  align-items: center;
- // background-image: url('../../background.jpg');
+
  background: linear-gradient(180deg, $light-green,$dark-green);
  background-size: 1100px;
 
@@ -53,32 +40,32 @@
    font-weight: bold;
    padding: .2rem;
    margin: 2rem;
-   // border: 1px solid lightblue;
+
  }
  h2 {
-   // font-family: Verdana, Geneva, Tahoma, sans-serif;
+ 
    color: $text-blue;
    font-size: 1rem;
-   // font-weight: bold;
+
    padding: 1%;
-   // border: 1px solid lightblue;
+
  }
  p {
-   // font-family: Verdana, Geneva, Tahoma, sans-serif;
+
   color: $text-blue;
   font-size: .8rem;
   text-justify: auto;
-  // text-align: justify;
+
   align-self: center;
   padding: 1%;
   overflow-wrap: break-word;
-   // border: 1px solid lightblue;
+
  }
  img {
    color: $lightest-tan;
    
    margin: 1rem;
-   // border: 1px solid lightblue;
+
    min-height: 20vh;
    max-height: 50vh;
    width: auto;
@@ -97,7 +84,7 @@
      color: $dark-green;
      font-size: .75rem;
      padding: .1rem;
-     // border: 2px solid $dark-green;
+
      background: linear-gradient(225deg,$lightest-tan, $body-lightest);
    a {
 

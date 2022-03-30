@@ -39,4 +39,3 @@ const mDTP = dispatch => ({
 })
 
 export default connect(null, mDTP)(Splash)
-// export default SplashPage;

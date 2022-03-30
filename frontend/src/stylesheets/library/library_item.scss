@@ -1,5 +1,4 @@
   .library-index-item {
-    // border: 1px solid rgb(80, 238, 49);
     width: 20vh;
     height: 20vh;
     justify-content: center;
@@ -7,7 +6,6 @@
     position: relative;
     border: 1px solid $body-lightest;
     border-radius: 4px;
-    // background: linear-gradient(135deg, $beige,$dark-brown);
     background-color: $body-lightest;
     box-shadow:  4px 4px 4px black;
       &:hover {
@@ -31,11 +29,9 @@
       }  
   }
 
-
   #game-img--library {
     max-height: 20vh;
-    max-width: 20vh;
-   
+    max-width: 20vh; 
   }
 
   #game-title--library {
@@ -65,7 +61,6 @@
     background: linear-gradient(75deg, $light-blue,$dark-blue);
     width: 94.75%;
     font-size: 1rem;
-    // box-shadow:  4px 4px 4px black;
     top: 40%;
     left: 0%;
   }

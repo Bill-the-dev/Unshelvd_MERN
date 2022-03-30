@@ -8,14 +8,7 @@
   height: 100%;
   width: 100%;
   background: linear-gradient(330deg, $dark-blue,$light-green);
-  // background-image: url('../../background_white.jpg');
-  // background-size: cover;
-  overflow-y: auto;
-  // h1 {
-  //   font-family: $serif;
-  //   font-weight: 600;
-  // }
-  
+  overflow-y: auto; 
 }
 
 .welcome-msg--library {
@@ -45,7 +38,6 @@
   font-family: $sans-serif;
   font-weight: bold;
   color: $dark-green;
-  // border: 2px solid $dark-green;
   background: linear-gradient(225deg,$lightest-tan, $body-lightest);
   &:hover {
     background: $body-lightest;
@@ -76,7 +68,6 @@
 }
 
 .library-index-container {
-  // border: 1px solid gray;
   border-radius: 4px;
   grid-row: 3 / 12;
   grid-column: 3 / 11;
@@ -90,7 +81,6 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  // height: 100%;
   justify-content: space-around;
   row-gap: 2rem;
   column-gap: 2rem;

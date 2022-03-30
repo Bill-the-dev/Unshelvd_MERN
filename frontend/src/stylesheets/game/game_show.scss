@@ -3,7 +3,7 @@
   justify-content: center;
   display: flex;
   background: linear-gradient(180deg, $dark-blue,$light-blue);
-  // background-image: url('../../background_white.jpg');
+
 }
 
 
@@ -13,9 +13,7 @@
   flex-direction: column;
   align-items: center;
   width: 66%;
-  // background: linear-gradient(180deg, $dark-blue,$light-blue);
-  // background: tan;
-  // background-size: 1100px;
+
 
   h1 {
     font-family: $serif;
@@ -24,14 +22,13 @@
     font-weight: bold;
     padding: .2rem;
     margin: 2rem;
-    // border: 1px solid lightblue;
+
   }
   h2 {
     color: $text-blue;
     padding: 1%;
     align-self: center;
     margin: 1rem;
-    // border: 1px solid lightblue;
   }
   p {
     color: $text-blue;
@@ -43,12 +40,10 @@
     font-style: italic;
     overflow-wrap: break-word;
     
-    // border: 1px solid lightblue;
   }
   img {
     color: $lightest-tan;
     margin-bottom: 2rem;
-    // border: 1px solid lightblue;
     max-height: 50vh;
     width: auto;
     box-shadow:  4px 4px 4px black;
@@ -58,7 +53,6 @@
 
 .game-details{
   border-radius: 6px;
-  // background: $body-lightest;
   background: radial-gradient(circle, $body-lightest 1%, $lightest-tan 100%);
   text-align: center;
   align-content: center;
@@ -73,7 +67,6 @@
   color: $lightest-tan;
   background: $text-blue;
   box-shadow: inset;
-  // background: linear-gradient(225deg,$lightest-tan, $body-lightest);
   &:hover {
     background: $yellow;
     box-shadow:  4px 4px 4px black;

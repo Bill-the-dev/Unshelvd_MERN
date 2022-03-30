@@ -7,14 +7,12 @@ const GroupsReducer = (state = { userGroups: {}, currentGroup: {} },
   action) => {
   Object.freeze(state);
   let nextState = Object.assign({}, state);
-  // debugger
   switch (action.type) {
     case RECEIVE_GROUPS:
     action.groups.data.forEach(group => nextState.userGroups[group._id] = group);
     return nextState;
 
     case RECEIVE_GROUP:
-    // debugger
     nextState.currentGroup = action.group.data
     return nextState;
   
