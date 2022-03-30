@@ -6,7 +6,8 @@ import Library from './library';
 const mapStateToProps = state => ({
     sessionUser: state.session.user, 
     currentUser: state.entities.users.currentUser, 
-    userGames: state.entities.users.currentUser.games, 
+    userGames: state.entities.users.currentUser.games,
+    allGames: Object.values(state.entities.games.userGames) 
 })
 
 

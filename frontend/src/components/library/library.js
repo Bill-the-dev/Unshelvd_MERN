@@ -34,9 +34,8 @@ class Library extends React.Component {
     const {currentUser, userGames, fetchGames, fetchGame, createGame, fetchUserGames, openModal} = this.props
     if (!currentUser) {
       return null
-    } else {
-    }
-    
+    } 
+
     return(    
       <div className='library-container'>
         <h1 className="welcome-msg--library">{currentUser.username}'s Library</h1>
