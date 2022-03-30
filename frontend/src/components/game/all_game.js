@@ -1,7 +1,6 @@
 import React from "react";
 import GameItem from "./game_item";
 import {Link} from 'react-router-dom'
-// import ProductIndexItem from "../library/library_item";
 
 class AllGameIndex extends React.Component {
   componentDidMount() {
@@ -9,7 +8,6 @@ class AllGameIndex extends React.Component {
   }
 
   render () {
-    // debugger
     const {allGames, currentUser, openModal} = this.props
     return(
       <div className="library-container">
@@ -24,10 +22,7 @@ class AllGameIndex extends React.Component {
             }
           </ul>
         </div>
-      </div>
-      
-        // allGames.map(game => game.name)
-      
+      </div>  
     )
   }
 }

@@ -13,7 +13,6 @@ class SignupForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.clearedErrors = false;
   }
 
   componentWillReceiveProps(nextProps) {
@@ -63,7 +62,6 @@ class SignupForm extends React.Component {
         <h2>Sign Up</h2>
         <h4><Link to='/login'>Log In</Link> instead</h4>
           <form onSubmit={this.handleSubmit}>
-              {/* <div> */}
                 <input type="text"
                   value={this.state.email}
                   onChange={this.update('email')}
@@ -93,9 +91,8 @@ class SignupForm extends React.Component {
                 />
               <br/>
               <input className='button button--session' type="submit" value="Sign Up" />
-              <button className="button button--session" onClick={() => loginDemo()}>Demo Log In</button>
+              <div className="button button--session" onClick={() => loginDemo()}>Demo Log In</div>
               {this.renderErrors()}
-              {/* </div> */}
           </form>
         </div>
       </div>

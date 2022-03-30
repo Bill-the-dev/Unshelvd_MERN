@@ -6,8 +6,6 @@ const passport = require('passport');
 const validateGameInput = require('../../validation/games');
 const User = require("../../models/User");
 
-// router.get("/test", (req, res) => res.json({ msg: "This is the tweets route" }));
-
 // ALL GAMES
 router.get('/', (req,res) => {
     Game.find()
@@ -25,11 +23,6 @@ router.get('/:id', (req,res) => {
 
 // CREATE GAME
 router.post('/', passport.authenticate('jwt', {session: false}), (req,res) => {
-    // const {errors, isValid} = validateGameInput(req.body);
-
-    // if (!isValid) {
-    //     return res.status(400).json(errors)
-    // }
     
     const newGame = new Game({
         name: req.body.name,
@@ -44,17 +37,10 @@ router.post('/', passport.authenticate('jwt', {session: false}), (req,res) => {
         rulesLink: req.body.rulesLink,
         userCreator: req.user.id
     })
-    // console.log(newGame)
-    // const currentUser = User.findById(req.user.id);
+
     newGame.save()
         .then(game => res.json(game))
-        // .catch(err => res.json(err))    
-        .catch(err => res.status(404).json({err}))    
-        // .then(game => console.log({game}))
-        // .catch(err => console.log({err}))        
-
-
+        .catch(err => res.status(404).json({err}))     
 })
-
 
 module.exports = router;

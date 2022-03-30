@@ -7,7 +7,6 @@ import { withRouter } from "react-router-dom";
 import { closeModal } from "../../actions/modal_actions";
 
 const mSTP = (state,ownProps) => {
-  // debugger
   return({
     currentUserId: state.session.user.id,
     currentUser: state.entities.users.currentUser,
@@ -19,7 +18,6 @@ const mSTP = (state,ownProps) => {
 
 const mDTP = dispatch => ({
   createGroup: group => dispatch(createGroup(group)),
-  // joinGroup: group => dispatch(joinGroup(group)),
   fetchUser: userId => dispatch(fetchUser(userId)),
   fetchGroups: () => dispatch(fetchGroups()),
   updateUser: user => dispatch(updateUser(user)),

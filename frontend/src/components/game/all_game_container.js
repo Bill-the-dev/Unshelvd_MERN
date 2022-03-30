@@ -5,7 +5,6 @@ import AllGameIndex from "./all_game";
 
 
 const mSTP = (state, ownProps) => {
-  // debugger
   return({
     allGames: Object.values(state.entities.games.userGames),
     currentUser: state.session.user
