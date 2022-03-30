@@ -109,8 +109,12 @@ class CreateGroup extends React.Component {
             <label>Enter Code:
                 <input type='text' value={this.state.code} onChange={this.update('code')}/>
             </label>
-            {/* {groupErrors} */}
             <input className="group-form-submit" type='submit' value='Join Group'/>
+            {
+            this.state.errors ? 
+            <div className="join-group-errors">{this.state.errors}</div> :
+            null
+            }
         </form>
       </div>
         }
