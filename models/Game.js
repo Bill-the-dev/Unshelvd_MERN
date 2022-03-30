@@ -5,24 +5,23 @@ const gameSchema = new Schema({
   name: {
     type: String,
     required: [true, 'Name is required'],
-    // index: true
   },
   image: {
-    type: String, //is string correct type? reading url for AWS
+    type: String, 
     required: true
-    // add default to generic image path
+    
   },
   playerCount: {
-    type: Map, // figure out how to get min and max player count
+    type: Map, 
     of: Number
   },
   category: {
-    type: Array, // this can be multiselect stored as an array
+    type: Array, 
     required: true,
     validate: [arrayMin, 'Must select at least one category']
   },
   gameType: {
-    type: Array, // this can be multiselect stored as an array
+    type: Array,
     required: true,
     validate: [arrayMin, 'Must select Setting']
 
@@ -36,7 +35,6 @@ const gameSchema = new Schema({
   userCreator: {
     type: Schema.Types.ObjectId,
     ref: 'User',
-    // index: true
   }
 })
 

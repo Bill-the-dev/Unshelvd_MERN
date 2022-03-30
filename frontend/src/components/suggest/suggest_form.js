@@ -14,7 +14,7 @@ class SuggestForm extends React.Component{
             filteredGames: []
         }
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.clearedErrors = false //DEPENDS IF ERRORS EVEN RENDER IN THIS FORM
+        this.clearedErrors = false 
         this.categoryUpdate = this.categoryUpdate.bind(this);
         this.typeUpdate = this.typeUpdate.bind(this);
         this.clearForm = this.clearForm.bind(this);
@@ -75,12 +75,12 @@ class SuggestForm extends React.Component{
         let preferences = {
             library: this.state.library,
             numPlayers: this.state.numPlayers,
-            category: this.state.category, //[App, Dice]
-            gameType: this.state.gameType //[Unplugged, Connected]
+            category: this.state.category, 
+            gameType: this.state.gameType 
         };
         let filteredGames = []
         
-        const userPoolId = currentGroups[this.state.library]?.users //FINDS USERS IN SELECTED GROUP
+        const userPoolId = currentGroups[this.state.library]?.users
         let gamePool = []
 
         for (let i = 0; i < userPoolId.length; i++) {
@@ -140,7 +140,6 @@ class SuggestForm extends React.Component{
 
     render() {
         const categories = ["Board Game", "Playing Cards", "Dice", "Pen & Paper", "App", "Party", "Word", "Puzzle", "Quick", "Team Play", "Bluffing", "Deduction"]
-        // debugger
         return (
             <div className='suggest-form-container'>
 
@@ -151,7 +150,6 @@ class SuggestForm extends React.Component{
                 <form id="suggest-form" className='suggest-form' onSubmit={this.handleSubmit}>
 
                     {/* LIBRARY SELECTOR */}
-
                     <div className='suggest-form-library'>
                         <h3>Find game from:
                         <div>
@@ -251,8 +249,6 @@ class SuggestForm extends React.Component{
                     </div>
 
                 </form>
-
-
 
             </div>
         )
