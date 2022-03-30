@@ -65,6 +65,7 @@ router.post("/register", (req, res) => {
           newUser
             .save()
             .then(user => {
+
               const payload = { id: user.id, username: user.username };
 
               jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
@@ -124,7 +125,6 @@ router.post("/login", (req, res) => {
 router.patch('/:id', (req,res) => {
   const userID = req.body.user._id;
   const updatedUser = req.body.user 
-  console.log({user: req.body.user.groups})
 
   User.findByIdAndUpdate(userID, {games: updatedUser.games, groups: updatedUser.groups})
     .then(user => res.json(user))
@@ -132,3 +132,4 @@ router.patch('/:id', (req,res) => {
 })
 
 module.exports = router;
+

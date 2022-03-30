@@ -14,7 +14,6 @@ class Library extends React.Component {
   }
 
   componentDidMount() {
-    // debugger
     if (!this.props.currentUser._id){
       this.props.fetchUser(this.props.sessionUser.id)
     }
@@ -22,7 +21,6 @@ class Library extends React.Component {
       .then(() => this.setState({currentUserGames: this.props.userGames}))
       .then(() => {
         let games = []
-        console.log('mapping games')
         this.props.allGames?.map(game => {
           if (this.state.currentUserGames.includes(game._id)){
             games.push(game)
@@ -35,10 +33,8 @@ class Library extends React.Component {
   render() {
     const {currentUser, userGames, fetchGames, fetchGame, createGame, fetchUserGames, openModal} = this.props
     if (!currentUser) {
-      console.log("no current user in render")
       return null
     } else {
-      console.log("got past current user")
     }
     
     return(    
