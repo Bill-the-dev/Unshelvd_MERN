@@ -165,7 +165,7 @@ class SuggestForm extends React.Component{
 
                     {/* NUMBER OF PLAYERS SELECTOR */}
                     <div className='suggest-form-numplayers'>
-                        <h3>Number of Players
+                        <h3>Number of Players:
                             <div>
                                 <select onChange={this.update("numPlayers")}>
                                     <option value ></option>
@@ -218,12 +218,12 @@ class SuggestForm extends React.Component{
 
                     {/* FORM SUBMIT */}
                     <div className='suggest-form-submit'>
-                        <input className="button" type="submit" value="Go Fish"/>
+                        <input className="button button--go-fish" type="submit" value="Go Fish"/>
                         {this.renderErrors()}
                     </div>
 
                     <div className='suggest-form-clearform'>
-                         <button className="button" onClick={() => this.clearForm()}>Clear preferences</button>
+                        <button className="button button--go-fish" onClick={() => this.clearForm()}>Clear selections</button>
                     </div>
 
                     {/* RESULTS OUTPUT */}
