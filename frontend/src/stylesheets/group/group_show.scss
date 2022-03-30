@@ -40,10 +40,29 @@
   padding: 0.5rem;
   width: 7rem;
   transition:all 1s ease;
+  margin-right: 1rem;
   &:hover {
     transform: scale(1.05);
     transition: all .4s ease;
     background: radial-gradient(circle, $light-blue 40%, $light-blue 100%);
+    color: $body-lightest;
+    font-weight: 500;
+    cursor: text;
+  }
+}
+.btn--leave-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $dark-blue;
+  border-radius: 4px;
+  padding: 0.5rem;
+  width: 7rem;
+  transition:all 1s ease;
+  &:hover {
+    transform: scale(1.05);
+    transition: all .4s ease;
+    background: radial-gradient(circle, $light-red 40%, $light-red 100%);
     color: $body-lightest;
     font-weight: 500;
     cursor: text;

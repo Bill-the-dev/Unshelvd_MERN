@@ -89,12 +89,12 @@ class GroupShow extends React.Component {
       <div className="group-show-container">
         <div className="gs-sub-header">
           <h1>{currentGroup.name}</h1>
-          <div className="btn--leave-group" onClick={this.handleLeave}>Leave Group</div>
-          <div 
-            className="btn--share-group" 
-            onMouseEnter={this.handleMouseEnter} 
-            onMouseLeave={this.handleMouseLeave}
-          >Share Code</div>
+            <div 
+              className="btn--share-group" 
+              onMouseEnter={this.handleMouseEnter} 
+              onMouseLeave={this.handleMouseLeave}
+            >Share Code</div>
+            <div className="btn--leave-group" onClick={this.handleLeave}>Leave Group</div>
         </div>
         <div className="gs-content">
           <div className="gs-user-list-container">
