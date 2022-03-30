@@ -5,10 +5,9 @@ const GroupSchema = new Schema({
   name: {
     type: String,
     required: true,
-    // index: true
   },
   shareCode: {
-    type: String, // random generate 
+    type: String, 
     required: true  
   },
   users: [{
@@ -18,7 +17,6 @@ const GroupSchema = new Schema({
   userGroupCreator: {
     type: Schema.Types.ObjectId,
     ref: 'User',
-    // index: true
   }
 })
 
