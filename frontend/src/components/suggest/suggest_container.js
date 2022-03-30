@@ -6,7 +6,7 @@ import { fetchGroups } from '../../actions/group_actions'
 import { openModal } from '../../actions/modal_actions'
 
 const mapStateToProps = state => ({
-    sessionUser: state.session.user, //Need to know who current user is because that will be an option for library selection 
+    sessionUser: state.session.user,
     currentGroups: state.entities.groups.userGroups,
     currentUser: state.entities.users.currentUser,
     allGames: state.entities.games.userGames,
