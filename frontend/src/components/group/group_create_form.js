@@ -95,7 +95,7 @@ class CreateGroup extends React.Component {
             <input className="group-form-submit" type='submit' value='Join Group'/>
             {
             this.state.errors ? 
-            <div>{this.state.errors}</div> :
+            <div className="join-group-errors">{this.state.errors}</div> :
             null
             }
         </form>
