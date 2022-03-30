@@ -6,7 +6,8 @@ class CreateGroup extends React.Component {
     super(props);
     this.state = {
       name: '',
-      code: ''
+      code: '',
+      errors: ""
     }
     this.handleSubmit = this.handleSubmit.bind(this)
   }
@@ -44,31 +45,33 @@ class CreateGroup extends React.Component {
             curGroup = group
           }
         })
-        // if (!curGroup) {
-        //   this.renderErrors()
-        //   return
-        // }
-      // ADD GROUP TO USER
-      const updatedUser = this.props.currentUser;
-      if (!updatedUser.groups.includes(curGroup._id)){
-        // debugger
-          updatedUser.groups = this.props.currentUser.groups.concat(curGroup);
-          this.props.updateUser(updatedUser);
-  
-          // ADD USER TO GROUP
-          const updatedGroup = curGroup;
-          updatedGroup.users = curGroup.users.concat(this.props.currentUser._id);
-          // debugger
-          this.props.updateGroup(updatedGroup)
-          .then(() => this.props.fetchGroups())
+
+        if (!curGroup) {
+          this.setState({
+            errors: "Group does not exist"
+          })
+        } else {
+            // ADD GROUP TO USER
+          const updatedUser = this.props.currentUser;
+          if (!updatedUser.groups.includes(curGroup._id)){
+            // debugger
+              updatedUser.groups = this.props.currentUser.groups.concat(curGroup);
+              this.props.updateUser(updatedUser);
+      
+              // ADD USER TO GROUP
+              const updatedGroup = curGroup;
+              updatedGroup.users = curGroup.users.concat(this.props.currentUser._id);
+              // debugger
+              this.props.updateGroup(updatedGroup)
+              .then(() => this.props.fetchGroups())
+            }
+            this.props.closeModal()
+            setTimeout(this.props.history.push({pathname: `/groups/${curGroup._id}`}),1000)
         }
-        this.props.closeModal()
-        setTimeout(this.props.history.push({pathname: `/groups/${curGroup._id}`}),1000)
     }
   }
 
   render() {
-    let groupErrors = this.props.errors
     const {modal} = this.props
     return (
       <div className="group-form-container">
@@ -89,8 +92,12 @@ class CreateGroup extends React.Component {
             <label>Enter Code:
                 <input type='text' value={this.state.code} onChange={this.update('code')}/>
             </label>
-            {/* {groupErrors} */}
             <input className="group-form-submit" type='submit' value='Join Group'/>
+            {
+            this.state.errors ? 
+            <div>{this.state.errors}</div> :
+            null
+            }
         </form>
       </div>
         }
