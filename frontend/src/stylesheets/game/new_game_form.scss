@@ -1,9 +1,6 @@
 .new-game-form-container {
-  // height: 100%;
-  // border: 1px solid black;
   color: $dark-blue;
   overflow-y: auto;
-  // padding-top: 2vh;
   grid-row: 1 / 11;
   grid-column: 1 / 13;
   font: inherit;
@@ -17,14 +14,12 @@
   flex-direction: column;
   justify-content: baseline;
   align-items: center;
-  // text-align: center;
   align-self: flex-end;
   font-size: 2rem;
   grid-column: 3/11;
   padding: 1%;
   font-family: $serif;
   color: $dark-brown;
-  // grid-row: 1/2;
 }
 
 .new-game-form {
@@ -40,7 +35,6 @@
 .game-form-name {
   display: flex;
   grid-column: 3/11;
-  // grid-row: 2/3;
   padding-top: 2%;
   font-weight: bold;
   label{ 
@@ -65,7 +59,6 @@
   align-items: center;
   padding-top: 2%;
   grid-column: 3/11;
-  // grid-row: 3/4;
   span {
     font-weight: bold;
   }
@@ -103,7 +96,6 @@ input.add-game-input {
   justify-content: center;
   align-items: center;
   grid-column: 3/11;
-  // grid-row: 4/5;
   h2 {
     font-weight: bold;
   }
@@ -126,7 +118,6 @@ input.add-game-input {
   align-items: center;
   padding-top: 2%;
   grid-column: 3/11;
-  // grid-row: 5/6;
   h2 {
     font-weight: bold;
   }
@@ -147,7 +138,6 @@ input.add-game-input {
   align-items: center;
   padding-top: 2%;
   grid-column: 3/11;
-  // grid-row: 6/7;
   h2 {
     font-weight: bold;
   }
@@ -169,7 +159,6 @@ input.add-game-input {
   padding-top: 2%;
   align-items: center;
   grid-column: 3/11;
-  // grid-row: 7/8;
   label{ 
     text-align: center;
     font-weight: bold;
@@ -189,7 +178,6 @@ input.add-game-input {
 .game-form-rules {
   display: flex;
   grid-column: 3/11;
-  // grid-row: 8/9;
   padding-top: 2%;
   font-weight: bold;
   label{ 
@@ -206,12 +194,10 @@ input.add-game-input {
 
 .game-form-submit {
   display: flex;
-  // flex-direction: column;
   justify-content: center;
   padding-top: 2%;
   align-items: center;
   grid-column: 3/11;
-  // grid-row: 9/10;
   input {
     border: 1px solid $dark-blue;
     background-color: white;
@@ -224,13 +210,11 @@ input.add-game-input {
       color: white;
       box-shadow: 2px 2px 10px black;
     }
-    // background: linear-gradient(225deg,$lightest-tan, $body-lightest)
   }
 }
 
 .game-errors {
   grid-column: 3/11;
-  // grid-row: 10/11;
   display: flex;
   flex-direction: column;
   justify-content: center;

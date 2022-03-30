@@ -7,8 +7,6 @@ const mapStateToProps = state => ({
     sessionUser: state.session.user, 
     currentUser: state.entities.users.currentUser, 
     userGames: state.entities.users.currentUser.games, 
-    //Current user's games will be rendered in the library
-    allGames: Object.values(state.entities.games.userGames) //So that clicking on a game in library shows the game information (renders a game show/modal)
 })
 
 
