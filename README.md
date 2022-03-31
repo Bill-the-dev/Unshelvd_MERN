@@ -118,4 +118,4 @@ The ability for a user to create a new group exists within a modal.  Because of 
 
 ![Feature: Auth & Library](https://i.imgur.com/tApp26H.mp4)
 
-
+![Feature: Auth & Library](https://github.com/Bill-the-dev/Unshelvd_MERN/blob/d3a2720412b975adfe5a8ed70f14e00d71a1bb32/frontend/public/gif-auth-library.mp4)
