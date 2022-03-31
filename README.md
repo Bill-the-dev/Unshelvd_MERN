@@ -8,6 +8,10 @@ Unshelvd is a social gaming site that does away with uncertainty at your next me
 
 It will give you suggestions for Connected (online) or Unplugged (in-person) games to play based on what's already on your shelf... or what you have in common with another user!
 
+<p align="center">
+ <img src="https://github.com/Bill-the-dev/Unshelvd_MERN/blob/main/z-images/readme-login-library.gif" width="500" height="500" />
+</p>
+ 
 ## Features
 ### Game Suggestion Form
 The game suggestion feature is the core of this application.  On this form, users enter minimal information (how many people are playing, any category preferences etc) and the app generates a list of game suggestions based on the criteria. The following function updates the local state of this component with games that match a user's preferences. By updating local state, this also triggers the component to rerender, displaying updated games everytime the user updates and submits their preferences. 
