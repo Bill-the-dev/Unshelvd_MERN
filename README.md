@@ -10,7 +10,66 @@ It will give you suggestions for Connected (online) or Unplugged (in-person) gam
 
 ## Features
 ### Game Suggestion Form
-The game suggestion feature is the core of this application.  On this form, users enter minimal information (how many people are playing, any category preferences etc) and the app generates a list of game suggestions based on the criteria.  
+The game suggestion feature is the core of this application.  On this form, users enter minimal information (how many people are playing, any category preferences etc) and the app generates a list of game suggestions based on the criteria. The following function updates the local state of this component with games that match a user's preferences. By updating local state, this also triggers the component to rerender, displaying updated games everytime the user updates and submits their preferences. 
+
+```js
+ handleSubmit(e) {
+        const {allUsers, currentGroups, allGames} = this.props;
+
+        e.preventDefault();
+        let preferences = {
+            library: this.state.library,
+            numPlayers: this.state.numPlayers,
+            category: this.state.category, 
+            gameType: this.state.gameType 
+        };
+        let filteredGames = []
+        
+        const userPoolId = currentGroups[this.state.library]?.users
+        let gamePool = []
+
+        for (let i = 0; i < userPoolId.length; i++) {
+            gamePool = gamePool.concat(allUsers[userPoolId[i]]?.games)
+        }
+        const realGamePool = gamePool.filter(item => {
+            if (item) return item
+        })
+
+        for (let i = 0; i < realGamePool.length; i++) {
+            if (!filteredGames.includes(allGames[realGamePool[i]])) {
+                filteredGames.push(allGames[realGamePool[i]])
+            }
+        }
+
+        const categoryFilter = (game, player) => {
+            for (const ele of player) {
+                if (game.includes(ele)) return true
+            }
+            return false
+        }
+
+        const typeFilter = (game, player) => {
+            for (const ele of player) {
+                if (game.includes(ele)) return true
+            }
+            return false
+        }
+
+        let userFiltered = []
+
+        filteredGames.forEach(game => {
+            if ( 
+                game?.playerCount.max >= parseInt(preferences?.numPlayers) && 
+                game?.playerCount.min <= parseInt(preferences?.numPlayers) &&
+                categoryFilter(game.category, preferences.category) &&
+                typeFilter(game.gameType, preferences.gameType)
+                ) userFiltered.push(game)
+        })
+        this.setState({
+            filteredGames: userFiltered
+        })
+    }
+```
 
 ### Create Group Modal
 The ability for a user to create a new group exists within a modal.  Because of this, after a group was created, the "All Groups" index page was not rerendering with the newly added group.  To solve this, we added a request to the backend upon creation that updated state and triggered a rerender.
