@@ -120,4 +120,4 @@ The ability for a user to create a new group exists within a modal.  Because of 
 
 ![Feature: Auth & Library](z-gif-auth-library.mp4)
 
-[Imgur](https://imgur.com/tApp26H.mp4)
+![Imgur](https://imgur.com/tApp26H.mp4)
