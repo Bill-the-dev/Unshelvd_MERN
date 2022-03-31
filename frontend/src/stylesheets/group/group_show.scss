@@ -63,9 +63,10 @@
     transform: scale(1.05);
     transition: all .4s ease;
     background: radial-gradient(circle, $light-red 40%, $light-red 100%);
+    border: 1px solid $dark-red;
     color: $body-lightest;
     font-weight: 500;
-    cursor: text;
+    cursor: pointer;
   }
 }
 
