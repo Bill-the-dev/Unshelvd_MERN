@@ -102,3 +102,17 @@ The ability for a user to create a new group exists within a modal.  Because of 
 ## Next Steps
 * Add ability for user to have a "favorites" section in library
 * Incorporate AWS to allow user to upload their own photo when creating a game
+
+---
+
+
+[Feature: Suggest](https://i.imgur.com/VohF9iT.mp4)
+
+
+---
+
+[Feature: Groups](https://i.imgur.com/6kJ7yky.mp4)
+
+---
+
+[Feature: Auth & Library](https://i.imgur.com/tApp26H.mp4)
