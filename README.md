@@ -106,13 +106,16 @@ The ability for a user to create a new group exists within a modal.  Because of 
 ---
 
 
-[Feature: Suggest](https://i.imgur.com/VohF9iT.mp4)
+![Feature: Suggest](https://i.imgur.com/VohF9iT.mp4)
 
 
 ---
 
-[Feature: Groups](https://i.imgur.com/6kJ7yky.mp4)
+![Feature: Groups](https://i.imgur.com/6kJ7yky.mp4)
 
 ---
 
-[Feature: Auth & Library](https://i.imgur.com/tApp26H.mp4)
+
+![Feature: Auth & Library](https://i.imgur.com/tApp26H.mp4)
+
+
