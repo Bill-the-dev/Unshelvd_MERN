@@ -90,8 +90,8 @@ class SignupForm extends React.Component {
                   className='form-input'
                 />
               <br/>
-              <input className='button button--session' type="submit" value="Sign Up" />
-              <div className="button button--session" onClick={() => loginDemo()}>Demo Log In</div>
+            <input className='button' id='button--session' type="submit" value="Sign Up" />
+            <div className='button' id='button--demo' onClick={() => loginDemo()}>Demo Log In</div>
               {this.renderErrors()}
           </form>
         </div>
