@@ -111,12 +111,12 @@ The ability for a user to create a new group exists within a modal.  Because of 
 ---
 
 
-![Feature: Suggest](https://i.imgur.com/VohF9iT.mp4)
+![Feature: Suggest](https://github.com/Bill-the-dev/Unshelvd_MERN/blob/main/z-images/readme-suggest-game.gif?raw=true)
 
 
 ---
 
-![Feature: Groups](https://i.imgur.com/6kJ7yky.mp4)
+![Feature: Groups](https://github.com/Bill-the-dev/Unshelvd_MERN/blob/main/z-images/readme-groups.gif?raw=true)
 
 ---
 
