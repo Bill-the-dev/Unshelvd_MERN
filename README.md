@@ -119,10 +119,3 @@ The ability for a user to create a new group exists within a modal.  Because of 
 ![Feature: Groups](https://github.com/Bill-the-dev/Unshelvd_MERN/blob/main/z-images/readme-groups.gif?raw=true)
 
 ---
-
-
-![Feature: Auth & Library](https://i.imgur.com/tApp26H.mp4)
-
-![Feature: Auth & Library](z-gif-auth-library.mp4)
-
-![Imgur](https://imgur.com/tApp26H.mp4)
