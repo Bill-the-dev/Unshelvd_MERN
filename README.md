@@ -9,7 +9,8 @@ Unshelvd is a social gaming site that does away with uncertainty at your next me
 It will give you suggestions for Connected (online) or Unplugged (in-person) games to play based on what's already on your shelf... or what you have in common with another user!
 
 <p align="center">
- <img src="https://github.com/Bill-the-dev/Unshelvd_MERN/blob/main/z-images/readme-login-library.gif" width="500" height="500" />
+<!--  <img src="https://github.com/Bill-the-dev/Unshelvd_MERN/blob/main/z-images/readme-login-library.gif" width="500" height="500" /> -->
+ <img src="https://github.com/Bill-the-dev/Unshelvd_MERN/blob/main/z-images/readme-login-library-2.gif?raw=true" width="500" height="500" />
 </p>
  
 ## Features
